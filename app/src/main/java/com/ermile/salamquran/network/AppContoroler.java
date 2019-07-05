@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Network;
+package com.ermile.salamquran.network;
 
 import android.app.Application;
 import android.text.TextUtils;

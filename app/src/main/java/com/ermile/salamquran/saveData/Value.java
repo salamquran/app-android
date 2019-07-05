@@ -1,11 +1,11 @@
-package com.ermile.salamquran.SaveData;
+package com.ermile.salamquran.saveData;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
-public class value extends PreferenceActivity {
+public class Value extends PreferenceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
