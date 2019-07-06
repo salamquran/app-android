@@ -10,8 +10,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String Language = "fa";
+        Language(Language);
+
+    }
+
+
+    private void Language(String deviceLanguage){
+        switch (deviceLanguage){
+            case "fa":
+
+                break;
+            case "ar":
+                break;
+            default:
+                break;
+        }
+    }
+
+    private String Apply(String name){
 
 
 
+        return null;
     }
 }
