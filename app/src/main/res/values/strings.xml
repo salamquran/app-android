@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Salam Quran</string>
+    <string name="name">سلام قرآن</string>
+    <string name="desc">به قرآن سلام کن! قران تو را می‌خواند. با زبان خودتان به قرآن دسترسی داشته باشید. رایگان و آسان.</string>
+    <string name="slogan">قرآن هر کجا و هر زمان</string>
 </resources>

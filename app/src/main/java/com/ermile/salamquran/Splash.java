@@ -19,7 +19,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -52,6 +55,10 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     private String language_device = Locale.getDefault().getLanguage();
     /*Value*/
     Value value = new Value();
+    /*Object's of activity_splash.xml*/
+    ImageView logo;
+    TextView title,desc,titleProgress;
+    ProgressBar progress;
 
 
     @Override
