@@ -29,7 +29,36 @@ public class SessionManager extends ContextWrapper {
     }
 
 
-    /*Update Version*/
+    /** App Language*/
+    public static final String pref_appLanguage = "appLanguage";
+    public void saveAppLanguage(String language ) {
+        editor.putString(pref_appLanguage, language);
+        editor.apply();
+    }
+    public Map<String, String> getAppLanguage() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(pref_appLanguage, sharedPreferences
+                .getString(pref_appLanguage, null));
+        return hashMap;
+    }
+
+    /** Version*/
+    public static final String pref_VersionUpdate = "VersionUpdate";
+    public static final String pref_VersionDeprecate = "VersionDeprecate";
+    public void saveVersion(String Update ,String Deprecate) {
+        editor.putString(pref_VersionUpdate, Update);
+        editor.putString(pref_VersionDeprecate, Deprecate );
+        editor.apply();
+    }
+    public Map<String, String> getVersion() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(pref_VersionUpdate, sharedPreferences
+                .getString(pref_VersionUpdate, String.valueOf(Value.versioncodeAPK)));
+        hashMap.put(pref_VersionDeprecate, sharedPreferences
+                .getString(pref_VersionDeprecate, String.valueOf(Value.versioncodeAPK) ));
+        return hashMap;
+    }
+    /** Update Version*/
     public static final String pref_UpdateTitle = "UpdateTitle";
     public static final String pref_UpdateDesc = "UpdateDesc";
     public static final String pref_UpdateURL = "UpdateURL";
@@ -49,8 +78,7 @@ public class SessionManager extends ContextWrapper {
                 .getString(pref_UpdateURL, Value.site));
         return hashMap;
     }
-
-    /*Deprecate Version*/
+    /** Deprecate Version*/
     public static final String pref_deprecatTitle = "deprecatTitle";
     public static final String pref_deprecatDesc = "deprecatDesc";
     public static final String pref_deprecatBtn = "deprecatBtn";

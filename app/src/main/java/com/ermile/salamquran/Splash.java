@@ -1,32 +1,22 @@
 package com.ermile.salamquran;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -35,23 +25,18 @@ import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.network.AppContoroler;
 import com.ermile.salamquran.saveData.SessionManager;
 import com.ermile.salamquran.saveData.Value;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 
@@ -66,108 +51,165 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     ProgressBar progress;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        String AppLanguage = SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
+        Log.d(TAG, "AppLanguage: "+AppLanguage);
+
+
+        if (AppLanguage == null){
+            CarateFirstJsonFile();
+            SetFirstLanguage();
+        }else {
+            GetSettingJson();
+        }
+
+        /*Use Method for get offline json*/
+        /*
+
+
         try {
-            writeToMyFile("1234444");
             PackageInfo pInfo = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0);
             value.versionAPK = pInfo.versionName;
             value.versioncodeAPK = pInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             Log.e(TAG,"GET VERSION APK : "+e);
+        }*/
+
+
+    }
+
+    /** Crate json file (local.json)*/
+    private void CarateFirstJsonFile(){
+        try {
+            writeToMyFile("");
+            Log.d(TAG, "Json File Crated");
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Json File Not Crated");
+        }
+    }
+    /** Set First Language Auto from Device*/
+    private void SetFirstLanguage(){
+        switch (language_device){
+            case "fa":
+                SessionManager.get(getApplicationContext()).saveAppLanguage(language_device);
+                Log.d(TAG, "onCreate: set language > "+language_device);
+                GetSettingJson();
+                break;
+            case "ar":
+                SessionManager.get(getApplicationContext()).saveAppLanguage(language_device);
+                Log.d(TAG, "onCreate: set language > "+language_device);
+                GetSettingJson();
+                break;
+            default:
+                SessionManager.get(getApplicationContext()).saveAppLanguage("en");
+                Log.d(TAG, "onCreate: set language >  "+language_device);
+                GetSettingJson();
+                break;
+        }
+    }
+    /** Get Setting Json Online(if connected) & Offline(if null)*/
+    private void GetSettingJson(){
+        String AppLanguage = SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
+        if (hasInternetConnection()){
+            /*Get Setting From Url*/
+            StringRequest get_local = new StringRequest(Request.Method.GET, Value.local, new Response.Listener<String>(){
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        Log.d(TAG, "onResponse OK");
+                        writeToMyFile(response);
+                        Log.d(TAG, "Write online Json to local.json");
+                        DeprecatedVersion();
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                        Log.e(TAG, "Not Write online Json: +"+e);
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Not Write online Json (onErrorResponse) : "+error);
+                }
+            });AppContoroler.getInstance().addToRequestQueue(get_local);
+        }
+        else {
+            try {
+                if (readFromMyFile(Value.jsonFileName).equals("")) {
+                    writeToMyFile(loadJSONFromAsset(AppLanguage));
+                    Log.d(TAG, "Write offline Json to local.json");
+                    DeprecatedVersion();
+                }else {
+                    DeprecatedVersion();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e(TAG, "Not Write offline Json: "+e);
+            }
+        }
+    }
+
+
+    /** Check Deprecated Version*/
+    private void DeprecatedVersion(){
+        try {
+            JSONObject respone = new JSONObject(readFromMyFile(Value.jsonFileName));
+            JSONObject result = respone.getJSONObject("result");
+            JSONObject version = result.getJSONObject("version");
+            int Depver = Integer.valueOf(version.getString("deprecated"));
+            int Updver = Integer.valueOf(version.getString("last"));
+            if (value.versioncodeAPK < Depver){
+                Log.e(TAG, "KK Update Version ");
+                final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+                /*Title*/
+                builderSingle.setTitle(SessionManager
+                        .get(getApplicationContext())
+                        .getDeprecat()
+                        .get(SessionManager.pref_deprecatTitle));
+                /*Message*/
+                builderSingle.setMessage(SessionManager
+                        .get(getApplicationContext())
+                        .getDeprecat()
+                        .get(SessionManager.pref_deprecatDesc));
+                /*Button*/
+                builderSingle.setPositiveButton(SessionManager
+                                .get(getApplicationContext())
+                                .getDeprecat()
+                                .get(SessionManager.pref_deprecatBtn),
+                        /*Open Url*/
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent openURL = new Intent ( Intent.ACTION_VIEW );
+                                openURL.setData ( Uri.parse ( SessionManager
+                                        .get(getApplicationContext())
+                                        .getDeprecat()
+                                        .get(SessionManager.pref_deprecatURL) ) );
+                                startActivity ( openURL );
+                                finish();
+                            }
+                        });
+                builderSingle.setCancelable(false);
+
+                builderSingle.show();
+            }else {
+                UpdateVersion(Updver);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        /*Save Value for Deprecate Version*/
-        SessionManager
-                .get(getApplicationContext())
-                .saveDeprecat("Title","Desc","BTN","https://google.com");
-        DeprecatedVersion(2);
-
-
     }
-
-    private boolean hasInternetConnection() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        if (wifiNetwork != null && wifiNetwork.isConnected())
-        {
-            return true;
-        }
-        NetworkInfo mobileNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (mobileNetwork != null && mobileNetwork.isConnected())
-        {
-            return true;
-        }
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        if (activeNetwork != null && activeNetwork.isConnected())
-        {
-            return true;
-        }
-        return false;
-    }
-
-
-
-    private void writeToMyFile(String json) throws IOException {
-        File file = new File(getApplicationContext().getFilesDir(), "ahmad.json");
-        FileOutputStream fileOutputStream;
-        try {
-            fileOutputStream = openFileOutput("ahmad.json", Context.MODE_PRIVATE);
-            fileOutputStream.write(json.getBytes());
-            fileOutputStream.close();
-            Log.d(TAG, "writeToMyFile OK > " + file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    private void DeprecatedVersion(int DeprecatedVersion){
-        if (value.versioncodeAPK < DeprecatedVersion){
-            final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
-            /*Title*/
-            builderSingle.setTitle(SessionManager
-                    .get(getApplicationContext())
-                    .getDeprecat()
-                    .get(SessionManager.pref_deprecatTitle));
-            /*Message*/
-            builderSingle.setMessage(SessionManager
-                    .get(getApplicationContext())
-                    .getDeprecat()
-                    .get(SessionManager.pref_deprecatDesc));
-            /*Button*/
-            builderSingle.setPositiveButton(SessionManager
-                    .get(getApplicationContext())
-                    .getDeprecat()
-                    .get(SessionManager.pref_deprecatBtn),
-            /*Open Url*/
-                    new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent openURL = new Intent ( Intent.ACTION_VIEW );
-                    openURL.setData ( Uri.parse ( SessionManager
-                            .get(getApplicationContext())
-                            .getDeprecat()
-                            .get(SessionManager.pref_deprecatURL) ) );
-                    startActivity ( openURL );
-                    finish();
-                }
-            });
-            builderSingle.setCancelable(false);
-
-            builderSingle.show();
-        }else {
-
-        }
-    }
-
+    /** Check Update Version*/
     private void UpdateVersion(int UpdateVersion){
         if (value.versioncodeAPK < UpdateVersion){
-
+            Log.d(TAG, "Pales Update Version!");
+            Log.e(TAG, "KK Update Version ");
         }
         else {
             GetToken();
@@ -316,4 +358,69 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
 
 
 
+    private void writeToMyFile(String json) throws IOException {
+        File file = new File(getApplicationContext().getFilesDir(), Value.jsonFileName+".json");
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = openFileOutput(Value.jsonFileName+".json", Context.MODE_PRIVATE);
+            fileOutputStream.write(json.getBytes());
+            fileOutputStream.close();
+            Log.d(TAG, "writeToMyFile OK > " + file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    private String readFromMyFile(String filename) throws IOException {
+        File file = new File(getApplicationContext().getFilesDir(), filename+".json");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String line;
+        StringBuilder text = new StringBuilder();
+
+        while ((line = bufferedReader.readLine()) != null) {
+            text.append(line);
+        }
+        bufferedReader.close();
+        return text.toString();
+    }
+
+
+    public String loadJSONFromAsset(String langName) {
+        try {
+            InputStream file= this.getAssets().open(langName+"_offline.json");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file, "UTF-8"));
+            String line;
+            StringBuilder text = new StringBuilder();
+            while ((line = bufferedReader.readLine()) != null) {
+                text.append(line);
+            }
+            bufferedReader.close();
+            return text.toString();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+
+
+
+    private boolean hasInternetConnection() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        if (wifiNetwork != null && wifiNetwork.isConnected())
+        {
+            return true;
+        }
+        NetworkInfo mobileNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        if (mobileNetwork != null && mobileNetwork.isConnected())
+        {
+            return true;
+        }
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if (activeNetwork != null && activeNetwork.isConnected())
+        {
+            return true;
+        }
+        return false;
+    }
 }

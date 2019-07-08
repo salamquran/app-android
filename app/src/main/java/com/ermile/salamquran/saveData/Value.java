@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 
 public class Value extends PreferenceActivity {
 
+    public static String jsonFileName = "local";
     public static String local = "https://jibres.ir/api/v6/app";
     public static String site = "https://jibres.ir";
     public static String apiV6 = "https://jibres.ir/api/v6/";
@@ -14,7 +15,7 @@ public class Value extends PreferenceActivity {
     public static String user_add = apiV6+"android/user/add";
     public static String appkey = null;
     public String versionAPK = null;
-    public int versioncodeAPK = 1;
+    public static int versioncodeAPK = 1;
 
     public boolean firstOpen = false;
     public String appLanguage = null;
