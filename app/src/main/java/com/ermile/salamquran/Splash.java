@@ -6,12 +6,14 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +33,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.network.AppContoroler;
+import com.ermile.salamquran.saveData.SessionManager;
 import com.ermile.salamquran.saveData.Value;
 
 import org.json.JSONArray;
@@ -41,6 +44,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -66,13 +71,24 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         try {
+            writeToMyFile("1234444");
             PackageInfo pInfo = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0);
             value.versionAPK = pInfo.versionName;
+            value.versioncodeAPK = pInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            Log.e(TAG,"GET VERSION APK : "+e);
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        GetToken();
+        /*Save Value for Deprecate Version*/
+        SessionManager
+                .get(getApplicationContext())
+                .saveDeprecat("Title","Desc","BTN","https://google.com");
+        DeprecatedVersion(2);
+
+
     }
 
     private boolean hasInternetConnection() {
@@ -96,52 +112,76 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     }
 
 
-    private void SaveValue(){
-        StringRequest get_local = new StringRequest(Request.Method.GET, "https://jibres.ir/en/api/v6", new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response) {
-                boolean ok =false;
-                JSONObject result = null;
-                JSONObject lang_list = null;
-                try {
-                    JSONObject mainObject = new JSONObject(response);
-                    if(!mainObject.isNull("ok")) ok = mainObject.getBoolean("ok");
 
-                    if (ok){
-                        result = mainObject.getJSONObject("result");
-                        // Get Language List
-                        lang_list = result.getJSONObject("lang_list");
-
-                        Iterator<?> keys = lang_list.keys();
-                        while( keys.hasNext() ) {
-                            String key = (String)keys.next();
-                            if ( lang_list.get(key) instanceof JSONObject ) {
-                                JSONObject langlist_object = lang_list.getJSONObject(key);
-
-                                String name = langlist_object.getString("name");
-                                String localname = langlist_object.getString("localname");
-
-                            }
-                        }
-
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        AppContoroler.getInstance().addToRequestQueue(get_local);
+    private void writeToMyFile(String json) throws IOException {
+        File file = new File(getApplicationContext().getFilesDir(), "ahmad.json");
+        FileOutputStream fileOutputStream;
+        try {
+            fileOutputStream = openFileOutput("ahmad.json", Context.MODE_PRIVATE);
+            fileOutputStream.write(json.getBytes());
+            fileOutputStream.close();
+            Log.d(TAG, "writeToMyFile OK > " + file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
+    private void DeprecatedVersion(int DeprecatedVersion){
+        if (value.versioncodeAPK < DeprecatedVersion){
+            final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+            /*Title*/
+            builderSingle.setTitle(SessionManager
+                    .get(getApplicationContext())
+                    .getDeprecat()
+                    .get(SessionManager.pref_deprecatTitle));
+            /*Message*/
+            builderSingle.setMessage(SessionManager
+                    .get(getApplicationContext())
+                    .getDeprecat()
+                    .get(SessionManager.pref_deprecatDesc));
+            /*Button*/
+            builderSingle.setPositiveButton(SessionManager
+                    .get(getApplicationContext())
+                    .getDeprecat()
+                    .get(SessionManager.pref_deprecatBtn),
+            /*Open Url*/
+                    new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent openURL = new Intent ( Intent.ACTION_VIEW );
+                    openURL.setData ( Uri.parse ( SessionManager
+                            .get(getApplicationContext())
+                            .getDeprecat()
+                            .get(SessionManager.pref_deprecatURL) ) );
+                    startActivity ( openURL );
+                    finish();
+                }
+            });
+            builderSingle.setCancelable(false);
+
+            builderSingle.show();
+        }else {
+
+        }
+    }
+
+    private void UpdateVersion(int UpdateVersion){
+        if (value.versioncodeAPK < UpdateVersion){
+
+        }
+        else {
+            GetToken();
+        }
+    }
 
 
+    private void CheckAddUser(){
+        /*if (){
+            GetToken();
+        }else {
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }*/
+    }
     private void GetToken() {
         StringRequest getToken = new StringRequest(Request.Method.POST, Value.token, new Response.Listener<String>(){
             @Override
@@ -154,15 +194,15 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                     ok_getToken = mainObject.getBoolean("ok");
                     if (ok_getToken){
                         result = mainObject.getJSONObject("result");
-                         String token = result.getString("token");
+                        String token = result.getString("token");
                         Log.i(TAG,token);
                         AddUser(token);
                     }else {
-                         msg = mainObject.getJSONArray("msg");
-                         for (int i = 0 ; i<= msg.length();i++){
-                             JSONObject msg_object = msg.getJSONObject(i);
-                             Log.e(TAG,msg_object.getString("text"));
-                         }
+                        msg = mainObject.getJSONArray("msg");
+                        for (int i = 0 ; i<= msg.length();i++){
+                            JSONObject msg_object = msg.getJSONObject(i);
+                            Log.e(TAG,msg_object.getString("text"));
+                        }
                     }
 
                 } catch (JSONException e) {
@@ -273,33 +313,6 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
 
         };AppContoroler.getInstance().addToRequestQueue(post_user_add);
     }
-
-    private void Laaguage(String language_device){
-        //Get Value
-        SharedPreferences pf_value = getSharedPreferences("pf_value", MODE_PRIVATE);
-        SharedPreferences.Editor pf_editorvalue = pf_value.edit();
-        //Value
-        value.firstOpen = pf_value.getBoolean("v_firstOpen", false);
-        value.appLanguage = pf_value.getString("v_appLanguage", "en");
-        if (value.firstOpen){
-            switch (language_device){
-                case "fa":
-                    pf_editorvalue.putString("v_appLanguage",language_device);
-                    pf_editorvalue.apply();
-                    break;
-                case "ar":
-                    pf_editorvalue.putString("v_appLanguage",language_device);
-                    pf_editorvalue.apply();
-                    break;
-
-                default:
-                    pf_editorvalue.putString("v_appLanguage","en");
-                    pf_editorvalue.apply();
-
-            }
-        }
-    }
-
 
 
 
