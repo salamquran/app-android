@@ -1,15 +1,17 @@
-package com.ermile.salamquran;
+package com.ermile.salamquran.online;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.ermile.salamquran.R;
+
+public class Main_online extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_online);
         String Language = "fa";
         Language(Language);
 

@@ -1,4 +1,4 @@
-package com.ermile.salamquran;
+package com.ermile.salamquran.statice;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.ListView;
+
+import com.ermile.salamquran.R;
 import com.ermile.salamquran.saveData.SessionManager;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -45,14 +47,15 @@ public class Language extends AppCompatActivity {
         relv_Language = findViewById(R.id.lv_Language);
         mAdapter = new ItemAdapter(mItem, this);
         /*Set*/
-        StaggeredGridLayoutManager sLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager sLayoutManager = new StaggeredGridLayoutManager(0, StaggeredGridLayoutManager.VERTICAL);
         relv_Language.setLayoutManager(sLayoutManager);
     }
 
     /*Get Language*/
     void GetLanguage(){
+        String appLanguage= SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
         try {
-            String Json_text = readFromMyFile("");
+            String Json_text = readFromMyFile("en");
             JSONObject jsonOffline = new JSONObject(Json_text);
             boolean ok = jsonOffline.getBoolean("ok");
             JSONObject result = jsonOffline.getJSONObject("result");
@@ -62,9 +65,7 @@ public class Language extends AppCompatActivity {
                 String key = (String)keys.next();
                 JSONObject lang_key = lang_list.getJSONObject(key);
                 if ( lang_list.get(key) instanceof JSONObject ) {
-                    if (SessionManager.get(getApplicationContext())
-                            .getAppLanguage()
-                            .get(SessionManager.pref_appLanguage) == lang_key.getString("name") )
+                    if (appLanguage == lang_key.getString("name") )
                     {
                         mItem.add(new Item(
                                 lang_key.getString("localname"),
@@ -91,18 +92,14 @@ public class Language extends AppCompatActivity {
     }
     private String readFromMyFile(String filename) throws IOException {
         File file = new File(getApplicationContext().getFilesDir(), filename+".json");
-        Log.d(TAG, "MyFile: " + file);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String line;
         StringBuilder text = new StringBuilder();
 
         while ((line = bufferedReader.readLine()) != null) {
             text.append(line);
-            Log.d(TAG, "readFromMyFile: " + text);
-
         }
         bufferedReader.close();
-
         return text.toString();
     }
 

@@ -14,8 +14,8 @@ public class Value extends PreferenceActivity {
     public static String token = apiV6+"token";
     public static String user_add = apiV6+"android/user/add";
     public static String appkey = null;
-    public String versionAPK = null;
-    public static int versioncodeAPK = 1;
+    public static String versionAPK = null;
+    public static int versioncodeAPK = 1400;
 
     public boolean firstOpen = false;
     public String appLanguage = null;
