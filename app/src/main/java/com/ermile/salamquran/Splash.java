@@ -62,7 +62,6 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         String AppLanguage = SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
-        Log.d(TAG, "AppLanguage: "+AppLanguage);
 
         if (AppLanguage == null){
             carateFirstJsonFile();
@@ -190,8 +189,8 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                 builderSingle.show();
                 Log.d(TAG, "Version is Deprecated (Show Dialog)");
             }else {
-                updateVersion(Updver,update_title,update_desc,urlUpdate);
                 Log.d(TAG, "Version Not Deprecated, Check Update Version");
+                updateVersion(Updver,update_title,update_desc,urlUpdate);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -209,6 +208,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         }
         else {
             guide();
+            Log.d(TAG, "No Update Version");
         }
     }
 

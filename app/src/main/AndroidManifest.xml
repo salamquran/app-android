@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".statice.Intro"></activity>
+        <activity android:name=".online.enter.Enter"></activity>
+        <activity android:name=".statice.Intro" />
         <activity android:name=".offline.Main_offline" />
         <activity android:name=".statice.Language" />
         <activity android:name=".Splash">
