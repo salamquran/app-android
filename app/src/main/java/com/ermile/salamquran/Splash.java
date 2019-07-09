@@ -102,6 +102,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
             Log.d(TAG, "setLanguageByUser");
         }else{
             deprecatedVersion();
+            Log.d(TAG, "LanguageByUser Is Set");
         }
     }
 
@@ -115,9 +116,8 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                 @Override
                 public void onResponse(String response) {
                     try {
-                        Log.d(TAG, "onResponse OK");
+                        Log.d(TAG, "Connection to Server and write");
                         writeToMyFile(response);
-                        Log.d(TAG, "Write online Json to local.json");
                         setLanguageByUser();
                     }catch (IOException e) {
                         e.printStackTrace();
@@ -229,10 +229,10 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
             }
         }
     }
-    private void guide_intro(){startActivity(new Intent(this, Intro.class));}
-    private void guide_online(){startActivity(new Intent(this, Main_online.class));}
-    private void guide_offline(){startActivity(new Intent(this,Main_offline.class));}
-    private void guide_Language(){startActivity(new Intent(this, Language.class));}
+    private void guide_intro(){finish();startActivity(new Intent(this, Intro.class));}
+    private void guide_online(){finish();startActivity(new Intent(this, Main_online.class));}
+    private void guide_offline(){finish();startActivity(new Intent(this,Main_offline.class));}
+    private void guide_Language(){finish();startActivity(new Intent(this, Language.class));}
 
 
     /** Add User Auto*/

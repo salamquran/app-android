@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".online.Main_online">
 
@@ -18,29 +18,40 @@
             android:textColor="#000"
             android:gravity="left"
             android:text="فارسی"
-            android:paddingLeft="5dp"
-            android:textSize="25sp"
+            android:paddingLeft="20dp"
+            android:textSize="20sp"
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_weight="7"
             android:layout_height="wrap_content" />
 
-        <CheckBox
-            android:id="@+id/cbLanguage"
-            android:checked="false"
-            android:visibility="invisible"
+
+        <RelativeLayout
+            android:layout_gravity="center"
             android:gravity="right"
-            android:layout_margin="5dp"
+            android:layout_marginRight="20dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/checkLanguage"
+                android:gravity="right"
+                android:src="@drawable/ic_check_black_24dp"
+                android:layout_margin="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </RelativeLayout>
+
+
 
     </LinearLayout>
 
-    <view
+    <TextView
         android:layout_margin="3dp"
-        app:boxBackgroundColor="#ddd"
+        android:background="#2D575555"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp" />
 
 </LinearLayout>
