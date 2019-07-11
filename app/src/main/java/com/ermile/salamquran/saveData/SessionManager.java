@@ -49,10 +49,12 @@ public class SessionManager extends ContextWrapper {
     public static final String pref_usercode = "usercode";
     public static final String pref_zoneid = "zoneid";
     public static final String pref_apikey = "apikey";
-    public void saveUser(String usercode ,String zoneid , String apikey) {
+    public static final String pref_mobile = "mobile";
+    public void saveUser(String usercode ,String zoneid , String apikey , String mobile) {
         editor.putString(pref_usercode, usercode);
         editor.putString(pref_zoneid, zoneid);
         editor.putString(pref_apikey, apikey);
+        editor.putString(pref_mobile, mobile);
         editor.apply();
     }
     public Map<String, String> getUser() {
@@ -60,8 +62,10 @@ public class SessionManager extends ContextWrapper {
         hashMap.put(pref_usercode, sharedPreferences.getString(pref_usercode, null ));
         hashMap.put(pref_zoneid, sharedPreferences.getString(pref_zoneid, null ));
         hashMap.put(pref_apikey, sharedPreferences.getString(pref_apikey, null ));
+        hashMap.put(pref_mobile, sharedPreferences.getString(pref_mobile, null ));
         return hashMap;
     }
+
 
 
     /** Update Version*/

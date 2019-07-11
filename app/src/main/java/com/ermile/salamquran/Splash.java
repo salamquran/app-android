@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -30,6 +31,7 @@ import com.ermile.salamquran.saveData.Value;
 import com.ermile.salamquran.statice.Intro;
 import com.ermile.salamquran.statice.Language;
 import com.google.android.material.snackbar.Snackbar;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,16 +54,27 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     /*Value*/
     Value value = new Value();
     /*Object's of activity_splash.xml*/
-    LinearLayout linearLayout;
+    LinearLayout linearLayout,boxUseOffline;
     ImageView logo;
     TextView title,desc,titleProgress;
     ProgressBar progress;
+    Button btnUseOffline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         String AppLanguage = SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
+
+        boxUseOffline=findViewById(R.id.boxUseOffline);
+        btnUseOffline=findViewById(R.id.btnUseOffline);
+
+        btnUseOffline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guide_offline();
+            }
+        });
 
         if (AppLanguage == null){
             carateFirstJsonFile();
@@ -222,11 +235,12 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                 guide_online();
             }
         }else {
-            if (!userIsAded()){
+            boxUseOffline.setVisibility(View.VISIBLE);
+            /*if (!userIsAded()){
                 guide_intro();
             }else {
                 guide_offline();
-            }
+            }*/
         }
     }
     private void guide_intro(){finish();startActivity(new Intent(this, Intro.class));}
@@ -253,7 +267,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         }
         return true;
     }
-    /*Get Token*/
+    /*Get Tokens*/
     private void getToken() {
         StringRequest getToken = new StringRequest(Request.Method.POST, Value.token, new Response.Listener<String>(){
             @Override
@@ -300,7 +314,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
 
         };AppContoroler.getInstance().addToRequestQueue(getToken);
     }
-    /*Add User By Token (Auto)*/
+    /*Add User By Tokens (Auto)*/
     private void addUser(final String token){
         /*Get Info Device*/
         final String model = Build.MODEL;
@@ -329,7 +343,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                         String zoneid = result.getString("zoneid");
                         String apikey = result.getString("apikey");
                         /*Save Value*/
-                        SessionManager.get(getApplicationContext()).saveUser(usercode,zoneid,apikey);
+                        SessionManager.get(getApplicationContext()).saveUser(usercode,zoneid,apikey,null);
                         Log.i(TAG,"USER ADED (Auto)"
                                 +"\n usercode: "+usercode
                                 +"\n zoneid: "+zoneid
@@ -367,7 +381,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                 posting.put("model", model );
                 posting.put("serial", serial );
                 posting.put("manufacturer", manufacturer );
-                posting.put("version", value.versionAPK );
+                posting.put("version", Value.versionAPK );
                 posting.put("hardware", hardware );
                 posting.put("type", type );
                 posting.put("board", board );
@@ -437,6 +451,11 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         return text.toString();
     }
 
+
+    /** Offline Method*/
+    private void msgConnectionIsOffline(){
+
+    }
 
 
     /** Static Method*/
