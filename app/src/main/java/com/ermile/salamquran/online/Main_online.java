@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.online.enter.Enter;
 import com.ermile.salamquran.saveData.Value;
+import com.ermile.salamquran.statice.AboutApp;
+import com.ermile.salamquran.statice.ShearApp;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -110,8 +112,10 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_learn:
+                startActivity(new Intent(this, ShearApp.class));
                 break;
             case R.id.nav_meg:
+                startActivity(new Intent(this, AboutApp.class));
                 break;
             case R.id.nav_quran:
                 break;
