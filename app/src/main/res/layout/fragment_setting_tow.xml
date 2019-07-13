@@ -4,9 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ll_fragment_setting"
+    android:id="@+id/ll_fragment_settingTow"
     android:padding="5dp"
-    tools:context=".online.fragmen.setting.Setting">
+    tools:context=".online.fragmen.setting.SettingTow">
 
 
     <ScrollView
@@ -15,7 +15,7 @@
         android:fillViewport="true">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_fSetting"
+            android:id="@+id/rv_fSettingTow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

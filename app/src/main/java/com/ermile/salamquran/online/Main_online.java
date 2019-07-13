@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.ermile.salamquran.R;
-import com.ermile.salamquran.online.enter.Enter;
+import com.ermile.salamquran.online.fragmen.setting.Setting;
 import com.ermile.salamquran.saveData.Value;
 import com.ermile.salamquran.statice.AboutApp;
 import com.ermile.salamquran.statice.ShearApp;

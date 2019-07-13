@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/logo_salamquran"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_margin="10dp"
+            android:layout_height="90dp" />
+
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Javad Evazzadeh"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <TextView
+                android:text="+98 919 519 1378"
+                android:textColor="#6F6F6F"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <TextView
+                android:text=".@evazzadeh"
+                android:textColor="#6F6F6F"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/ic_felesh"
+            android:rotation="90"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+    <RelativeLayout
+        android:background="#5BD3D1D1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+</LinearLayout>
