@@ -26,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Splash;
 import com.ermile.salamquran.network.AppContoroler;
 import com.ermile.salamquran.online.Main_online;
 import com.ermile.salamquran.saveData.SessionManager;
@@ -60,68 +61,44 @@ public class Enter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
+        findViewById();
+        edtSetMethod();
         apikey=SessionManager.get(getApplicationContext()).getUser().get(SessionManager.pref_apikey);
 
-        /*Number Phone*/
-        /*Find Id*/
-        boxNumber=findViewById(R.id.boxNumberPhone);
-        tvTitleNumber=findViewById(R.id.tvTitleNumber);
-        edtNumber=findViewById(R.id.edtNumberPhone);
-        btnNumber=findViewById(R.id.btnNumberPhone);
-        tvResndVerify=findViewById(R.id.tvResndVerify);
-
-
         boxNumber.setVisibility(View.VISIBLE);
-        edtNumberMethod(edtNumber);
-
-
-        btnNumber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getTokenNumber();
-            }
-        });
-
-        tvResndVerify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getTokenNumber();
-                boxResend.setVisibility(View.GONE);
-            }
-        });
-
-
-
-
-
-        /*Verify*/
-        /*Find Id*/
-        boxVerify=findViewById(R.id.boxVerify);
-        tvTitleVerify=findViewById(R.id.tvTitleVerify);
-        tvNumberVerify=findViewById(R.id.tvNumberVerify);
-        ev1=findViewById(R.id.edt_verify1);
-        ev2=findViewById(R.id.edt_verify2);
-        ev3=findViewById(R.id.edt_verify3);
-        ev4=findViewById(R.id.edt_verify4);
-        ev5=findViewById(R.id.edt_verify5);
-        boxResend=findViewById(R.id.boxResendVerify);
-        tvTitleResend=findViewById(R.id.tvTitleResend);
-        tvResndVerify=findViewById(R.id.tvResndVerify);
-
-        /*Method EditText Verify*/
-        edt1(ev1,ev2);
-        edt2(ev2,ev3,ev1);
-        edt3(ev3,ev4,ev2);
-        edt4(ev4,ev5,ev3);
-        edt5(ev5,ev4,ev1,ev2,ev3);
-
-
-
+        if (hasInternetConnection()){
+            btnNumber.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    getTokenNumber();
+                }
+            });
+            tvResndVerify.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    getTokenNumber();
+                    boxResend.setVisibility(View.GONE);
+                }
+            });
+        }else {
+            finish();
+            startActivity(new Intent(getApplicationContext(), Splash.class));
+        }
 
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!hasInternetConnection()){
+            finish();
+            startActivity(new Intent(getApplicationContext(), Splash.class));
+        }
+    }
 
+    /** Connection To Server*/
+    /*Writ Number Phone*/
     private void getTokenNumber(){
         StringRequest getToken = new StringRequest(Request.Method.POST, Value.token, new Response.Listener<String>(){
             @Override
@@ -237,7 +214,7 @@ public class Enter extends AppCompatActivity {
         AppContoroler.getInstance().addToRequestQueue(getVerify);
 
     }
-
+    /*Writ Verify Code*/
     private void getTokenVerify(){
         StringRequest getToken = new StringRequest(Request.Method.POST, Value.token, new Response.Listener<String>(){
             @Override
@@ -356,12 +333,19 @@ public class Enter extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
+    /** Edit Text Method*/
+    /*EditText Set Method*/
+    private void edtSetMethod(){
+        /*Method EditText Number*/
+        edtNumberMethod(edtNumber);
+        /*Method EditText Verify*/
+        edt1(ev1,ev2);
+        edt2(ev2,ev3,ev1);
+        edt3(ev3,ev4,ev2);
+        edt4(ev4,ev5,ev3);
+        edt5(ev5,ev4,ev1,ev2,ev3);
+    }
+    /*Number*/
     private void edtNumberMethod(final EditText editText){
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -386,7 +370,7 @@ public class Enter extends AppCompatActivity {
             }
         });
     }
-
+    /*Verify*/
     private void edt1(final EditText edt1 , final EditText edt2 ){
 
         edt1.addTextChangedListener(new TextWatcher() {
@@ -524,6 +508,27 @@ public class Enter extends AppCompatActivity {
 
 
     /** Static Method*/
+    /*Find Id*/
+    private void findViewById(){
+        /*Number Phone*/
+        boxNumber=findViewById(R.id.boxNumberPhone);
+        tvTitleNumber=findViewById(R.id.tvTitleNumber);
+        edtNumber=findViewById(R.id.edtNumberPhone);
+        btnNumber=findViewById(R.id.btnNumberPhone);
+        tvResndVerify=findViewById(R.id.tvResndVerify);
+        /*Verify*/
+        boxVerify=findViewById(R.id.boxVerify);
+        tvTitleVerify=findViewById(R.id.tvTitleVerify);
+        tvNumberVerify=findViewById(R.id.tvNumberVerify);
+        ev1=findViewById(R.id.edt_verify1);
+        ev2=findViewById(R.id.edt_verify2);
+        ev3=findViewById(R.id.edt_verify3);
+        ev4=findViewById(R.id.edt_verify4);
+        ev5=findViewById(R.id.edt_verify5);
+        boxResend=findViewById(R.id.boxResendVerify);
+        tvTitleResend=findViewById(R.id.tvTitleResend);
+        tvResndVerify=findViewById(R.id.tvResndVerify);
+    }
     /*Check Internet Connection*/
     private boolean hasInternetConnection() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

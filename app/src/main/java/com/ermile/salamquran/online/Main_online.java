@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.online.fragmen.quran.Quran;
 import com.ermile.salamquran.online.fragmen.setting.Setting;
 import com.ermile.salamquran.saveData.Value;
 import com.ermile.salamquran.statice.AboutApp;
@@ -118,6 +119,7 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
                 startActivity(new Intent(this, AboutApp.class));
                 break;
             case R.id.nav_quran:
+                fragment=new Quran();
                 break;
             case R.id.nav_search:
                 break;
