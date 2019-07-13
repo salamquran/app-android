@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.saveData.Value;
@@ -77,7 +78,9 @@ public class SettingTow extends Fragment {
             boolean ok = jsonOffline.getBoolean("ok");
             JSONObject result = jsonOffline.getJSONObject("result");
             JSONArray menu = result.getJSONArray("menu");
-            JSONObject keyMenu = menu.getJSONObject(1);
+
+            int jsonKeyValue=getArguments().getInt("jsonKeyValue");
+            JSONObject keyMenu = menu.getJSONObject(jsonKeyValue);
             JSONArray child = keyMenu.getJSONArray("child");
             for (int i = 0 ; i<= child.length() ; i++){
                 JSONObject keyChild = child.getJSONObject(i);

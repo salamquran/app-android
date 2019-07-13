@@ -84,9 +84,14 @@ public class Setting extends Fragment {
             for (int i = 0 ; i<= menu.length() ; i++){
                 JSONObject keyMenu = menu.getJSONObject(i);
                 String title = keyMenu.getString("title");
+                if (!keyMenu.isNull("child")){
+                    mItem.add(new Setting.Item(title,true,i));
+                    mAdapter.notifyDataSetChanged();
+                }else {
+                    mItem.add(new Setting.Item(title,false,i));
+                    mAdapter.notifyDataSetChanged();
+                }
 
-                mItem.add(new Setting.Item(title));
-                mAdapter.notifyDataSetChanged();
 
             }
 
@@ -122,9 +127,13 @@ public class Setting extends Fragment {
     class Item {
 
         private String title;
+        private boolean nextMenu;
+        private int jsonKeyMeun;
 
-        public Item(String title) {
+        public Item(String title, boolean nextMenu, int jsonKeyMeun) {
             this.title = title;
+            this.nextMenu = nextMenu;
+            this.jsonKeyMeun = jsonKeyMeun;
         }
 
         public String getTitle() {
@@ -133,6 +142,22 @@ public class Setting extends Fragment {
 
         public void setTitle(String title) {
             this.title = title;
+        }
+
+        public boolean isNextMenu() {
+            return nextMenu;
+        }
+
+        public void setNextMenu(boolean nextMenu) {
+            this.nextMenu = nextMenu;
+        }
+
+        public int getJsonKeyMeun() {
+            return jsonKeyMeun;
+        }
+
+        public void setJsonKeyMeun(int jsonKeyMeun) {
+            this.jsonKeyMeun = jsonKeyMeun;
         }
     }
 
@@ -159,20 +184,25 @@ public class Setting extends Fragment {
         @Override
         public void onBindViewHolder(final Setting.ItemAdapter.MyViewHolder holder, final int position) {
 
-            Setting.Item aItem = itemList.get(position);
+            final Setting.Item aItem = itemList.get(position);
 
             holder.titel.setText(aItem.getTitle());
-            holder.titel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    rv_fSetting.setVisibility(View.GONE);
-                    SettingTow nextFrag= new SettingTow();
-                    getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, nextFrag, "findThisFragment")
-                            .addToBackStack(null)
-                            .commit();
-                }
-            });
+            if (aItem.isNextMenu()){
+                holder.titel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("jsonKeyValue",aItem.getJsonKeyMeun());
+                        SettingTow nextFrag= new SettingTow();
+                        nextFrag.setArguments(bundle);
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                });
+            }
+
 
         }
 
