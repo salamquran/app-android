@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".statice.ShearApp"></activity>
+        <activity android:name=".QuranPage"></activity>
+        <activity android:name=".statice.ShearApp" />
         <activity android:name=".statice.AboutApp" />
         <activity android:name=".online.enter.Enter" />
         <activity android:name=".statice.Intro" />
