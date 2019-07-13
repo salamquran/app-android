@@ -3,6 +3,7 @@ package com.ermile.salamquran;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -36,6 +37,8 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,6 +50,8 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class Splash extends AppCompatActivity { private static String TAG = "Splash";
     /*Get language device*/
@@ -76,12 +81,24 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
             }
         });
 
-        if (AppLanguage == null){
-            carateFirstJsonFile();
-            setFirstLanguage();
-        }else {
-            getSettingJson();
+        try {
+            if (AppLanguage == null){
+                carateFirstJsonFile();
+                carateJsonQuranWBW();
+                setFirstLanguage();
+            }else {
+                if (readFromMyFile(Value.jsonFileQuranWBW).equals("")){
+                    unZip(Value.zipFileQuranWBW);
+                }else {
+                    getSettingJson();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
+
     }
 
 
@@ -401,12 +418,14 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     private void carateFirstJsonFile(){
         try {
             writeToMyFile("");
+
             Log.d(TAG, "Json File Crated");
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "Json File Not Crated");
         }
     }
+
     /*Write To Json (local.json)*/
     private void writeToMyFile(String json) throws IOException {
         File file = new File(getApplicationContext().getFilesDir(), Value.jsonFileName+".json");
@@ -449,6 +468,79 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         }
         bufferedReader.close();
         return text.toString();
+    }
+    /** FileQuranWBW */
+    /*Crate Json File Quran*/
+    private void carateJsonQuranWBW(){
+        String json="";
+        try {
+            File file = new File(getApplicationContext().getFilesDir(), Value.jsonFileQuranWBW+".json");
+            FileOutputStream fileOutputStream = null;
+            try {
+                fileOutputStream = openFileOutput(Value.jsonFileQuranWBW+".json", Context.MODE_PRIVATE);
+                fileOutputStream.write(json.getBytes());
+                fileOutputStream.close();
+                Log.d(TAG, "writeToMyFile OK > " + file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            Log.d(TAG, "Json FileQuranWBW Crated");
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Json FileQuranWBW Not Crated");
+        }
+    }
+    /*Extract Zip File (Quran Word by Word) */
+    public void unZip(String fileName) {
+        AssetManager manager = this.getAssets();
+        final String OUTPUT_FOLDER = this.getExternalFilesDir(null).getAbsolutePath();
+        // create output directory if not exists
+        String[] fileNameSplit = fileName.split("/");
+        File folder = new File(OUTPUT_FOLDER + "/" + fileNameSplit[0]);
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+        Log.v(TAG, "Destination output: " + OUTPUT_FOLDER);
+        try {
+            // get the zip file content
+            Log.v(TAG, fileName);
+            BufferedInputStream bis = new BufferedInputStream(manager.open(fileName));
+            ZipInputStream zis = new ZipInputStream(bis);
+            // get the zipped file list entry
+            ZipEntry ze = zis.getNextEntry();
+            while (ze != null) {
+                String fileEntry = ze.getName();
+                File newFile = new File(OUTPUT_FOLDER + File.separator + fileEntry);
+                Log.v(TAG, "File unzip: " + newFile.getAbsolutePath());
+                // create all non existent folders from zip archive
+                if (fileEntry.endsWith("/")) {
+                    // new File(newFile.getParent()).mkdirs();
+                    newFile.mkdirs();
+                }
+                File parent = newFile.getParentFile();
+                if (parent != null) {
+                    parent.mkdirs();
+                }
+                // FileOutputStream fos = new FileOutputStream(newFile);
+                FileOutputStream fos = this.openFileOutput(newFile.getName(),
+                        0);
+                byte[] buffer = new byte[4096];
+                int length = 0;
+                while ((length = zis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                    fos.flush();
+                }
+                fos.close();
+                ze = zis.getNextEntry();
+            }
+            // close open resources
+            bis.close();
+            zis.closeEntry();
+            zis.close();
+        } catch (IOException ex) {
+            Log.v(TAG, ex.toString());
+        }
     }
 
 
