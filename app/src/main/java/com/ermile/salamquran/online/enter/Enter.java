@@ -1,7 +1,6 @@
 package com.ermile.salamquran.online.enter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,7 +18,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -32,29 +30,23 @@ import com.ermile.salamquran.online.Main_online;
 import com.ermile.salamquran.saveData.SessionManager;
 import com.ermile.salamquran.saveData.Value;
 import com.google.android.material.snackbar.Snackbar;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Enter extends AppCompatActivity {
     private static String TAG = "Enter";
 
-    public String apikey;
-    public String token;
-    public String mobile;
-    public String verifycode;
+    private String apikey;
+    private String token;
+    private String mobile;
+    private String verifycode;
 
-    TextView tvTitleNumber,
-             tvTitleVerify,tvNumberVerify,tvTitleResend,tvResndVerify;
-
-    EditText ev1,ev2,ev3,ev4,ev5,
-             edtNumber;
+    TextView tvTitleNumber,tvTitleVerify,tvNumberVerify,tvTitleResend,tvResndVerify;
+    EditText ev1,ev2,ev3,ev4,ev5,edtNumber;
     Button btnNumber;
-
     LinearLayout boxNumber,boxVerify,boxResend;
 
     @Override
@@ -84,8 +76,6 @@ public class Enter extends AppCompatActivity {
             finish();
             startActivity(new Intent(getApplicationContext(), Splash.class));
         }
-
-
     }
 
     @Override
@@ -96,6 +86,7 @@ public class Enter extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Splash.class));
         }
     }
+
 
     /** Connection To Server*/
     /*Writ Number Phone*/
@@ -504,7 +495,6 @@ public class Enter extends AppCompatActivity {
         });
 
     }
-
 
 
     /** Static Method*/

@@ -89,6 +89,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
             }else {
                 if (readFromMyFile(Value.jsonFileQuranWBW).equals("")){
                     unZip(Value.zipFileQuranWBW);
+                    getSettingJson();
                 }else {
                     getSettingJson();
                 }
