@@ -54,7 +54,7 @@ public class SureList extends Fragment {
     /*Get Value*/
     private void getSure(){
         try {
-            String Json_text = readFromMyFile(Value.jsonFileName);
+            String Json_text = readFromMyFile(Value.jsonFile_local);
 
 
 

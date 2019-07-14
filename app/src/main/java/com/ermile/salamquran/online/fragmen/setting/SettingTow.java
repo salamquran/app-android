@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.saveData.Value;
@@ -72,7 +71,7 @@ public class SettingTow extends Fragment {
     /*Get Language*/
     void getMenu() {
         try {
-            String Json_text = readFromMyFile(Value.jsonFileName);
+            String Json_text = readFromMyFile(Value.jsonFile_local);
             JSONObject jsonOffline = new JSONObject(Json_text);
             Log.d(TAG, "GetLanguage: "+Json_text);
             boolean ok = jsonOffline.getBoolean("ok");

@@ -60,7 +60,7 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
 
     private void setTitleBottomNav(){
         try {
-            String json = readFromMyFile(Value.jsonFileName);
+            String json = readFromMyFile(Value.jsonFile_local);
             JSONObject respone = new JSONObject(json);
             JSONObject result = respone.getJSONObject("result");
             JSONArray navigation = result.getJSONArray("navigation");

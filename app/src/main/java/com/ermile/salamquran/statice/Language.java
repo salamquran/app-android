@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.CheckBox;
-import android.widget.ListView;
 
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Splash;
@@ -25,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,7 +65,7 @@ public class Language extends AppCompatActivity {
     void GetLanguage() {
         String appLanguage = SessionManager.get(getApplicationContext()).getAppLanguage().get(SessionManager.pref_appLanguage);
         try {
-            String Json_text = readFromMyFile(Value.jsonFileName);
+            String Json_text = readFromMyFile(Value.jsonFile_local);
             JSONObject jsonOffline = new JSONObject(Json_text);
             Log.d(TAG, "GetLanguage: "+Json_text);
             boolean ok = jsonOffline.getBoolean("ok");

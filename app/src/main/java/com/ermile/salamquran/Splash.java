@@ -32,7 +32,6 @@ import com.ermile.salamquran.saveData.Value;
 import com.ermile.salamquran.statice.Intro;
 import com.ermile.salamquran.statice.Language;
 import com.google.android.material.snackbar.Snackbar;
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -84,11 +83,13 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         try {
             if (AppLanguage == null){
                 carateFirstJsonFile();
-                carateJsonQuranWBW();
                 setFirstLanguage();
             }else {
-                if (readFromMyFile(Value.jsonFileQuranWBW).equals("")){
-                    unZip(Value.zipFileQuranWBW);
+                if (readFromMyFile(Value.jsonFile_QuranWBW).equals("")||
+                    readFromMyFile(Value.jsonFile_JuzSura).equals("") ||
+                    readFromMyFile(Value.jsonFile_JuzHezb).equals(""))
+                {
+                    unZip(Value.zipFile_QuranWBW);
                     getSettingJson();
                 }else {
                     getSettingJson();
@@ -101,6 +102,29 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
 
 
     }
+
+
+    /** Guid for Check and Go (Add User)&(Go to Activity)*/
+    private void guide(){
+        if (hasInternetConnection()){
+            if (!userIsAded()){
+                getToken();
+            }else {
+                guide_online();
+            }
+        }else {
+            boxUseOffline.setVisibility(View.VISIBLE);
+            /*if (!userIsAded()){
+                guide_intro();
+            }else {
+                guide_offline();
+            }*/
+        }
+    }
+    private void guide_intro(){finish();startActivity(new Intent(this, Intro.class));}
+    private void guide_online(){finish();startActivity(new Intent(this, Main_online.class));}
+    private void guide_offline(){finish();startActivity(new Intent(this,Main_offline.class));}
+    private void guide_Language(){finish();startActivity(new Intent(this, Language.class));}
 
 
     /** Set First Language Auto from Device*/
@@ -147,7 +171,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
                 public void onResponse(String response) {
                     try {
                         Log.d(TAG, "Connection to Server and write");
-                        writeToMyFile(response);
+                        writeToMyFile(Value.jsonFile_local,response);
                         setLanguageByUser();
                     }catch (IOException e) {
                         e.printStackTrace();
@@ -163,8 +187,8 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         }
         else {
             try {
-                if (readFromMyFile(Value.jsonFileName).equals("")) {
-                    writeToMyFile(loadJSONFromAsset(AppLanguage));
+                if (readFromMyFile(Value.jsonFile_local).equals("")) {
+                    writeToMyFile(Value.jsonFile_local,loadJSONFromAsset(AppLanguage));
                     Log.d(TAG, "Write offline Json to local.json");
                     setLanguageByUser();
                 }else {
@@ -182,7 +206,7 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     /*Check Deprecated Version*/
     private void deprecatedVersion(){
         try {
-            JSONObject respone = new JSONObject(readFromMyFile(Value.jsonFileName));
+            JSONObject respone = new JSONObject(readFromMyFile(Value.jsonFile_local));
             JSONObject result = respone.getJSONObject("result");
             JSONObject url = result.getJSONObject("url");
             JSONObject version = result.getJSONObject("version");
@@ -242,29 +266,6 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
             Log.d(TAG, "No Update Version");
         }
     }
-
-
-    /** Guid for Check and Go (Add User)&(Go to Activity)*/
-    private void guide(){
-        if (hasInternetConnection()){
-            if (!userIsAded()){
-                getToken();
-            }else {
-                guide_online();
-            }
-        }else {
-            boxUseOffline.setVisibility(View.VISIBLE);
-            /*if (!userIsAded()){
-                guide_intro();
-            }else {
-                guide_offline();
-            }*/
-        }
-    }
-    private void guide_intro(){finish();startActivity(new Intent(this, Intro.class));}
-    private void guide_online(){finish();startActivity(new Intent(this, Main_online.class));}
-    private void guide_offline(){finish();startActivity(new Intent(this,Main_offline.class));}
-    private void guide_Language(){finish();startActivity(new Intent(this, Language.class));}
 
 
     /** Add User Auto*/
@@ -418,21 +419,22 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
     /*Crate json file (local.json)*/
     private void carateFirstJsonFile(){
         try {
-            writeToMyFile("");
-
+            writeToMyFile(Value.jsonFile_local,"");
+            writeToMyFile(Value.jsonFile_QuranWBW,"");
+            writeToMyFile(Value.jsonFile_JuzSura,"");
+            writeToMyFile(Value.jsonFile_JuzHezb,"");
             Log.d(TAG, "Json File Crated");
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "Json File Not Crated");
         }
     }
-
     /*Write To Json (local.json)*/
-    private void writeToMyFile(String json) throws IOException {
-        File file = new File(getApplicationContext().getFilesDir(), Value.jsonFileName+".json");
+    private void writeToMyFile(String fileName,String json) throws IOException {
+        File file = new File(getApplicationContext().getFilesDir(), fileName+".json");
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = openFileOutput(Value.jsonFileName+".json", Context.MODE_PRIVATE);
+            fileOutputStream = openFileOutput(fileName+".json", Context.MODE_PRIVATE);
             fileOutputStream.write(json.getBytes());
             fileOutputStream.close();
             Log.d(TAG, "writeToMyFile OK > " + file);
@@ -470,28 +472,9 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         bufferedReader.close();
         return text.toString();
     }
-    /** FileQuranWBW */
-    /*Crate Json File Quran*/
-    private void carateJsonQuranWBW(){
-        String json="";
-        try {
-            File file = new File(getApplicationContext().getFilesDir(), Value.jsonFileQuranWBW+".json");
-            FileOutputStream fileOutputStream = null;
-            try {
-                fileOutputStream = openFileOutput(Value.jsonFileQuranWBW+".json", Context.MODE_PRIVATE);
-                fileOutputStream.write(json.getBytes());
-                fileOutputStream.close();
-                Log.d(TAG, "writeToMyFile OK > " + file);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
 
-            Log.d(TAG, "Json FileQuranWBW Crated");
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e(TAG, "Json FileQuranWBW Not Crated");
-        }
-    }
+
+    /** FileQuranWBW */
     /*Extract Zip File (Quran Word by Word) */
     public void unZip(String fileName) {
         AssetManager manager = this.getAssets();
@@ -542,12 +525,6 @@ public class Splash extends AppCompatActivity { private static String TAG = "Spl
         } catch (IOException ex) {
             Log.v(TAG, ex.toString());
         }
-    }
-
-
-    /** Offline Method*/
-    private void msgConnectionIsOffline(){
-
     }
 
 

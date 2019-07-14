@@ -3,9 +3,11 @@ package com.ermile.salamquran.saveData;
 
 public class Value {
 
-    public static String jsonFileName = "local";
-    public static String jsonFileQuranWBW = "QuranWBW";
-    public static String zipFileQuranWBW = "QuranWBW.zip";
+    public static String jsonFile_local = "local";
+    public static String jsonFile_QuranWBW = "QuranWBW";
+    public static String jsonFile_JuzSura = "juz_sura";
+    public static String jsonFile_JuzHezb = "juz_hezb";
+    public static String zipFile_QuranWBW = "QuranWBW.zip";
 
     public static String appkey = "74165249ad965f506c5234324e870fd3";
 
