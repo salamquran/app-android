@@ -36,4 +36,5 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+    implementation 'com.duolingo.open:rtl-viewpager:2.0.0'
 }

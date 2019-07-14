@@ -48,11 +48,22 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
         bottomNavigation.setTextSize(8f);
         bottomNavigation.setIconSize(28,28);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
-        bottomNavigation.setSelectedItemId(R.id.nav_setting);
+        bottomNavigation.setSelectedItemId(R.id.nav_quran);
         setTitleBottomNav();
 
 
 
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (bottomNavigation.getMenu().findItem(R.id.nav_quran).isChecked()) {
+            super.onBackPressed();
+        }else {
+            bottomNavigation.setSelectedItemId(R.id.nav_quran);
+        }
 
 
     }
