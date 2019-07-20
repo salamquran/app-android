@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.online.fragmen.quran.Quran;
 import com.ermile.salamquran.online.fragmen.setting.Setting;
@@ -51,9 +55,20 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
         bottomNavigation.setSelectedItemId(R.id.nav_quran);
         setTitleBottomNav();
 
+        SQLiteDatabase mydb = new MyDatabase(Main_online.this).getWritableDatabase();
 
+        String txt = "TEXT";
 
+        Cursor c = mydb.rawQuery("SELECT * FROM quran_word WHERE page=600 AND line=1 AND id=87852", null);
+        while (c.moveToNext()){
+            String text = c.getString(6);
 
+            txt = (text+"");
+            Toast.makeText(this, ""+txt, Toast.LENGTH_SHORT).show();
+        }
+
+        c.close();
+        mydb.close();
 
     }
 
