@@ -54,22 +54,6 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
         bottomNavigation.setOnNavigationItemSelectedListener(this);
         bottomNavigation.setSelectedItemId(R.id.nav_quran);
         setTitleBottomNav();
-
-        SQLiteDatabase mydb = new MyDatabase(Main_online.this).getWritableDatabase();
-
-        String txt = "TEXT";
-
-        Cursor c = mydb.rawQuery("SELECT * FROM quran_word WHERE page=600 AND line=1 AND id=87852", null);
-        while (c.moveToNext()){
-            String text = c.getString(6);
-
-            txt = (text+"");
-            Toast.makeText(this, ""+txt, Toast.LENGTH_SHORT).show();
-        }
-
-        c.close();
-        mydb.close();
-
     }
 
     @Override
