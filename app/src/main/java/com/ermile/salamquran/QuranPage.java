@@ -5,9 +5,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +28,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class QuranPage extends AppCompatActivity {
+    private static String TAG = "QuranPage";
+
     ViewpagersAdapter PagerAdapter;  // for View page
     RtlViewPager viewpager; //  for dots & Button in XML
     private TextView number_pageQuran , number_juzQuran,title_surahQuran;
     public int count = 605; // Slide number
 
+    getUrlAudio urlAudio = new getUrlAudio();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,7 +189,8 @@ public class QuranPage extends AppCompatActivity {
             while (pageData.moveToNext()) {
                 String text = pageData.getString(pageData.getColumnIndex("text"));
                 String code = pageData.getString(pageData.getColumnIndex("code"));
-                int aya = pageData.getInt(2);
+                final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
+                final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
                 int line = pageData.getInt(pageData.getColumnIndex("line"));
                 int page = pageData.getInt(pageData.getColumnIndex("page"));
                 int positions = pageData.getInt(pageData.getColumnIndex("position"));
@@ -220,6 +227,49 @@ public class QuranPage extends AppCompatActivity {
                     }
                 });
 
+                TextQuran_textview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        String audioUrl ="https://dl.salamquran.com/ayat/afasy-murattal-192/"+ urlAudio.UrlAudio(aya,sura)+".mp3";
+                        Log.d(TAG, ""+audioUrl);
+
+                        // Initialize a new media player instance
+                        final MediaPlayer mPlayer = new MediaPlayer();
+
+                        // Set the media player audio stream type
+                        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                        //Try to play music/audio from url
+                        try{
+                            // Set the audio data source
+                            mPlayer.setDataSource(audioUrl);
+                            // Prepare the media player
+                            mPlayer.prepare();
+
+                            // Start playing audio from http url
+                            mPlayer.start();
+
+                            // Inform user for audio streaming
+                            Toast.makeText(getApplicationContext(),"Playing",Toast.LENGTH_SHORT).show();
+                        }catch (IOException e){
+                            // Catch the exception
+                            e.printStackTrace();
+                        }catch (IllegalArgumentException e){
+                            e.printStackTrace();
+                        }catch (SecurityException e){
+                            e.printStackTrace();
+                        }catch (IllegalStateException e){
+                            e.printStackTrace();
+                        }
+
+                        mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                Toast.makeText(getApplicationContext(),"End",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
 
 
                 switch (page){
