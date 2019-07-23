@@ -7,9 +7,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,26 +15,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.ViewPager;
 import com.duolingo.open.rtlviewpager.RtlViewPager;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class QuranPage extends AppCompatActivity {
     private static String TAG = "QuranPage";
 
+    int tagOnclickAudio;
+
     MediaPlayer mPlayer = new MediaPlayer();
-    Timer timer;
-    ArrayList<String> playlistQuran = new ArrayList<String>();
 
     ViewpagersAdapter PagerAdapter;  // for View page
     RtlViewPager viewpager; //  for dots & Button in XML
@@ -98,16 +91,7 @@ public class QuranPage extends AppCompatActivity {
         viewpager.setCurrentItem(Integer.valueOf(getIntent().getStringExtra("open_page")));
 
 
-        mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                Toast.makeText(getApplicationContext(),"End",Toast.LENGTH_SHORT).show();
-                int ss = viewpager.getCurrentItem();
-                if (playlistQuran.size()  == 1)
-                viewpager.setCurrentItem(getItem(+1),true);
 
-            }
-        });
 
     }
 
@@ -123,9 +107,6 @@ public class QuranPage extends AppCompatActivity {
      * View Pager Adapter
      */
     class ViewpagersAdapter extends androidx.viewpager.widget.PagerAdapter {
-
-        int ayaQuran = 0;
-        int i=0;
 
         private Context context;
         private LayoutInflater inflater;
@@ -196,15 +177,13 @@ public class QuranPage extends AppCompatActivity {
 
 
                 if (charType.equals("end")){
-                    playlistQuran.add("https://dl.salamquran.com/ayat/afasy-murattal-192/"+ urlAudio.UrlAudio(aya,sura)+".mp3");
-                    ayaQuran = aya;
                     Log.d(TAG, ""+aya+"\n"+page);
                 }
 
                 final TextView TextQuran_textview = new TextView(view.getContext());
                 TextQuran_textview.setTextColor(Color.parseColor("#000000"));
                 TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                TextQuran_textview.setTag(aya);
+                TextQuran_textview.setTag(urlAudio.UrlAudio(aya,sura));
 
                 /*On Long Click Listener*/
                 TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
@@ -235,25 +214,63 @@ public class QuranPage extends AppCompatActivity {
                 TextQuran_textview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        tagOnclickAudio = Integer.valueOf(TextQuran_textview.getTag().toString());
                         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                        int onclicked = Integer.valueOf(TextQuran_textview.getTag().toString()) -1;
-                        Log.d(TAG, "onClick:---------------------------------------------------------------------------- "+onclicked);
+                        String getTag_textQuran ="https://dl.salamquran.com/ayat/afasy-murattal-192/"+TextQuran_textview.getTag().toString()+".mp3" ;
+                        Log.d(TAG, "Link Audio: "+getTag_textQuran);
                         try {
+                            mPlayer.stop();
                             mPlayer.reset();
-                            mPlayer.setDataSource(getApplicationContext(), Uri.parse(playlistQuran.get(onclicked)));
+                            mPlayer.setDataSource(getTag_textQuran);
                             mPlayer.prepare();
-                            mPlayer.start();
-                            timer = new Timer();
-                            i=onclicked;
-                            if (playlistQuran.size() > 1 ){
-                                i=onclicked;
-                                playNext();
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+
+                        } catch (IllegalArgumentException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (SecurityException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (IllegalStateException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                        mPlayer.start();
                     }
                 });
+                mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        tagOnclickAudio++;
+                        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                        String getTag_textQuran ="https://dl.salamquran.com/ayat/afasy-murattal-192/"+urlAudio.UrlNextAudio(tagOnclickAudio)+".mp3" ;
+                        Log.d(TAG, "Link Audio: "+getTag_textQuran);
+                        try {
+                            mPlayer.stop();
+                            mPlayer.reset();
+                            mPlayer.setDataSource(getTag_textQuran);
+                            mPlayer.prepare();
+
+                        } catch (IllegalArgumentException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        } catch (SecurityException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        } catch (IllegalStateException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        mPlayer.start();
+
+                    }
+                });
+
 
                 switch (page){
                     case 1:
@@ -336,26 +353,6 @@ public class QuranPage extends AppCompatActivity {
         @Override
         public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
             container.removeView( (LinearLayout) object);
-        }
-
-        public void playNext() {
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    try {
-                        mPlayer.reset();
-                        mPlayer.setDataSource(getApplicationContext(), Uri.parse(playlistQuran.get(++i)));
-                        mPlayer.prepare();
-                        mPlayer.start();
-                        if (playlistQuran.size() > i+1) {
-                            playNext();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            },mPlayer.getDuration()+100);
         }
     }
 

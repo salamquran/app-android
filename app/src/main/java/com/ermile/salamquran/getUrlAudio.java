@@ -23,4 +23,16 @@ public class getUrlAudio {
 
         return urlSura+urlAya;
     }
+
+    public String UrlNextAudio(int tagOnclickAudio){
+        String url;
+        if (tagOnclickAudio <1000){
+            url = "00"+tagOnclickAudio;
+        }else if (tagOnclickAudio < 10000){
+            url = "00"+tagOnclickAudio;
+        }else {
+            url = ""+tagOnclickAudio;
+        }
+        return url;
+    }
 }
