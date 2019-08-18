@@ -9,7 +9,9 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +23,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.ViewPager;
 import com.duolingo.open.rtlviewpager.RtlViewPager;
+import com.ermile.salamquran.saveData.Value;
 
 import java.io.IOException;
 
 public class QuranPage extends AppCompatActivity {
     private static String TAG = "QuranPage";
-
     int tagOnclickAudio;
 
     MediaPlayer mPlayer = new MediaPlayer();
@@ -138,27 +140,17 @@ public class QuranPage extends AppCompatActivity {
             inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
             final View view = inflater.inflate(R.layout.item_modle_quranpage , container , false);
             final LinearLayout background_slide = view.findViewById(R.id.background_slide);
-            linequran_1 = view.findViewById(R.id.linequran_1);
-            linequran_2 = view.findViewById(R.id.linequran_2);
-            linequran_3 = view.findViewById(R.id.linequran_3);
-            linequran_4 = view.findViewById(R.id.linequran_4);
-            linequran_5 = view.findViewById(R.id.linequran_5);
-            linequran_6 = view.findViewById(R.id.linequran_6);
-            linequran_7 = view.findViewById(R.id.linequran_7);
-            linequran_8 = view.findViewById(R.id.linequran_8);
-            linequran_9 = view.findViewById(R.id.linequran_9);
-            linequran_10 = view.findViewById(R.id.linequran_10);
-            linequran_11 = view.findViewById(R.id.linequran_11);
-            linequran_12 = view.findViewById(R.id.linequran_12);
-            linequran_13 = view.findViewById(R.id.linequran_13);
-            linequran_14 = view.findViewById(R.id.linequran_14);
-            linequran_15 = view.findViewById(R.id.linequran_15);
 
+            LinearLayout linearLayout_Line = null;
+            TextView TextQuran_textview = null ;
+
+            int testLine =0;
 
             Typeface font_nabi=ResourcesCompat.getFont(context, R.font.font_nabi);
             Typeface font_p1 = ResourcesCompat.getFont(context, R.font.p1);
             Typeface font_p5 = ResourcesCompat.getFont(context, R.font.p5);
-            Typeface font_bismellah =ResourcesCompat.getFont(context, R.font.bismillah);
+            final Typeface font_bismellah =ResourcesCompat.getFont(context, R.font.bismillah);
+
 
 
             SQLiteDatabase mydb = new MyDatabase(QuranPage.this).getWritableDatabase();
@@ -180,17 +172,40 @@ public class QuranPage extends AppCompatActivity {
                     Log.d(TAG, ""+aya+"\n"+page);
                 }
 
-                final TextView TextQuran_textview = new TextView(view.getContext());
-                TextQuran_textview.setTextColor(Color.parseColor("#000000"));
-                TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                TextQuran_textview.setTag(urlAudio.UrlAudio(aya,sura));
 
+                if(testLine < line){
+                    linearLayout_Line = new LinearLayout(view.getContext());
+                    linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
+                    linearLayout_Line.setGravity(Gravity.CENTER_HORIZONTAL);
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT);
+                    linearLayout_Line.setLayoutParams(layoutParams);
+                    background_slide.addView(linearLayout_Line);
+                    testLine =line;
+                    
+                }
+
+
+
+
+                if (linearLayout_Line != null){
+                    TextQuran_textview = new TextView(view.getContext());
+                    TextQuran_textview.setTextColor(Color.parseColor("#000000"));
+                    TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                    TextQuran_textview.setGravity(View.TEXT_ALIGNMENT_CENTER);
+                    linearLayout_Line.addView(TextQuran_textview);
+                    TextQuran_textview.setTag(urlAudio.UrlAudio(aya,sura));
+
+                }
+
+                final String getTag_textQuran = TextQuran_textview.getTag().toString();
                 /*On Long Click Listener*/
                 TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
                         /*Get Tag Word Selected*/
-                        String getTag_textQuran = TextQuran_textview.getTag().toString();
+
                         for (int rq=0; rq<= background_slide.getChildCount();rq++){
                             /*Get Row Quran*/
                             LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
@@ -214,9 +229,10 @@ public class QuranPage extends AppCompatActivity {
                 TextQuran_textview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        tagOnclickAudio = Integer.valueOf(TextQuran_textview.getTag().toString());
+                        tagOnclickAudio = Integer.valueOf(getTag_textQuran);
+                        String testTagTextQuran = getTag_textQuran;
                         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                        String getTag_textQuran ="https://dl.salamquran.com/ayat/afasy-murattal-192/"+TextQuran_textview.getTag().toString()+".mp3" ;
+                        String getTag_textQuran ="https://dl.salamquran.com/ayat/afasy-murattal-192/"+testTagTextQuran+".mp3" ;
                         Log.d(TAG, "Link Audio: "+getTag_textQuran);
                         try {
                             mPlayer.stop();
@@ -274,12 +290,12 @@ public class QuranPage extends AppCompatActivity {
 
                 switch (page){
                     case 1:
-                        TextQuran_textview.setTextSize(28f);
+                        TextQuran_textview.setTextSize(35f);
                         TextQuran_textview.setText(Html.fromHtml(code).toString());
                         TextQuran_textview.setTypeface(font_p1);
                         break;
                     case 5:
-                        TextQuran_textview.setTextSize(20f);
+                        TextQuran_textview.setTextSize(21f);
                         TextQuran_textview.setText(Html.fromHtml(code).toString());
                         TextQuran_textview.setTypeface(font_p5);
                         break;
@@ -294,53 +310,6 @@ public class QuranPage extends AppCompatActivity {
                         break;
                 }
 
-                switch (line){
-                    case 1:
-                        linequran_1.addView(TextQuran_textview);
-                        break;
-                    case 2:
-                        linequran_2.addView(TextQuran_textview);
-                        break;
-                    case 3:
-                        linequran_3.addView(TextQuran_textview);
-                        break;
-                    case 4:
-                        linequran_4.addView(TextQuran_textview);
-                        break;
-                    case 5:
-                        linequran_5.addView(TextQuran_textview);
-                        break;
-                    case 6:
-                        linequran_6.addView(TextQuran_textview);
-                        break;
-                    case 7:
-                        linequran_7.addView(TextQuran_textview);
-                        break;
-                    case 8:
-                        linequran_8.addView(TextQuran_textview);
-                        break;
-                    case 9:
-                        linequran_9.addView(TextQuran_textview);
-                        break;
-                    case 10:
-                        linequran_10.addView(TextQuran_textview);
-                        break;
-                    case 11:
-                        linequran_11.addView(TextQuran_textview);
-                        break;
-                    case 12:
-                        linequran_12.addView(TextQuran_textview);
-                        break;
-                    case 13:
-                        linequran_13.addView(TextQuran_textview);
-                        break;
-                    case 14:
-                        linequran_14.addView(TextQuran_textview);
-                        break;
-                    case 15:
-                        linequran_15.addView(TextQuran_textview);
-                        break;
-                }
 
             }
             pageData.close();
