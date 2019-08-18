@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.online.fragmen.learn.Learn;
 import com.ermile.salamquran.online.fragmen.quran.Quran;
 import com.ermile.salamquran.online.fragmen.setting.Setting;
 import com.ermile.salamquran.saveData.Value;
@@ -123,7 +124,7 @@ public class Main_online extends AppCompatActivity implements BottomNavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_learn:
-                startActivity(new Intent(this, ShearApp.class));
+                fragment = new Learn();
                 break;
             case R.id.nav_meg:
                 startActivity(new Intent(this, AboutApp.class));

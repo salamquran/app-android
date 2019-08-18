@@ -3,6 +3,7 @@ package com.ermile.salamquran.saveData;
 
 public class Value {
 
+
     public static String jsonFile_local = "local";
     public static String jsonFile_QuranWBW = "QuranWBW";
     public static String jsonFile_JuzSura = "juz_sura";
@@ -21,6 +22,7 @@ public class Value {
     public static String enter = apiV6+"enter";
     public static String verify = enter+"/verify";
 
+    public static String url_learn = "https://salamquran.com/fa/lms";
 
     public static String versionAPK = "1142";
     public static int versioncodeAPK = 1402;
