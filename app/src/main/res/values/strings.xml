@@ -1,30 +1,3 @@
 <resources>
     <string name="app_name">Salam Quran</string>
-    <string name="name">سلام قرآن</string>
-    <string name="desc">به قرآن سلام کن! قران تو را می‌خواند. با زبان خودتان به قرآن دسترسی داشته باشید. رایگان و آسان.</string>
-    <string name="slogan">قرآن هر کجا و هر زمان</string>
-
-
-    <string name="nav_learn">Learn</string>
-    <string name="nav_mag">Magazine</string>
-    <string name="nav_quran">Quran</string>
-    <string name="navQuran_surah">Surah</string>
-    <string name="navQuran_juz">Juz</string>
-    <string name="navQuran_bookmark">Bookmark</string>
-    <string name="nav_search">Search</string>
-    <string name="navSearch_title">Salam Quran</string>
-    <string name="navSearch_cancel">Cancel</string>
-    <string name="nav_setting">Setting</string>
-
-
-    <string name="title_deprecated">This version not supported</string>
-    <string name="desc_deprecated">Update now!</string>
-    <string name="btn_deprecated">Download</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="coming_soon">Coming Soon!</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>

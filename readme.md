@@ -1,1 +1,0 @@
-IN THE NAME OF GOD
