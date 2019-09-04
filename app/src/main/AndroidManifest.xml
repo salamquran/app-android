@@ -12,7 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Actitvty.View.WebView"></activity>
+        <activity android:name=".Actitvty.View.Video" />
+        <activity android:name=".Actitvty.View.HtmlView" />
+        <activity android:name=".Actitvty.Look.LookFinger" />
+        <activity android:name=".Actitvty.Look.LookNumber" />
+        <activity android:name=".Actitvty.Look.LookPattern" />
+        <activity android:name=".Actitvty.User.SessionManager" />
+        <activity android:name=".Actitvty.User.Profile" />
+        <activity android:name=".Actitvty.Support.Notifecation" />
+        <activity android:name=".Actitvty.Support.TicketChat" />
+        <activity android:name=".Actitvty.Support.TicketList" />
+        <activity android:name=".Actitvty.Support.HelpCenter" />
+        <activity android:name=".Actitvty.View.Share" />
+        <activity android:name=".Actitvty.View.About" />
+        <activity android:name=".Actitvty.Quran" />
+        <activity android:name=".Actitvty.Login" />
+        <activity android:name=".Actitvty.Intro" />
+        <activity android:name=".Actitvty.Language" />
+        <activity android:name=".Actitvty.Splash" />
+        <activity android:name=".Actitvty.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
