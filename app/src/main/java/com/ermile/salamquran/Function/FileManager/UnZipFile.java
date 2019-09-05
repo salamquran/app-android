@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import com.ermile.salamquran.Static.tag;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -60,6 +62,10 @@ public class UnZipFile {
             zis.closeEntry();
             zis.close();
         } catch (IOException ex) {
+            Log.e(tag.function, "UnZipFile: ",ex );
+            Log.e(tag.FileManager, "UnZipFile: ",ex );
+            Log.e(tag.ac_Splash, "UnZipFile: ",ex );
+            Log.e(tag.error, "UnZipFile: ",ex );
         }
     }
 

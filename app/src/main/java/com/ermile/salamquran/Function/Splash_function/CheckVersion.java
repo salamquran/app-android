@@ -3,12 +3,14 @@ package com.ermile.salamquran.Function.Splash_function;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 import com.ermile.salamquran.Function.FileManager.ReadFile;
 import com.ermile.salamquran.Function.inApp.Dialog;
 import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
+import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.value;
 
 import org.json.JSONException;
@@ -21,6 +23,7 @@ public class CheckVersion {
 
     public CheckVersion(final Context context) {
         this.context = context;
+        Log.d(tag.ac_Splash, "CheckVersion ");
         deprecatedVersion(context);
     }
 
@@ -45,6 +48,7 @@ public class CheckVersion {
             String update_title = version.getString("update_title");
             String update_desc = version.getString("update_desc");
             if (value.versionCode <= Depver){
+                Log.d(tag.ac_Splash, "deprecated Version "+value.versionCode+" = "+Depver);
                 SaveManager.get(context).change_deprecatedVersion(true);
                 Intent openURL = new Intent ( Intent.ACTION_VIEW );
                 openURL.setData (Uri.parse( urlUpdate ));
@@ -62,6 +66,7 @@ public class CheckVersion {
     /*Check Update Version*/
     private void updateVersion(Context context,int UpdateVersion){
         if (value.versionCode < UpdateVersion){
+            Log.d(tag.ac_Splash, "Update Version "+value.versionCode+" = "+UpdateVersion);
             SaveManager.get(context).change_hasNewVersion(true);
             new AddUserTamp(context);
         }

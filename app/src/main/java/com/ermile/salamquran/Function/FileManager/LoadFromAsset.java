@@ -23,14 +23,16 @@ public class LoadFromAsset {
             while ((line = bufferedReader.readLine()) != null) {
                 text.append(line);
             }
-            Log.d(tag.ac_Splash, "Load Json File: "+langName+format+" From Asset!");
+            Log.d(tag.function, "LoadFromAsset: Value: \n" +text.toString());
             Log.d(tag.FileManager, "LoadFromAsset: Value: \n" +text.toString());
+            Log.d(tag.ac_Splash, "Load Json File: "+langName+format+" From Asset!");
             bufferedReader.close();
             return text.toString();
         } catch (IOException ex) {
+            Log.e(tag.function, "LoadFromAsset: ",ex );
             Log.e(tag.FileManager, "LoadFromAsset: ",ex );
-            Log.e(tag.ac_Splash, "LoadFromAsset: ",ex );
             Log.e(tag.error, "LoadFromAsset: ",ex );
+            Log.e(tag.ac_Splash, "LoadFromAsset: ",ex );
             ex.printStackTrace();
             return null;
         }

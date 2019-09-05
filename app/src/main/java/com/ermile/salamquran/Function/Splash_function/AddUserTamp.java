@@ -39,6 +39,7 @@ public class AddUserTamp {
 
         if (new HasConnection().HasConnection(context)){
             if (userIsAdded(context)){
+                Log.d(tag.ac_Splash, "User is Aded Tamp ");
                 ((Activity) context).finish();
                 context.startActivity(new Intent(context,Main.class));
             }
@@ -49,11 +50,13 @@ public class AddUserTamp {
         }
         else {
             if (firstOpen){
+                Log.d(tag.ac_Splash, "First Open App ");
                 SaveManager.get(context).change_firstOpen(false);
                 ((Activity) context).finish();
                 context.startActivity(new Intent(context,Intro.class));
             }
             else {
+                Log.d(tag.ac_Splash, "no First Open ");
                 ((Activity) context).finish();
                 context.startActivity(new Intent(context,Main.class));
             }
@@ -93,22 +96,28 @@ public class AddUserTamp {
                     ok_getToken = mainObject.getBoolean("ok");
                     if (ok_getToken){
                         result = mainObject.getJSONObject("result");
-
+                        Log.d(tag.ac_Splash, "Get Token For Add User Tamp ");
                         addUser(context,result.getString("token"),StartIntentAfreAdd);
                     }else {
                         msg = mainObject.getJSONArray("msg");
                         for (int i = 0 ; i<= msg.length();i++){
                             JSONObject msg_object = msg.getJSONObject(i);
+                            Log.e(tag.error, "Get Token: "+msg_object );
+                            Log.e(tag.ac_Splash, "Get Token: "+msg_object );
                         }
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Log.e(tag.error, "Get Token: ",e );
+                    Log.e(tag.ac_Splash, "Get Token: ",e );
                 }
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(VolleyError e) {
+                Log.e(tag.error, "Get Token: ",e );
+                Log.e(tag.ac_Splash, "Get Token: ",e );
             }
         })
                 // Send Headers
@@ -166,15 +175,21 @@ public class AddUserTamp {
                         msg = mainObject.getJSONArray("msg");
                         for (int i = 0 ; i<= msg.length();i++){
                             JSONObject msg_object = msg.getJSONObject(i);
+                            Log.e(tag.ac_Splash, "catch Add User Tamp: "+msg_object);
+                            Log.e(tag.error, "catch Add User Tamp: "+msg_object);
                         }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Log.e(tag.error, "Add User Tamp: ",e );
+                    Log.e(tag.ac_Splash, "Add User Tamp: ",e );
                 }
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(VolleyError e) {
+                Log.e(tag.error, "Add User Tamp: ",e );
+                Log.e(tag.ac_Splash, "Add User Tamp: ",e );
             }
         })
         {

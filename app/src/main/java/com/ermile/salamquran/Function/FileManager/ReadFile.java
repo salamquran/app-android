@@ -1,6 +1,9 @@
 package com.ermile.salamquran.Function.FileManager;
 
 import android.content.Context;
+import android.util.Log;
+
+import com.ermile.salamquran.Static.tag;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,6 +24,9 @@ public class ReadFile {
             text.append(line);
         }
         bufferedReader.close();
+        Log.d(tag.function, "ReadFile: "+text);
+        Log.d(tag.FileManager, "ReadFile: "+text);
+        Log.d(tag.ac_Splash, "ReadFile: "+text);
         return text.toString();
 
     }

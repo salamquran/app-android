@@ -3,6 +3,7 @@ package com.ermile.salamquran.Function.Splash_function;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -18,6 +19,7 @@ import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.charset;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
+import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.url;
 
 import java.io.IOException;
@@ -25,28 +27,24 @@ import java.util.Locale;
 
 public class ac_Splash {
 
-    public void crateJsonFile(Context context){
-        new WriteFile(context, file.setting,  format.json,null);
-        new WriteFile(context, file.list_sure,format.json,null);
-        new WriteFile(context, file.list_juz, format.json,null);
-    }
 
     /** Set First Language Auto from Device */
     /*Set First Language*/
     public void setFirstLanguage(Context context,String AppLanguage){
         String language_device = Locale.getDefault().getLanguage();
+        Log.d(tag.ac_Splash, "setFirstLanguage: >language_device = "+language_device);
         switch (language_device){
-            case "en":
-                SaveManager.get(context).change_appLanguage(language_device);
-                SaveManager.get(context).change_LanguageByUser(true);
-
-                getSettingApp(context,AppLanguage);
-                break;
-            default:
+            case "fa":
+            case "ar":
                 SaveManager.get(context).change_appLanguage(language_device);
                 SaveManager.get(context).change_LanguageByUser(false);
+                getSettingApp(context,language_device);
+                break;
+            default:
+                SaveManager.get(context).change_appLanguage("en");
+                SaveManager.get(context).change_LanguageByUser(false);
 
-                getSettingApp(context,AppLanguage);
+                getSettingApp(context,"en");
                 break;
         }
     }
@@ -56,6 +54,7 @@ public class ac_Splash {
         final boolean changeLanguageUser= SaveManager.get(context).getboolen_appINFO().get(SaveManager.changeLanguageByUser);
         if (new HasConnection().HasConnection(context))
         {
+            Log.d(tag.ac_Splash, "getSettingApp: Has Internet");
             /*Get Setting From Url*/
             StringRequest get_local = new StringRequest(Request.Method.GET, url.setting, new Response.Listener<String>()
             {
@@ -71,7 +70,8 @@ public class ac_Splash {
                 @Override
                 public void onErrorResponse(VolleyError error)
                 {
-
+                    Log.e(tag.error, "onErrorResponse: Has Internet ", error);
+                    Log.e(tag.ac_Splash, "onErrorResponse: Has Internet ", error);
                 }
             });
             AppContoroler.getInstance().addToRequestQueue(get_local);
@@ -80,26 +80,34 @@ public class ac_Splash {
         {
             try
             {
+                Log.d(tag.ac_Splash, "getSettingApp: No Internet ");
                 String settingApp = new ReadFile().ReadFile(context,file.setting,format.json);
-                if (settingApp == null)
+                if (settingApp.length() < 20)
                 {
+                    Log.d(tag.ac_Splash, "getSettingApp: " + AppLanguage+format.json +" "+charset.UTF8);
                     String valueJson = new LoadFromAsset().LoadFromAsset(context,AppLanguage,format.json, charset.UTF8);
                     new WriteFile(context,file.setting,format.json,valueJson);
+                    Log.d(tag.ac_Splash, "getSettingApp: File setting.json == Null \n Value set to File IS: "+valueJson);
                     setLanguageByUser(context,changeLanguageUser);
                 }
                 else
                 {
+                    Log.d(tag.ac_Splash, "getSettingApp: File setting.json != Null ");
                     setLanguageByUser(context,changeLanguageUser);
                 }
             }
             catch (IOException e) {
                 e.printStackTrace();
+                Log.e(tag.ac_Splash, "getSettingApp: ",e );
+                Log.e(tag.error, "getSettingApp: ",e );
             }
         }
     }
 
     private void setLanguageByUser(Context context ,Boolean changeLanguageByUser){
+        Log.d(tag.ac_Splash, "setLanguageByUser: "+changeLanguageByUser);
         if (changeLanguageByUser){
+            Log.d(tag.ac_Splash, "Go to Language.class ");
             ((Activity) context).finish();
             context.startActivity( new Intent(context,Language.class));
         }else {

@@ -15,9 +15,8 @@ import java.io.ObjectOutputStream;
 import static android.content.Context.MODE_PRIVATE;
 
 public class WriteFile {
-    Context context;
+
     public WriteFile(Context context, String FileName, String Format, String Value) {
-        this.context = context;
         File file = new File(context.getFilesDir(), FileName+Format);
         FileOutputStream fileOutputStream;
         try {
@@ -26,14 +25,20 @@ public class WriteFile {
             objectOutputStream.write(Value.getBytes());
             objectOutputStream.close();
             Log.d(tag.FileManager, "WriteFile: File: " + file + "\n value: "+Value);
+            Log.d(tag.function, "WriteFile: File: " + file + "\n value: "+Value);
+            Log.d(tag.ac_Splash, "WriteFile: File: " + file + "\n value: "+Value);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Log.e(tag.error, "WriteFile: ",e );
             Log.e(tag.FileManager, "WriteFile: ",e );
+            Log.e(tag.function, "WriteFile: ",e );
+            Log.e(tag.ac_Splash, "WriteFile: ",e );
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(tag.error, "WriteFile: ",e );
             Log.e(tag.FileManager, "WriteFile: ",e );
+            Log.e(tag.function, "WriteFile: ",e );
+            Log.e(tag.ac_Splash, "WriteFile: ",e );
         }
     }
 }
