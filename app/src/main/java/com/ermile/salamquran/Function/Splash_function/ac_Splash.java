@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Function.Splash_function;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -13,7 +14,7 @@ import com.ermile.salamquran.Function.FileManager.ReadFile;
 import com.ermile.salamquran.Function.FileManager.WriteFile;
 import com.ermile.salamquran.Function.inApp.HasConnection;
 import com.ermile.salamquran.Network.AppContoroler;
-import com.ermile.salamquran.Static.SaveManager;
+import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.charset;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
@@ -48,15 +49,6 @@ public class ac_Splash {
                 getSettingApp(context,AppLanguage);
                 break;
         }
-    }
-
-    private void setLanguageByUser(Context context ,Boolean changeLanguageByUser){
-        if (changeLanguageByUser){
-            context.startActivity( new Intent(context,Language.class));
-        }else {
-            new CheckVersion(context);
-        }
-
     }
 
     /** Get Setting Json Online(if connected) & Offline(if null)*/
@@ -104,6 +96,16 @@ public class ac_Splash {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void setLanguageByUser(Context context ,Boolean changeLanguageByUser){
+        if (changeLanguageByUser){
+            ((Activity) context).finish();
+            context.startActivity( new Intent(context,Language.class));
+        }else {
+            new CheckVersion(context);
+        }
+
     }
 
 

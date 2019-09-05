@@ -1,16 +1,12 @@
 package com.ermile.salamquran.Function.Splash_function;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
-
-import androidx.appcompat.app.AlertDialog;
 
 import com.ermile.salamquran.Function.FileManager.ReadFile;
 import com.ermile.salamquran.Function.inApp.Dialog;
-import com.ermile.salamquran.Static.SaveManager;
+import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.value;
@@ -48,7 +44,7 @@ public class CheckVersion {
             int Updver = Integer.valueOf(lastVersion);
             String update_title = version.getString("update_title");
             String update_desc = version.getString("update_desc");
-            if (value.versionCode < Depver){
+            if (value.versionCode <= Depver){
                 SaveManager.get(context).change_deprecatedVersion(true);
                 Intent openURL = new Intent ( Intent.ACTION_VIEW );
                 openURL.setData (Uri.parse( urlUpdate ));
@@ -67,10 +63,11 @@ public class CheckVersion {
     private void updateVersion(Context context,int UpdateVersion){
         if (value.versionCode < UpdateVersion){
             SaveManager.get(context).change_hasNewVersion(true);
+            new AddUserTamp(context);
         }
         else {
             SaveManager.get(context).change_hasNewVersion(false);
-            guide();
+            new AddUserTamp(context);
         }
     }
 }

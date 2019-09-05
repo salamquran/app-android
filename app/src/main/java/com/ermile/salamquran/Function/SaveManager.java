@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Static;
+package com.ermile.salamquran.Function;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -27,7 +27,7 @@ public class SaveManager extends ContextWrapper {
 
 
     /** App Info */
-    public static final String versionApp = "versionApp";
+    public static final String fileIsUnZiping = "fileIsUnZiping";
 
     public static final String firstOpen = "firstOpen";
 
@@ -72,17 +72,11 @@ public class SaveManager extends ContextWrapper {
         editor.putBoolean(changeLanguageByUser, ChangeLanguageByUser);
         editor.apply();
     }
-    public void change_versionApp(Integer VersionApp) {
-        editor.putInt(versionApp, VersionApp);
+    public void change_FileUnZip(Boolean FileIsUnZiping) {
+        editor.putBoolean(fileIsUnZiping, FileIsUnZiping);
         editor.apply();
     }
 
-
-    public Map<String, Integer> getint_appINFO() {
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        hashMap.put(versionApp, sharedPreferences.getInt(versionApp, 1 ));
-        return hashMap;
-    }
 
 
     public Map<String, Boolean> getboolen_appINFO() {
@@ -90,6 +84,7 @@ public class SaveManager extends ContextWrapper {
         hashMap.put(firstOpen, sharedPreferences.getBoolean(firstOpen, true ));
         hashMap.put(hasNewVersion, sharedPreferences.getBoolean(hasNewVersion, false ));
         hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false ));
+        hashMap.put(fileIsUnZiping, sharedPreferences.getBoolean(fileIsUnZiping, false ));
 
         hashMap.put(changeLanguageByUser, sharedPreferences.getBoolean(changeLanguageByUser, true ));
         return hashMap;
