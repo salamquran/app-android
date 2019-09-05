@@ -1,16 +1,13 @@
 package com.ermile.salamquran.Actitvty;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 
-import com.ermile.salamquran.Function.FileManager.WriteFile;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.SaveManager;
-import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
-import com.ermile.salamquran.Static.value;
 
 public class Splash extends AppCompatActivity {
 
@@ -22,6 +19,7 @@ public class Splash extends AppCompatActivity {
         try {
             if (appLanguage != null ){
                 crateJsonFile();
+                setFirstLanguage(appLanguage);
 
             }
 
@@ -32,9 +30,8 @@ public class Splash extends AppCompatActivity {
         }
     }
 
-    private void crateJsonFile(){
-        new WriteFile(getApplicationContext(), value.jsonFile_local, format.json,null);
-        new WriteFile(getApplicationContext(),value.jsonFile_JuzSura,format.json,null);
-        new WriteFile(getApplicationContext(),value.jsonFile_JuzHezb,format.json,null);
-    }
+
+
+
+
 }

@@ -27,9 +27,12 @@ public class SaveManager extends ContextWrapper {
 
 
     /** App Info */
+    public static final String versionApp = "versionApp";
+
     public static final String firstOpen = "firstOpen";
 
     public static final String appLanguage = "appLanguage";
+    public static final String changeLanguageByUser = "changeLanguageByUser";
 
     public static final String hasNewVersion = "hasNewVersion";
     public static final String deprecatedVersion = "deprecatedVersion";
@@ -65,6 +68,21 @@ public class SaveManager extends ContextWrapper {
         editor.apply();
     }
 
+    public void change_LanguageByUser(Boolean ChangeLanguageByUser) {
+        editor.putBoolean(changeLanguageByUser, ChangeLanguageByUser);
+        editor.apply();
+    }
+    public void change_versionApp(Integer VersionApp) {
+        editor.putInt(versionApp, VersionApp);
+        editor.apply();
+    }
+
+
+    public Map<String, Integer> getint_appINFO() {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put(versionApp, sharedPreferences.getInt(versionApp, 1 ));
+        return hashMap;
+    }
 
 
     public Map<String, Boolean> getboolen_appINFO() {
@@ -72,6 +90,8 @@ public class SaveManager extends ContextWrapper {
         hashMap.put(firstOpen, sharedPreferences.getBoolean(firstOpen, true ));
         hashMap.put(hasNewVersion, sharedPreferences.getBoolean(hasNewVersion, false ));
         hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false ));
+
+        hashMap.put(changeLanguageByUser, sharedPreferences.getBoolean(changeLanguageByUser, true ));
         return hashMap;
     }
 

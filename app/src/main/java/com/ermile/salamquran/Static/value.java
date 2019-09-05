@@ -1,10 +1,10 @@
 package com.ermile.salamquran.Static;
 
+import com.ermile.salamquran.BuildConfig;
+
 public class value {
 
-    public static String jsonFile_local = "local";
-    public static String jsonFile_QuranWBW = "QuranWBW";
-    public static String jsonFile_JuzSura = "juz_sura";
-    public static String jsonFile_JuzHezb = "juz_hezb";
-    public static String zipFile_QuranWBW = "QuranWBW.zip";
+    public static String language;
+    public static String versionName = BuildConfig.VERSION_NAME;
+    public static int versionCode = BuildConfig.VERSION_CODE;
 }
