@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Function.inApp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,6 +22,7 @@ public class Dialog {
                 /*Open Url*/
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        ((Activity)context).finish();
                         context.startActivity(intent);
                     }
                 });

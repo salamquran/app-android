@@ -50,7 +50,7 @@ public class ac_Splash {
     }
 
     /** Get Setting Json Online(if connected) & Offline(if null)*/
-    public void getSettingApp(final Context context, String AppLanguage){
+    public void getSettingApp(final Context context, final String AppLanguage){
         final boolean changeLanguageUser= SaveManager.get(context).getboolen_appINFO().get(SaveManager.changeLanguageByUser);
         if (new HasConnection().HasConnection(context))
         {
@@ -70,7 +70,8 @@ public class ac_Splash {
                 @Override
                 public void onErrorResponse(VolleyError error)
                 {
-                    Log.e(tag.error, "onErrorResponse: Has Internet ", error);
+                    setSetting_Offline(context,AppLanguage,changeLanguageUser);
+                    Log.e(tag.error, "Get Setting Online onErrorResponse: Has Internet ", error);
                     Log.e(tag.ac_Splash, "onErrorResponse: Has Internet ", error);
                 }
             });
@@ -78,29 +79,33 @@ public class ac_Splash {
         }
         else
         {
-            try
+           setSetting_Offline(context,AppLanguage,changeLanguageUser);
+        }
+    }
+
+    private void setSetting_Offline(Context context,String AppLanguage,Boolean changeLanguageUser){
+        try
+        {
+            Log.d(tag.ac_Splash, "getSettingApp: No Internet ");
+            String settingApp = new ReadFile().ReadFile(context,file.setting,format.json);
+            if (settingApp.length() < 20)
             {
-                Log.d(tag.ac_Splash, "getSettingApp: No Internet ");
-                String settingApp = new ReadFile().ReadFile(context,file.setting,format.json);
-                if (settingApp.length() < 20)
-                {
-                    Log.d(tag.ac_Splash, "getSettingApp: " + AppLanguage+format.json +" "+charset.UTF8);
-                    String valueJson = new LoadFromAsset().LoadFromAsset(context,AppLanguage,format.json, charset.UTF8);
-                    new WriteFile(context,file.setting,format.json,valueJson);
-                    Log.d(tag.ac_Splash, "getSettingApp: File setting.json == Null \n Value set to File IS: "+valueJson);
-                    setLanguageByUser(context,changeLanguageUser);
-                }
-                else
-                {
-                    Log.d(tag.ac_Splash, "getSettingApp: File setting.json != Null ");
-                    setLanguageByUser(context,changeLanguageUser);
-                }
+                Log.d(tag.ac_Splash, "getSettingApp: " + AppLanguage+format.json +" "+charset.UTF8);
+                String valueJson = new LoadFromAsset().LoadFromAsset(context,AppLanguage,format.json, charset.UTF8);
+                new WriteFile(context,file.setting,format.json,valueJson);
+                Log.d(tag.ac_Splash, "getSettingApp: File setting.json == Null \n Value set to File IS: "+valueJson);
+                setLanguageByUser(context,changeLanguageUser);
             }
-            catch (IOException e) {
-                e.printStackTrace();
-                Log.e(tag.ac_Splash, "getSettingApp: ",e );
-                Log.e(tag.error, "getSettingApp: ",e );
+            else
+            {
+                Log.d(tag.ac_Splash, "getSettingApp: File setting.json != Null ");
+                setLanguageByUser(context,changeLanguageUser);
             }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            Log.e(tag.ac_Splash, "getSettingApp: ",e );
+            Log.e(tag.error, "getSettingApp: ",e );
         }
     }
 

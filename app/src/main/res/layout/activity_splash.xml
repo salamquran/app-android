@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:gravity="center"
     android:layout_height="match_parent"
+    android:id="@+id/mainView_Splash"
     tools:context=".Actitvty.Splash">
 
     <TextView

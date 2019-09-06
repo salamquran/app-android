@@ -7,7 +7,7 @@ android {
         applicationId "com.ermile.salamquran"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
+        versionCode 1402
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,4 +38,3 @@ dependencies {
     implementation 'com.duolingo.open:rtl-viewpager:2.0.0'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 }
-

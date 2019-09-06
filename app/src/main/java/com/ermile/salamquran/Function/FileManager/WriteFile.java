@@ -16,17 +16,16 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class WriteFile {
 
-    public WriteFile(Context context, String FileName, String Format, String Value) {
+    public WriteFile(Context context, String FileName, String Format, String Values) {
         File file = new File(context.getFilesDir(), FileName+Format);
-        FileOutputStream fileOutputStream;
+        FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = context.openFileOutput(FileName+Format, MODE_PRIVATE);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.write(Value.getBytes());
-            objectOutputStream.close();
-            Log.d(tag.FileManager, "WriteFile: File: " + file + "\n value: "+Value);
-            Log.d(tag.function, "WriteFile: File: " + file + "\n value: "+Value);
-            Log.d(tag.ac_Splash, "WriteFile: File: " + file + "\n value: "+Value);
+            fileOutputStream = context.openFileOutput(FileName+Format, Context.MODE_PRIVATE);
+            fileOutputStream.write(Values.getBytes());
+            fileOutputStream.close();
+            Log.d(tag.FileManager, "WriteFile: File: " + file + "\n value: "+Values);
+            Log.d(tag.function, "WriteFile: File: " + file + "\n value: "+Values);
+            Log.d(tag.ac_Splash, "WriteFile: File: " + file + "\n value: "+Values);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Log.e(tag.error, "WriteFile: ",e );

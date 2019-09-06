@@ -3,8 +3,10 @@ package com.ermile.salamquran.Function.Splash_function;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -13,9 +15,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.Actitvty.Intro;
 import com.ermile.salamquran.Actitvty.Main;
+import com.ermile.salamquran.Actitvty.Splash;
+import com.ermile.salamquran.Function.inApp.Dialog;
 import com.ermile.salamquran.Function.inApp.HasConnection;
+import com.ermile.salamquran.Function.inApp.SnackBar;
 import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.look;
 import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.url;
@@ -104,6 +110,7 @@ public class AddUserTamp {
                             JSONObject msg_object = msg.getJSONObject(i);
                             Log.e(tag.error, "Get Token: "+msg_object );
                             Log.e(tag.ac_Splash, "Get Token: "+msg_object );
+                            new Dialog(context,"Error Get Token",msg_object+"","OK",false, new Intent(context, getClass()));
                         }
                     }
 
@@ -177,6 +184,7 @@ public class AddUserTamp {
                             JSONObject msg_object = msg.getJSONObject(i);
                             Log.e(tag.ac_Splash, "catch Add User Tamp: "+msg_object);
                             Log.e(tag.error, "catch Add User Tamp: "+msg_object);
+                            new Dialog(context,"Error AddUser",msg_object+"","OK",false, new Intent(context, getClass()));
                         }
                     }
                 } catch (JSONException e) {
