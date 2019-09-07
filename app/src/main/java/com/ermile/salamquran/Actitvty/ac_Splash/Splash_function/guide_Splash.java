@@ -44,7 +44,7 @@ public class guide_Splash {
                 break;
             default:
                 SaveManager.get(context).change_appLanguage("en");
-                SaveManager.get(context).change_LanguageByUser(false);
+                SaveManager.get(context).change_LanguageByUser(true);
 
                 getSettingApp(context,"en");
                 break;
