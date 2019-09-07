@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Salam Quran</string>
+    <string name="name">Salam Quran</string>
+    <string name="slogan">Say Hello To Quran!</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

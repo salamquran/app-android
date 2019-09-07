@@ -1,8 +1,9 @@
-package com.ermile.salamquran.Function.Splash_function;
+package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -25,7 +26,7 @@ import com.ermile.salamquran.Static.url;
 import java.io.IOException;
 import java.util.Locale;
 
-public class ac_Splash {
+public class guide_Splash {
 
 
     /** Set First Language Auto from Device */
@@ -63,6 +64,14 @@ public class ac_Splash {
                 {
                     new WriteFile(context,file.setting,format.json,response);
                     setLanguageByUser(context,changeLanguageUser);
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setSetting_Offline(context,AppLanguage,changeLanguageUser);
+                        }
+                    }, 3*1000);
 
                 }
             }, new Response.ErrorListener()
@@ -116,7 +125,7 @@ public class ac_Splash {
             ((Activity) context).finish();
             context.startActivity( new Intent(context,Language.class));
         }else {
-            new CheckVersion(context);
+            new checkVersion(context);
         }
 
     }

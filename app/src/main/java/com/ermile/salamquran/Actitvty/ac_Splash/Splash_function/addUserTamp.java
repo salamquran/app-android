@@ -1,12 +1,10 @@
-package com.ermile.salamquran.Function.Splash_function;
+package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
-import android.view.View;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -15,14 +13,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.Actitvty.Intro;
 import com.ermile.salamquran.Actitvty.Main;
-import com.ermile.salamquran.Actitvty.Splash;
 import com.ermile.salamquran.Function.inApp.Dialog;
 import com.ermile.salamquran.Function.inApp.HasConnection;
-import com.ermile.salamquran.Function.inApp.SnackBar;
 import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.Function.SaveManager;
-import com.ermile.salamquran.R;
-import com.ermile.salamquran.Static.look;
+import com.ermile.salamquran.Static.lookServer;
 import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.url;
 import com.ermile.salamquran.Static.value;
@@ -34,11 +29,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddUserTamp {
+public class addUserTamp {
 
     Context context;
 
-    public AddUserTamp(Context context) {
+    public addUserTamp(Context context) {
         this.context = context;
 
         boolean firstOpen = SaveManager.get(context).getboolen_appINFO().get(SaveManager.firstOpen);
@@ -132,7 +127,7 @@ public class AddUserTamp {
             @Override
             public Map<String, String> getHeaders()  {
                 HashMap<String, String> headers = new HashMap<>();
-                headers.put("appkey", look.appkey);
+                headers.put("appkey", lookServer.appkey);
                 return headers;
             }
 

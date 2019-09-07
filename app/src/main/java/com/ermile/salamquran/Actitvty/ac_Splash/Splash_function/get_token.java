@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.inServer;
+package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
 
 import android.content.Context;
 
@@ -17,10 +17,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetToken {
+public class get_token {
     Context context;
 
-    public GetToken(Context context) {
+    public get_token(Context context) {
         this.context = context;
         StringRequest getToken = new StringRequest(Request.Method.POST, url.token, new Response.Listener<String>(){
             @Override

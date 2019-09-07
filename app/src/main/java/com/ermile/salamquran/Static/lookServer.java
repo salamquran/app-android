@@ -1,6 +1,6 @@
 package com.ermile.salamquran.Static;
 
-public class look {
+public class lookServer {
 
 
     public static String appkey0 = "74165249ad965f5";

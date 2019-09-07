@@ -3,31 +3,31 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ermile.salamquran">
-
+    <!--dist-->
     <dist:module dist:instant="true" />
-
+    <!--uses-permission-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!--application-->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:name=".Network.AppContoroler"
+        android:icon="@drawable/logo_salamquran"
+        android:roundIcon="@drawable/logo_salamquran"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Actitvty.Splash">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
+        android:name=".Network.AppContoroler">
+        <!--activity-->
+        <activity android:name=".Actitvty.ac_Splash.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Actitvty.View.WebView"/>
         <activity android:name=".Actitvty.View.Video" />
         <activity android:name=".Actitvty.View.HtmlView" />
@@ -47,7 +47,5 @@
         <activity android:name=".Actitvty.Intro" />
         <activity android:name=".Actitvty.Language" />
         <activity android:name=".Actitvty.Main" />
-
     </application>
-
 </manifest>

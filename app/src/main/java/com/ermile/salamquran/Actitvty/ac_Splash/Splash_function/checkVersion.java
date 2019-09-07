@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.Splash_function;
+package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +18,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class CheckVersion {
+public class checkVersion {
     Context context;
 
-    public CheckVersion(final Context context) {
+    public checkVersion(final Context context) {
         this.context = context;
         Log.d(tag.ac_Splash, "CheckVersion ");
         deprecatedVersion(context);
@@ -68,11 +68,11 @@ public class CheckVersion {
         if (value.versionCode < UpdateVersion){
             Log.d(tag.ac_Splash, "Update Version "+value.versionCode+" = "+UpdateVersion);
             SaveManager.get(context).change_hasNewVersion(true);
-            new AddUserTamp(context);
+            new addUserTamp(context);
         }
         else {
             SaveManager.get(context).change_hasNewVersion(false);
-            new AddUserTamp(context);
+            new addUserTamp(context);
         }
     }
 }
