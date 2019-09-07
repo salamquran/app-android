@@ -29,7 +29,7 @@ public class SaveManager extends ContextWrapper {
     /** App Info */
     public static final String fileIsUnZiping = "fileIsUnZiping";
 
-    public static final String firstOpen = "firstOpen";
+    public static final String introIsChacked = "introIsChacked";
 
     public static final String appLanguage = "appLanguage";
     public static final String changeLanguageByUser = "changeLanguageByUser";
@@ -63,8 +63,8 @@ public class SaveManager extends ContextWrapper {
         editor.apply();
     }
 
-    public void change_firstOpen(Boolean FirstOpen) {
-        editor.putBoolean(firstOpen, FirstOpen);
+    public void change_firstOpen(Boolean IntroIsChacked) {
+        editor.putBoolean(introIsChacked, IntroIsChacked);
         editor.apply();
     }
 
@@ -81,7 +81,7 @@ public class SaveManager extends ContextWrapper {
 
     public Map<String, Boolean> getboolen_appINFO() {
         HashMap<String, Boolean> hashMap = new HashMap<>();
-        hashMap.put(firstOpen, sharedPreferences.getBoolean(firstOpen, true ));
+        hashMap.put(introIsChacked, sharedPreferences.getBoolean(introIsChacked, false ));
         hashMap.put(hasNewVersion, sharedPreferences.getBoolean(hasNewVersion, false ));
         hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false ));
         hashMap.put(fileIsUnZiping, sharedPreferences.getBoolean(fileIsUnZiping, false ));

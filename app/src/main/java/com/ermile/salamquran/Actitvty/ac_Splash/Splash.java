@@ -20,8 +20,6 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        boolean firstOpen = SaveManager.get(this).getboolen_appINFO().get(SaveManager.firstOpen);
         try {
             Log.d(tag.activity, "onCreate: Splash");
             Boolean file_isUnZiping = SaveManager.get(getApplicationContext()).getboolen_appINFO().get(SaveManager.fileIsUnZiping);

@@ -20,12 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9">
-            <ImageView
-                android:id="@+id/Logo_laysplash"
-                android:src="@drawable/logo_salamquran"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"/>
+
             <TextView
                 android:id="@+id/title_laysplash"
                 android:textAlignment="center"

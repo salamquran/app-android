@@ -3,7 +3,6 @@ package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -14,9 +13,11 @@ import com.ermile.salamquran.Actitvty.Language;
 import com.ermile.salamquran.Function.FileManager.LoadFromAsset;
 import com.ermile.salamquran.Function.FileManager.ReadFile;
 import com.ermile.salamquran.Function.FileManager.WriteFile;
-import com.ermile.salamquran.Function.inApp.HasConnection;
-import com.ermile.salamquran.Network.AppContoroler;
+import com.ermile.salamquran.Function.HasConnection;
 import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.inApp.CheckVersion;
+import com.ermile.salamquran.Function.inApp.Dialog;
+import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.Static.charset;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
@@ -65,21 +66,13 @@ public class guide_Splash {
                     new WriteFile(context,file.setting,format.json,response);
                     setLanguageByUser(context,changeLanguageUser);
 
-                    final Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            setSetting_Offline(context,AppLanguage,changeLanguageUser);
-                        }
-                    }, 3*1000);
-
                 }
             }, new Response.ErrorListener()
             {
                 @Override
                 public void onErrorResponse(VolleyError error)
                 {
-                    setSetting_Offline(context,AppLanguage,changeLanguageUser);
+                    new Dialog(context,"Error Network","Please try again","ok",false,new Intent(context,context.getClass()));
                     Log.e(tag.error, "Get Setting Online onErrorResponse: Has Internet ", error);
                     Log.e(tag.ac_Splash, "onErrorResponse: Has Internet ", error);
                 }
@@ -125,12 +118,9 @@ public class guide_Splash {
             ((Activity) context).finish();
             context.startActivity( new Intent(context,Language.class));
         }else {
-            new checkVersion(context);
+            if (!new CheckVersion().Deprecated(context)){
+                new addUserTamp(context);
+            }
         }
-
     }
-
-
-
-
 }

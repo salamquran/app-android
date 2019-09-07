@@ -14,7 +14,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.Actitvty.Intro;
 import com.ermile.salamquran.Actitvty.Main;
 import com.ermile.salamquran.Function.inApp.Dialog;
-import com.ermile.salamquran.Function.inApp.HasConnection;
+import com.ermile.salamquran.Function.HasConnection;
 import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.lookServer;
@@ -36,7 +36,7 @@ public class addUserTamp {
     public addUserTamp(Context context) {
         this.context = context;
 
-        boolean firstOpen = SaveManager.get(context).getboolen_appINFO().get(SaveManager.firstOpen);
+        boolean introIsChacked = SaveManager.get(context).getboolen_appINFO().get(SaveManager.introIsChacked);
 
         if (new HasConnection().HasConnection(context)){
             if (userIsAdded(context)){
@@ -50,8 +50,8 @@ public class addUserTamp {
             }
         }
         else {
-            if (firstOpen){
-                Log.d(tag.ac_Splash, "First Open App ");
+            if (!introIsChacked){
+                Log.d(tag.ac_Splash, " Open Intro App ");
                 SaveManager.get(context).change_firstOpen(false);
                 ((Activity) context).finish();
                 context.startActivity(new Intent(context,Intro.class));

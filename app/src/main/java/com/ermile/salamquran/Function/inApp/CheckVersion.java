@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Actitvty.ac_Splash.Splash_function;
+package com.ermile.salamquran.Function.inApp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.ermile.salamquran.Function.FileManager.ReadFile;
-import com.ermile.salamquran.Function.inApp.Dialog;
 import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
@@ -18,16 +17,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class checkVersion {
+public class CheckVersion {
     Context context;
-
-    public checkVersion(final Context context) {
-        this.context = context;
-        Log.d(tag.ac_Splash, "CheckVersion ");
-        deprecatedVersion(context);
-    }
-
-    private void deprecatedVersion(Context context){
+    public Boolean Deprecated(Context context){
         try {
             String settingApp = new ReadFile().ReadFile(context, file.setting, format.json);
             JSONObject respone = new JSONObject(settingApp);
@@ -53,13 +45,16 @@ public class checkVersion {
                 Intent openURL = new Intent ( Intent.ACTION_VIEW );
                 openURL.setData (Uri.parse( urlUpdate ));
                 new Dialog(context,deprecated_title,deprecated_desc,deprecated_btnTitle,false,openURL);
+                return true;
 
             }else {
                 SaveManager.get(context).change_deprecatedVersion(false);
                 updateVersion(context,Updver);
+                return false;
             }
         } catch (JSONException | IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -68,11 +63,9 @@ public class checkVersion {
         if (value.versionCode < UpdateVersion){
             Log.d(tag.ac_Splash, "Update Version "+value.versionCode+" = "+UpdateVersion);
             SaveManager.get(context).change_hasNewVersion(true);
-            new addUserTamp(context);
         }
         else {
             SaveManager.get(context).change_hasNewVersion(false);
-            new addUserTamp(context);
         }
     }
 }
