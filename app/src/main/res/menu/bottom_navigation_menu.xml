@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <group>
+        <item
+            android:id="@+id/nav_setting"
+            android:title="@string/nav_setting"
+            android:icon="@drawable/setting">
+        </item>
+        <item
+            android:id="@+id/nav_search"
+            android:title="@string/nav_search"
+            android:icon="@drawable/search">
+        </item>
+        <item
+            android:id="@+id/nav_quran"
+            android:title="@string/nav_quran"
+            android:icon="@drawable/quran">
+        </item>
+        <item
+            android:id="@+id/nav_learn"
+            android:title="@string/nav_learn"
+            android:icon="@drawable/learn">
+        </item>
+
+        <item
+            android:id="@+id/nav_meg"
+            android:title="@string/nav_mag"
+            android:icon="@drawable/mag">
+        </item>
+
+
+
+    </group>
+
+
+</menu>

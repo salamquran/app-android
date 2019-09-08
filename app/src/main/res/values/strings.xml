@@ -3,6 +3,18 @@
     <string name="name">Salam Quran</string>
     <string name="slogan">Say Hello To Quran!</string>
 
+
+    <string name="nav_learn">Learn</string>
+    <string name="nav_mag">Magazine</string>
+    <string name="nav_quran">Quran</string>
+    <string name="navQuran_surah">Surah</string>
+    <string name="navQuran_juz">Juz</string>
+    <string name="navQuran_bookmark">Bookmark</string>
+    <string name="nav_search">Search</string>
+    <string name="navSearch_title">Salam Quran</string>
+    <string name="navSearch_cancel">Cancel</string>
+    <string name="nav_setting">Setting</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

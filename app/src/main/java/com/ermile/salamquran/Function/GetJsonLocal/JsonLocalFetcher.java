@@ -38,7 +38,7 @@ public class JsonLocalFetcher {
             {
                 try
                 {
-                    String settingApp = new ReadFile().ReadFile(context,file.setting,format.json);
+                    String settingApp = ReadFile.ReadFile(context,file.setting,format.json);
                     String AppLanguage = SaveManager.get(context).getstring_appINFO().get(SaveManager.appLanguage);
                     if (settingApp.length() < 20)
                     {

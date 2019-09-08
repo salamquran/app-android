@@ -33,7 +33,7 @@ public class Splash extends AppCompatActivity {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            Toast.makeText(Splash.this, "Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Splash.this, "oh! Sorry :(", Toast.LENGTH_SHORT).show();
             nextActivity();
         }
     };
@@ -47,7 +47,7 @@ public class Splash extends AppCompatActivity {
         try {
             unZipnigDatabase();
             setAppLanguage();
-//            handler.postDelayed(runnable,5000);
+            handler.postDelayed(runnable,15000);
 
 
         }

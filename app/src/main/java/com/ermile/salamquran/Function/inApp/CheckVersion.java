@@ -21,7 +21,7 @@ public class CheckVersion {
     Context context;
     public Boolean Deprecated(Context context){
         try {
-            String settingApp = new ReadFile().ReadFile(context, file.setting, format.json);
+            String settingApp = ReadFile.ReadFile(context, file.setting, format.json);
             JSONObject respone = new JSONObject(settingApp);
             JSONObject result = respone.getJSONObject("result");
             JSONObject url = result.getJSONObject("url");

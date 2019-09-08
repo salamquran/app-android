@@ -52,7 +52,7 @@ public class Language extends AppCompatActivity {
     void GetLanguage() {
         String appLanguage = SaveManager.get(getApplicationContext()).getstring_appINFO().get(SaveManager.appLanguage);
         try {
-            String Json_text = new ReadFile().ReadFile(this,file.setting, format.json);
+            String Json_text = ReadFile.ReadFile(this,file.setting, format.json);
             JSONObject jsonOffline = new JSONObject(Json_text);
             boolean ok = jsonOffline.getBoolean("ok");
             JSONObject result = jsonOffline.getJSONObject("result");
