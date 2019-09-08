@@ -21,7 +21,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
         android:name=".Network.AppContoroler">
         <!--activity-->
-        <activity android:name=".Actitvty.ac_Splash.Splash">
+        <activity android:name=".Actitvty.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
