@@ -1,6 +1,6 @@
 *.iml
 .gradle
-/⁨app⁩/⁨src⁩/⁨main⁩/⁨java⁩/⁨com⁩/⁨ermile⁩/⁨salamquran⁩/⁨Static⁩/lookServer.java
+/app⁩/⁨src⁩/⁨main⁩/⁨java⁩/⁨com⁩/⁨ermile⁩/⁨salamquran⁩/⁨Static⁩/lookServer.java
 /local.properties
 /.idea/caches/build_file_checksums.ser
 /.idea/libraries
