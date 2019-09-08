@@ -5,10 +5,7 @@ import android.content.Context;
 import java.io.IOException;
 
 public class HasConnection {
-    Context context;
-
-    public Boolean HasConnection(Context context) {
-        this.context = context;
+    public static Boolean HasConnection(Context context) {
         Runtime runtime = Runtime.getRuntime();
         try {
             Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");

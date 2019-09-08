@@ -63,7 +63,7 @@ public class SaveManager extends ContextWrapper {
         editor.apply();
     }
 
-    public void change_firstOpen(Boolean IntroIsChacked) {
+    public void change_intriOpen(Boolean IntroIsChacked) {
         editor.putBoolean(introIsChacked, IntroIsChacked);
         editor.apply();
     }

@@ -22,6 +22,7 @@ import java.util.Map;
 public class TokenFetcher {
 
     public static void GetToken(final TokenListener tokenListener) {
+
         StringRequest getToken = new StringRequest(Request.Method.POST, url.token, new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
@@ -69,6 +70,7 @@ public class TokenFetcher {
 
         };
         AppContoroler.getInstance().addToRequestQueue(getToken);
+
     }
 }
 

@@ -2,7 +2,9 @@ package com.ermile.salamquran.Actitvty;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +29,15 @@ import static com.ermile.salamquran.Function.SaveManager.appLanguage;
 
 public class Splash extends AppCompatActivity {
 
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            Toast.makeText(Splash.this, "Error", Toast.LENGTH_SHORT).show();
+            nextActivity();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +47,9 @@ public class Splash extends AppCompatActivity {
         try {
             unZipnigDatabase();
             setAppLanguage();
+//            handler.postDelayed(runnable,5000);
+
+
         }
         catch (Exception error){
             Log.e(tag.ac_Splash, "onCreate: ", error);
@@ -91,20 +105,28 @@ public class Splash extends AppCompatActivity {
             @Override
             public void onGetJson_Online(String ResponeOnline) {
                 new WriteFile(getApplicationContext(),file.setting,format.json,ResponeOnline);
+                Log.d(tag.ac_Splash, "online");
                 choseLanguage();
             }
 
             @Override
             public void onGetJson_Offline(String ResponeOffline) {
                 new WriteFile(getApplicationContext(),file.setting,format.json,ResponeOffline);
+                Log.d(tag.ac_Splash, "Offline");
+                choseLanguage();
+            }
+
+            @Override
+            public void OnGetJson_OfflineNoNULL() {
+                Log.d(tag.ac_Splash, "Offline");
                 choseLanguage();
             }
         });
     }
     private void choseLanguage(){
         Boolean changeLanguageByUser = SaveManager.get(this).getboolen_appINFO().get(SaveManager.changeLanguageByUser);
+            Log.d(tag.ac_Splash, "changeLanguageByUser: "+changeLanguageByUser);
         if (changeLanguageByUser){
-            Log.d(tag.ac_Splash, "Go to Language.class ");
             finish();
             startActivity( new Intent(this, Language.class));
         }else {
@@ -166,6 +188,7 @@ public class Splash extends AppCompatActivity {
 
 
     private void nextActivity(){
+        handler.removeCallbacks(runnable);
         Boolean intro_isChecked = SaveManager.get(this).getboolen_appINFO().get(SaveManager.introIsChacked);
         if (intro_isChecked){
             finish();

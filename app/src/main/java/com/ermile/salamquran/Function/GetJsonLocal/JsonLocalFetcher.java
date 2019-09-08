@@ -44,6 +44,8 @@ public class JsonLocalFetcher {
                     {
                         String valueJson = new LoadFromAsset().LoadFromAsset(context,AppLanguage,format.json, charset.UTF8);
                         jsonLocalListener.onGetJson_Offline(valueJson);
+                    }else {
+                        jsonLocalListener.OnGetJson_OfflineNoNULL();
                     }
                 }
                 catch (IOException e) {
@@ -52,5 +54,6 @@ public class JsonLocalFetcher {
             }
         });
         AppContoroler.getInstance().addToRequestQueue(get_local);
+
     }
 }
