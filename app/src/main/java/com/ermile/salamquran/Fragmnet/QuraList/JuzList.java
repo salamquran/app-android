@@ -24,18 +24,17 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class JuzList extends Fragment {
 
-    View fragment_juz_list;
-    RecyclerView recylerview_juz;
-    QuranListAdaptor quranList_adapter;
-    LinearLayoutManager LayoutManager;
-    ArrayList<item_QuranList> quranlist;
-    int HIZB = 0;
+    private RecyclerView recylerview_juz;
+    private LinearLayoutManager LayoutManager;
+    private ArrayList<item_QuranList> quranlist;
+    private int HIZB = 0;
 
     public JuzList() {
         // Required empty public constructor
@@ -46,11 +45,11 @@ public class JuzList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fragment_juz_list= inflater.inflate(R.layout.fragment_juz_list, container, false);
+        View fragment_juz_list = inflater.inflate(R.layout.fragment_juz_list, container, false);
 
         quranlist= new ArrayList<>();
-        recylerview_juz = (RecyclerView) fragment_juz_list.findViewById(R.id.recylerview_juz);
-        quranList_adapter = new QuranListAdaptor(quranlist,getContext());
+        recylerview_juz = fragment_juz_list.findViewById(R.id.recylerview_juz);
+        QuranListAdaptor quranList_adapter = new QuranListAdaptor(quranlist, getContext());
         LayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         getHezb();
         recylerview_juz.setAdapter(quranList_adapter);
@@ -61,16 +60,15 @@ public class JuzList extends Fragment {
     /*Get Value*/
     private void getHezb(){
         try {
-            String Json_text = ReadFile.ReadFile(getContext(), file.list_juz, format.json);
+            String Json_text = ReadFile.ReadFile(Objects.requireNonNull(getContext()), file.list_juz, format.json);
             JSONObject json_objet  = new JSONObject(Json_text);
             JSONObject result = json_objet.getJSONObject("result");
 
-            String number_hezb = null;
+            String number_hezb;
             String title_hezb = null;
             String page_hezb = null;
             String aya_hezb = null;
             String sureh_hezb = null;
-            String hezb_hezb = null;
             int bgHezb_hezb = 0;
 
             for(Iterator<String> key_result = result.keys(); key_result.hasNext();) {
@@ -149,9 +147,7 @@ public class JuzList extends Fragment {
 
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
     }

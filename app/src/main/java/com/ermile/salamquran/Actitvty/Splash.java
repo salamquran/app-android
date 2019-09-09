@@ -2,9 +2,7 @@ package com.ermile.salamquran.Actitvty;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,15 +27,6 @@ import static com.ermile.salamquran.Function.SaveManager.appLanguage;
 
 public class Splash extends AppCompatActivity {
 
-    Handler handler = new Handler();
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            Toast.makeText(Splash.this, "oh! Sorry :(", Toast.LENGTH_SHORT).show();
-            nextActivity();
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +36,6 @@ public class Splash extends AppCompatActivity {
         try {
             unZipnigDatabase();
             setAppLanguage();
-            handler.postDelayed(runnable,15000);
-
-
         }
         catch (Exception error){
             Log.e(tag.ac_Splash, "onCreate: ", error);
@@ -74,8 +60,6 @@ public class Splash extends AppCompatActivity {
         Log.d(tag.ac_Splash, "onCreate: AppLanguage: "+AppLanguage);
         if (AppLanguage == null){
             new WriteFile(getApplicationContext(), file.setting   ,  format.json,"" );
-            new WriteFile(getApplicationContext(), file.list_sure ,  format.json,"" );
-            new WriteFile(getApplicationContext(), file.list_juz  ,  format.json,"" );
             setFirstLanguages();
         }
         else {
@@ -188,7 +172,6 @@ public class Splash extends AppCompatActivity {
 
 
     private void nextActivity(){
-        handler.removeCallbacks(runnable);
         Boolean intro_isChecked = SaveManager.get(this).getboolen_appINFO().get(SaveManager.introIsChacked);
         if (intro_isChecked){
             finish();

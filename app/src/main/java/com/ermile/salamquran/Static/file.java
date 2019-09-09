@@ -1,7 +1,7 @@
 package com.ermile.salamquran.Static;
 
 public class file {
-    public static String comperes_File = "ComperesFile";
+    public static String comperes_File = "Archive";
     public static String setting = "setting";
     public static String list_sure = "juz_sura";
     public static String list_juz = "juz_hezb";
