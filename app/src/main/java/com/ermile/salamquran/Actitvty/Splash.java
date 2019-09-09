@@ -176,7 +176,8 @@ public class Splash extends AppCompatActivity {
         if (intro_isChecked){
             finish();
             startActivity(new Intent(this, Main.class));
-        }else {
+        }
+        else {
             finish();
             startActivity(new Intent(this, Intro.class));
         }

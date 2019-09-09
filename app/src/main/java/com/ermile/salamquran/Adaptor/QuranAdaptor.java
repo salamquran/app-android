@@ -28,11 +28,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     private LayoutInflater inflater;
     public int count = 605; // Slide number
 
-    LinearLayout linequran_1,linequran_2,linequran_3,linequran_4,linequran_5,
-            linequran_6,linequran_7,linequran_8,linequran_9,linequran_10,
-            linequran_11,linequran_12,linequran_13,linequran_14,linequran_15;
-
-    QuranAdaptor(Context context) {
+    public QuranAdaptor(Context context) {
         this.context = context;
     }
 
@@ -70,7 +66,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         SQLiteDatabase mydb = new MyDatabase(context).getWritableDatabase();
         Cursor pageData = mydb.rawQuery("SELECT * FROM quran_word WHERE page="+position, null);
-        int is = 0;
         while (pageData.moveToNext()) {
             String text = pageData.getString(pageData.getColumnIndex("text"));
             String code = pageData.getString(pageData.getColumnIndex("code"));
@@ -81,6 +76,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             int page = pageData.getInt(pageData.getColumnIndex("page"));
             int positions = pageData.getInt(pageData.getColumnIndex("position"));
             String audio = pageData.getString(pageData.getColumnIndex("audio"));
+
 
 
             if (charType.equals("end")){
@@ -114,22 +110,18 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
             }
 
-            final String getTag_textQuran = TextQuran_textview.getTag().toString();
-            /*On Long Click Listener*/
+//            final String getTag_textQuran = TextQuran_textview.getTag().toString();
+            /*On Long Click Listener
             TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    /*Get Tag Word Selected*/
 
                     for (int rq=0; rq<= background_slide.getChildCount();rq++){
-                        /*Get Row Quran*/
                         LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
                         if (rowQuran != null){
                             for (int wq=0; wq <= rowQuran.getChildCount(); wq++){
-                                /*Get Word Quran*/
                                 TextView wordQuran = (TextView) rowQuran.getChildAt(wq);
                                 if (wordQuran != null){
-                                    /*Set Background Quran*/
                                     if (wordQuran.getTag().toString().equals(getTag_textQuran)){
                                         wordQuran.setBackgroundColor(Color.parseColor("#60B3B0B0"));
                                     }
@@ -139,7 +131,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     }
                     return true;
                 }
-            });
+            });*/
 
 
 

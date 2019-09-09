@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Actitvty;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -106,6 +107,7 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
                 fragment = new LMS();
                 break;
             case R.id.nav_meg:
+                startActivity(new Intent(this,Quran.class));
                 break;
             case R.id.nav_quran:
                 fragment= new QuranList();
