@@ -1,5 +1,7 @@
 package com.ermile.salamquran.Actitvty;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.ermile.salamquran.Adaptor.QuranAdaptor;
 import com.ermile.salamquran.Item.itemQuran.ayat;
+import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
 
 import java.util.List;
@@ -55,24 +58,13 @@ public class Quran extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                /*number_pageQuran.setText(String.valueOf(position));
-                page = "https://salamquran.com/fa/api/v6/page/wbw?index="+String.valueOf(position);
-                try {
-                    String textTop_surah , textTop_juz ;
-                    String jsonText = readFromMyFile(Value.jsonFile_QuranWBW);
-                    JSONArray jsonObject = new JSONArray(jsonText);
-                    for (int i = 0 ; i<= jsonObject.length(); i++) {
-                        JSONObject get_WordQuran = jsonObject.getJSONObject(i);
-                        String page = get_WordQuran.getString("page");
-                        if (position == Integer.valueOf(page)){
+                SQLiteDatabase mydb = new MyDatabase(getApplicationContext()).getWritableDatabase();
+                Cursor pageData = mydb.rawQuery("SELECT * FROM quran_word WHERE page="+position, null);
+                while (pageData.moveToNext()){
 
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
+                }
+
+
             }
             @Override
             public void onPageScrollStateChanged(int i) {
