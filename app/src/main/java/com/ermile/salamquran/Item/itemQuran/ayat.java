@@ -1,36 +1,20 @@
 package com.ermile.salamquran.Item.itemQuran;
 
+import java.util.List;
+
 public class ayat {
 
-    Integer page,sure,aya;
+    List<word> words;
 
-    public ayat(Integer page, Integer sure, Integer aya) {
-        this.page = page;
-        this.sure = sure;
-        this.aya = aya;
+    public ayat() {
+        this.words = words;
     }
 
-    public Integer getPage() {
-        return page;
+    public List<word> getWords() {
+        return words;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
-    }
-
-    public Integer getSure() {
-        return sure;
-    }
-
-    public void setSure(Integer sure) {
-        this.sure = sure;
-    }
-
-    public Integer getAya() {
-        return aya;
-    }
-
-    public void setAya(Integer aya) {
-        this.aya = aya;
+    public void setWords(List<word> words) {
+        this.words = words;
     }
 }

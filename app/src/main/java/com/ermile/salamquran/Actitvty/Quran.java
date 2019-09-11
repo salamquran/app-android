@@ -43,6 +43,8 @@ public class Quran extends AppCompatActivity {
         QuranAdaptor PagerAdapter = new QuranAdaptor(getApplicationContext()); // add Adapter (in line 55)
         viewpager.setAdapter(PagerAdapter); // set Adapter to View pager in XML
 
+
+
         viewpager.setCurrentItem(Integer.valueOf(getIntent().getStringExtra("open_page")));
         viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {

@@ -107,7 +107,7 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
                 fragment = new LMS();
                 break;
             case R.id.nav_meg:
-                startActivity(new Intent(this,Quran.class));
+                startActivity(new Intent(this,Login.class));
                 break;
             case R.id.nav_quran:
                 fragment= new QuranList();
