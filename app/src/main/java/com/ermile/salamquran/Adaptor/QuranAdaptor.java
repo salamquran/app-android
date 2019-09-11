@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Adaptor;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,8 +18,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.ermile.salamquran.Item.itemQuran.ayat;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.tag;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
@@ -27,6 +33,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     private Context context;
     private LayoutInflater inflater;
     public int count = 605; // Slide number
+
+    List<ayat> ayatList = new ArrayList<>();
 
     public QuranAdaptor(Context context) {
         this.context = context;
@@ -44,6 +52,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         return view == object;
     }
 
+    @SuppressLint("ResourceType")
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
@@ -54,6 +63,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         LinearLayout linearLayout_Line = null;
         TextView TextQuran_textview = null ;
+        View view1 = null;
 
         int testLine =0;
 
@@ -76,11 +86,18 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             int page = pageData.getInt(pageData.getColumnIndex("page"));
             int positions = pageData.getInt(pageData.getColumnIndex("position"));
             String audio = pageData.getString(pageData.getColumnIndex("audio"));
+            int index = pageData.getInt(pageData.getColumnIndex("index"));
 
 
 
             if (charType.equals("end")){
-                Log.d("", ""+aya+"\n"+page);
+                view1 = new View(view.getContext());
+                view1.setVisibility(View.GONE);
+                view1.setTag(String.valueOf("00"+sura)+String.valueOf("00"+aya));
+                view1.setId(index);
+                background_slide.addView(view1);
+                Log.d(tag.publicsh, index+"- >>>>>>>>>>>  "+view1.getId());
+                Log.d(tag.publicsh, index+"- -----------  "+view1.getTag());
             }
 
 
@@ -106,12 +123,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 TextQuran_textview.setGravity(View.TEXT_ALIGNMENT_CENTER);
                 linearLayout_Line.addView(TextQuran_textview);
-//                TextQuran_textview.setTag(urlAudio.UrlAudio(aya,sura));
+                TextQuran_textview.setTag(index);
 
             }
 
-//            final String getTag_textQuran = TextQuran_textview.getTag().toString();
-            /*On Long Click Listener
+            final String getTag_textQuran = TextQuran_textview.getTag().toString();
             TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
@@ -131,18 +147,28 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     }
                     return true;
                 }
-            });*/
+            });
+
+
+            TextQuran_textview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    for (int i = 0; i < background_slide.getChildCount(); i++) {
+
+                    }
+                }
+            });
 
 
 
             switch (page){
                 case 1:
-                    TextQuran_textview.setTextSize(35f);
+                    TextQuran_textview.setTextSize(65f);
                     TextQuran_textview.setText(Html.fromHtml(code).toString());
                     TextQuran_textview.setTypeface(font_p1);
                     break;
                 case 5:
-                    TextQuran_textview.setTextSize(21f);
+                    TextQuran_textview.setTextSize(45f);
                     TextQuran_textview.setText(Html.fromHtml(code).toString());
                     TextQuran_textview.setTypeface(font_p5);
                     break;
@@ -152,7 +178,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     }else {
                         TextQuran_textview.setText(" ( "+aya+" ) ");
                     }
-                    TextQuran_textview.setTextSize(15f);
+                    TextQuran_textview.setTextSize(30f);
                     TextQuran_textview.setTypeface(font_nabi);
                     break;
             }

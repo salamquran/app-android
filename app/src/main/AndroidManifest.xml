@@ -47,5 +47,18 @@
         <activity android:name=".Actitvty.Intro" />
         <activity android:name=".Actitvty.Language" />
         <activity android:name=".Actitvty.Main" />
+        <!--service-->
+        <service
+            android:name=".Service.AudioForeground"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService">
+        </service>
+        <service
+            android:name=".Service.AlarmBackground"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService">
+        </service>
     </application>
 </manifest>

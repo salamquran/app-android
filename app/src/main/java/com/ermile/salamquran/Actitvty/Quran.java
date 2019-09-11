@@ -1,7 +1,7 @@
 package com.ermile.salamquran.Actitvty;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,17 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.ermile.salamquran.Adaptor.QuranAdaptor;
+import com.ermile.salamquran.Item.itemQuran.ayat;
 import com.ermile.salamquran.R;
+
+import java.util.List;
 
 public class Quran extends AppCompatActivity {
 
-    int tagOnclickAudio;
-
-    MediaPlayer mPlayer = new MediaPlayer();
-
-    QuranAdaptor PagerAdapter;  // for View page
-    RtlViewPager viewpager; //  for dots & Button in XML
     private TextView number_pageQuran , number_juzQuran,title_surahQuran;
-    public int count = 605; // Slide number
+
+    View stop,play;
+    List<ayat> ayatList;
 
 
     @Override
@@ -28,27 +27,32 @@ public class Quran extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quran);
 
+        stop = findViewById(R.id.audio_stop);
+        play = findViewById(R.id.audio_play);
+
+        
+
 
         // Chang ID XML
         number_pageQuran = findViewById(R.id.number_pageQuran);
         number_juzQuran = findViewById(R.id.number_juzQuran);
         title_surahQuran = findViewById(R.id.title_surahQuran);
-        viewpager = findViewById(R.id.view_pagers); // view page in XML
+        RtlViewPager viewpager = findViewById(R.id.view_pagers); // view page in XML
 
         // set
-        PagerAdapter = new QuranAdaptor(getApplicationContext()); // add Adapter (in line 55)
+        QuranAdaptor PagerAdapter = new QuranAdaptor(getApplicationContext()); // add Adapter (in line 55)
         viewpager.setAdapter(PagerAdapter); // set Adapter to View pager in XML
 
-
-
-        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+        viewpager.setCurrentItem(Integer.valueOf(getIntent().getStringExtra("open_page")));
+        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
 
             }
-
             @Override
-            public void onPageSelected(final int position) {
+            public void onPageSelected(int position) {
+
                 /*number_pageQuran.setText(String.valueOf(position));
                 page = "https://salamquran.com/fa/api/v6/page/wbw?index="+String.valueOf(position);
                 try {
@@ -72,7 +76,6 @@ public class Quran extends AppCompatActivity {
             public void onPageScrollStateChanged(int i) {
             }
         });
-        viewpager.setCurrentItem(Integer.valueOf(getIntent().getStringExtra("open_page")));
 
     }
 }
