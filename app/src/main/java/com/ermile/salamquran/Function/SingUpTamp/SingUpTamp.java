@@ -53,6 +53,7 @@ public class SingUpTamp {
                         String zoneid = result.getString("zoneid");
                         String apikey = result.getString("apikey");
                         /*Save Value*/
+                        Log.d(tag.ac_Splash, "onResponse: "+usercode+" | "+zoneid+" | "+apikey);
                         SaveManager.get(context).change_infoLOGIN(apikey,usercode,zoneid);
                         singUpTampListener.UserAddToServer(true);
 

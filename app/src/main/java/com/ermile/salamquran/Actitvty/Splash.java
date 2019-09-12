@@ -123,18 +123,12 @@ public class Splash extends AppCompatActivity {
         String usercode = SaveManager.get(this).getstring_appINFO().get(SaveManager.userCode);
         String zoneid = SaveManager.get(this).getstring_appINFO().get(SaveManager.zoneID);
         String apikey = SaveManager.get(this).getstring_appINFO().get(SaveManager.apiKey);
-        if (usercode == null)
+        if (usercode == null || zoneid == null || apikey == null)
         {
+            Log.d(tag.ac_Splash, "user Not Added usercode: "+usercode+" |zonID: "+zoneid+" |apikey: "+apikey);
             return false;
         }
-        else if (zoneid == null)
-        {
-            return false;
-        }
-        else if (apikey == null)
-        {
-            return false;
-        }
+        Log.d(tag.ac_Splash, "user Is Added usercode: "+usercode+" |zonID: "+zoneid+" |apikey: "+apikey);
         return true;
     }
     private void singUpTamp(){
@@ -147,6 +141,7 @@ public class Splash extends AppCompatActivity {
 
                 @Override
                 public void onTokenFailed(String error) {
+                    Log.d(tag.ac_Splash, "Get Token Error: "+error);
                     nextActivity();
                 }
             });
@@ -159,11 +154,13 @@ public class Splash extends AppCompatActivity {
         SingUpTamp.Sining(new SingUpTampListener() {
             @Override
             public void UserAddToServer(Boolean UserAddToServer) {
+                Log.d(tag.ac_Splash, "UserAddToServer: "+UserAddToServer);
                 nextActivity();
             }
 
             @Override
             public void FiledUserAdd(Boolean FiledUserAdd) {
+                Log.d(tag.ac_Splash, "UserAddToServer: "+FiledUserAdd);
                 nextActivity();
             }
         }, getApplicationContext(), Token);

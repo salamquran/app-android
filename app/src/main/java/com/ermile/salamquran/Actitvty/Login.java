@@ -17,16 +17,26 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.Function.GetToken.TokenFetcher;
 import com.ermile.salamquran.Function.GetToken.TokenListener;
-import com.ermile.salamquran.Function.LoginByNumber.step1_VerifyNumber.Enter;
-import com.ermile.salamquran.Function.LoginByNumber.step1_VerifyNumber.EnterListener;
-import com.ermile.salamquran.Function.LoginByNumber.step2_VerifyCode.VerifuCodeListener;
-import com.ermile.salamquran.Function.LoginByNumber.step2_VerifyCode.VerifyCodeFethcer;
 import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.tag;
+import com.ermile.salamquran.Static.url;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Login extends AppCompatActivity {
     private static String TAG = "Enter";
@@ -80,32 +90,68 @@ public class Login extends AppCompatActivity {
     private void step1_VerifyNumber(){
         TokenFetcher.GetToken(new TokenListener() {
             @Override
-            public void onTokenRecieved(String token) {
-                Log.d(tag.publicsh, "onTokenRecieved: Enter "+token+" | "+getNumberPhone()+" | "+getApiKey());
-                Enter.sendNumberToVerify(token, getNumberPhone(), getApiKey(), new EnterListener() {
-                    @Override
-                    public void SendCodeToNumber() {
-                        boxNumber.setVisibility(View.GONE);
-                        boxVerify.setVisibility(View.VISIBLE);
-                        tvNumberVerify.setText(getNumberPhone());
-                        ev1.requestFocus();
+            public void onTokenRecieved(final String token) {
 
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                boxResend.setVisibility(View.VISIBLE);
+
+                StringRequest getVerify = new StringRequest(Request.Method.POST, url.enter, new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject mainObject;
+                        JSONArray msg;
+                        boolean ok_getVerify;
+                        try {
+                            mainObject = new JSONObject(response);
+                            ok_getVerify = mainObject.getBoolean("ok");
+                            if (ok_getVerify){
+                                boxNumber.setVisibility(View.GONE);
+                                boxVerify.setVisibility(View.VISIBLE);
+                                tvNumberVerify.setText(getNumberPhone());
+                                ev1.requestFocus();
+
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        boxResend.setVisibility(View.VISIBLE);
+                                    }
+                                }, 120000);
+                            }else {
+                                msg = mainObject.getJSONArray("msg");
+                                for (int i = 0 ; i<= msg.length();i++){
+                                    JSONObject msg_object = msg.getJSONObject(i);
+                                    Log.e(tag.error,"VerifyNumberFetcher HasNet: "+msg_object.getString("text"));
+                                }
                             }
-                        }, 120000);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e(tag.error,"VerifyNumberFetcher >JSONException "+e);
+                        }
                     }
 
+                }, new Response.ErrorListener() {
                     @Override
-                    public void ErrorSendCodeToNumber(String Error) {
-                        boxResend.setVisibility(View.VISIBLE);
-                        Log.e(tag.error, "ErrorSendCodeToNumber: "+Error);
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(tag.error,"VerifyNumberFetcher > onErrorResponse  "+error);
                     }
-                });
+                })
+                        // Send Headers
+                {
+                    @Override
+                    public Map<String, String> getHeaders()  {
+                        HashMap<String, String> headers = new HashMap<>();
+                        headers.put("token", token);
+                        headers.put("apikey", getApiKey());
+                        return headers;
+                    }
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> posting = new HashMap<>();
+                        posting.put("mobile", getNumberPhone());
+                        return posting;
+                    }
 
-
+                };
+                AppContoroler.getInstance().addToRequestQueue(getVerify);
             }
 
             @Override
@@ -117,22 +163,66 @@ public class Login extends AppCompatActivity {
 
     /*Writ Verify Code*/
     private void step2_VerifyCodeSMS(){
-
         TokenFetcher.GetToken(new TokenListener() {
             @Override
-            public void onTokenRecieved(String token) {
-                VerifyCodeFethcer.vrifyCode(getApplicationContext(), token, getApiKey(), getNumberPhone(), getUserVerfycationCode(), new Intent(getApplicationContext(), Main.class), new VerifuCodeListener() {
+            public void onTokenRecieved(final String token) {
+                StringRequest getVerify = new StringRequest(Request.Method.POST, url.verify, new Response.Listener<String>(){
                     @Override
-                    public void VerifyCode(String apikey, String zoneID, String userCode) {
-                        SaveManager.get(getApplicationContext()).change_infoLOGIN(apikey,userCode,zoneID);
+                    public void onResponse(String response) {
+                        JSONObject mainObject,result;
+                        JSONArray msg;
+                        boolean ok_getVerify;
+                        try {
+                            mainObject = new JSONObject(response);
+                            ok_getVerify = mainObject.getBoolean("ok");
+                            if (ok_getVerify){
+                                result = mainObject.getJSONObject("result");
+                                String apikeyNew = result.getString("apikey");
+                                String usercode  =  SaveManager.get(getApplicationContext()).getstring_appINFO().get(SaveManager.userCode);
+                                String zoneid    =  SaveManager.get(getApplicationContext()).getstring_appINFO().get(SaveManager.zoneID);
+
+                                SaveManager.get(getApplicationContext()).change_infoLOGIN(apikeyNew,usercode,zoneid);
+                                nexActivity();
+
+                            }else {
+                                msg = mainObject.getJSONArray("msg");
+                                for (int i = 0 ; i<= msg.length();i++){
+                                    JSONObject msg_object = msg.getJSONObject(i);
+                                    Log.e(tag.error,"VerifyCodeFethcer: "+ msg_object.getString("text"));
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e(tag.error,"VerifyCodeFethcer >JSONException "+e);
+                        }
                     }
 
+                }, new Response.ErrorListener() {
                     @Override
-                    public void ErrorGetVerifyCode(String Error) {
-
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(tag.error,"VerifyCodeFethcer > onErrorResponse  "+error);
                     }
-                });
+                })
+                        // Send Headers
+                {
+                    @Override
+                    public Map<String, String> getHeaders()  {
+                        HashMap<String, String> headers = new HashMap<>();
+                        headers.put("token", token);
+                        headers.put("apikey", getApiKey());
+                        return headers;
+                    }
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> posting = new HashMap<>();
+                        posting.put("mobile", getNumberPhone());
+                        posting.put("verifycode", getUserVerfycationCode());
+                        return posting;
+                    }
 
+                };
+                AppContoroler.getInstance().addToRequestQueue(getVerify);
             }
 
             @Override
@@ -140,6 +230,11 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void nexActivity() {
+        finish();
+        startActivity(new Intent(this,Main.class));
     }
 
     /** Edit Text Method*/
