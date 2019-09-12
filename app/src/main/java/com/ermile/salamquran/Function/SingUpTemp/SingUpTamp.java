@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.SingUpTamp;
+package com.ermile.salamquran.Function.SingUpTemp;
 
 import android.content.Context;
 import android.os.Build;

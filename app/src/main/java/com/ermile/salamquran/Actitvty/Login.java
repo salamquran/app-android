@@ -38,11 +38,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener{
     private static String TAG = "Enter";
 
     TextView tvTitleNumber,tvTitleVerify,tvNumberVerify,tvTitleResend,tvResndVerify;
-    EditText ev1,ev2,ev3,ev4,ev5,edtNumber;
+    EditText edtVerify_1, edtVerify_2, edtVerify_3, edtVerify_4, edtVerify_5, edtWriteNumber;
     Button btnNumber;
     LinearLayout boxNumber,boxVerify,boxResend;
 
@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         findViewById();
-        edtSetMethod();
+        EditTextSetMethode(edtVerify_1, edtVerify_2, edtVerify_3, edtVerify_4, edtVerify_5, edtWriteNumber);
 
         boxNumber.setVisibility(View.VISIBLE);
         btnNumber.setOnClickListener(new View.OnClickListener() {
@@ -72,17 +72,17 @@ public class Login extends AppCompatActivity {
 
 
     private String getNumberPhone(){
-        return edtNumber.getText().toString().replace("+","");
+        return edtWriteNumber.getText().toString().replace("+","");
     }
     private String getApiKey(){
         return SaveManager.get(this).getstring_appINFO().get(SaveManager.apiKey);
     }
     private String getUserVerfycationCode(){
-        return ev1.getText().toString()
-                + ev2.getText().toString()
-                + ev3.getText().toString()
-                + ev4.getText().toString()
-                + ev5.getText().toString();
+        return edtVerify_1.getText().toString()
+                + edtVerify_2.getText().toString()
+                + edtVerify_3.getText().toString()
+                + edtVerify_4.getText().toString()
+                + edtVerify_5.getText().toString();
     }
 
     /** Connection To Server*/
@@ -91,8 +91,6 @@ public class Login extends AppCompatActivity {
         TokenFetcher.GetToken(new TokenListener() {
             @Override
             public void onTokenRecieved(final String token) {
-
-
                 StringRequest getVerify = new StringRequest(Request.Method.POST, url.enter, new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response) {
@@ -106,7 +104,7 @@ public class Login extends AppCompatActivity {
                                 boxNumber.setVisibility(View.GONE);
                                 boxVerify.setVisibility(View.VISIBLE);
                                 tvNumberVerify.setText(getNumberPhone());
-                                ev1.requestFocus();
+                                edtVerify_1.requestFocus();
 
                                 new Handler().postDelayed(new Runnable() {
                                     @Override
@@ -238,20 +236,8 @@ public class Login extends AppCompatActivity {
     }
 
     /** Edit Text Method*/
-    /*EditText Set Method*/
-    private void edtSetMethod(){
-        /*Method EditText Number*/
-        edtNumberMethod(edtNumber);
-        /*Method EditText Verify*/
-        edt1(ev1,ev2);
-        edt2(ev2,ev3,ev1);
-        edt3(ev3,ev4,ev2);
-        edt4(ev4,ev5,ev3);
-        edt5(ev5,ev4,ev1,ev2,ev3);
-    }
-    /*Number*/
-    private void edtNumberMethod(final EditText editText){
-        editText.addTextChangedListener(new TextWatcher() {
+    private void EditTextSetMethode(final EditText Verify_1 , final EditText Verify_2 , final EditText Verify_3, final EditText Verify_4, final EditText Verify_5, final EditText Number){
+        Number.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -260,7 +246,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if (editText.length() >=7){
+                if (Number.length() >=7){
                     btnNumber.setVisibility(View.VISIBLE);
                 }else {
                     btnNumber.setVisibility(View.GONE);
@@ -273,33 +259,30 @@ public class Login extends AppCompatActivity {
 
             }
         });
-    }
-    /*Verify*/
-    private void edt1(final EditText edt1 , final EditText edt2 ){
 
-        edt1.addTextChangedListener(new TextWatcher() {
+        Verify_1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d(tag.error, "beforeTextChanged: "+i+"|"+i1+"|"+i2);
 
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d(tag.error, "onTextChanged: "+i+"|"+i1+"|"+i2);
                 if (charSequence.length() == 1){
-                    edt2.requestFocus();
+                    Verify_2.requestFocus();
                 }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
+                Log.d(tag.error, "afterTextChanged: "+editable);
 
             }
         });
 
-    }
-    private void edt2(final EditText edt2 , final EditText edt3, final EditText edt1 ){
-
-        edt2.addTextChangedListener(new TextWatcher() {
+        Verify_2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -308,9 +291,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() == 1){
-                    edt3.requestFocus();
+                    Verify_3.requestFocus();
                 }else {
-                    edt1.requestFocus();
+                    Verify_1.requestFocus();
                 }
 
             }
@@ -322,10 +305,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-    }
-    private void edt3(final EditText edt3 , final EditText edt4, final EditText edt2 ){
-
-        edt3.addTextChangedListener(new TextWatcher() {
+        Verify_3.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -334,9 +314,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() == 1){
-                    edt4.requestFocus();
+                    Verify_4.requestFocus();
                 }else {
-                    edt2.requestFocus();
+                    Verify_2.requestFocus();
                 }
 
             }
@@ -347,10 +327,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-    }
-    private void edt4(final EditText edt4 , final EditText edt5, final EditText edt3 ){
-
-        edt4.addTextChangedListener(new TextWatcher() {
+        Verify_4.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -359,9 +336,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() == 1){
-                    edt5.requestFocus();
+                    Verify_5.requestFocus();
                 }else {
-                    edt3.requestFocus();
+                    Verify_3.requestFocus();
                 }
 
             }
@@ -372,31 +349,28 @@ public class Login extends AppCompatActivity {
             }
         });
 
-    }
-    private void edt5(final EditText edt5 , final EditText edt4 , final EditText edt1, final EditText edt2, final EditText edt3){
-
-        edt5.addTextChangedListener(new TextWatcher() {
+        Verify_5.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                final int edtLength = edt1.length()+edt2.length()+edt3.length()+edt4.length()+edt5.length();
+                final int edtLength = getUserVerfycationCode().length();
                 if (charSequence.length() == 1){
                     if (edtLength == 5){
                         step2_VerifyCodeSMS();
                     }else {
-                        edt1.getText().clear();
-                        edt2.getText().clear();
-                        edt3.getText().clear();
-                        edt4.getText().clear();
-                        edt5.getText().clear();
-                        edt1.requestFocus();
+                        Verify_1.getText().clear();
+                        Verify_2.getText().clear();
+                        Verify_3.getText().clear();
+                        Verify_4.getText().clear();
+                        Verify_5.getText().clear();
+                        Verify_1.requestFocus();
                         Toast.makeText(Login.this, "Pleas write Code "+edtLength, Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    edt4.requestFocus();
+                    Verify_4.requestFocus();
                 }
 
             }
@@ -406,7 +380,6 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
     }
 
 
@@ -414,23 +387,23 @@ public class Login extends AppCompatActivity {
     /*Find Id*/
     private void findViewById(){
         /*Number Phone*/
-        boxNumber=findViewById(R.id.boxNumberPhone);
-        tvTitleNumber=findViewById(R.id.tvTitleNumber);
-        edtNumber=findViewById(R.id.edtNumberPhone);
-        btnNumber=findViewById(R.id.btnNumberPhone);
-        tvResndVerify=findViewById(R.id.tvResndVerify);
+        boxNumber=findViewById(R.id.boxNumberPhone_login);
+        tvTitleNumber=findViewById(R.id.textViewTitleNumber_login);
+        edtWriteNumber =findViewById(R.id.edtNumberPhone_login);
+        btnNumber=findViewById(R.id.btnNumberPhone_login);
+        tvResndVerify=findViewById(R.id.tvResndVerify_login);
         /*Verify*/
-        boxVerify=findViewById(R.id.boxVerify);
-        tvTitleVerify=findViewById(R.id.tvTitleVerify);
-        tvNumberVerify=findViewById(R.id.tvNumberVerify);
-        ev1=findViewById(R.id.edt_verify1);
-        ev2=findViewById(R.id.edt_verify2);
-        ev3=findViewById(R.id.edt_verify3);
-        ev4=findViewById(R.id.edt_verify4);
-        ev5=findViewById(R.id.edt_verify5);
-        boxResend=findViewById(R.id.boxResendVerify);
-        tvTitleResend=findViewById(R.id.tvTitleResend);
-        tvResndVerify=findViewById(R.id.tvResndVerify);
+        boxVerify=findViewById(R.id.boxVerify_login);
+        tvTitleVerify=findViewById(R.id.textViewTitleVerify_login);
+        tvNumberVerify=findViewById(R.id.textViewNumberVerify_login);
+        edtVerify_1 =findViewById(R.id.edt_verify1_login);
+        edtVerify_2 =findViewById(R.id.edt_verify2_login);
+        edtVerify_3 =findViewById(R.id.edt_verify3_login);
+        edtVerify_4 =findViewById(R.id.edt_verify4_login);
+        edtVerify_5 =findViewById(R.id.edt_verify5_login);
+        boxResend=findViewById(R.id.boxResendVerify_login);
+        tvTitleResend=findViewById(R.id.tvTitleResend_login);
+        tvResndVerify=findViewById(R.id.tvResndVerify_login);
     }
     /*Show Snack Bar In Error Json*/
     private void writeNumberAfter120sec(){
@@ -447,8 +420,8 @@ public class Login extends AppCompatActivity {
 
             public void onFinish() {
                 btnNumber.setVisibility(View.VISIBLE);
-                edtNumber.getText().clear();
-                edtNumber.requestFocus();
+                edtWriteNumber.getText().clear();
+                edtWriteNumber.requestFocus();
             }
 
         }.start();
@@ -459,13 +432,17 @@ public class Login extends AppCompatActivity {
         final Snackbar snackbar = Snackbar.make(boxNumber, "Code Not Valid", Snackbar.LENGTH_INDEFINITE);
         snackbar.setActionTextColor(Color.WHITE);
         snackbar.setDuration(3000);
-        ev1.getText().clear();
-        ev2.getText().clear();
-        ev3.getText().clear();
-        ev4.getText().clear();
-        ev5.getText().clear();
-        ev1.requestFocus();
+        edtVerify_1.getText().clear();
+        edtVerify_2.getText().clear();
+        edtVerify_3.getText().clear();
+        edtVerify_4.getText().clear();
+        edtVerify_5.getText().clear();
+        edtVerify_1.requestFocus();
         snackbar.show();
     }
 
+    @Override
+    public void onClick(View view) {
+        Log.d(tag.error, "onFocusChange: "+view.getId());
+    }
 }

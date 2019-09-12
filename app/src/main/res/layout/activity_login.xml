@@ -5,13 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".Actitvty.Login">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true">
+
+
 
         <LinearLayout
             android:gravity="center"
@@ -31,16 +35,16 @@
 
             <!--Number Phone-->
             <LinearLayout
-                android:id="@+id/boxNumberPhone"
+                android:id="@+id/boxNumberPhone_login"
                 android:visibility="gone"
                 android:orientation="vertical"
-                android:nextFocusDown="@id/edtNumberPhone"
+                android:nextFocusDown="@id/edtNumberPhone_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
                 <TextView
-                    android:id="@+id/tvTitleNumber"
+                    android:id="@+id/textViewTitleNumber_login"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="#000"
@@ -50,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <EditText
-                    android:id="@+id/edtNumberPhone"
+                    android:id="@+id/edtNumberPhone_login"
                     android:maxLines="1"
                     android:maxLength="15"
                     android:digits="0123456789+"
@@ -70,7 +74,7 @@
 
                 <Button
                     android:visibility="gone"
-                    android:id="@+id/btnNumberPhone"
+                    android:id="@+id/btnNumberPhone_login"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
@@ -85,9 +89,9 @@
             <!--Verify Code-->
             <LinearLayout
                 android:visibility="gone"
-                android:id="@+id/boxVerify"
+                android:id="@+id/boxVerify_login"
                 android:orientation="vertical"
-                android:nextFocusDown="@id/edt_verify1"
+                android:nextFocusDown="@id/edt_verify1_login"
                 android:layout_width="match_parent"
                 android:gravity="center|top"
                 android:layout_height="wrap_content"
@@ -95,7 +99,7 @@
                 android:layout_marginRight="30dp">
 
                 <TextView
-                    android:id="@+id/tvTitleVerify"
+                    android:id="@+id/textViewTitleVerify_login"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="#000"
@@ -106,7 +110,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/tvNumberVerify"
+                    android:id="@+id/textViewNumberVerify_login"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="#000"
@@ -123,9 +127,9 @@
                     android:gravity="center|top"
                     android:layout_height="wrap_content">
                     <EditText
-                        android:id="@+id/edt_verify1"
+                        android:id="@+id/edt_verify1_login"
                         android:focusable="true"
-                        android:nextFocusDown="@id/edt_verify2"
+                        android:nextFocusDown="@id/edt_verify2_login"
                         android:maxLines="1"
                         android:maxLength="1"
                         android:digits="0123456789"
@@ -142,9 +146,9 @@
                         android:singleLine="true"
                         tools:ignore="RtlCompat" />
                     <EditText
-                        android:id="@+id/edt_verify2"
+                        android:id="@+id/edt_verify2_login"
                         android:focusable="true"
-                        android:nextFocusDown="@id/edt_verify3"
+                        android:nextFocusDown="@id/edt_verify3_login"
                         android:maxLines="1"
                         android:maxLength="1"
                         android:digits="0123456789"
@@ -161,9 +165,9 @@
                         android:singleLine="true"
                         tools:ignore="RtlCompat" />
                     <EditText
-                        android:id="@+id/edt_verify3"
+                        android:id="@+id/edt_verify3_login"
                         android:focusable="true"
-                        android:nextFocusDown="@id/edt_verify4"
+                        android:nextFocusDown="@id/edt_verify4_login"
                         android:maxLines="1"
                         android:maxLength="1"
                         android:digits="0123456789"
@@ -180,9 +184,9 @@
                         android:singleLine="true"
                         tools:ignore="RtlCompat" />
                     <EditText
-                        android:id="@+id/edt_verify4"
+                        android:id="@+id/edt_verify4_login"
                         android:focusable="true"
-                        android:nextFocusDown="@id/edt_verify5"
+                        android:nextFocusDown="@id/edt_verify5_login"
                         android:maxLines="1"
                         android:maxLength="1"
                         android:digits="0123456789"
@@ -199,7 +203,7 @@
                         android:singleLine="true"
                         tools:ignore="RtlCompat" />
                     <EditText
-                        android:id="@+id/edt_verify5"
+                        android:id="@+id/edt_verify5_login"
                         android:focusable="true"
                         android:maxLines="1"
                         android:maxLength="1"
@@ -220,7 +224,7 @@
 
                 <LinearLayout
                     android:visibility="gone"
-                    android:id="@+id/boxResendVerify"
+                    android:id="@+id/boxResendVerify_login"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -228,14 +232,14 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tvTitleResend"
+                        android:id="@+id/tvTitleResend_login"
                         android:textSize="15sp"
                         android:textAlignment="center"
                         android:text="Didn't you received any code?"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/tvResndVerify"
+                        android:id="@+id/tvResndVerify_login"
                         android:textColor="#045049"
                         android:textStyle="bold"
                         android:textSize="15sp"
@@ -255,5 +259,9 @@
         </LinearLayout>
     </ScrollView>
 
+    <ProgressBar
+        android:id="@+id/progress_login"
+        android:layout_width="250dp"
+        android:layout_height="25dp"/>
 
 </LinearLayout>
