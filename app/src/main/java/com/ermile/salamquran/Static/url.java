@@ -10,5 +10,7 @@ public class url {
     public static String enter = "https://salamquran.com/fa/api/v6/enter";
     public static String verify = "https://salamquran.com/fa/api/v6/enter/verify";
 
+    public static String calclutorHefzProgram = "https://salamquran.com/en/api/v6/hefz/time";
+
     public static String google = "https://google.com";
 }

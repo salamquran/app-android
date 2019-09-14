@@ -3,24 +3,24 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ermile.salamquran">
-    <!--dist-->
-    <dist:module dist:instant="true" />
-    <!--uses-permission-->
+    <!-- dist -->
+    <dist:module dist:instant="true" /> <!-- uses-permission -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--application-->
+
     <application
+        android:name=".Network.AppContoroler"
         android:allowBackup="true"
         android:icon="@drawable/logo_salamquran"
-        android:roundIcon="@drawable/logo_salamquran"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_salamquran"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
-        android:name=".Network.AppContoroler">
-        <!--activity-->
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
+        <activity android:name=".Actitvty.CalclutorHefzProgram"></activity>
+        <!-- activity -->
         <activity android:name=".Actitvty.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Actitvty.View.WebViewFetcher"/>
+        <activity android:name=".Actitvty.View.WebViewFetcher" />
         <activity android:name=".Actitvty.View.Video" />
         <activity android:name=".Actitvty.Look.LookFinger" />
         <activity android:name=".Actitvty.Look.LookNumber" />
@@ -45,19 +45,17 @@
         <activity android:name=".Actitvty.Login" />
         <activity android:name=".Actitvty.Intro" />
         <activity android:name=".Actitvty.Language" />
-        <activity android:name=".Actitvty.Main" />
-        <!--service-->
+        <activity android:name=".Actitvty.Main" /> <!-- service -->
         <service
             android:name=".Service.AudioForeground"
             android:enabled="true"
             android:exported="true"
-            tools:ignore="ExportedService">
-        </service>
+            tools:ignore="ExportedService"></service>
         <service
             android:name=".Service.AlarmBackground"
             android:enabled="true"
             android:exported="true"
-            tools:ignore="ExportedService">
-        </service>
+            tools:ignore="ExportedService"></service>
     </application>
+
 </manifest>

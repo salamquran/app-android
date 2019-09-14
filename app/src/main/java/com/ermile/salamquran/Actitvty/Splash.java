@@ -2,7 +2,9 @@ package com.ermile.salamquran.Actitvty;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +17,7 @@ import com.ermile.salamquran.Function.api.GetAndroidDetail;
 import com.ermile.salamquran.Function.api.SingUpUser;
 import com.ermile.salamquran.Function.api.Token;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.charset;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
@@ -26,17 +29,31 @@ import static com.ermile.salamquran.Function.Utility.SaveManager.appLanguage;
 
 public class Splash extends AppCompatActivity {
 
+    Handler handler = new Handler();
+    Runnable runnable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Log.d(tag.activity, "onCreate: Splash");
 
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(Splash.this, "Next", Toast.LENGTH_SHORT).show();
+                forceRunApp();
+            }
+        };
+
         try {
+            handler.postDelayed(runnable,10*1000);
             unZipnigDatabase();
             setAppLanguage();
         }
         catch (Exception error){
+            Toast.makeText(this, "Error Runnig", Toast.LENGTH_SHORT).show();
+            finish();
             Log.e(tag.ac_Splash, "onCreate: ", error);
             Log.e(tag.error, "onCreate: ", error);
             Log.e(tag.publicsh, "onCreate: ", error);
@@ -114,6 +131,7 @@ public class Splash extends AppCompatActivity {
         Boolean changeLanguageByUser = SaveManager.get(this).getboolen_appINFO().get(SaveManager.changeLanguageByUser);
             Log.d(tag.ac_Splash, "changeLanguageByUser: "+changeLanguageByUser);
         if (changeLanguageByUser){
+            handler.removeCallbacks(runnable);
             finish();
             startActivity( new Intent(this, Language.class));
         }else {
@@ -169,9 +187,26 @@ public class Splash extends AppCompatActivity {
         }, getApplicationContext(), Token);
     }
 
-
+    private void forceRunApp(){
+        try
+        {
+            String settingApp = ReadFile.FromStorage(getApplicationContext(),file.setting,format.json);
+            String AppLanguage = SaveManager.get(getApplicationContext()).getstring_appINFO().get(SaveManager.appLanguage);
+            if (settingApp.length() < 20)
+            {
+                String valueJson = ReadFile.FromAsset(getApplicationContext(),AppLanguage,format.json, charset.UTF8);
+                nextActivity();
+            }else {
+                nextActivity();
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void nextActivity(){
+        handler.removeCallbacks(runnable);
         Boolean intro_isChecked = SaveManager.get(this).getboolen_appINFO().get(SaveManager.introIsChacked);
         if (intro_isChecked){
             finish();

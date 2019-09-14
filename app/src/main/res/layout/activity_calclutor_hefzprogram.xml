@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Actitvty.CalclutorHefzProgram">
+
+
+    <EditText
+        android:id="@+id/edt_CalcultorHefz"
+        android:background="#2C6F6C6C"
+        android:layout_width="wrap_content"
+        android:minWidth="50dp"
+        android:textSize="40sp"
+        android:lines="0"
+        android:maxLines="1"
+        android:maxLength="15"
+        android:inputType="number"
+        android:hint="@string/_20"
+        android:padding="10dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="Submit"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_CalcultorHefz"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView_CalcultorHefz"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
