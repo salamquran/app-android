@@ -9,19 +9,33 @@
     tools:context=".Actitvty.CalclutorHefzProgram">
 
 
-    <EditText
-        android:id="@+id/edt_CalcultorHefz"
-        android:background="#2C6F6C6C"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:minWidth="50dp"
-        android:textSize="40sp"
-        android:lines="0"
-        android:maxLines="1"
-        android:maxLength="15"
-        android:inputType="number"
-        android:hint="@string/_20"
-        android:padding="10dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edt_CalcultorHefz"
+            android:background="#2C6F6C6C"
+            android:layout_width="wrap_content"
+            android:minWidth="50dp"
+            android:textSize="40sp"
+            android:lines="0"
+            android:maxLines="1"
+            android:maxLength="15"
+            android:inputType="number"
+            android:hint="@string/_20"
+            android:padding="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:text="@string/min_fa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 
     <Button
         android:text="Submit"

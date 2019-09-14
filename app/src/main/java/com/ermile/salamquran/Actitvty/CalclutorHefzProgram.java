@@ -47,11 +47,15 @@ public class CalclutorHefzProgram extends AppCompatActivity {
                         @Override
                         public void result_CalclutorHefzProgram(String yers, String month) {
                             editText.setBackgroundColor(Color.GREEN);
-                            if (!yers.equals("0")){
-                                textView.setText("اگر روزانه "+getEditText()+" دقیقه از قرآن رو حفظ کنی در"+ yers+" سال و "+month+" ماه حافظ کل قرآن میشی" );
+                            if (!yers.equals("0") && !month.equals("0")){
+                                textView.setText("اگر روزانه "+getEditText()+" دقیقه از قرآن رو حفظ کنی در "+ yers+" سال و "+month+" ماه حافظ کل قرآن میشی " );
                             }
-                            else {
-                                textView.setText("اگر روزانه "+getEditText()+" دقیقه از قرآن رو حفظ کنی در"+month+" ماه حافظ کل قرآن میشی" );
+                            if (!yers.equals("0") && month.equals("0")){
+                                textView.setText("اگر روزانه "+getEditText()+" دقیقه از قرآن رو حفظ کنی در "+ yers+" سال حافظ کل قرآن میشی ");
+
+                            }
+                            if (yers.equals("0") && !month.equals("0")){
+                                textView.setText("اگر روزانه "+getEditText()+" دقیقه از قرآن رو حفظ کنی در "+month+" ماه حافظ کل قرآن میشی " );
                             }
 
                         }
