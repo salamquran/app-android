@@ -6,11 +6,12 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ermile.salamquran.Function.Utility.CheckVersion;
+import com.ermile.salamquran.Function.Utility.ReadFile;
+import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Function.Utility.UnZipFile;
 import com.ermile.salamquran.Function.Utility.WriteFile;
 import com.ermile.salamquran.Function.api.GetAndroidDetail;
-import com.ermile.salamquran.Function.Utility.CheckVersion;
-import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Function.api.SingUpUser;
 import com.ermile.salamquran.Function.api.Token;
 import com.ermile.salamquran.R;
@@ -18,6 +19,7 @@ import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
 
+import java.io.IOException;
 import java.util.Locale;
 
 import static com.ermile.salamquran.Function.Utility.SaveManager.appLanguage;
@@ -44,11 +46,15 @@ public class Splash extends AppCompatActivity {
 
 
     private void unZipnigDatabase(){
-        Boolean file_isUnZiping = SaveManager.get(getApplicationContext()).getboolen_appINFO().get(SaveManager.fileIsUnZiping);
-        Log.d(tag.ac_Splash, "onCreate: file is UnZiping: "+file_isUnZiping);
-        if (!file_isUnZiping){
+        try {
+            ReadFile.FromStorage(this,file.list_juz,format.json);
+            ReadFile.FromStorage(this,file.list_sure,format.json);
+            Log.d(tag.ac_Splash, "onCreate: file is UnZiping: true");
+        } catch (IOException e) {
             new UnZipFile(this, file.comperes_File, format.zip);
-            SaveManager.get(this).change_FileUnZip(true);
+            Log.d(tag.ac_Splash, "onCreate: file is UnZiping: false Extrating...");
+            e.printStackTrace();
+
         }
     }
 

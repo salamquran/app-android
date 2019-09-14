@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.ermile.salamquran.Actitvty.View.WebViewFetcher;
 import com.ermile.salamquran.Fragmnet.LMS;
 import com.ermile.salamquran.Fragmnet.QuraList.QuranList;
 import com.ermile.salamquran.Fragmnet.Setting;
@@ -107,7 +108,9 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
                 fragment = new LMS();
                 break;
             case R.id.nav_meg:
-                startActivity(new Intent(this,Login.class));
+                Intent test = new Intent(this, WebViewFetcher.class);
+                test.putExtra("url","https://salamquran.com/fa");
+                startActivity(test);
                 break;
             case R.id.nav_quran:
                 fragment= new QuranList();

@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Actitvty.View.WebView"/>
+        <activity android:name=".Actitvty.View.WebViewFetcher"/>
         <activity android:name=".Actitvty.View.Video" />
         <activity android:name=".Actitvty.Look.LookFinger" />
         <activity android:name=".Actitvty.Look.LookNumber" />

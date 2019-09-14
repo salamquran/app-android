@@ -21,20 +21,14 @@ public class WriteFile {
             fileOutputStream.write(Values.getBytes());
             fileOutputStream.close();
             Log.d(tag.FileManager, "WriteFile: File: " + file + "\n value: "+Values);
-            Log.d(tag.function, "WriteFile: File: " + file + "\n value: "+Values);
-            Log.d(tag.ac_Splash, "WriteFile: File: " + file + "\n value: "+Values);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Log.e(tag.error, "WriteFile: ",e );
             Log.e(tag.FileManager, "WriteFile: ",e );
-            Log.e(tag.function, "WriteFile: ",e );
-            Log.e(tag.ac_Splash, "WriteFile: ",e );
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(tag.error, "WriteFile: ",e );
             Log.e(tag.FileManager, "WriteFile: ",e );
-            Log.e(tag.function, "WriteFile: ",e );
-            Log.e(tag.ac_Splash, "WriteFile: ",e );
         }
     }
 }

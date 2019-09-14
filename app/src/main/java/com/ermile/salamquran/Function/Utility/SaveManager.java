@@ -27,8 +27,6 @@ public class SaveManager extends ContextWrapper {
 
 
     /** App Info */
-    public static final String fileIsUnZiping = "fileIsUnZiping";
-
     public static final String introIsChacked = "introIsChacked";
 
     public static final String appLanguage = "appLanguage";
@@ -72,10 +70,6 @@ public class SaveManager extends ContextWrapper {
         editor.putBoolean(changeLanguageByUser, ChangeLanguageByUser);
         editor.apply();
     }
-    public void change_FileUnZip(Boolean FileIsUnZiping) {
-        editor.putBoolean(fileIsUnZiping, FileIsUnZiping);
-        editor.apply();
-    }
 
 
 
@@ -84,7 +78,6 @@ public class SaveManager extends ContextWrapper {
         hashMap.put(introIsChacked, sharedPreferences.getBoolean(introIsChacked, false ));
         hashMap.put(hasNewVersion, sharedPreferences.getBoolean(hasNewVersion, false ));
         hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false ));
-        hashMap.put(fileIsUnZiping, sharedPreferences.getBoolean(fileIsUnZiping, false ));
 
         hashMap.put(changeLanguageByUser, sharedPreferences.getBoolean(changeLanguageByUser, true ));
         return hashMap;

@@ -23,9 +23,7 @@ public class ReadFile {
             text.append(line);
         }
         bufferedReader.close();
-        Log.d(tag.function, "ReadFile: "+text);
         Log.d(tag.FileManager, "ReadFile: "+text);
-        Log.d(tag.ac_Splash, "ReadFile: "+text);
         return text.toString();
 
     }
@@ -39,16 +37,12 @@ public class ReadFile {
             while ((line = bufferedReader.readLine()) != null) {
                 text.append(line);
             }
-            Log.d(tag.function, "LoadFromAsset: Value: \n" +text.toString());
             Log.d(tag.FileManager, "LoadFromAsset: Value: \n" +text.toString());
-            Log.d(tag.ac_Splash, "Load Json File: "+langName+format+" From Asset!");
             bufferedReader.close();
             return text.toString();
         } catch (IOException ex) {
-            Log.e(tag.function, "LoadFromAsset: ",ex );
             Log.e(tag.FileManager, "LoadFromAsset: ",ex );
             Log.e(tag.error, "LoadFromAsset: ",ex );
-            Log.e(tag.ac_Splash, "LoadFromAsset: ",ex );
             ex.printStackTrace();
             return null;
         }
