@@ -37,6 +37,4 @@ dependencies {
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
     implementation 'com.duolingo.open:rtl-viewpager:2.0.0'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
-
-    implementation 'cn.jzvd:jiaozivideoplayer:7.0.5'
 }
