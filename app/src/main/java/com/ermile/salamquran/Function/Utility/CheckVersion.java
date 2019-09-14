@@ -37,7 +37,7 @@ public class CheckVersion {
             String update_title = version.getString("update_title");
             String update_desc = version.getString("update_desc");
             if (value.versionCode <= Depver){
-                Log.d(tag.ac_Splash, "deprecated Version "+value.versionCode+" = "+Depver);
+                Log.d(tag.function, "deprecated Version "+value.versionCode+" = "+Depver);
                 SaveManager.get(context).change_deprecatedVersion(true);
                 Intent openURL = new Intent ( Intent.ACTION_VIEW );
                 openURL.setData (Uri.parse( urlUpdate ));
@@ -58,7 +58,7 @@ public class CheckVersion {
     /*Check Update Version*/
     private static void updateVersion(Context context,int UpdateVersion){
         if (value.versionCode < UpdateVersion){
-            Log.d(tag.ac_Splash, "Update Version "+value.versionCode+" = "+UpdateVersion);
+            Log.d(tag.function, "Update Version "+value.versionCode+" = "+UpdateVersion);
             SaveManager.get(context).change_hasNewVersion(true);
         }
         else {

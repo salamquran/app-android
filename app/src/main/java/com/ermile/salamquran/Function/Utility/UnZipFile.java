@@ -62,9 +62,7 @@ public class UnZipFile {
             zis.closeEntry();
             zis.close();
         } catch (IOException ex) {
-            Log.e(tag.function, "UnZipFile: ",ex );
             Log.e(tag.FileManager, "UnZipFile: ",ex );
-            Log.e(tag.ac_Splash, "UnZipFile: ",ex );
             Log.e(tag.error, "UnZipFile: ",ex );
         }
     }

@@ -21,7 +21,7 @@ import java.io.IOException;
 public class GetAndroidDetail {
 
     public static void GetJson(final Context context, final JsonLocalListener jsonLocalListener){
-        Log.d(tag.ac_Splash, "GetJson: ");
+        Log.d(tag.function, "GetAndroidDetail > GetJson");
         StringRequest get_local = new StringRequest(Request.Method.GET, url.setting, new Response.Listener<String>()
         {
             @Override
