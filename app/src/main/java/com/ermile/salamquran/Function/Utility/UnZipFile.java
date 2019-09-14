@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.FileManager;
+package com.ermile.salamquran.Function.Utility;
 
 import android.content.Context;
 import android.content.res.AssetManager;

@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.FileManager;
+package com.ermile.salamquran.Function.Utility;
 
 
 import android.content.Context;
@@ -10,9 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class WriteFile {
 

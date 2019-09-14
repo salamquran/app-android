@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.log;
 

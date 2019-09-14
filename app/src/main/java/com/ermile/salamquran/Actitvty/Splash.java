@@ -6,16 +6,13 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ermile.salamquran.Function.FileManager.UnZipFile;
-import com.ermile.salamquran.Function.FileManager.WriteFile;
-import com.ermile.salamquran.Function.GetJsonLocal.JsonLocalFetcher;
-import com.ermile.salamquran.Function.GetJsonLocal.JsonLocalListener;
-import com.ermile.salamquran.Function.GetToken.TokenFetcher;
-import com.ermile.salamquran.Function.GetToken.TokenListener;
-import com.ermile.salamquran.Function.SaveManager;
-import com.ermile.salamquran.Function.SingUpTemp.SingUpTamp;
-import com.ermile.salamquran.Function.SingUpTemp.SingUpTampListener;
-import com.ermile.salamquran.Function.inApp.CheckVersion;
+import com.ermile.salamquran.Function.Utility.UnZipFile;
+import com.ermile.salamquran.Function.Utility.WriteFile;
+import com.ermile.salamquran.Function.api.GetAndroidDetail;
+import com.ermile.salamquran.Function.Utility.CheckVersion;
+import com.ermile.salamquran.Function.Utility.SaveManager;
+import com.ermile.salamquran.Function.api.SingUpUser;
+import com.ermile.salamquran.Function.api.Token;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
@@ -23,7 +20,7 @@ import com.ermile.salamquran.Static.tag;
 
 import java.util.Locale;
 
-import static com.ermile.salamquran.Function.SaveManager.appLanguage;
+import static com.ermile.salamquran.Function.Utility.SaveManager.appLanguage;
 
 public class Splash extends AppCompatActivity {
 
@@ -85,7 +82,7 @@ public class Splash extends AppCompatActivity {
         }
     }
     private void setSettingApp(){
-        JsonLocalFetcher.GetJson(this, new JsonLocalListener() {
+        GetAndroidDetail.GetJson(this, new GetAndroidDetail.JsonLocalListener() {
             @Override
             public void onGetJson_Online(String ResponeOnline) {
                 new WriteFile(getApplicationContext(),file.setting,format.json,ResponeOnline);
@@ -114,8 +111,8 @@ public class Splash extends AppCompatActivity {
             finish();
             startActivity( new Intent(this, Language.class));
         }else {
-            if (!new CheckVersion().Deprecated(this)){
-                singUpTamp();
+            if (!CheckVersion.Deprecated(this)){
+                singUpTemp();
             }
         }
     }
@@ -131,9 +128,9 @@ public class Splash extends AppCompatActivity {
         Log.d(tag.ac_Splash, "user Is Added usercode: "+usercode+" |zonID: "+zoneid+" |apikey: "+apikey);
         return true;
     }
-    private void singUpTamp(){
+    private void singUpTemp(){
         if ( !userIsAdded() ) {
-            TokenFetcher.GetToken(new TokenListener() {
+            Token.GetToken(new Token.TokenListener() {
                 @Override
                 public void onTokenRecieved(String token) {
                     addUserTamp(token);
@@ -151,7 +148,7 @@ public class Splash extends AppCompatActivity {
         }
     }
     private void addUserTamp(String Token){
-        SingUpTamp.Sining(new SingUpTampListener() {
+        SingUpUser.Singing(new SingUpUser.SingUpTampListener() {
             @Override
             public void UserAddToServer(Boolean UserAddToServer) {
                 Log.d(tag.ac_Splash, "UserAddToServer: "+UserAddToServer);

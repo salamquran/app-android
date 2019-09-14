@@ -1,12 +1,10 @@
-package com.ermile.salamquran.Function.inApp;
+package com.ermile.salamquran.Function.Utility;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
-import com.ermile.salamquran.Function.FileManager.ReadFile;
-import com.ermile.salamquran.Function.SaveManager;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
@@ -18,10 +16,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 public class CheckVersion {
-    Context context;
-    public Boolean Deprecated(Context context){
+    public static Boolean Deprecated(Context context){
         try {
-            String settingApp = ReadFile.ReadFile(context, file.setting, format.json);
+            String settingApp = ReadFile.FromStorage(context, file.setting, format.json);
             JSONObject respone = new JSONObject(settingApp);
             JSONObject result = respone.getJSONObject("result");
             JSONObject url = result.getJSONObject("url");
@@ -59,7 +56,7 @@ public class CheckVersion {
     }
 
     /*Check Update Version*/
-    private void updateVersion(Context context,int UpdateVersion){
+    private static void updateVersion(Context context,int UpdateVersion){
         if (value.versionCode < UpdateVersion){
             Log.d(tag.ac_Splash, "Update Version "+value.versionCode+" = "+UpdateVersion);
             SaveManager.get(context).change_hasNewVersion(true);

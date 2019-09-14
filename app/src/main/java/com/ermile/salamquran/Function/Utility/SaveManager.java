@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function;
+package com.ermile.salamquran.Function.Utility;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

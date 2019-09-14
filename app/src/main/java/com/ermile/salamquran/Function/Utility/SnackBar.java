@@ -1,13 +1,10 @@
-package com.ermile.salamquran.Function.inApp;
+package com.ermile.salamquran.Function.Utility;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.View;
-import android.widget.LinearLayout;
 
-import com.ermile.salamquran.R;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SnackBar {

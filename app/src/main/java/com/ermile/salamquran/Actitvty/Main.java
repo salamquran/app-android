@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.ermile.salamquran.Fragmnet.LMS;
 import com.ermile.salamquran.Fragmnet.QuraList.QuranList;
 import com.ermile.salamquran.Fragmnet.Setting;
-import com.ermile.salamquran.Function.FileManager.ReadFile;
+import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
@@ -65,7 +65,7 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
 
     private void setTitleBottomNav(){
         try {
-            String json = ReadFile.ReadFile(this, file.setting, format.json);
+            String json = ReadFile.FromStorage(this, file.setting, format.json);
             JSONObject respone = new JSONObject(json);
             JSONObject result = respone.getJSONObject("result");
             JSONArray navigation = result.getJSONArray("navigation");

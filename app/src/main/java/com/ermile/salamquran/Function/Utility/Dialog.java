@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.inApp;
+package com.ermile.salamquran.Function.Utility;
 
 import android.app.Activity;
 import android.content.Context;

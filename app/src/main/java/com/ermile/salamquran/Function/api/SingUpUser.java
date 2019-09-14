@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.SingUpTemp;
+package com.ermile.salamquran.Function.api;
 
 import android.content.Context;
 import android.os.Build;
@@ -9,7 +9,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.Static.log;
 import com.ermile.salamquran.Static.tag;
@@ -23,9 +23,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SingUpTamp {
+public class SingUpUser {
 
-    public static void Sining(final SingUpTampListener singUpTampListener, final Context context, final String token){
+    public static void Singing(final SingUpTampListener singUpTampListener, final Context context, final String token){
         /*Get Info Device*/
         final String model = Build.MODEL;
         final String serial = Build.SERIAL;
@@ -105,5 +105,11 @@ public class SingUpTamp {
 
         };
         AppContoroler.getInstance().addToRequestQueue(post_user_add);
+    }
+
+    public interface SingUpTampListener {
+        void UserAddToServer(Boolean UserAddToServer );
+
+        void FiledUserAdd(Boolean FiledUserAdd);
     }
 }

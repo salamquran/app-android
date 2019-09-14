@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ermile.salamquran.Adaptor.QuranListAdaptor;
-import com.ermile.salamquran.Function.FileManager.ReadFile;
+import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.Item.item_QuranList;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
@@ -60,7 +60,7 @@ public class JuzList extends Fragment {
     /*Get Value*/
     private void getHezb(){
         try {
-            String Json_text = ReadFile.ReadFile(Objects.requireNonNull(getContext()), file.list_juz, format.json);
+            String Json_text = ReadFile.FromStorage(Objects.requireNonNull(getContext()), file.list_juz, format.json);
             JSONObject json_objet  = new JSONObject(Json_text);
             JSONObject result = json_objet.getJSONObject("result");
 

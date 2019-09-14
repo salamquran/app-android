@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ermile.salamquran.Adaptor.QuranListAdaptor;
-import com.ermile.salamquran.Function.FileManager.ReadFile;
+import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.Item.item_QuranList;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
@@ -61,7 +61,7 @@ public class SureList extends Fragment {
     /*Get Value*/
     private void getSure(){
         try {
-            String Json_text = ReadFile.ReadFile(getContext(), file.list_sure, format.json);
+            String Json_text = ReadFile.FromStorage(getContext(), file.list_sure, format.json);
             JSONObject json_objet  = new JSONObject(Json_text);
             JSONArray result = json_objet.getJSONArray("result");
             for (int i = 0 ; i<= result.length(); i++) {

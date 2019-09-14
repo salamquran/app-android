@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ermile.salamquran.Actitvty.Splash;
-import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Item.item_Language;
 import com.ermile.salamquran.R;
 

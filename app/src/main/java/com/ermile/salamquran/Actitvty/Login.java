@@ -22,9 +22,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.ermile.salamquran.Function.GetToken.TokenFetcher;
-import com.ermile.salamquran.Function.GetToken.TokenListener;
-import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.Utility.SaveManager;
+import com.ermile.salamquran.Function.api.Token;
 import com.ermile.salamquran.Network.AppContoroler;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.tag;
@@ -88,7 +87,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     /** Connection To Server*/
     /*Writ Number Phone*/
     private void step1_VerifyNumber(){
-        TokenFetcher.GetToken(new TokenListener() {
+        Token.GetToken(new Token.TokenListener() {
             @Override
             public void onTokenRecieved(final String token) {
                 StringRequest getVerify = new StringRequest(Request.Method.POST, url.enter, new Response.Listener<String>(){
@@ -161,7 +160,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     /*Writ Verify Code*/
     private void step2_VerifyCodeSMS(){
-        TokenFetcher.GetToken(new TokenListener() {
+        Token.GetToken(new Token.TokenListener() {
             @Override
             public void onTokenRecieved(final String token) {
                 StringRequest getVerify = new StringRequest(Request.Method.POST, url.verify, new Response.Listener<String>(){

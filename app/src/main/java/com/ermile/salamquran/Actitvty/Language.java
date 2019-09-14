@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ermile.salamquran.Adaptor.LanguageAdaptor;
-import com.ermile.salamquran.Function.FileManager.ReadFile;
-import com.ermile.salamquran.Function.SaveManager;
+import com.ermile.salamquran.Function.Utility.ReadFile;
+import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Item.item_Language;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
@@ -52,7 +52,7 @@ public class Language extends AppCompatActivity {
     void GetLanguage() {
         String appLanguage = SaveManager.get(getApplicationContext()).getstring_appINFO().get(SaveManager.appLanguage);
         try {
-            String Json_text = ReadFile.ReadFile(this,file.setting, format.json);
+            String Json_text = ReadFile.FromStorage(this,file.setting, format.json);
             JSONObject jsonOffline = new JSONObject(Json_text);
             boolean ok = jsonOffline.getBoolean("ok");
             JSONObject result = jsonOffline.getJSONObject("result");

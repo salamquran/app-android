@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Function.GetToken;
+package com.ermile.salamquran.Function.api;
 
 import android.util.Log;
 
@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TokenFetcher {
+public class Token {
 
     public static void GetToken(final TokenListener tokenListener) {
 
@@ -71,6 +71,12 @@ public class TokenFetcher {
         };
         AppContoroler.getInstance().addToRequestQueue(getToken);
 
+    }
+
+    public interface TokenListener {
+        void onTokenRecieved(String token);
+
+        void onTokenFailed(String error);
     }
 }
 
