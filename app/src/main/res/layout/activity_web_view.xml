@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Actitvty.View.WebView">
+    tools:context=".Actitvty.View.WebViewFetcher">
 
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/tollbar_WebView"

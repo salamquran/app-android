@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Actitvty.View;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,9 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.setNextMediaPlayer(mediaPlayer);
+        
 
     }
 }

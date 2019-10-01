@@ -1,5 +1,6 @@
 package com.ermile.salamquran.Actitvty.View;
 
+        import android.annotation.SuppressLint;
         import android.os.Bundle;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -26,6 +27,7 @@ public class WebViewFetcher extends AppCompatActivity {
     WebView webView_object;
 
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,7 @@ public class WebViewFetcher extends AppCompatActivity {
         if (URL != null){
             swipeRefreshLayout.setRefreshing(true);
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @SuppressLint("NewApi")
                 @Override
                 public void onRefresh() {
                     webView_object.loadUrl(webView_object.getUrl(), sernd_headers);

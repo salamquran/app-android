@@ -56,6 +56,7 @@ public class SaveManager extends ContextWrapper {
         editor.putBoolean(hasNewVersion, HasNewVersion);
         editor.apply();
     }
+    @SuppressLint("NewApi")
     public void change_deprecatedVersion(Boolean Deprecated_Version) {
         editor.putBoolean(deprecatedVersion, Deprecated_Version);
         editor.apply();

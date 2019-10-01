@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
@@ -120,7 +121,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             if (linearLayout_Line != null){
                 TextQuran_textview = new TextView(view.getContext());
                 TextQuran_textview.setTextColor(Color.parseColor("#000000"));
-                TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                }
+
                 TextQuran_textview.setGravity(View.TEXT_ALIGNMENT_CENTER);
                 linearLayout_Line.addView(TextQuran_textview);
                 TextQuran_textview.setTag(index);
@@ -133,6 +137,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 public boolean onLongClick(View view) {
 
                     for (int rq=0; rq<= background_slide.getChildCount();rq++){
+
                         LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
                         if (rowQuran != null){
                             for (int wq=0; wq <= rowQuran.getChildCount(); wq++){
@@ -150,25 +155,15 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             });
 
 
-            TextQuran_textview.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    for (int i = 0; i < background_slide.getChildCount(); i++) {
-
-                    }
-                }
-            });
-
-
 
             switch (page){
                 case 1:
-                    TextQuran_textview.setTextSize(65f);
+                    TextQuran_textview.setTextSize(35f);
                     TextQuran_textview.setText(Html.fromHtml(code).toString());
                     TextQuran_textview.setTypeface(font_p1);
                     break;
                 case 5:
-                    TextQuran_textview.setTextSize(45f);
+                    TextQuran_textview.setTextSize(25f);
                     TextQuran_textview.setText(Html.fromHtml(code).toString());
                     TextQuran_textview.setTypeface(font_p5);
                     break;
@@ -178,7 +173,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     }else {
                         TextQuran_textview.setText(" ( "+aya+" ) ");
                     }
-                    TextQuran_textview.setTextSize(30f);
+                    TextQuran_textview.setTextSize(12f);
                     TextQuran_textview.setTypeface(font_nabi);
                     break;
             }
