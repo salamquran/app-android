@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Build;
 import android.text.Html;
 import android.util.Log;
@@ -13,12 +14,15 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.Item.itemQuran.ayat;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
@@ -62,6 +66,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         final View view = inflater.inflate(R.layout.item_quran , container , false);
         final LinearLayout background_slide = view.findViewById(R.id.background_slide);
 
+        final ImageView cutPage_R = view.findViewById(R.id.cutPage_R);
+        final ImageView cutPage_L = view.findViewById(R.id.cutPage_L);
+        final ImageView spacePage_L = view.findViewById(R.id.spacePage_L);
+        final ImageView spacePage_R = view.findViewById(R.id.spacePage_R);
+
         LinearLayout linearLayout_Line = null;
         TextView TextQuran_textview = null ;
         View view1 = null;
@@ -72,6 +81,15 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         Typeface font_p1 = ResourcesCompat.getFont(context, R.font.p1);
         Typeface font_p5 = ResourcesCompat.getFont(context, R.font.p5);
         final Typeface font_bismellah =ResourcesCompat.getFont(context, R.font.bismillah);
+
+        if (even_odd.isOdd(position)){
+            cutPage_R.setVisibility(View.VISIBLE);
+            spacePage_L.setVisibility(View.VISIBLE);
+        }
+        else {
+            cutPage_L.setVisibility(View.VISIBLE);
+            spacePage_R.setVisibility(View.VISIBLE);
+        }
 
 
 
@@ -179,6 +197,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             }
 
 
+
         }
         pageData.close();
         mydb.close();
@@ -189,6 +208,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView( (LinearLayout) object);
+        container.removeView( (RelativeLayout) object);
     }
+
 }
