@@ -61,10 +61,12 @@
     <!--Quran-->
     <LinearLayout
         android:id="@+id/background_slide"
+        android:gravity="center"
         android:textDirection="rtl"
         android:layoutDirection="rtl"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </RelativeLayout>

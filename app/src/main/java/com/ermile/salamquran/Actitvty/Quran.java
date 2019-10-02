@@ -1,12 +1,14 @@
 package com.ermile.salamquran.Actitvty;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,17 +22,16 @@ import com.ermile.salamquran.Item.itemQuran.ayat;
 import com.ermile.salamquran.Item.item_PlayAudio;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
-import com.ermile.salamquran.Service.AudioForeground;
 import com.ermile.salamquran.Static.tag;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
 
-    private TextView number_pageQuran , number_juzQuran,title_surahQuran;
+    TextView title_juz ,
+             title_vars;
 
 
     RtlViewPager viewpager;
@@ -47,20 +48,61 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quran);
 
+
+        // Chang ID XML
+        title_juz = findViewById(R.id.top_title_juz);
+        title_vars = findViewById(R.id.top_title_vers);
+        viewpager = findViewById(R.id.view_pagers); // view page in XML
 
         stop = findViewById(R.id.audio_stop);
         play = findViewById(R.id.audio_play);
 
+
+
+
+
+
+
+
+
+
+        final LinearLayout mediaContoroler = findViewById(R.id.media_contoroler);
+
+        title_juz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mediaContoroler.getTranslationY() < 20){
+                    Toast.makeText(Quran.this, ""+mediaContoroler.getTranslationY(), Toast.LENGTH_SHORT).show();
+                    mediaContoroler.animate().translationY(160).setDuration(300);
+                }
+                else {
+                    mediaContoroler.animate().translationY(0).setDuration(300);
+
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
 
 
-        // Chang ID XML
-        number_pageQuran = findViewById(R.id.number_pageQuran);
-        number_juzQuran = findViewById(R.id.number_juzQuran);
-        title_surahQuran = findViewById(R.id.title_surahQuran);
-        viewpager = findViewById(R.id.view_pagers); // view page in XML
+
 
         // set
         QuranAdaptor PagerAdapter = new QuranAdaptor(getApplicationContext()); // add Adapter (in line 55)

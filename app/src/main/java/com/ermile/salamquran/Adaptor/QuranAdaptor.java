@@ -77,10 +77,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         int testLine =0;
 
-        Typeface font_nabi= ResourcesCompat.getFont(context, R.font.font_nabi);
-        Typeface font_p1 = ResourcesCompat.getFont(context, R.font.p1);
-        Typeface font_p5 = ResourcesCompat.getFont(context, R.font.p5);
-        final Typeface font_bismellah =ResourcesCompat.getFont(context, R.font.bismillah);
 
         if (even_odd.isOdd(position)){
             cutPage_R.setVisibility(View.VISIBLE);
@@ -101,6 +97,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
             final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
             String charType = pageData.getString(pageData.getColumnIndex("char_type"));
+            String class_name = pageData.getString(pageData.getColumnIndex("class_name"));
             int line = pageData.getInt(pageData.getColumnIndex("line"));
             int page = pageData.getInt(pageData.getColumnIndex("page"));
             int positions = pageData.getInt(pageData.getColumnIndex("position"));
@@ -175,24 +172,16 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
 
             switch (page){
-                case 1:
-                    TextQuran_textview.setTextSize(35f);
-                    TextQuran_textview.setText(Html.fromHtml(code).toString());
-                    TextQuran_textview.setTypeface(font_p1);
-                    break;
-                case 5:
-                    TextQuran_textview.setTextSize(25f);
-                    TextQuran_textview.setText(Html.fromHtml(code).toString());
-                    TextQuran_textview.setTypeface(font_p5);
-                    break;
                 default:
-                    if (text != null){
-                        TextQuran_textview.setText(" "+text+" ");
+                    TextQuran_textview.setTextSize(21.5f);
+                    Typeface font = Typeface.createFromAsset(context.getAssets(), "font/"+class_name+".ttf");
+                    TextQuran_textview.setTypeface(font);
+                    TextQuran_textview.setText(Html.fromHtml(code).toString());
+                    /*if (text != null){
+                        TextQuran_textview.setText(Html.fromHtml(code).toString());
                     }else {
                         TextQuran_textview.setText(" ( "+aya+" ) ");
-                    }
-                    TextQuran_textview.setTextSize(12f);
-                    TextQuran_textview.setTypeface(font_nabi);
+                    }*/
                     break;
             }
 
