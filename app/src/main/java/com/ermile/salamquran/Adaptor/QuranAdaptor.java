@@ -136,7 +136,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 @Override
                 public boolean onLongClick(View view) {
 
-                    for (int rq=0; rq<= background_slide.getChildCount();rq++){
+                    /*for (int rq=0; rq<= background_slide.getChildCount();rq++){
 
                         LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
                         if (rowQuran != null){
@@ -149,7 +149,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                                 }
                             }
                         }
-                    }
+                    }*/
                     return true;
                 }
             });

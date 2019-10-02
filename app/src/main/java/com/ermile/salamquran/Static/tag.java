@@ -4,6 +4,7 @@ public class tag {
     private static String a = "";
     public static String activity = a+"activity";
     public static String function = a+"function";
+    public static String carateURL = a+"carateURL";
     public static String error = a+"ErRoR";
     public static String publicsh = a+"public";
     public static String important = a+"important";

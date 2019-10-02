@@ -8,15 +8,22 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.IBinder;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.ermile.salamquran.Actitvty.Main;
+import com.ermile.salamquran.Actitvty.Quran;
 import com.ermile.salamquran.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AudioForeground extends Service {
+
+
 
 
     /*Notification Static Value*/
@@ -28,6 +35,7 @@ public class AudioForeground extends Service {
             .setSmallIcon(R.drawable.logo_xml);
     NotificationManagerCompat notificationManager ;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -36,6 +44,10 @@ public class AudioForeground extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
+
+
+
         /*Crate Notification in start*/
         createNotificationChannel();
         /*Intent go to app by toch*/
