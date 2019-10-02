@@ -49,7 +49,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quran);
 
-        mediaPlayer = new MediaPlayer();
 
         stop = findViewById(R.id.audio_stop);
         play = findViewById(R.id.audio_play);
@@ -81,10 +80,10 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
                 place =position;
 
-                if (mediaPlayer != null && !mediaPlayer.isPlaying()){
+                if (mediaPlayer == null ){
                     playAudioList  = new ArrayList<>();
                     SQLiteDatabase mydb = new MyDatabase(getApplicationContext()).getWritableDatabase();
-                    Cursor pageData = mydb.rawQuery("select * from quran_word where char_type = 'end'and page ="+position, null);
+                    Cursor pageData = mydb.rawQuery("select * from quran_word where char_type = 'end' and page ="+position, null);
 
                     while (pageData.moveToNext()){
                         int page = pageData.getInt(pageData.getColumnIndex("page"));
@@ -111,6 +110,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stopPlaying();
                 startPlaying();
             }
         });
@@ -118,12 +118,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i=0;
-                if (mediaPlayer != null && mediaPlayer.isPlaying()){
-                    mediaPlayer.stop();
-                    mediaPlayer.release();
-                }
-                stopService(new Intent(getApplication(), AudioForeground.class));
+                stopPlaying();
             }
         });
 
@@ -133,17 +128,30 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     int i = 0;
 
     private void startPlaying() {
-        mediaPlayer = new MediaPlayer();
         try {
             if (playAudioList.get(i).getUrl() != null){
+                mediaPlayer = new MediaPlayer();
                 mediaPlayer.setDataSource(playAudioList.get(i).getUrl());
                 mediaPlayer.prepare();
+                mediaPlayer.start();
                 i++;
             }
+
         } catch (IOException ignored) {
         }
-        mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(this);
+    }
+
+
+    private void stopPlaying() {
+        if (mediaPlayer !=null){
+            i = 0;
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }else {
+            i=0;
+        }
     }
 
     @Override
@@ -156,19 +164,25 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
         }
         else {
-            playAudioList.size();
-            if (playAudioList.get(i-1).getPage() != 604){
-                viewpager.setCurrentItem(playAudioList.get(i-1).getPage()+1);
-                i = 0;
+            if (playAudioList.get(0).getPage() != 604){
+                stopPlaying();
+                viewpager.setCurrentItem(playAudioList.get(0).getPage()+1);
                 startPlaying();
             }
             else{
-                i = 0;
+                stopPlaying();
                 Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
             } 
             
         }
         Log.d(tag.important, i+" - onCompletion: "+playAudioList.size());
+    }
+
+
+
+
+    private void getAya(RtlViewPager viewpager){
+
     }
 
 }
