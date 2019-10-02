@@ -1,8 +1,9 @@
 package com.ermile.salamquran.Static;
 
 public class url {
-    private static String site = "https://salamquran.com/";
-    private static String apiV6 = "https://salamquran.com/api/v6/";
+    public static String dl_salamquran = "https://dl.salamquran.com/ayat/";
+    public static String site = "https://salamquran.com/";
+    public static String apiV6 = "https://salamquran.com/api/v6/";
 
     public static String setting = apiV6+"app/";
     public static String token = apiV6+"token/";

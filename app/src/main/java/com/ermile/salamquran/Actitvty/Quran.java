@@ -1,7 +1,9 @@
 package com.ermile.salamquran.Actitvty;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,27 +15,41 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.ermile.salamquran.Adaptor.QuranAdaptor;
+import com.ermile.salamquran.Function.Utility.carateURL;
 import com.ermile.salamquran.Item.itemQuran.ayat;
+import com.ermile.salamquran.Item.item_PlayAudio;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Service.AudioForeground;
 import com.ermile.salamquran.Static.tag;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Quran extends AppCompatActivity {
+public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
 
     private TextView number_pageQuran , number_juzQuran,title_surahQuran;
 
+
+    RtlViewPager viewpager;
+
     View stop,play;
     List<ayat> ayatList;
-    List<sss> sssList;
+    List<item_PlayAudio> playAudioList;
+
+    MediaPlayer mediaPlayer;
+
+    int place;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quran);
+
+        mediaPlayer = new MediaPlayer();
 
         stop = findViewById(R.id.audio_stop);
         play = findViewById(R.id.audio_play);
@@ -45,7 +61,7 @@ public class Quran extends AppCompatActivity {
         number_pageQuran = findViewById(R.id.number_pageQuran);
         number_juzQuran = findViewById(R.id.number_juzQuran);
         title_surahQuran = findViewById(R.id.title_surahQuran);
-        RtlViewPager viewpager = findViewById(R.id.view_pagers); // view page in XML
+        viewpager = findViewById(R.id.view_pagers); // view page in XML
 
         // set
         QuranAdaptor PagerAdapter = new QuranAdaptor(getApplicationContext()); // add Adapter (in line 55)
@@ -63,23 +79,24 @@ public class Quran extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                sssList  = new ArrayList<>();
+                place =position;
 
-                SQLiteDatabase mydb = new MyDatabase(getApplicationContext()).getWritableDatabase();
-                Cursor pageData = mydb.rawQuery("select aya,sura,page from quran_word where char_type = 'end'and page ="+position, null);
+                if (mediaPlayer != null && !mediaPlayer.isPlaying()){
+                    playAudioList  = new ArrayList<>();
+                    SQLiteDatabase mydb = new MyDatabase(getApplicationContext()).getWritableDatabase();
+                    Cursor pageData = mydb.rawQuery("select * from quran_word where char_type = 'end'and page ="+position, null);
 
-                while (pageData.moveToNext()){
-                    int aya = pageData.getInt(pageData.getColumnIndex("aya"));
-                    int sura = pageData.getInt(pageData.getColumnIndex("sura"));
-                    int page = pageData.getInt(pageData.getColumnIndex("page"));
-                    sssList.add(new sss(page+"",aya+""));
+                    while (pageData.moveToNext()){
+                        int page = pageData.getInt(pageData.getColumnIndex("page"));
+                        int sura = pageData.getInt(pageData.getColumnIndex("sura"));
+                        int aya = pageData.getInt(pageData.getColumnIndex("aya"));
+                        int index = pageData.getInt(pageData.getColumnIndex("index"));
+                        String url = carateURL.audio(getApplication(),sura+"",aya+"");
+                        playAudioList.add(new item_PlayAudio(page,sura,aya,index,url));
+                    }
+                    pageData.close();
+                    mydb.close();
                 }
-                pageData.close();
-                mydb.close();
-
-
-
-
 
             }
             @Override
@@ -88,42 +105,70 @@ public class Quran extends AppCompatActivity {
         });
 
 
+
+
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int i = 0; i < sssList.size(); i++) {
-                    String page = sssList.get(i).getPage();
-                    String atya = sssList.get(i).getAya();
-                    Toast.makeText(Quran.this, page+"<-- page | aya -->"+atya, Toast.LENGTH_SHORT).show();
-                }
+                startPlaying();
             }
         });
 
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i=0;
+                if (mediaPlayer != null && mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                    mediaPlayer.release();
+                }
+                stopService(new Intent(getApplication(), AudioForeground.class));
+            }
+        });
+
+
     }
 
-    public class sss{
+    int i = 0;
 
-        String page,aya;
-
-        public sss(String page, String aya) {
-            this.page = page;
-            this.aya = aya;
+    private void startPlaying() {
+        mediaPlayer = new MediaPlayer();
+        try {
+            if (playAudioList.get(i).getUrl() != null){
+                mediaPlayer.setDataSource(playAudioList.get(i).getUrl());
+                mediaPlayer.prepare();
+                i++;
+            }
+        } catch (IOException ignored) {
         }
-
-        public String getPage() {
-            return page;
-        }
-
-        public void setPage(String page) {
-            this.page = page;
-        }
-
-        public String getAya() {
-            return aya;
-        }
-
-        public void setAya(String aya) {
-            this.aya = aya;
-        }
+        mediaPlayer.start();
+        mediaPlayer.setOnCompletionListener(this);
     }
+
+    @Override
+    public void onCompletion(MediaPlayer mediaPlayer) {
+        if (playAudioList.size() != i){
+            startPlaying();
+            if (playAudioList.get(0).getPage() != place){
+                viewpager.setCurrentItem(playAudioList.get(0).getPage());
+                place = playAudioList.get(0).getPage();
+            }
+        }
+        else {
+            playAudioList.size();
+            if (playAudioList.get(i-1).getPage() != 604){
+                viewpager.setCurrentItem(playAudioList.get(i-1).getPage()+1);
+                i = 0;
+                startPlaying();
+            }
+            else{
+                i = 0;
+                Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
+            } 
+            
+        }
+        Log.d(tag.important, i+" - onCompletion: "+playAudioList.size());
+    }
+
 }

@@ -25,6 +25,8 @@ public class SaveManager extends ContextWrapper {
         return new SaveManager(context);
     }
 
+    /** Ghari */
+    public static final String qari = "qari";
 
     /** App Info */
     public static final String introIsChacked = "introIsChacked";
@@ -38,6 +40,12 @@ public class SaveManager extends ContextWrapper {
     public static final String apiKey = "apiKey";
     public static final String userCode = "userCode";
     public static final String zoneID = "zoneID";
+
+
+    public void change_qari(String qaris) {
+        editor.putString(qari, qaris);
+        editor.apply();
+    }
 
     public void change_appLanguage(String Language) {
         editor.putString(appLanguage, Language);
@@ -86,6 +94,7 @@ public class SaveManager extends ContextWrapper {
 
     public Map<String, String> getstring_appINFO() {
         HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(qari, sharedPreferences.getString(qari, "afasy-murattal-192" ));
         hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, null ));
 
         hashMap.put(apiKey, sharedPreferences.getString(apiKey, null ));
