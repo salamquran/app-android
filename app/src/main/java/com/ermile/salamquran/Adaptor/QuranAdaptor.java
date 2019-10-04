@@ -38,7 +38,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         return view == object;
     }
 
-    @SuppressLint("ResourceType")
+    @SuppressLint({"ResourceType", "SetTextI18n"})
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
@@ -71,6 +71,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         if (position > 0){
 
             Typeface font = Typeface.createFromAsset(container.getContext().getAssets(), "font/"+"p"+position+".ttf");
+            Typeface font_besmellah = Typeface.createFromAsset(container.getContext().getAssets(), "font/bismillah.ttf");
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -90,6 +91,33 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             String audio = pageData.getString(pageData.getColumnIndex("audio"));
             int index = pageData.getInt(pageData.getColumnIndex("index"));
 
+
+                if (
+                        aya == 1
+                        && positions == 1
+                        && page > 1
+                        && sura != 9
+                )
+                {
+                    LinearLayout linearLayout_Lines = new LinearLayout(container.getContext());
+                    linearLayout_Lines.setOrientation(LinearLayout.HORIZONTAL);
+                    linearLayout_Lines.setGravity(Gravity.CENTER_HORIZONTAL);
+                    linearLayout_Lines.setLayoutParams(layoutParams);
+                    background_slide.addView(linearLayout_Lines);
+                    TextView TextQuran_textviews = new TextView(container.getContext());
+                    TextQuran_textviews.setTextColor(Color.parseColor("#000000"));
+                    TextQuran_textviews.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+                    TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
+                    linearLayout_Lines.addView(TextQuran_textviews);
+                    TextQuran_textviews.setTag("0");
+
+                    TextQuran_textviews.setTextSize(25f);
+                    TextQuran_textviews.setTypeface(font_besmellah);
+                    TextQuran_textviews.setText("﷽");
+
+                }
+
                 if(testLine < line){
                     linearLayout_Line = new LinearLayout(container.getContext());
                     linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
@@ -100,6 +128,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
+
                     TextQuran_textview = new TextView(container.getContext());
                     TextQuran_textview.setTextColor(Color.parseColor("#000000"));
                     TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
