@@ -1,11 +1,14 @@
 package com.ermile.salamquran.Actitvty;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -44,7 +47,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     MediaPlayer mediaPlayer;
     int place;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +67,9 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         viewpager.setAdapter(PagerAdapter); // set Adapter to View pager in XML
         viewpager.setCurrentItem(Integer.valueOf(Objects.requireNonNull(getIntent().getStringExtra("open_page"))));
 
-
         viewpager.clearOnPageChangeListeners();
 
-        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
-        {
+        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
 
@@ -102,12 +102,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
         });
 
-
-
-
-
-
-
         final LinearLayout mediaContoroler = findViewById(R.id.media_contoroler);
         title_juz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,10 +117,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
         });
 
-
-
-
-
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,6 +124,11 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 startPlaying();
             }
         });
+
+        String name_surah = "\\E904";
+
+        title_juz.setText(Html.escapeHtml(name_surah));
+
 
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
