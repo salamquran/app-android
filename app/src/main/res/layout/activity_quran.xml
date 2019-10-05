@@ -41,6 +41,7 @@
             android:layout_height="wrap_content" />
         <!--Aya-->
         <TextView
+            android:fontFamily="@font/surah_names"
             android:id="@+id/top_title_juz"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/_7ssp"
@@ -115,10 +116,6 @@
 
 
     </LinearLayout>
-
-
-
-
 
 
 
