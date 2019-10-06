@@ -72,14 +72,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:alpha="0.7"
         android:id="@+id/media_contoroler"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:background="#4D000000"
+        android:background="#4DC2BCBC"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="@dimen/_40sdp">
 
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -104,6 +103,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:visibility="gone"
             style="@style/Widget.AppCompat.ImageButton"
             android:id="@+id/btn_pause"
             android:src="@drawable/ic_pause"
