@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <LinearLayout
         android:id="@+id/audio_stop"
         android:background="#66FF0000"
@@ -13,7 +12,11 @@
         android:gravity="center"
         android:layout_height="match_parent">
 
-
+        <TextView
+            android:text="STOP"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -27,8 +30,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:fontFamily="@font/surah_names"
-            android:text="\T sds"
+            android:text="Play"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
