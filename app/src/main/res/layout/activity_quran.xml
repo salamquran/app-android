@@ -72,47 +72,50 @@
     </LinearLayout>
 
     <LinearLayout
+        android:alpha="0.7"
         android:id="@+id/media_contoroler"
-        android:translationY="@dimen/_60sdp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:background="#ddd"
+        android:background="#4D000000"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="70dp">
 
 
-        <LinearLayout
-            android:id="@+id/audio_stop"
-            android:background="#66FF0000"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/btn_bakc"
+            android:src="@drawable/ic_fast_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <TextView
-                android:text="STOP"
-                android:textSize="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/btn_stop"
+            android:src="@drawable/ic_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/btn_play"
+            android:src="@drawable/ic_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/btn_pause"
+            android:src="@drawable/ic_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:id="@+id/audio_play"
-            android:background="#570067C2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:text="Play"
-                android:textSize="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/btn_next"
+            android:src="@drawable/ic_fast_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 
     </LinearLayout>
