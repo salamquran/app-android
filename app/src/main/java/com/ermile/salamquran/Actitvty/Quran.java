@@ -102,31 +102,77 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
         });
 
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextSound();
+            }
+        });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backSound();
+            }
+        });
+
 
     }
 
     /*Next Aya*/
     private void nextSound(){
-
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        mediaPlayer = null;
+        if (ayaIsEND()){
+            if (playAudioList.get(0).getPage() != 604){
+                viewpager.setCurrentItem(playAudioList.get(0).getPage()+1,true);
+                playSound();
+            }
+            else{
+                Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            ayaNumber++;
+            playSound();
+        }
     }
 
     /*Back Aya*/
     private void backSound(){
-
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        mediaPlayer = null;
+        if (ayaIsEND()){
+            if (playAudioList.get(0).getPage() != 604){
+                viewpager.setCurrentItem(playAudioList.get(0).getPage()+1,true);
+                playSound();
+            }
+            else{
+                Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            ayaNumber--;
+            playSound();
+        }
     }
 
     /*Play AudioPlayer*/
     private void playSound() {
         try {
             if (playAudioList.get(ayaNumber).getUrl() != null){
-                viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(),true);
-                Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                setBgPlaying();
-                mediaPlayer = new MediaPlayer();
-                mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
-                mediaPlayer.prepare();
-                mediaPlayer.start();
-                ayaNumber++;
+                if (ayaNumber < playAudioList.size()){
+                    viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(),true);
+                    Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+                    setBgPlaying();
+                    mediaPlayer = new MediaPlayer();
+                    mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                }
+
             }
 
         } catch (IOException ignored) {
@@ -156,10 +202,8 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     /*OnCompletion Audio Quran For Play Auto Next Aya*/
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
-        if (playAudioList.size() != ayaNumber){
-            playSound();
-        }
-        else {
+
+        if (ayaIsEND()){
             if (playAudioList.get(0).getPage() != 604){
                 stopSound();
                 viewpager.setCurrentItem(playAudioList.get(0).getPage()+1,true);
@@ -168,9 +212,15 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             else{
                 stopSound();
                 Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
-            } 
-            
+            }
         }
+        else {
+            ayaNumber++;
+            playSound();
+        }
+
+
+
     }
 
 
@@ -235,5 +285,11 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     protected void onDestroy() {
         super.onDestroy();
         stopSound();
+    }
+
+
+    private boolean ayaIsEND(){
+        int AudioAya = playAudioList.size()-1;
+        return AudioAya == ayaNumber;
     }
 }
