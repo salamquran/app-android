@@ -38,12 +38,10 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     List<item_PlayAudio> playAudioList;
     MediaPlayer mediaPlayer;
-    int ayaNumber = 0;
+    Integer     ayaNumber   =  0 ;
 
-    AppCompatImageButton btn_next,btn_back,
+    AppCompatImageButton btn_next,btn_back ,
                          btn_play,btn_pause,btn_stop;
-    TextView title_juz ,
-             title_vars;
     int place;
 
     @Override
@@ -54,14 +52,12 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         setContentView(R.layout.activity_quran);
 
         // Chang ID XML
-        title_juz = findViewById(R.id.top_title_juz);
-        title_vars = findViewById(R.id.top_title_vers);
-        viewpager = findViewById(R.id.view_pagers); // view page in XML
-        btn_back = findViewById(R.id.btn_bakc);
-        btn_next = findViewById(R.id.btn_next);
-        btn_play = findViewById(R.id.btn_play);
-        btn_pause = findViewById(R.id.btn_pause);
-        btn_stop = findViewById(R.id.btn_stop);
+        viewpager  = findViewById(R.id.view_pagers);    // RTL viewpager in XML
+        btn_back   = findViewById(R.id.btn_bakc);       // MediaControl (Back Audio)
+        btn_next   = findViewById(R.id.btn_next);       // MediaControl (Next Audio)
+        btn_play   = findViewById(R.id.btn_play);       // MediaControl (Play Audio)
+        btn_pause  = findViewById(R.id.btn_pause);      // MediaControl (Pause Audio)
+        btn_stop   = findViewById(R.id.btn_stop);       // MediaControl (Stop Audio)
 
         // set
         PagerAdapter = new QuranAdaptor(); // add Adapter
@@ -71,8 +67,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
         viewpager.addOnPageChangeListener(this);
-
-
 
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,8 +109,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 backSound();
             }
         });
-
-
     }
 
     /*Next Aya*/
@@ -172,7 +164,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                     mediaPlayer.prepare();
                     mediaPlayer.start();
                 }
-
             }
 
         } catch (IOException ignored) {
@@ -202,7 +193,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     /*OnCompletion Audio Quran For Play Auto Next Aya*/
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
-
         if (ayaIsEND()){
             if (playAudioList.get(0).getPage() != 604){
                 stopSound();
@@ -218,15 +208,10 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             ayaNumber++;
             playSound();
         }
-
-
-
     }
-
 
     /*Hi Light Text in ViewPager*/
     private void setBgPlaying(){
-        Log.d(tag.important, viewpager.getCurrentItem()+"- i: "+ayaNumber);
         RelativeLayout relativeLayout = (RelativeLayout) viewpager.getChildAt(0);
         LinearLayout background_slide = (LinearLayout) relativeLayout.getChildAt(2);
         for (int rq=0; rq<= background_slide.getChildCount();rq++){
@@ -245,9 +230,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 }
             }
         }
-
     }
-
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -286,7 +269,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         super.onDestroy();
         stopSound();
     }
-
 
     private boolean ayaIsEND(){
         int AudioAya = playAudioList.size()-1;

@@ -53,11 +53,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         final ImageView spacePage_L = view.findViewById(R.id.spacePage_L);
         final ImageView spacePage_R = view.findViewById(R.id.spacePage_R);
 
-        LinearLayout linearLayout_Line = null;
-        TextView TextQuran_textview  ;
-
-        int testLine =0;
-
 
         if (even_odd.isOdd(position)){
             cutPage_R.setVisibility(View.VISIBLE);
@@ -67,6 +62,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             cutPage_L.setVisibility(View.VISIBLE);
             spacePage_R.setVisibility(View.VISIBLE);
         }
+
+        LinearLayout linearLayout_Line = null;
+        TextView TextQuran_textview  ;
+
+        int testLine =0;
 
         if (position > 0){
 

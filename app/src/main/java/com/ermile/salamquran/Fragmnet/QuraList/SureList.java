@@ -69,7 +69,7 @@ public class SureList extends Fragment {
                 int number_juz = juz.getInt("index");
                 int page_juz = juz.getInt("startpage");
                 quranlist.add(new item_QuranList(item_QuranList.JUZ_TYPE,0,null,
-                        "Juz "+String.valueOf(number_juz),null,
+                        getString(R.string.juz)+String.valueOf(number_juz),null,
                         String.valueOf(page_juz),null,0));
                 recylerview_surah.setLayoutManager(LayoutManager);
                 recylerview_surah.setItemAnimator(new DefaultItemAnimator());
@@ -93,7 +93,7 @@ public class SureList extends Fragment {
                             quranlist.add(new item_QuranList(item_QuranList.SURAH_TYPE, 0,
                                     number_surah,
                                     title_surah,
-                                    MadeIn_surah + " - " + aya_surah + " aya",
+                                    MadeIn_surah + " - " + aya_surah + getString(R.string.aya),
                                     page_surah, null, 0));
                             recylerview_surah.setLayoutManager(LayoutManager);
                             recylerview_surah.setItemAnimator(new DefaultItemAnimator());

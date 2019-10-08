@@ -6,14 +6,14 @@
     android:gravity="center"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:minHeight="45dp"
     android:id="@+id/rootItem_juz"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/_40sdp">
 
     <TextView
+        style="@style/Widget.AppCompat.TextView"
         android:id="@+id/title_juz"
-        android:textSize="16dp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="Juz 1"
@@ -23,9 +23,10 @@
 
     <!--Page in Juz-->
     <TextView
+        style="@style/Widget.AppCompat.TextView"
         android:id="@+id/page_juz"
         android:textAlignment="center"
-        android:textSize="16dp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="1"

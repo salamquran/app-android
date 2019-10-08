@@ -75,7 +75,7 @@ public class JuzList extends Fragment {
                 String get_keyResult = key_result.next();
                 JSONObject juz = result.getJSONObject(get_keyResult);
                 quranlist.add(new item_QuranList(item_QuranList.JUZ_TYPE,0,null,
-                        "Juz "+get_keyResult,null,
+                        getString(R.string.juz)+get_keyResult,null,
                         "",null,0));
                 recylerview_juz.setLayoutManager(LayoutManager);
                 recylerview_juz.setItemAnimator(new DefaultItemAnimator());
@@ -132,7 +132,7 @@ public class JuzList extends Fragment {
                         quranlist.add(new item_QuranList(item_QuranList.HEZB_TYPE,0,
                                 null,
                                 title_hezb,
-                                "Surah "+sureh_hezb+ ", Aya "+aya_hezb,
+                                getString(R.string.surah)+sureh_hezb+ ", "+getString(R.string.aya)+aya_hezb,
                                 page_hezb,
                                 number_hezb,
                                 bgHezb_hezb));
