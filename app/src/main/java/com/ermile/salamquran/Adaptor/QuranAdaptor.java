@@ -110,7 +110,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
                     TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
                     linearLayout_Lines.addView(TextQuran_textviews);
-                    TextQuran_textviews.setTag("0");
+                    TextQuran_textviews.setTag(index);
 
                     TextQuran_textviews.setTextSize(25f);
                     TextQuran_textviews.setTypeface(font_besmellah);

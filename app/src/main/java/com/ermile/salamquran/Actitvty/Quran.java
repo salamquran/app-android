@@ -43,6 +43,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     AppCompatImageButton btn_next,btn_back ,
                          btn_play,btn_pause,btn_stop;
     int place;
+    boolean besmellahIsPlaying = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,22 +154,35 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     /*Play AudioPlayer*/
     private void playSound() {
-        try {
-            if (playAudioList.get(ayaNumber).getUrl() != null){
-                if (ayaNumber < playAudioList.size()){
-                    viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(),true);
-                    Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                    setBgPlaying();
-                    mediaPlayer = new MediaPlayer();
-                    mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
-                    mediaPlayer.prepare();
-                    mediaPlayer.start();
-                }
-            }
 
-        } catch (IOException ignored) {
+        if (!besmellahIsPlaying
+                && playAudioList.get(ayaNumber).getAya() == 1
+                && playAudioList.get(ayaNumber).getVers() != 1
+                && playAudioList.get(ayaNumber).getVers() != 9 ) {
+            viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(),true);
+            Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+            setBgPlaying();
+            playBesmellah();
         }
-        mediaPlayer.setOnCompletionListener(this);
+        else {
+            besmellahIsPlaying = false;
+            try {
+                if (playAudioList.get(ayaNumber).getUrl() != null){
+                    if (ayaNumber < playAudioList.size()){
+                        viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(),true);
+                        Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+                        setBgPlaying();
+                        mediaPlayer = new MediaPlayer();
+                        mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
+                        mediaPlayer.prepare();
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(this);
+                    }
+                }
+
+            } catch (IOException ignored) {
+            }
+        }
     }
 
     /*Stop AudioPlayer*/
@@ -273,5 +287,22 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     private boolean ayaIsEND(){
         int AudioAya = playAudioList.size()-1;
         return AudioAya == ayaNumber;
+    }
+
+    private void playBesmellah(){
+        try {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setDataSource(carateURL.besmellah(this));
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    besmellahIsPlaying = true;
+                    playSound();
+                }
+            });
+        } catch (IOException ignored) {
+        }
     }
 }

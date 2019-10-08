@@ -44,4 +44,10 @@ public class carateURL {
         return url.dl_salamquran + qari + value.slash + repl_vers + repl_aya + format.mp3;
     }
 
+    public static String besmellah(Context context){
+        String qari = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari);
+
+        return url.dl_salamquran + qari + value.slash + "001" + "001" + format.mp3;
+    }
+
 }
