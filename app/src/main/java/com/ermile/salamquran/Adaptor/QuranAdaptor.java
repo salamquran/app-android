@@ -1,6 +1,7 @@
 package com.ermile.salamquran.Adaptor;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -42,8 +43,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
+
+        Context context = container.getContext();
+
         // Static Methods
-        LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
         final View view = Objects.requireNonNull(inflater).inflate(R.layout.item_quran , container , false);
 
         final LinearLayout background_slide = view.findViewById(R.id.background_slide);
@@ -52,6 +56,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         final ImageView cutPage_L = view.findViewById(R.id.cutPage_L);
         final ImageView spacePage_L = view.findViewById(R.id.spacePage_L);
         final ImageView spacePage_R = view.findViewById(R.id.spacePage_R);
+
+        boolean pageInfoIsSet = false;
+        final TextView Top_surah = view.findViewById(R.id.quranItemViewPager_titleSurah);
+        final TextView Top_juz = view.findViewById(R.id.quranItemViewPager_titleJuz);
+        final TextView bottom_numberPage = view.findViewById(R.id.quranItemViewPager_pageNumber);
 
 
         if (even_odd.isOdd(position)){
@@ -70,41 +79,43 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         if (position > 0){
 
-            Typeface font = Typeface.createFromAsset(container.getContext().getAssets(), "font/"+"p"+position+".ttf");
-            Typeface font_besmellah = Typeface.createFromAsset(container.getContext().getAssets(), "font/bismillah.ttf");
+            Typeface font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
+            Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
+                    70);
 
-            SQLiteDatabase mydb = new MyDatabase(container.getContext()).getReadableDatabase();
+            SQLiteDatabase mydb = new MyDatabase(context).getReadableDatabase();
             Cursor pageData = mydb.rawQuery("SELECT * FROM quran_word WHERE page="+position, null);
             while (pageData.moveToNext()) {
-            String text = pageData.getString(pageData.getColumnIndex("text"));
-            String code = pageData.getString(pageData.getColumnIndex("code"));
-            final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
-            final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
-            String charType = pageData.getString(pageData.getColumnIndex("char_type"));
-            String class_name = pageData.getString(pageData.getColumnIndex("class_name"));
-            int line = pageData.getInt(pageData.getColumnIndex("line"));
-            int page = pageData.getInt(pageData.getColumnIndex("page"));
-            int positions = pageData.getInt(pageData.getColumnIndex("position"));
-            String audio = pageData.getString(pageData.getColumnIndex("audio"));
-            int index = pageData.getInt(pageData.getColumnIndex("index"));
 
+                String text = pageData.getString(pageData.getColumnIndex("text"));
+                String code = pageData.getString(pageData.getColumnIndex("code"));
+                final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
+                final int juz = pageData.getInt(pageData.getColumnIndex("juz"));
+                final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
+                String charType = pageData.getString(pageData.getColumnIndex("char_type"));
+                String class_name = pageData.getString(pageData.getColumnIndex("class_name"));
+                int line = pageData.getInt(pageData.getColumnIndex("line"));
+                int page = pageData.getInt(pageData.getColumnIndex("page"));
+                int positions = pageData.getInt(pageData.getColumnIndex("position"));
+                String audio = pageData.getString(pageData.getColumnIndex("audio"));
+                int index = pageData.getInt(pageData.getColumnIndex("index"));
 
-                if (
-                        aya == 1
-                        && positions == 1
-                        && page > 1
-                        && sura != 9
-                )
-                {
-                    LinearLayout linearLayout_Lines = new LinearLayout(container.getContext());
+                if (!pageInfoIsSet){
+                    pageInfoIsSet = true;
+                    Top_surah.setText(context.getString(R.string.surah)+sura);
+                    Top_juz.setText(context.getString(R.string.juz)+juz);
+                    bottom_numberPage.setText(page+"");
+                }
+
+                if (aya == 1 && positions == 1 && page > 1 && sura != 9) {
+                    LinearLayout linearLayout_Lines = new LinearLayout(context);
                     linearLayout_Lines.setOrientation(LinearLayout.HORIZONTAL);
                     linearLayout_Lines.setGravity(Gravity.CENTER_HORIZONTAL);
                     linearLayout_Lines.setLayoutParams(layoutParams);
                     background_slide.addView(linearLayout_Lines);
-                    TextView TextQuran_textviews = new TextView(container.getContext());
+                    TextView TextQuran_textviews = new TextView(context);
                     TextQuran_textviews.setTextColor(Color.parseColor("#000000"));
                     TextQuran_textviews.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
@@ -119,7 +130,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if(testLine < line){
-                    linearLayout_Line = new LinearLayout(container.getContext());
+                    linearLayout_Line = new LinearLayout(context);
                     linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
                     linearLayout_Line.setGravity(Gravity.CENTER_HORIZONTAL);
                     linearLayout_Line.setLayoutParams(layoutParams);
@@ -129,7 +140,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
                 if (linearLayout_Line != null){
 
-                    TextQuran_textview = new TextView(container.getContext());
+                    TextQuran_textview = new TextView(context);
                     TextQuran_textview.setTextColor(Color.parseColor("#000000"));
                     TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
@@ -162,6 +173,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                         }
                     });
                 }
+
+
             }
             pageData.close();
             mydb.close();

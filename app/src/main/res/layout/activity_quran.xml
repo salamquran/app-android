@@ -62,6 +62,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+        <ImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/change_qari"
+            android:src="@drawable/ic_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 </RelativeLayout>
