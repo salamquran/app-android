@@ -6,4 +6,6 @@
     <string name="aya">" آيه "</string>
     <string name="surah">" سوره "</string>
     <string name="juz">" جزء "</string>
+    <string name="save">ذخیره</string>
+    <string name="selected">انتخاب شد</string>
 </resources>

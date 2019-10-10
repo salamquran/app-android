@@ -22,4 +22,6 @@
     <string name="juz">" Juz "</string>
     <string name="surah">" Vars "</string>
     <string name="aya">" Aya "</string>
+    <string name="save">Save</string>
+    <string name="selected">Selected</string>
 </resources>
