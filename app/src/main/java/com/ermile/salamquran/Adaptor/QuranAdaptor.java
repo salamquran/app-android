@@ -86,7 +86,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     70);
 
             SQLiteDatabase mydb = new MyDatabase(context).getReadableDatabase();
-            Cursor pageData = mydb.rawQuery("SELECT * FROM quran_word WHERE page="+position, null);
+            Cursor pageData = mydb.rawQuery("SELECT text,code,aya,juz,sura,char_type,class_name,line,page,position,audio,\"index\" FROM quran_word WHERE page="+position, null);
             while (pageData.moveToNext()) {
 
                 String text = pageData.getString(pageData.getColumnIndex("text"));

@@ -17,7 +17,7 @@ import com.ermile.salamquran.Actitvty.Main;
 import com.ermile.salamquran.R;
 
 public class AlarmBackground extends Service {
-    
+
     /*Notification Static Value*/
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
