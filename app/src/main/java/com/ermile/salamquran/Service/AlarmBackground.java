@@ -17,8 +17,7 @@ import com.ermile.salamquran.Actitvty.Main;
 import com.ermile.salamquran.R;
 
 public class AlarmBackground extends Service {
-
-
+    
     /*Notification Static Value*/
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -38,12 +37,15 @@ public class AlarmBackground extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         /*Crate Notification in start*/
         createNotificationChannel();
+
         /*Intent go to app by toch*/
         Intent notificationIntent = new Intent(this, Main.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
+
         /*get notificationManager*/
         notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
         /*Set Intent go to app by toch*/
         builder.setContentIntent(pendingIntent);
         notificationManager.notify(100, builder.build());
