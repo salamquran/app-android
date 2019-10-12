@@ -63,11 +63,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quran);
 
-
-
-
-
-
         // Chang ID XML
         viewpager = findViewById(R.id.view_pagers);    // RTL viewpager in XML
         btn_back = findViewById(R.id.btn_bakc);        // MediaControl (Back Audio)
@@ -82,7 +77,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         btn_changeQari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stopSound();
                 runAlert();
             }
         });
@@ -96,6 +90,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
         viewpager.addOnPageChangeListener(this);
+
 
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -282,16 +277,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     public void onPageScrollStateChanged(int state) {
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        stopSound();
-    }
-
-    private boolean ayaIsEND() {
-        int AudioAya = playAudioList.size() - 1;
-        return AudioAya == ayaNumber;
-    }
 
     private void playBesmellah() {
         try {
@@ -330,6 +315,19 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopSound();
+    }
+
+    private boolean ayaIsEND() {
+        int AudioAya = playAudioList.size() - 1;
+        return AudioAya == ayaNumber;
+    }
+
+
+
 
 
 
@@ -338,20 +336,21 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     private void runAlert() {
         final String[] items = value.qari;
+        final String[] item = value.qariName;
         new AlertDialog.Builder(this)
                 .setTitle("قاری خود را انتخاب کنید")
                 .setCancelable(false)
-                .setSingleChoiceItems(items, 0, null)
+                .setSingleChoiceItems(item, 0, null)
                 .setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        stopSound();
                         SaveManager.get(getApplication()).change_qari(result);
                         Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                        Toast.makeText(Quran.this, result + "شروع به تلاوت", Toast.LENGTH_SHORT).show();
                         createListAudioAya(place);
                     }
                 })
-                .setSingleChoiceItems(items, 2, new DialogInterface.OnClickListener() {
+                .setSingleChoiceItems(item, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         result = items[i];
