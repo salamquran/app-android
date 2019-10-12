@@ -166,6 +166,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         if (ayaNumber == 0) {
             if (playAudioList.get(0).getPage() != 604) {
                 viewpager.setCurrentItem(playAudioList.get(0).getPage() - 1, true);
+                ayaNumber = playAudioList.size() -1;
                 playSound();
             } else {
                 Toast.makeText(this, "صدق الله العلی العظیم", Toast.LENGTH_SHORT).show();
