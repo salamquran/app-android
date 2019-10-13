@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
@@ -76,10 +77,15 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextView TextQuran_textview  ;
 
         int testLine =0;
-
+        Typeface font;
         if (position > 0){
 
-            Typeface font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
+            if (position <= 10){
+                font = Typeface.createFromFile(FileManager.getFile_storage("font/Quran_v1","p"+position+".ttf").getPath());
+            }else {
+                font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
+            }
+
             Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,

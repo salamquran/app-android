@@ -40,14 +40,14 @@ public class carateURL {
                 break;
         }
 
-        Log.d(tag.carateURL, url.dl_salamquran + qari + value.slash + repl_vers + repl_aya + format.mp3);
-        return url.dl_salamquran + qari + value.slash + repl_vers + repl_aya + format.mp3;
+        Log.d(tag.carateURL, url.dl_ayat + qari + value.slash + repl_vers + repl_aya + format.mp3);
+        return url.dl_ayat + qari + value.slash + repl_vers + repl_aya + format.mp3;
     }
 
     public static String besmellah(Context context){
         String qari = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari);
 
-        return url.dl_salamquran + qari + value.slash + "001" + "001" + format.mp3;
+        return url.dl_ayat + qari + value.slash + "001" + "001" + format.mp3;
     }
 
 }

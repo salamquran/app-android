@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.ermile.salamquran.Actitvty.View.About;
 import com.ermile.salamquran.Fragmnet.LMS;
 import com.ermile.salamquran.Fragmnet.QuraList.QuranList;
 import com.ermile.salamquran.Fragmnet.Setting;
@@ -107,7 +108,7 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
                 fragment = new LMS();
                 break;
             case R.id.nav_meg:
-                Intent test = new Intent(this, CalclutorHefzProgram.class);
+                Intent test = new Intent(this, About.class);
                 startActivity(test);
                 break;
             case R.id.nav_quran:

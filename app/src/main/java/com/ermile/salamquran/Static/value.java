@@ -8,6 +8,7 @@ public class value {
     public static String btn_CalclutorHefzProgram = "محاسبه";
     public static String language;
     public static String slash = "/";
+    public static String backSlash = "\\";
     public static String versionName = BuildConfig.VERSION_NAME;
     public static int versionCode = BuildConfig.VERSION_CODE;
 
