@@ -9,9 +9,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ermile.salamquran.Function.Utility.CheckVersion;
+import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.Function.Utility.SaveManager;
-import com.ermile.salamquran.Function.Utility.UnZipFile;
 import com.ermile.salamquran.Function.Utility.WriteFile;
 import com.ermile.salamquran.Function.api.GetAndroidDetail;
 import com.ermile.salamquran.Function.api.SingUpUser;
@@ -66,10 +66,10 @@ public class Splash extends AppCompatActivity {
         try {
             ReadFile.FromStorage(this,file.list_juz,format.json);
             ReadFile.FromStorage(this,file.list_sure,format.json);
-            Log.d(tag.ac_Splash, "onCreate: file is UnZiping: true");
+            Log.d(tag.ac_Splash, "onCreate: file is UnZipped");
         } catch (IOException e) {
-            new UnZipFile(this, file.comperes_File, format.zip);
-            Log.d(tag.ac_Splash, "onCreate: file is UnZiping: false Extrating...");
+            FileManager.UnZipFile(this, file.comperes_File, format.zip);
+            Log.d(tag.ac_Splash, "onCreate: Extracting... *(File Not! UnZipped)");
             e.printStackTrace();
 
         }
