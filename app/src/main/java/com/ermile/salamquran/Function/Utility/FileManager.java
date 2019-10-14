@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
-
-import com.ermile.salamquran.Static.file;
+import com.ermile.salamquran.Static.filePath;
 import com.ermile.salamquran.Static.tag;
 
 import java.io.BufferedInputStream;
@@ -19,14 +17,14 @@ import java.util.zip.ZipInputStream;
 public class FileManager {
     public static boolean findFile_storage(String DirectionFile,String fileName){
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/"+ file.android_data_files + DirectionFile;
+        String pathDir = baseDir + "/"+ filePath.android_data_files + DirectionFile;
         File f = new File(pathDir + File.separator + fileName);
         return f.exists();
     }
 
     public static File getFile_storage(String DirectionFile,String fileName){
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/"+ file.android_data_files + DirectionFile;
+        String pathDir = baseDir + "/"+ filePath.android_data_files + DirectionFile;
         File f = new File(pathDir + File.separator + fileName);
         return f ;
     }
