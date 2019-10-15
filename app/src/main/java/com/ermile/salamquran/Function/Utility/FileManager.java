@@ -8,9 +8,13 @@ import com.ermile.salamquran.Static.filePath;
 import com.ermile.salamquran.Static.tag;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -18,15 +22,20 @@ public class FileManager {
     public static boolean findFile_storage(String DirectionFile,String fileName){
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
         String pathDir = baseDir + "/"+ filePath.android_data_files + DirectionFile;
-        File f = new File(pathDir + File.separator + fileName);
-        return f.exists();
+        if (DirectionFile == null){
+            pathDir = baseDir + "/"+ filePath.android_data_files;
+        }
+        File file = new File(pathDir + File.separator + fileName);
+        return file.exists();
     }
 
     public static File getFile_storage(String DirectionFile,String fileName){
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
         String pathDir = baseDir + "/"+ filePath.android_data_files + DirectionFile;
-        File f = new File(pathDir + File.separator + fileName);
-        return f ;
+        if (DirectionFile == null){
+            pathDir = baseDir + "/"+ filePath.android_data_files;
+        }
+        return new File(pathDir + File.separator + fileName);
     }
 
 
@@ -78,5 +87,41 @@ public class FileManager {
             Log.e(tag.FileManager, "UnZipFile: ",ex );
             Log.e(tag.error, "UnZipFile: ",ex );
         }
+    }
+
+
+    public static void WriteFile(Context context, String Folder , String FileName, String Format, String Values) {
+        try {
+            File file = new File(context.getExternalFilesDir(null),   FileName+Format);
+            FileOutputStream fileOutput = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutput);
+            outputStreamWriter.write(Values);
+            outputStreamWriter.flush();
+            fileOutput.getFD().sync();
+            outputStreamWriter.close();
+            Log.d(tag.FileManager, "WriteFile: FileOutputStream: " + file + "\n value: "+Values);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            Log.e(tag.error, "WriteFile: ",e );
+            Log.e(tag.FileManager, "WriteFile: ",e );
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(tag.error, "WriteFile: ",e );
+            Log.e(tag.FileManager, "WriteFile: ",e );
+        }
+    }
+
+
+    public static String ReadString(File file) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String line;
+        StringBuilder text = new StringBuilder();
+
+        while ((line = bufferedReader.readLine()) != null) {
+            text.append(line);
+        }
+        bufferedReader.close();
+        Log.d(tag.FileManager, "ReadFile: "+text);
+        return text.toString();
     }
 }
