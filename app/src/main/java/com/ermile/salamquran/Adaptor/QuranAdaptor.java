@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Html;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,26 +17,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 
 import com.ermile.salamquran.Function.Utility.FileManager;
-import com.ermile.salamquran.Function.Utility.WriteFile;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
-import com.ermile.salamquran.Static.format;
-import com.ermile.salamquran.Static.tag;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
-
-    Context contextQuran;
 
     @Override
     public int getCount() {
@@ -90,21 +80,18 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         Typeface font;
         if (position > 0){
 
-/*            if (position <= 10){
+            if (position <= 10){
                 font = Typeface.createFromFile(FileManager.getFile_storage("font/Quran_v1","p"+position+".ttf").getPath());
             }else {
                 font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
             }
 
-            Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");*/
+            Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     70);
 
-
-            String lineQuran = "";
-
-/*            SQLiteDatabase mydb = new MyDatabase(context).getReadableDatabase();
+            SQLiteDatabase mydb = new MyDatabase(context).getReadableDatabase();
             Cursor pageData = mydb.rawQuery("SELECT text,code,aya,juz,sura,char_type,class_name,line,page,position,audio,\"index\" FROM quran_word WHERE page="+position, null);
             while (pageData.moveToNext()) {
 
@@ -125,11 +112,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     pageInfoIsSet = true;
                     Top_surah.setText(context.getString(R.string.surah)+sura);
                     Top_juz.setText(context.getString(R.string.juz)+juz);
-                    bottom_numberPage.setText(page+"");
-                }
-
-                if (charType.equals("end")){
-                    lineQuran = lineQuran + " "+aya+" ";
+                    bottom_numberPage.setText(String.valueOf(page));
                 }
 
                 if (aya == 1 && positions == 1 && page > 1 && sura != 9) {
@@ -151,19 +134,14 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     TextQuran_textviews.setText("﷽");
 
                 }
-                if(testLine != line){
-                    FileManager.WriteFile(context,"/Page/sura"+sura+"/","page"+page+"-sura"+sura+"-line"+line, ".txt",lineQuran);
-                    lineQuran = "";
+
+                if(testLine < line){
                     linearLayout_Line = new LinearLayout(context);
                     linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
                     linearLayout_Line.setGravity(Gravity.CENTER_HORIZONTAL);
                     linearLayout_Line.setLayoutParams(layoutParams);
                     background_slide.addView(linearLayout_Line);
                     testLine =line;
-                }
-
-                if (text != null){
-                    lineQuran = lineQuran + text + " ";
                 }
 
                 if (linearLayout_Line != null){
@@ -205,29 +183,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
             }
             pageData.close();
-            mydb.close();*/
-            Typeface fontnabi = ResourcesCompat.getFont(context,R.font.font_nabi);
-
-            for (int i = 1; i <=10 ; i++) {
-                linearLayout_Line = new LinearLayout(context);
-                linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
-                linearLayout_Line.setGravity(Gravity.CENTER_HORIZONTAL);
-                linearLayout_Line.setLayoutParams(layoutParams);
-                background_slide.addView(linearLayout_Line);
-                
-                for (int j = 0; j < 7; j++) {
-                    TextQuran_textview = new TextView(context);
-                    TextQuran_textview.setTextColor(Color.parseColor("#000000"));
-                    TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
-                    TextQuran_textview.setGravity(View.TEXT_ALIGNMENT_CENTER);
-                    linearLayout_Line.addView(TextQuran_textview);
-                    TextQuran_textview.setTextSize(21f);
-                    TextQuran_textview.setTypeface(fontnabi);
-                    TextQuran_textview.setText(" متن شماره "+i);
-                }
-            }
-
+            mydb.close();
         }
         container.addView(view);
         return view;
