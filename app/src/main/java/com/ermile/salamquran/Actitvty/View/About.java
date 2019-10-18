@@ -30,10 +30,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.ermile.salamquran.Function.Utility.Download;
 import com.ermile.salamquran.Function.Utility.FileManager;
+import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.format;
@@ -51,76 +57,49 @@ import java.util.ArrayList;
 
 import static com.ermile.salamquran.Function.Utility.Download.onDownloadComplete;
 
-public class About extends AppCompatActivity {
+public class About extends FragmentActivity {
 
-    ViewPager2 myViewPager2;
-    MyAdapter MyAdapter;
-    private ArrayList<String> arrayList = new ArrayList<>();
-
-
-
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-            myViewPager2 = findViewById(R.id.view_pager);
-
-            MyAdapter = new MyAdapter(this, arrayList);
-            MyAdapter.notifyItemRemoved(0);
-
-
-            myViewPager2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-            myViewPager2.setOffscreenPageLimit(1);
-
-            myViewPager2.setAdapter(MyAdapter);
-
-
-            myViewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                    super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    super.onPageSelected(position);
-
-                }
-
-                @Override
-                public void onPageScrollStateChanged(int state) {
-                    super.onPageScrollStateChanged(state);
-                }
-            });
+            ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            pager.setOffscreenPageLimit(3);
 
 
 
-
-
-
-
-
-
-
-/*            Button DownloadImage = (Button) findViewById(R.id.DownloadImage);
-            DownloadImage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    for (int i = 1; i <= 7; i++) {
-                        Download.File(getApplication(),"https://dl.salamquran.com/ayat/afasy-murattal-192/00100"+i+".mp3","afasy-murattal-192/Page-1/","00"+i,format.mp3,null,null);
-                    }
-                }
-            });
-        IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
-        registerReceiver(onDownloadComplete, filter);*/
 
     }
 
 
 
 
+    private class MyPagerAdapter extends FragmentPagerAdapter {
 
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int pos) {
+
+            if (even_odd.isOdd(pos)){
+                return BlankFragment2.newInstance(""+pos);
+            }
+            else {
+                return BlankFragment.newInstance(""+pos
+                );
+            }
+
+        }
+
+        @Override
+        public int getCount() {
+            return 605;
+        }
+    }
 
 
 

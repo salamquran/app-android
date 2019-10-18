@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Html;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.tag;
 
 import java.util.Objects;
 
@@ -72,7 +74,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             cutPage_L.setVisibility(View.VISIBLE);
             spacePage_R.setVisibility(View.VISIBLE);
         }
-
         LinearLayout linearLayout_Line = null;
         TextView TextQuran_textview  ;
 
@@ -185,6 +186,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             pageData.close();
             mydb.close();
         }
+
         container.addView(view);
         return view;
     }
