@@ -18,11 +18,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.QuranValue;
 import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.value;
 
@@ -85,7 +87,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             spacePage_R.setVisibility(View.VISIBLE);
         }
         LinearLayout linearLayout_Line = null;
-        TextView TextQuran_textview  ;
+        TextView TextQuran_textview = null;
 
         int testLine =0;
         lineRender = 1;
@@ -168,31 +170,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
-                    TextQuran_textview = new TextView(context);
-                    TextQuran_textview.setTextColor(Color.parseColor("#000000"));
-                    TextQuran_textview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
-                    TextQuran_textview.setGravity(View.TEXT_ALIGNMENT_CENTER);
-                    linearLayout_Line.addView(TextQuran_textview);
-                    TextQuran_textview.setTag(index);
-
-                    TextQuran_textview.setTextSize(21f);
-                    TextQuran_textview.setTypeface(font);
-                    TextQuran_textview.setText(Html.fromHtml(code).toString());
-
-                    TextQuran_textview.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            tochListener.wordOnclickListener();
-                        }
-                    });
-                    TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View view) {
-                            tochListener.wordOnLongclickListener();
-                            return true;
-                        }
-                    });                }
+                    crateWordQuran(context,linearLayout_Line,TextQuran_textview,font,null,code,index,page);
+                }
 
 
             }
@@ -216,13 +195,37 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
 
-    private void crateWordQuran(Context context,LinearLayout linearLayout_Line , String text , String code, int index , int page ){
-        Typeface  font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+page+".ttf");
+    private void crateWordQuran(Context context,LinearLayout linearLayout_Line ,TextView wordQuran,Typeface font,String text , String code, int index , int page ){
+        wordQuran = new TextView(context);
+        wordQuran.setTextColor(Color.parseColor("#000000"));
+        wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        wordQuran.setGravity(View.TEXT_ALIGNMENT_CENTER);
+        linearLayout_Line.addView(wordQuran);
+        wordQuran.setTag(index);
+
+        wordQuran.setTextSize(21f);
+        wordQuran.setTypeface(font);
+        wordQuran.setText(Html.fromHtml(code).toString());
+
+        wordQuran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tochListener.wordOnclickListener();
+            }
+        });
+        wordQuran.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                tochListener.wordOnLongclickListener();
+                return true;
+            }
+        });
 
     }
 
     private void crateTitelVers(Context context , LinearLayout background_slide,int vars ){
-        Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");
+        Typeface fontNabi = ResourcesCompat.getFont(context,R.font.font_nabi);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -243,10 +246,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
         linearLayout_Lines.addView(TextQuran_textviews);
 
-        TextQuran_textviews.setTextSize(25f);
+        TextQuran_textviews.setTextSize(20f);
         TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
-//        TextQuran_textviews.setTypeface(font_besmellah);
-        TextQuran_textviews.setText(vars+"");
+        TextQuran_textviews.setTypeface(fontNabi);
+        TextQuran_textviews.setText(QuranValue.listSura[vars]);
 
     }
     private void crateBesmellah(Context context , LinearLayout background_slide,int index ){
