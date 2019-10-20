@@ -1,37 +1,39 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:background="#636262"
-    android:gravity="center|left"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:minHeight="70dp"
     android:id="@+id/rootItem_sureh"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/_55sdp">
 
     <!--Number Sureh-->
     <TextView
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
         android:id="@+id/number_surah"
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="1"
-        android:layout_width="0dp"
-        android:layout_weight="1.5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <!--Title Sureh-->
     <LinearLayout
-        android:gravity="center|left"
+        android:gravity="center|start"
+        android:layout_toEndOf="@+id/number_surah"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="8"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/title_surah"
-            android:textSize="16dp"
+            android:textSize="@dimen/_14ssp"
             android:textStyle="bold"
             android:textColor="#fff"
             android:text="Al-Fatehe"
@@ -39,7 +41,7 @@
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/decs_surah"
-            android:textSize="14dp"
+            android:textSize="@dimen/_12ssp"
             android:textStyle="bold"
             android:textColor="#fff"
             android:text="Make - 7 aya"
@@ -49,14 +51,16 @@
 
     <!--Page in Surah-->
     <TextView
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
         android:id="@+id/page_surah"
         android:textAlignment="center"
-        android:textSize="16dp"
+        android:textSize="@dimen/_12ssp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="1"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+</RelativeLayout>

@@ -1,5 +1,6 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:background="#636262"
     android:gravity="center|left"
@@ -8,11 +9,13 @@
     android:minHeight="60dp"
     android:id="@+id/rootItem_hizb"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/_50sdp">
 
     <!--Number Sureh-->
 
     <TextView
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
         android:gravity="center"
         android:id="@+id/number_hizb"
         android:textAlignment="center"
@@ -23,16 +26,19 @@
         android:background="@drawable/hezb_1"
         android:text="1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:ignore="UnusedAttribute" />
 
 
 
     <!--Title Sureh-->
     <LinearLayout
-        android:gravity="center|left"
+        android:layout_toEndOf="@+id/page_hizb"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="8"
+        android:gravity="center|start"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/title_hizb"
@@ -59,14 +65,15 @@
 
     <!--Page in Surah-->
     <TextView
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
         android:id="@+id/page_hizb"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:text="1"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+</RelativeLayout>

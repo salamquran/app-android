@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +27,7 @@ public class QuranListAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
         TextView number_surah,title_surah,decs_surah,page_surah;
-        LinearLayout rootItem_surah;
+        RelativeLayout rootItem_surah;
 
         public SurahTypeViewHolder(View itemView) {
             super(itemView);
@@ -45,7 +46,7 @@ public class QuranListAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
         TextView title_juz , page_juz;
-        LinearLayout rootItem_juz;
+        RelativeLayout rootItem_juz;
 
         public JuzTypeViewHolder(View itemView) {
             super(itemView);
@@ -62,7 +63,7 @@ public class QuranListAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
         TextView number_hezb, title_hezb, decs_hezb, page_hezb;
-        LinearLayout rootItem_hizb;
+        RelativeLayout rootItem_hizb;
 
         public HezbTypeViewHolder(View itemView) {
             super(itemView);
@@ -189,6 +190,5 @@ public class QuranListAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHold
     public int getItemCount() {
         return QuranList.size();
     }
-
 
 }
