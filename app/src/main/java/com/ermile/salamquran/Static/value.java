@@ -3,6 +3,7 @@ package com.ermile.salamquran.Static;
 import com.ermile.salamquran.BuildConfig;
 
 public class value {
+    public static String besmellahe_alrahman_alrahim = "﷽";
 
     public static String error_CalclutorHefzProgram = "ما در محاسبه به مشکل برخوردیم!";
     public static String btn_CalclutorHefzProgram = "محاسبه";
