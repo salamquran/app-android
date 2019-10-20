@@ -96,7 +96,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         String getPage_FromListQuran = Objects.requireNonNull(getIntent().getStringExtra("open_page"));
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
-//        viewpager.addOnPageChangeListener(this);
+        viewpager.addOnPageChangeListener(this);
 
 
         btn_play.setOnClickListener(new View.OnClickListener() {
