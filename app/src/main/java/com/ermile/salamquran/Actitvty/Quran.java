@@ -87,12 +87,18 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         // set
         PagerAdapter = new QuranAdaptor(new QuranAdaptor.onTochListener() {
             @Override
-            public void toched() {
+            public void wordOnclickListener() {
                changeTransitionBoxMediaControl();
             }
-        }); // add Adapter
+
+            @Override
+            public void wordOnLongclickListener() {
+
+            }
+        });
+        // add Adapter
         viewpager.setAdapter(PagerAdapter); // set Adapter to View pager in XML
-        viewpager.setOffscreenPageLimit(2);
+        viewpager.setOffscreenPageLimit(1);
         String getPage_FromListQuran = Objects.requireNonNull(getIntent().getStringExtra("open_page"));
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
@@ -144,7 +150,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     /*Change Transition Box Media Control*/
     private void changeTransitionBoxMediaControl(){
-        Log.d(tag.important, "changeTransitionBoxMediaControl: "+boxMediaControl.getTranslationY());
         if (boxMediaControl.getTranslationY() != 0f){
             boxMediaControl.animate().setDuration(300).translationY(0f);
         }else {
