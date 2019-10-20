@@ -46,6 +46,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     MediaPlayer mediaPlayer;
     Integer ayaNumber = 0;
 
+    LinearLayout boxMediaControl;
     AppCompatImageButton btn_next, btn_back,
             btn_play, btn_pause, btn_stop;
     ImageButton btn_changeQari;
@@ -65,6 +66,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
         // Chang ID XML
         viewpager = findViewById(R.id.view_pagers);    // RTL viewpager in XML
+        boxMediaControl = findViewById(R.id.box_media_contoroler);
         btn_back = findViewById(R.id.btn_bakc);        // MediaControl (Back Audio)
         btn_next = findViewById(R.id.btn_next);        // MediaControl (Next Audio)
         btn_play = findViewById(R.id.btn_play);        // MediaControl (Play Audio)
@@ -83,9 +85,14 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
 
         // set
-        PagerAdapter = new QuranAdaptor(); // add Adapter
+        PagerAdapter = new QuranAdaptor(new QuranAdaptor.onTochListener() {
+            @Override
+            public void toched() {
+               changeTransitionBoxMediaControl();
+            }
+        }); // add Adapter
         viewpager.setAdapter(PagerAdapter); // set Adapter to View pager in XML
-        viewpager.setOffscreenPageLimit(0);
+        viewpager.setOffscreenPageLimit(2);
         String getPage_FromListQuran = Objects.requireNonNull(getIntent().getStringExtra("open_page"));
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
@@ -133,6 +140,16 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 backSound();
             }
         });
+    }
+
+    /*Change Transition Box Media Control*/
+    private void changeTransitionBoxMediaControl(){
+        Log.d(tag.important, "changeTransitionBoxMediaControl: "+boxMediaControl.getTranslationY());
+        if (boxMediaControl.getTranslationY() != 0f){
+            boxMediaControl.animate().setDuration(300).translationY(0f);
+        }else {
+            boxMediaControl.animate().setDuration(300).translationY(100f);
+        }
     }
 
     /*Next Aya*/

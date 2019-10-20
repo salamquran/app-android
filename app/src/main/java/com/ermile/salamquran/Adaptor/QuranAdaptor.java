@@ -10,6 +10,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -31,6 +32,12 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
+    onTochListener tochListener;
+
+    public QuranAdaptor(onTochListener tochListener) {
+        this.tochListener = tochListener;
+    }
+
     @Override
     public int getCount() {
         return 605;
@@ -42,7 +49,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         return view == object;
     }
 
-    @SuppressLint({"ResourceType", "SetTextI18n"})
+    @SuppressLint({"ResourceType", "SetTextI18n", "ClickableViewAccessibility"})
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
@@ -159,6 +166,13 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     TextQuran_textview.setTypeface(font);
                     TextQuran_textview.setText(Html.fromHtml(code).toString());
 
+                    TextQuran_textview.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tochListener.toched();
+                        }
+                    });
+
                     final String getTag_textQuran = TextQuran_textview.getTag().toString();
                     TextQuran_textview.setOnLongClickListener(new View.OnLongClickListener() {
                         @Override
@@ -195,6 +209,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView( (RelativeLayout) object);
+    }
+
+    public interface onTochListener{
+        void toched();
     }
 
 

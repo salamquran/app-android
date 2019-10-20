@@ -18,7 +18,8 @@
 
     <!--Media Controller-->
     <LinearLayout
-        android:id="@+id/media_contoroler"
+        android:translationY="@dimen/_50sdp"
+        android:id="@+id/box_media_contoroler"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#4DC2BCBC"
