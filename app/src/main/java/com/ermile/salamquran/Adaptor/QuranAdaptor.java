@@ -35,8 +35,6 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
 
-    private int lineRender = 1;
-
     private onTochListener tochListener;
 
     public QuranAdaptor(onTochListener tochListener) {
@@ -66,16 +64,16 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         final View view = Objects.requireNonNull(inflater).inflate(R.layout.item_quran , container , false);
 
         final LinearLayout background_slide = view.findViewById(R.id.background_slide);
-
         final ImageView cutPage_R = view.findViewById(R.id.cutPage_R);
         final ImageView cutPage_L = view.findViewById(R.id.cutPage_L);
         final ImageView spacePage_L = view.findViewById(R.id.spacePage_L);
         final ImageView spacePage_R = view.findViewById(R.id.spacePage_R);
-
-        boolean pageInfoIsSet = false;
         final TextView Top_surah = view.findViewById(R.id.quranItemViewPager_titleSurah);
         final TextView Top_juz = view.findViewById(R.id.quranItemViewPager_titleJuz);
         final TextView bottom_numberPage = view.findViewById(R.id.quranItemViewPager_pageNumber);
+
+        boolean pageInfoIsSet = false;
+
 
 
         if (even_odd.isOdd(position)){
@@ -90,7 +88,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextView TextQuran_textview = null;
 
         int testLine =0;
-        lineRender = 1;
+        int lineRender = 1;
         Typeface font;
         if (position > 0){
 
@@ -191,11 +189,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
     public interface onTochListener{
         void wordOnclickListener();
-        void wordOnLongclickListener();
+        void wordOnLongclickListener(int indexAya);
     }
 
 
-    private void crateWordQuran(Context context,LinearLayout linearLayout_Line ,TextView wordQuran,Typeface font,String text , String code, int index , int page ){
+    private void crateWordQuran(Context context, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int page ){
         wordQuran = new TextView(context);
         wordQuran.setTextColor(Color.parseColor("#000000"));
         wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -217,7 +215,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         wordQuran.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                tochListener.wordOnLongclickListener();
+                tochListener.wordOnLongclickListener(index);
                 return true;
             }
         });

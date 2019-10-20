@@ -92,8 +92,22 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
 
             @Override
-            public void wordOnLongclickListener() {
-
+            public void wordOnLongclickListener(int indexAya) {
+                RelativeLayout relativeLayout = (RelativeLayout) viewpager.getChildAt(0);
+                LinearLayout background_slide = (LinearLayout) relativeLayout.getChildAt(2);
+                for (int rq = 0; rq <= background_slide.getChildCount(); rq++) {
+                    LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
+                    if (rowQuran != null) {
+                        for (int wq = 0; wq <= rowQuran.getChildCount(); wq++) {
+                            TextView wordQuran = (TextView) rowQuran.getChildAt(wq);
+                            if (wordQuran != null) {
+                                if (wordQuran.getTag().toString().equals(indexAya + "")) {
+                                    wordQuran.setBackgroundColor(Color.GRAY);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         });
         // add Adapter
