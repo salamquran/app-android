@@ -243,7 +243,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
         linearLayout_Lines.addView(TextQuran_textviews);
-
+        TextQuran_textviews.setTag(vars);
         TextQuran_textviews.setTextSize(20f);
         TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
         TextQuran_textviews.setTypeface(fontNabi);
