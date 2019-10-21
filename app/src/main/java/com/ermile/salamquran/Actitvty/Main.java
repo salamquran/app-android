@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.ermile.salamquran.Actitvty.View.About;
-import com.ermile.salamquran.Fragmnet.LMS;
+import com.ermile.salamquran.Fragmnet.Lms.LMS;
 import com.ermile.salamquran.Fragmnet.QuraList.QuranList;
 import com.ermile.salamquran.Fragmnet.Setting;
 import com.ermile.salamquran.Function.Utility.ReadFile;
