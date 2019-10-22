@@ -104,21 +104,10 @@ public class Main extends AppCompatActivity implements BottomNavigationView.OnNa
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_learn:
-                fragment = new LMS();
-                break;
-            case R.id.nav_meg:
-                Intent test = new Intent(this, About.class);
-                startActivity(test);
-                break;
-            case R.id.nav_quran:
+            default:
                 fragment= new QuranList();
                 break;
-            case R.id.nav_search:
-                break;
-            case R.id.nav_setting:
-                fragment = new Setting();
-                break;
+
 
         }
 
