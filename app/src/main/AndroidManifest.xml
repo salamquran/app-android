@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Actitvty.Lms.Level_List"></activity>
+        <activity android:name=".Actitvty.Lms.Level"></activity>
+        <activity android:name=".Actitvty.Lms.Level_List" />
         <activity android:name=".Actitvty.CalclutorHefzProgram" /> <!-- activity -->
         <activity android:name=".Actitvty.Splash">
             <intent-filter>

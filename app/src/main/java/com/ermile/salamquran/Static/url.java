@@ -16,6 +16,7 @@ public class url {
 
     public static String lms_group = "https://salamquran.com/fa/api/v6/lms/group";
     public static String lms_levelList = "https://salamquran.com/fa/api/v6/lms/levellist";
+    public static String lms_level = "https://salamquran.com/fa/api/v6/lms/level";
 
     public static String calclutorHefzProgram = "https://salamquran.com/en/api/v6/hefz/time";
 

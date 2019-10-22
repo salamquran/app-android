@@ -136,4 +136,63 @@ public class LMS_api {
 
         void onErrorLevelList(String error);
     }
+
+    public static void getLevel(final Context context,String idLevel, final level_ListListener listListener){
+        StringRequest getToken =
+                new StringRequest(Request.Method.GET,
+                url.lms_level+"?id="+idLevel,
+                new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                JSONObject mainObject;
+                JSONArray msg,result;
+                boolean ok;
+                try {
+                    mainObject = new JSONObject(response);
+                    ok = mainObject.getBoolean("ok");
+                    if (ok){
+                        result = mainObject.getJSONArray("result");
+                        listListener.onGetLevel(String.valueOf(result));
+                        log.d(this.getClass().getName(),"Get Token"," :) Token is Hidden..");
+                    }else {
+                        msg = mainObject.getJSONArray("msg");
+                        for (int i = 0 ; i<= msg.length();i++){
+                            JSONObject msg_object = msg.getJSONObject(i);
+                            listListener.onErrorLevel(msg_object+"");
+                            Log.e(tag.error, "LMS_api : \n msg"+ msg_object );
+
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    listListener.onErrorLevel("JSONException: "+e);
+                    Log.e(tag.error, "LMS_api : \nJSONException",e );
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError e) {
+                listListener.onErrorLevel("VolleyError: "+e);
+                Log.e(tag.error, "LMS_api : \nVolleyError",e );
+            }
+        })
+                // Send Headers
+        {
+            @Override
+            public Map<String, String> getHeaders()  {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("apikey", SaveManager.get(context).getstring_appINFO().get(SaveManager.apiKey));
+                return headers;
+            }
+
+        };
+        AppContoroler.getInstance().addToRequestQueue(getToken);
+    }
+
+    public interface level_ListListener {
+        void onGetLevel(String token);
+
+        void onErrorLevel(String error);
+    }
 }
