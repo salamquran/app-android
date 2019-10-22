@@ -100,8 +100,14 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         if (position > 0){
             if (FileManager.findFile_storage("/"+file.font_OsmanTaha+"/","p"+position+format.ttf)){
                 File fontFile = FileManager.getFile_storage("/"+file.font_OsmanTaha+"/","p"+position+ format.ttf);
-                font = Typeface.createFromFile(fontFile.getPath());
-                hasFontOsmani = true;
+                try {
+                    font = Typeface.createFromFile(fontFile.getPath());
+                    hasFontOsmani = true;
+                }catch (Exception e){
+                    Log.e(tag.error, "QuranAdaptor: Set Downloaded Fot ",e );
+
+                }
+
             }
             else {
                 Download.Font(context, url.dlGithub_font_Quran_v1+"p"+position+format.ttf,file.font_OsmanTaha,"p"+ position);
@@ -118,12 +124,12 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
                 String code = pageData.getString(pageData.getColumnIndex("code"));
                 String text = pageData.getString(pageData.getColumnIndex("text"));
+                String char_type = pageData.getString(pageData.getColumnIndex("char_type"));
                 final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
                 final int juz = pageData.getInt(pageData.getColumnIndex("juz"));
                 final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
                 int line = pageData.getInt(pageData.getColumnIndex("line"));
                 int page = pageData.getInt(pageData.getColumnIndex("page"));
-                int positions = pageData.getInt(pageData.getColumnIndex("position"));
                 int index = pageData.getInt(pageData.getColumnIndex("index"));
 
                 if (!pageInfoIsSet){
@@ -174,7 +180,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
-                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,text,code,index,page);
+                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,text,code,index,aya,char_type);
                 }
 
 
@@ -199,7 +205,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
 
-    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int page ){
+    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int aya,String type ){
         wordQuran = new TextView(context);
         wordQuran.setTextColor(Color.parseColor("#000000"));
         wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -208,12 +214,17 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         linearLayout_Line.addView(wordQuran);
         wordQuran.setTag(index);
 
-        wordQuran.setTextSize(21f);
         wordQuran.setTypeface(font);
         if (hasFontOsmani){
+            wordQuran.setTextSize(22f);
             wordQuran.setText(Html.fromHtml(code).toString());
         }else {
-            wordQuran.setText(text);
+            wordQuran.setTextSize(18f);
+            if ("end".equals(type)) {
+                wordQuran.setText(" ( " + aya + " ) ");
+            } else {
+                wordQuran.setText(" " + text + " ");
+            }
         }
         wordQuran.setOnClickListener(new View.OnClickListener() {
             @Override
