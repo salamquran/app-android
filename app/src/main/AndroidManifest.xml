@@ -20,8 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Actitvty.CalclutorHefzProgram"></activity>
-        <!-- activity -->
+        <activity android:name=".Actitvty.Lms.Level_List"></activity>
+        <activity android:name=".Actitvty.CalclutorHefzProgram" /> <!-- activity -->
         <activity android:name=".Actitvty.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,12 +51,12 @@
             android:name=".Service.AudioForeground"
             android:enabled="true"
             android:exported="true"
-            tools:ignore="ExportedService"></service>
+            tools:ignore="ExportedService" />
         <service
             android:name=".Service.AlarmBackground"
             android:enabled="true"
             android:exported="true"
-            tools:ignore="ExportedService"></service>
+            tools:ignore="ExportedService" />
     </application>
 
 </manifest>

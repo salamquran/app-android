@@ -63,7 +63,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
         final View view = Objects.requireNonNull(inflater).inflate(R.layout.item_quran , container , false);
 
-        final LinearLayout background_slide = view.findViewById(R.id.background_slide);
+        LinearLayout background_slide = view.findViewById(R.id.background_slide);
         final ImageView cutPage_R = view.findViewById(R.id.cutPage_R);
         final ImageView cutPage_L = view.findViewById(R.id.cutPage_L);
         final ImageView spacePage_L = view.findViewById(R.id.spacePage_L);
@@ -126,16 +126,13 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
 
                 if (line == 14 && dbRenderCunt == pageData.getCount()){
-                    Log.e(tag.important, "Page: "+page +" ONE TitleVars" );
                     crateTitelVers(context,background_slide,sura+1);
                     lineRender++;
                     lineRender++;
                 }
 
                 if(testLine < line){
-                    Log.d(tag.important, "line: "+line+" - line Render: "+lineRender);
                     int t = line - lineRender;
-                    Log.d(tag.important, "----------------------------------------->line: "+line+" - line Render: "+lineRender+" - t: "+t);
                     switch (t){
                         case 2:
                             Log.e(tag.important, "Page: "+page +" TWO" );
@@ -168,7 +165,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
-                    crateWordQuran(context,linearLayout_Line,TextQuran_textview,font,null,code,index,page);
+                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,null,code,index,page);
                 }
 
 
@@ -193,7 +190,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
 
-    private void crateWordQuran(Context context, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int page ){
+    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int page ){
         wordQuran = new TextView(context);
         wordQuran.setTextColor(Color.parseColor("#000000"));
         wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -212,10 +209,24 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 tochListener.wordOnclickListener();
             }
         });
+
         wordQuran.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                tochListener.wordOnLongclickListener(index);
+                for (int rq = 0; rq <= background_slide.getChildCount(); rq++) {
+                    LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
+                    if (rowQuran != null) {
+                        for (int wq = 0; wq <= rowQuran.getChildCount(); wq++) {
+                            TextView wordQurans = (TextView) rowQuran.getChildAt(wq);
+                            if (wordQurans != null) {
+                                Log.e(tag.important, "setBgPlaying: "+wordQurans.getTag()+" | "+index);
+                                if (wordQurans.getTag().toString().equals(index+"")) {
+                                    wordQurans.setBackgroundColor(Color.parseColor("#ADC9A1"));
+                                }
+                            }
+                        }
+                    }
+                }
                 return true;
             }
         });
@@ -244,7 +255,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
         linearLayout_Lines.addView(TextQuran_textviews);
         TextQuran_textviews.setTag(vars);
-        TextQuran_textviews.setTextSize(20f);
+        TextQuran_textviews.setTextSize(15f);
         TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
         TextQuran_textviews.setTypeface(fontNabi);
         TextQuran_textviews.setText(QuranValue.listSura[vars]);

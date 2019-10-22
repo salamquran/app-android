@@ -1,10 +1,10 @@
-package com.ermile.salamquran.Item;
+package com.ermile.salamquran.Item.item_LMS;
 
-public class item_LMS_GroupList {
+public class GroupList {
     int id;
     String title,type,desc,sort,status,datecreated,file;
 
-    public item_LMS_GroupList(int id, String title, String type, String desc, String sort, String status, String datecreated, String file) {
+    public GroupList(int id, String title, String type, String desc, String sort, String status, String datecreated, String file) {
         this.id = id;
         this.title = title;
         this.type = type;

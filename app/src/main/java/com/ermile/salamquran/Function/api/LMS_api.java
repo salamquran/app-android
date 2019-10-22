@@ -44,7 +44,7 @@ public class LMS_api {
                         for (int i = 0 ; i<= msg.length();i++){
                             JSONObject msg_object = msg.getJSONObject(i);
                             listListener.onErrorGroupList(msg_object+"");
-                            Log.e(tag.error, "Get Token : \n msg"+ msg_object );
+                            Log.e(tag.error, "LMS_api: \n msg"+ msg_object );
 
                         }
                     }
@@ -52,14 +52,14 @@ public class LMS_api {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     listListener.onErrorGroupList("JSONException: "+e);
-                    Log.e(tag.error, "Get Token : \nJSONException",e );
+                    Log.e(tag.error, "LMS_api : \nJSONException",e );
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError e) {
                 listListener.onErrorGroupList("VolleyError: "+e);
-                Log.e(tag.error, "Get Token : \nVolleyError",e );
+                Log.e(tag.error, "LMS_api : \nVolleyError",e );
             }
         })
                 // Send Headers
@@ -79,5 +79,61 @@ public class LMS_api {
         void onGetGroupList(String token);
 
         void onErrorGroupList(String error);
+    }
+
+    public static void getLevelList(final Context context,int idGroup, final levelList_ListListener listListener){
+        StringRequest getToken = new StringRequest(Request.Method.GET, url.lms_levelList+"?id="+idGroup, new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                JSONObject mainObject;
+                JSONArray msg,result;
+                boolean ok;
+                try {
+                    mainObject = new JSONObject(response);
+                    ok = mainObject.getBoolean("ok");
+                    if (ok){
+                        result = mainObject.getJSONArray("result");
+                        listListener.onGetLevelList(String.valueOf(result));
+                        log.d(this.getClass().getName(),"Get Token"," :) Token is Hidden..");
+                    }else {
+                        msg = mainObject.getJSONArray("msg");
+                        for (int i = 0 ; i<= msg.length();i++){
+                            JSONObject msg_object = msg.getJSONObject(i);
+                            listListener.onErrorLevelList(msg_object+"");
+                            Log.e(tag.error, "LMS_api : \n msg"+ msg_object );
+
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    listListener.onErrorLevelList("JSONException: "+e);
+                    Log.e(tag.error, "LMS_api : \nJSONException",e );
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError e) {
+                listListener.onErrorLevelList("VolleyError: "+e);
+                Log.e(tag.error, "LMS_api : \nVolleyError",e );
+            }
+        })
+                // Send Headers
+        {
+            @Override
+            public Map<String, String> getHeaders()  {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("apikey", SaveManager.get(context).getstring_appINFO().get(SaveManager.apiKey));
+                return headers;
+            }
+
+        };
+        AppContoroler.getInstance().addToRequestQueue(getToken);
+    }
+
+    public interface levelList_ListListener {
+        void onGetLevelList(String token);
+
+        void onErrorLevelList(String error);
     }
 }

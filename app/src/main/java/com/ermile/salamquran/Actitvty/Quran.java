@@ -93,21 +93,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
             @Override
             public void wordOnLongclickListener(int indexAya) {
-                RelativeLayout relativeLayout = (RelativeLayout) viewpager.getChildAt(0);
-                LinearLayout background_slide = (LinearLayout) relativeLayout.getChildAt(2);
-                for (int rq = 0; rq <= background_slide.getChildCount(); rq++) {
-                    LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
-                    if (rowQuran != null) {
-                        for (int wq = 0; wq <= rowQuran.getChildCount(); wq++) {
-                            TextView wordQuran = (TextView) rowQuran.getChildAt(wq);
-                            if (wordQuran != null) {
-                                if (wordQuran.getTag().toString().equals(indexAya + "")) {
-                                    wordQuran.setBackgroundColor(Color.GRAY);
-                                }
-                            }
-                        }
-                    }
-                }
+
             }
         });
         // add Adapter
@@ -217,7 +203,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 && playAudioList.get(ayaNumber).getVers() != 9) {
             viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
             Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-            setBgPlaying();
+            setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
             playBesmellah();
         } else {
             besmellahIsPlaying = false;
@@ -226,7 +212,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                     if (ayaNumber < playAudioList.size()) {
                         viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
                         Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                        setBgPlaying();
+                        setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
                         mediaPlayer = new MediaPlayer();
                         mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
                         mediaPlayer.prepare();
@@ -278,7 +264,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     }
 
     /*Hi Light Text in ViewPager*/
-    private void setBgPlaying() {
+    private void setBgPlaying(int TagOfAya , boolean isAudioQuran) {
         RelativeLayout relativeLayout = (RelativeLayout) viewpager.getChildAt(0);
         LinearLayout background_slide = (LinearLayout) relativeLayout.getChildAt(2);
         for (int rq = 0; rq <= background_slide.getChildCount(); rq++) {
@@ -287,10 +273,19 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 for (int wq = 0; wq <= rowQuran.getChildCount(); wq++) {
                     TextView wordQuran = (TextView) rowQuran.getChildAt(wq);
                     if (wordQuran != null) {
-                        if (wordQuran.getTag().toString().equals(playAudioList.get(ayaNumber).getIndex() + "")) {
-                            wordQuran.setTextColor(Color.BLUE);
-                        } else {
-                            wordQuran.setTextColor(Color.BLACK);
+                        if (wordQuran.getTag().toString().equals(TagOfAya+"")) {
+
+                            if (isAudioQuran){
+                                wordQuran.setTextColor(Color.BLUE);
+                            }
+                            else {
+                                wordQuran.setBackgroundColor(Color.parseColor("#ADC9A1"));
+                            }
+                        }
+                        else {
+                            if (isAudioQuran){
+                                wordQuran.setTextColor(Color.BLACK);
+                            }
                         }
                     }
                 }
