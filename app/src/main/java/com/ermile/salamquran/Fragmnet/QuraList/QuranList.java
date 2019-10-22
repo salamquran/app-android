@@ -15,6 +15,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.ermile.salamquran.R;
 import com.google.android.material.tabs.TabLayout;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +24,6 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class QuranList extends Fragment {
-
-    View fragment_quran;
-    TabLayout tabLayout_NavQuran;
-    ViewPager viewPager_NavQuran;
 
     public QuranList() {
         // Required empty public constructor
@@ -36,10 +34,10 @@ public class QuranList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fragment_quran =  inflater.inflate(R.layout.fragment_quran_list, container, false);
+        View fragment_quran = inflater.inflate(R.layout.fragment_quran_list, container, false);
 
-        viewPager_NavQuran = fragment_quran.findViewById(R.id.viewPager_NavQuran);
-        tabLayout_NavQuran = fragment_quran.findViewById(R.id.tabLayout_NavQuran);
+        ViewPager viewPager_NavQuran = fragment_quran.findViewById(R.id.viewPager_NavQuran);
+        TabLayout tabLayout_NavQuran = fragment_quran.findViewById(R.id.tabLayout_NavQuran);
 
         NavQuran_adapterTab adapterTab = new NavQuran_adapterTab(getChildFragmentManager());
 
@@ -55,10 +53,11 @@ public class QuranList extends Fragment {
         private final List<Fragment> ftagment_list = new ArrayList<>();
         private final List<String> title_list = new  ArrayList<>();
 
-        public NavQuran_adapterTab(FragmentManager fm) {
+        NavQuran_adapterTab(FragmentManager fm) {
             super(fm);
         }
 
+        @NotNull
         @Override
         public Fragment getItem(int posetion) {
             return ftagment_list.get(posetion);
@@ -76,7 +75,7 @@ public class QuranList extends Fragment {
             return title_list.get(position);
         }
 
-        public void addFragment(Fragment fragment , String title){
+        void addFragment(Fragment fragment, String title){
             ftagment_list.add(fragment);
             title_list.add(title);
         }
