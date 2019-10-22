@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.widget.Toast;
 
 import com.ermile.salamquran.Actitvty.View.About;
+import com.ermile.salamquran.Static.format;
 
 import java.io.File;
 
@@ -21,20 +22,20 @@ public class Download {
     public static void File(Context context,
                     String URL,
                     String Folder, String FileName, String Format,
-                    String Title, String Discretion)
+                    String Title_Downloading, String Discretion_Downloading)
     {
-        if (Title == null){
-            Title = "Salam Quran";
+        if (Title_Downloading == null){
+            Title_Downloading = "Salam Quran";
         }
-        if (Discretion == null){
-            Discretion = "Downloading...";
+        if (Discretion_Downloading == null){
+            Discretion_Downloading = "Downloading...";
         }
 
         if (URL != null && FileName != null){
             File file = new File(context.getExternalFilesDir(null),Folder + FileName + Format);
             android.app.DownloadManager.Request request=new android.app.DownloadManager.Request(Uri.parse(URL))
-                    .setTitle(Title)// Title of the Download Notification
-                    .setDescription(Discretion)// Description of the Download Notification
+                    .setTitle(Title_Downloading)// Title of the Download Notification
+                    .setDescription(Discretion_Downloading)// Description of the Download Notification
                     .setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE)// Visibility of the download Notification
                     .setDestinationUri(Uri.fromFile(file))// Uri of the destination file
 //                .setRequiresCharging(false)// Set if charging is required to begin the download
@@ -61,4 +62,10 @@ public class Download {
             }
         }
     };
+
+
+    public static void Aya(Context context,String url,String QariName,String sura,String aya){
+        Download.File(context,url,"/"+QariName+"/"+sura+"/",aya, format.mp3,"در حال دانلود سوره" + sura, "با تلاوت " + QariName);
+
+    }
 }

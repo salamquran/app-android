@@ -24,14 +24,18 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.ermile.salamquran.Adaptor.QuranAdaptor;
+import com.ermile.salamquran.Function.Utility.Download;
+import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Function.Utility.carateURL;
 import com.ermile.salamquran.Item.item_PlayAudio;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.value;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -196,29 +200,41 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     /*Play AudioPlayer*/
     private void playSound() {
-
+        int aya = playAudioList.get(ayaNumber).getAya();
+        int sura = playAudioList.get(ayaNumber).getVers();
+        int page = playAudioList.get(ayaNumber).getPage();
+        int index = playAudioList.get(ayaNumber).getIndex();
+        String pathAudio = playAudioList.get(ayaNumber).getUrl();
         if (!besmellahIsPlaying
-                && playAudioList.get(ayaNumber).getAya() == 1
-                && playAudioList.get(ayaNumber).getVers() != 1
-                && playAudioList.get(ayaNumber).getVers() != 9) {
-            viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
+                && aya == 1
+                && sura != 1
+                && sura != 9) {
+            viewpager.setCurrentItem(page, true);
             Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-            setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
+            setBgPlaying(index,true);
             playBesmellah();
         } else {
             besmellahIsPlaying = false;
+            String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
+            if (FileManager.findFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3)){
+                File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3);
+                pathAudio = fileBesmellah.getPath();
+
+            }
+            else {
+                Download.Aya(this,pathAudio,qariName,String.valueOf(sura),String.valueOf(aya));
+            }
             try {
-                if (playAudioList.get(ayaNumber).getUrl() != null) {
-                    if (ayaNumber < playAudioList.size()) {
-                        viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
-                        Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                        setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
-                        mediaPlayer = new MediaPlayer();
-                        mediaPlayer.setDataSource(playAudioList.get(ayaNumber).getUrl());
-                        mediaPlayer.prepare();
-                        mediaPlayer.start();
-                        mediaPlayer.setOnCompletionListener(this);
-                    }
+                if (ayaNumber < playAudioList.size()) {
+                    viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
+                    Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+                    setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
+                    mediaPlayer = new MediaPlayer();
+                    Log.d(tag.important, "playSound: "+pathAudio);
+                    mediaPlayer.setDataSource(pathAudio);
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(this);
                 }
 
             } catch (IOException ignored) {
@@ -310,9 +326,20 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
 
     private void playBesmellah() {
+        String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
+        String pathAudio = carateURL.besmellah(this);
+        if (FileManager.findFile_storage("/"+qariName+"/1/","1"+ format.mp3)){
+            File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/1/","1"+ format.mp3);
+            pathAudio = fileBesmellah.getPath();
+
+        }
+        else {
+            Download.Aya(this,pathAudio,qariName,"1","1");
+        }
         try {
             mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDataSource(carateURL.besmellah(this));
+            Log.d(tag.important, "playBesmellah: "+pathAudio);
+            mediaPlayer.setDataSource(pathAudio);
             mediaPlayer.prepare();
             mediaPlayer.start();
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -322,6 +349,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                     playSound();
                 }
             });
+
         } catch (IOException ignored) {
         }
     }
@@ -356,10 +384,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         int AudioAya = playAudioList.size() - 1;
         return AudioAya == ayaNumber;
     }
-
-
-
-
 
 
 

@@ -92,11 +92,12 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         Typeface font;
         if (position > 0){
 
-            if (position <= 10){
+            /*if (position <= 10){
                 font = Typeface.createFromFile(FileManager.getFile_storage("font/Quran_v1","p"+position+".ttf").getPath());
             }else {
                 font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
-            }
+            }*/
+            font = Typeface.createFromAsset(context.getAssets(),"font/font_nabi.ttf");
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
@@ -109,6 +110,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 dbRenderCunt++;
 
                 String code = pageData.getString(pageData.getColumnIndex("code"));
+                String text = pageData.getString(pageData.getColumnIndex("text"));
                 final int aya = pageData.getInt(pageData.getColumnIndex("aya"));
                 final int juz = pageData.getInt(pageData.getColumnIndex("juz"));
                 final int sura = pageData.getInt(pageData.getColumnIndex("sura"));
@@ -165,7 +167,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
-                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,null,code,index,page);
+                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,text,code,index,page);
                 }
 
 
@@ -201,8 +203,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         wordQuran.setTextSize(21f);
         wordQuran.setTypeface(font);
-        wordQuran.setText(Html.fromHtml(code).toString());
-
+//        wordQuran.setText(Html.fromHtml(code).toString());
+        wordQuran.setText(text);
         wordQuran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -234,7 +236,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
     private void crateTitelVers(Context context , LinearLayout background_slide,int vars ){
-        Typeface fontNabi = ResourcesCompat.getFont(context,R.font.font_nabi);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -257,7 +258,6 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextQuran_textviews.setTag(vars);
         TextQuran_textviews.setTextSize(15f);
         TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
-        TextQuran_textviews.setTypeface(fontNabi);
         TextQuran_textviews.setText(QuranValue.listSura[vars]);
 
     }
