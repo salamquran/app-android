@@ -114,7 +114,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    70);
+                    (int) context.getResources().getDimension(R.dimen._30sdp));
 
             SQLiteDatabase mydb = new MyDatabase(context).getReadableDatabase();
             Cursor pageData = mydb.rawQuery("SELECT * FROM quran_word WHERE page="+position, null);
@@ -157,20 +157,24 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
                             break;
                         case 1:
-                            if (line == 2){
-                                Log.e(tag.important, "Page: "+page +" ONE > Besmellah" );
-                                crateBesmellah(context,background_slide,index);
-                                lineRender++;
-                                lineRender++;
+                            if (page == 1 || line == 1){
+                                crateTitelVers(context,background_slide,sura);
                             }
+                            else {
+                                if (line == 2){
+                                    Log.e(tag.important, "Page: "+page +" ONE > Besmellah" );
+                                    crateBesmellah(context,background_slide,index);
+                                    lineRender++;
+                                    lineRender++;
+                                }
+                            }
+
                             break;
 
-                            default:
-                                lineRender++;
-                                break;
+                        default:
+                            lineRender++;
+                            break;
                     }
-
-
                     linearLayout_Line = new LinearLayout(context);
                     linearLayout_Line.setOrientation(LinearLayout.HORIZONTAL);
                     linearLayout_Line.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -216,10 +220,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         wordQuran.setTypeface(font);
         if (hasFontOsmani){
-            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._9ssp));
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._8ssp));
             wordQuran.setText(Html.fromHtml(code).toString());
         }else {
-            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._6ssp));
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._5ssp));
             if ("end".equals(type)) {
                 wordQuran.setText(" ( " + aya + " ) ");
             } else {
@@ -239,10 +243,11 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.topMargin = 10;
-        layoutParams.bottomMargin = 10;
-        layoutParams.leftMargin = 30;
-        layoutParams.rightMargin = 30;
+        layoutParams.topMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
+        layoutParams.bottomMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
+        layoutParams.leftMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
+        layoutParams.rightMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
 
         LinearLayout linearLayout_Lines = new LinearLayout(context);
         linearLayout_Lines.setOrientation(LinearLayout.HORIZONTAL);
@@ -256,7 +261,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
         linearLayout_Lines.addView(TextQuran_textviews);
         TextQuran_textviews.setTag(vars);
-        TextQuran_textviews.setTextSize(15f);
+        TextQuran_textviews.setTextSize(context.getResources().getDimension(R.dimen._10ssp));
         TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
         TextQuran_textviews.setText(QuranValue.listSura[vars]);
 
@@ -280,7 +285,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         linearLayout_Lines.addView(TextQuran_textviews);
         TextQuran_textviews.setTag(index);
 
-        TextQuran_textviews.setTextSize(30f);
+        TextQuran_textviews.setTextSize(context.getResources().getDimension(R.dimen._12ssp));
         TextQuran_textviews.setTypeface(font_besmellah);
         TextQuran_textviews.setText(value.besmellahe_alrahman_alrahim);
 
