@@ -219,10 +219,25 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             if (FileManager.findFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3)){
                 File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3);
                 pathAudio = fileBesmellah.getPath();
+                if (!ayaIsEND()){
+                    String urlAyaNext = playAudioList.get(ayaNumber+1).getUrl();
+                    int ayaNext = playAudioList.get(ayaNumber+1).getAya();
+                    int suraNext = playAudioList.get(ayaNumber+1).getVers();
+                    if (!FileManager.findFile_storage("/"+qariName+"/"+suraNext+"/",ayaNext+ format.mp3)){
+                        Download.Aya(this,urlAyaNext,qariName,String.valueOf(suraNext),String.valueOf(ayaNext));
+                    }
+
+                }
 
             }
             else {
                 Download.Aya(this,pathAudio,qariName,String.valueOf(sura),String.valueOf(aya));
+                if (!ayaIsEND()){
+                    String urlAyaNext = playAudioList.get(ayaNumber+1).getUrl();
+                    int ayaNext = playAudioList.get(ayaNumber+1).getAya();
+                    int suraNext = playAudioList.get(ayaNumber+1).getVers();
+                    Download.Aya(this,urlAyaNext,qariName,String.valueOf(suraNext),String.valueOf(ayaNext));
+                }
             }
             try {
                 if (ayaNumber < playAudioList.size()) {
