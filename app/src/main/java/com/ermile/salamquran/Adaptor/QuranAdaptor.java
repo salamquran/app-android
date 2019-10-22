@@ -216,10 +216,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         wordQuran.setTypeface(font);
         if (hasFontOsmani){
-            wordQuran.setTextSize(22f);
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._9ssp));
             wordQuran.setText(Html.fromHtml(code).toString());
         }else {
-            wordQuran.setTextSize(18f);
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._6ssp));
             if ("end".equals(type)) {
                 wordQuran.setText(" ( " + aya + " ) ");
             } else {
