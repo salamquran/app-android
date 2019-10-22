@@ -20,21 +20,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.ermile.salamquran.Function.Utility.Download;
 import com.ermile.salamquran.Function.Utility.FileManager;
+import com.ermile.salamquran.Function.Utility.SaveManager;
+import com.ermile.salamquran.Function.Utility.carateURL;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.QuranValue;
+import com.ermile.salamquran.Static.file;
+import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
+import com.ermile.salamquran.Static.url;
 import com.ermile.salamquran.Static.value;
 
+import java.io.File;
 import java.util.Objects;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
-
+    private boolean hasFontOsmani = false;
     private onTochListener tochListener;
 
     public QuranAdaptor(onTochListener tochListener) {
@@ -56,7 +63,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
-
+        hasFontOsmani = false;
         Context context = container.getContext();
 
         // Static Methods
@@ -89,16 +96,16 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         int testLine =0;
         int lineRender = 1;
-        Typeface font;
+        Typeface font = Typeface.createFromAsset(context.getAssets(),"font/font_nabi.ttf");
         if (position > 0){
-
-            /*if (position <= 10){
-                font = Typeface.createFromFile(FileManager.getFile_storage("font/Quran_v1","p"+position+".ttf").getPath());
-            }else {
-                font = Typeface.createFromAsset(context.getAssets(), "font/"+"p"+position+".ttf");
-            }*/
-            font = Typeface.createFromAsset(context.getAssets(),"font/font_nabi.ttf");
-
+            if (FileManager.findFile_storage("/"+file.font_OsmanTaha+"/","p"+position+format.ttf)){
+                File fontFile = FileManager.getFile_storage("/"+file.font_OsmanTaha+"/","p"+position+ format.ttf);
+                font = Typeface.createFromFile(fontFile.getPath());
+                hasFontOsmani = true;
+            }
+            else {
+                Download.Font(context, url.dlGithub_font_Quran_v1+"p"+position+format.ttf,file.font_OsmanTaha,"p"+ position);
+            }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     70);
@@ -203,33 +210,15 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         wordQuran.setTextSize(21f);
         wordQuran.setTypeface(font);
-//        wordQuran.setText(Html.fromHtml(code).toString());
-        wordQuran.setText(text);
+        if (hasFontOsmani){
+            wordQuran.setText(Html.fromHtml(code).toString());
+        }else {
+            wordQuran.setText(text);
+        }
         wordQuran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 tochListener.wordOnclickListener();
-            }
-        });
-
-        wordQuran.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                for (int rq = 0; rq <= background_slide.getChildCount(); rq++) {
-                    LinearLayout rowQuran = (LinearLayout) background_slide.getChildAt(rq);
-                    if (rowQuran != null) {
-                        for (int wq = 0; wq <= rowQuran.getChildCount(); wq++) {
-                            TextView wordQurans = (TextView) rowQuran.getChildAt(wq);
-                            if (wordQurans != null) {
-                                Log.e(tag.important, "setBgPlaying: "+wordQurans.getTag()+" | "+index);
-                                if (wordQurans.getTag().toString().equals(index+"")) {
-                                    wordQurans.setBackgroundColor(Color.parseColor("#ADC9A1"));
-                                }
-                            }
-                        }
-                    }
-                }
-                return true;
             }
         });
 

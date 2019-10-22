@@ -2,7 +2,7 @@ package com.ermile.salamquran.Static;
 
 public class url {
     public static String dl_ayat = "https://dl.salamquran.com/ayat/";
-    public static String dl_font_Quran_v1 = "https://github.com/salamquran/SalamQuran-website/raw/master/public_html/static/fonts/quran-page-v1/ttf/";
+    public static String dlGithub_font_Quran_v1 = "https://github.com/salamquran/SalamQuran-website/raw/master/public_html/static/fonts/quran-page-v1/ttf/";
     public static String site = "https://salamquran.com/";
     public static String apiV6 = "https://salamquran.com/api/v6/";
 

@@ -68,4 +68,8 @@ public class Download {
         Download.File(context,url,"/"+QariName+"/"+sura+"/",aya, format.mp3,"در حال دانلود سوره" + sura, "با تلاوت " + QariName);
 
     }
+    public static void Font(Context context,String url,String Type,String Page){
+        Download.File(context,url,"/"+Type+"/",Page, format.ttf,"در حال دانلود فونت صفحه " + Page, "");
+
+    }
 }
