@@ -42,6 +42,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
     private boolean hasFontOsmani = false;
+    private LinearLayout linearLayout_Line = null;
     private onTochListener tochListener;
 
     public QuranAdaptor(onTochListener tochListener) {
@@ -91,8 +92,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             cutPage_L.setVisibility(View.VISIBLE);
             spacePage_R.setVisibility(View.VISIBLE);
         }
-        LinearLayout linearLayout_Line = null;
-        TextView TextQuran_textview = null;
+
 
         int testLine =0;
         int lineRender = 1;
@@ -184,7 +184,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                 }
 
                 if (linearLayout_Line != null){
-                    crateWordQuran(context,background_slide,linearLayout_Line,TextQuran_textview,font,text,code,index,aya,char_type);
+                    crateWordQuran(context,background_slide,linearLayout_Line,font,text,code,index,aya,char_type);
                 }
 
 
@@ -209,8 +209,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
 
-    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , TextView wordQuran, Typeface font, String text , String code, final int index , int aya,String type ){
-        wordQuran = new TextView(context);
+    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , Typeface font, String text , String code, final int index , int aya,String type ){
+        TextView wordQuran = new TextView(context);
         wordQuran.setTextColor(Color.parseColor("#000000"));
         wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
