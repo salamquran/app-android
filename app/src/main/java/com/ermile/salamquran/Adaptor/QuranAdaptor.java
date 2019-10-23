@@ -224,7 +224,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
             wordQuran.setTextSize(context.getResources().getDimension(R.dimen._9ssp));
             wordQuran.setText(Html.fromHtml(code).toString());
         }else {
-            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._6ssp));
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._5ssp));
             if ("end".equals(type)) {
                 wordQuran.setText(" ( " + aya + " ) ");
             } else {
@@ -243,28 +243,19 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     private void crateTitelVers(Context context , LinearLayout background_slide,int vars ){
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.topMargin = (int) context.getResources().getDimension(R.dimen._7sdp);
-        layoutParams.bottomMargin = (int) context.getResources().getDimension(R.dimen._7sdp);
-        layoutParams.setMarginStart((int) context.getResources().getDimension(R.dimen._12sdp));
-        layoutParams.setMarginEnd((int) context.getResources().getDimension(R.dimen._12sdp));
-        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+                (int) context.getResources().getDimension(R.dimen._30sdp));
+        layoutParams.topMargin = (int) context.getResources().getDimension(R.dimen._3sdp);
+        layoutParams.bottomMargin = (int) context.getResources().getDimension(R.dimen._3sdp);
+        layoutParams.setMarginStart((int) context.getResources().getDimension(R.dimen._9sdp));
+        layoutParams.setMarginEnd((int) context.getResources().getDimension(R.dimen._9sdp));
 
-        LinearLayout linearLayout_Lines = new LinearLayout(context);
-        linearLayout_Lines.setOrientation(LinearLayout.HORIZONTAL);
-        linearLayout_Lines.setGravity(Gravity.CENTER_HORIZONTAL);
-        linearLayout_Lines.setLayoutParams(layoutParams);
-        background_slide.addView(linearLayout_Lines);
-        TextView TextQuran_textviews = new TextView(context);
-        TextQuran_textviews.setTextColor(Color.parseColor("#000000"));
-        TextQuran_textviews.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
-        TextQuran_textviews.setGravity(View.TEXT_ALIGNMENT_CENTER);
-        linearLayout_Lines.addView(TextQuran_textviews);
-        TextQuran_textviews.setTag(vars);
-        TextQuran_textviews.setTextSize(context.getResources().getDimension(R.dimen._10ssp));
-        TextQuran_textviews.setBackgroundResource(R.drawable.surh_header);
-        TextQuran_textviews.setText(QuranValue.listSura[vars]);
+        LinearLayout LinearLayout_headerSura = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.item_header_sura,null);
+        LinearLayout_headerSura.setLayoutParams(layoutParams);
+        background_slide.addView(LinearLayout_headerSura);
+        
+        TextView textView = LinearLayout_headerSura.findViewById(R.id.aa);
+        textView.setText(QuranValue.listSura[vars]);
+        textView.setTag(vars+"Title");
 
     }
     private void crateBesmellah(Context context , LinearLayout background_slide,int index ){
