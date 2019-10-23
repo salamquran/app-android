@@ -16,60 +16,116 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <!--Media Controller-->
-    <LinearLayout
-        android:translationY="@dimen/_50sdp"
+
+    <RelativeLayout
         android:id="@+id/box_media_contoroler"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
         android:background="#4DC2BCBC"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/btn_bakc"
-            android:src="@drawable/ic_fast_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/btn_stop"
-            android:src="@drawable/ic_stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/boxQari"
+            android:id="@+id/boxMedia"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/btn_play"
-            android:src="@drawable/ic_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/back"
+                android:layout_alignParentStart="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fast_back"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:visibility="gone"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/btn_pause"
-            android:src="@drawable/ic_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/stop"
+                android:layout_toEndOf="@id/back"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_stop"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/btn_next"
-            android:src="@drawable/ic_fast_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/play"
+                android:layout_toEndOf="@id/stop"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_play"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
 
-        <ImageButton
-            style="@style/Widget.AppCompat.ImageButton"
-            android:id="@+id/change_qari"
-            android:src="@drawable/ic_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/pause"
+                android:layout_toEndOf="@id/play"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pause"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
 
-    </LinearLayout>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/next"
+                android:layout_toEndOf="@+id/pause"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fast_next"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/boxQari"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/Imageqari"
+                android:src="@drawable/logo_salamquran"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <TextView
+                android:id="@+id/nameQari"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                android:text="Meshari"
+                android:textColor="#000"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/Imageqari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="@dimen/_6ssp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameQari"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/Imageqari"
+                android:text="Tartil" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
