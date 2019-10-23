@@ -17,22 +17,23 @@ import java.io.IOException;
 
 public class CheckVersion {
     public static Boolean Deprecated(Context context){
-        try {
+        return false;
+        /*try {
             String settingApp = ReadFile.FromStorage(context, file.setting, format.json);
             JSONObject respone = new JSONObject(settingApp);
             JSONObject result = respone.getJSONObject("result");
             JSONObject url = result.getJSONObject("url");
             JSONObject version = result.getJSONObject("version");
-            /*Url For Update*/
+            *//*Url For Update*//*
             final String urlUpdate = url.getString("update");
-            /*Deprecate Value*/
+            *//*Deprecate Value*//*
             if (!version.isNull("deprecated")){
                 String deprecatedVersion = version.getString("deprecated").replace(".","");
                 int Depver = Integer.valueOf(deprecatedVersion);
                 String deprecated_title = version.getString("deprecated_title");
                 String deprecated_desc = version.getString("deprecated_desc");
                 String deprecated_btnTitle = "Update Now!";
-                /*Update Value*/
+                *//*Update Value*//*
                 String lastVersion = version.getString("last").replace(".","");
                 int Updver = Integer.valueOf(lastVersion);
                 String update_title = version.getString("update_title");
@@ -59,7 +60,7 @@ public class CheckVersion {
         } catch (JSONException | IOException e) {
             e.printStackTrace();
             return false;
-        }
+        }*/
     }
 
     /*Check Update Version*/

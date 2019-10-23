@@ -99,7 +99,7 @@ public class Splash extends AppCompatActivity {
                 break;
             default:
                 SaveManager.get(this).change_appLanguage("en");
-                SaveManager.get(this).change_LanguageByUser(true);
+                SaveManager.get(this).change_LanguageByUser(false);
                 setSettingApp();
                 break;
         }

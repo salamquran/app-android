@@ -18,13 +18,15 @@ public class Intro extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
 
+        log.d(this.getClass().getName(),"Open Oncreate",null);
+        SaveManager.get(getApplicationContext()).change_intriOpen(true);
+        finish();
+        startActivity(new Intent(getApplicationContext(),Main.class));
+
         findViewById(R.id.finish).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                log.d(this.getClass().getName(),"Open Oncreate",null);
-                SaveManager.get(getApplicationContext()).change_intriOpen(true);
-                finish();
-                startActivity(new Intent(getApplicationContext(),Main.class));
+
             }
         });
     }

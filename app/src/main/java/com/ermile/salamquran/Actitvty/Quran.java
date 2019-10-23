@@ -118,12 +118,18 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stopSound();
-                playSound();
-                btn_stop.setVisibility(View.VISIBLE);
-                btn_play.setVisibility(View.GONE);
-                btn_next.setVisibility(View.VISIBLE);
-                btn_back.setVisibility(View.VISIBLE);
+                if (isNetworkAvailable()){
+                    stopSound();
+                    playSound();
+                    btn_stop.setVisibility(View.VISIBLE);
+                    btn_play.setVisibility(View.GONE);
+                    btn_next.setVisibility(View.VISIBLE);
+                    btn_back.setVisibility(View.VISIBLE);
+                }
+                else {
+                    Toast.makeText(Quran.this, "به اینترنت متصل شوید", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -251,7 +257,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 }
             }
             if (!playFromStorage && !isNetworkAvailable()){
-                Toast.makeText(this, "Network Error!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "به اینترنت متصل شوید", Toast.LENGTH_SHORT).show();
                 stopSound();
             }
             else {

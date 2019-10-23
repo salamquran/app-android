@@ -21,6 +21,11 @@
             android:layout_height="0dp"
             android:layout_weight="9">
 
+            <ImageView
+                android:src="@drawable/logo_salamquran"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"/>
+
             <TextView
                 android:id="@+id/title_laysplash"
                 android:textAlignment="center"
@@ -52,15 +57,13 @@
             android:layout_weight="1">
             <ProgressBar
                 android:id="@+id/progress_laysplash"
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp" />
             <TextView
                 android:id="@+id/titleProgress_laysplash"
                 android:textAlignment="center"
-                android:textSize="8sp"
                 android:textColor="#000"
                 android:fontFamily="@font/iransans"
-                android:text="درحال اتصال.."
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
