@@ -232,7 +232,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             }
             else {
                 Download.Aya(this,pathAudio,qariName,String.valueOf(sura),String.valueOf(aya));
-                if (!ayaIsEND()){
+                if (!ayaIsEND() && ayaNumber != 0){
                     String urlAyaNext = playAudioList.get(ayaNumber+1).getUrl();
                     int ayaNext = playAudioList.get(ayaNumber+1).getAya();
                     int suraNext = playAudioList.get(ayaNumber+1).getVers();
