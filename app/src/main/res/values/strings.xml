@@ -19,9 +19,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="_20">20</string>
     <string name="min_fa">دقیقه</string>
-    <string name="juz">" Juz "</string>
-    <string name="surah">" Vars "</string>
-    <string name="aya">" Aya "</string>
-    <string name="save">Save</string>
-    <string name="selected">Selected</string>
+    <string name="juz">" جزء "</string>
+    <string name="surah">" سوره "</string>
+    <string name="aya">" آیه "</string>
+    <string name="save">ثبت</string>
+    <string name="selected">انتخاب</string>
 </resources>

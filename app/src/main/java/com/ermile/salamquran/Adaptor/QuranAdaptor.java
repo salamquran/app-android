@@ -18,12 +18,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 
 import com.ermile.salamquran.Function.Utility.Download;
 import com.ermile.salamquran.Function.Utility.FileManager;
-import com.ermile.salamquran.Function.Utility.SaveManager;
-import com.ermile.salamquran.Function.Utility.carateURL;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;

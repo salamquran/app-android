@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,10 +54,11 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     MediaPlayer mediaPlayer;
     Integer ayaNumber = 0;
 
-    LinearLayout boxMediaControl;
-    AppCompatImageButton btn_next, btn_back,
+    RelativeLayout boxMediaControl;
+    ImageView btn_next, btn_back,
             btn_play, btn_pause, btn_stop;
-    ImageButton btn_changeQari;
+    ImageView btn_changeQari;
+    TextView qariName ;
     int place;
     boolean besmellahIsPlaying = false;
 
@@ -74,13 +76,14 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         // Chang ID XML
         viewpager = findViewById(R.id.view_pagers);    // RTL viewpager in XML
         boxMediaControl = findViewById(R.id.box_media_contoroler);
-        btn_back = findViewById(R.id.btn_bakc);        // MediaControl (Back Audio)
-        btn_next = findViewById(R.id.btn_next);        // MediaControl (Next Audio)
-        btn_play = findViewById(R.id.btn_play);        // MediaControl (Play Audio)
-        btn_pause = findViewById(R.id.btn_pause);      // MediaControl (Pause Audio)
-        btn_stop = findViewById(R.id.btn_stop);        // MediaControl (Stop Audio)
-        btn_changeQari = findViewById(R.id.change_qari);
-
+        btn_back = findViewById(R.id.back);        // MediaControl (Back Audio)
+        btn_next = findViewById(R.id.next);        // MediaControl (Next Audio)
+        btn_play = findViewById(R.id.play);        // MediaControl (Play Audio)
+        btn_pause = findViewById(R.id.pause);      // MediaControl (Pause Audio)
+        btn_stop = findViewById(R.id.stop);        // MediaControl (Stop Audio)
+        btn_changeQari = findViewById(R.id.Imageqari);
+        qariName = findViewById(R.id.nameQari);
+        setNameQari();
 
         /*Change Qari*/
         btn_changeQari.setOnClickListener(new View.OnClickListener() {
@@ -117,8 +120,10 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             public void onClick(View view) {
                 stopSound();
                 playSound();
-                btn_pause.setVisibility(View.VISIBLE);
+                btn_stop.setVisibility(View.VISIBLE);
                 btn_play.setVisibility(View.GONE);
+                btn_next.setVisibility(View.VISIBLE);
+                btn_back.setVisibility(View.VISIBLE);
             }
         });
 
@@ -126,8 +131,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             @Override
             public void onClick(View view) {
                 stopSound();
-                btn_play.setVisibility(View.VISIBLE);
-                btn_pause.setVisibility(View.GONE);
+                clickOnStop();
             }
         });
 
@@ -157,10 +161,11 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     /*Change Transition Box Media Control*/
     private void changeTransitionBoxMediaControl(){
+        int transToBottom = (int) this.getResources().getDimension(R.dimen._60sdp);
         if (boxMediaControl.getTranslationY() != 0f){
             boxMediaControl.animate().setDuration(300).translationY(0f);
         }else {
-            boxMediaControl.animate().setDuration(300).translationY(100f);
+            boxMediaControl.animate().setDuration(300).translationY(transToBottom);
         }
     }
 
@@ -277,8 +282,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
-            viewpager.setCurrentItem(viewpager.getCurrentItem());
-            Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+            createListAudioAya(viewpager.getCurrentItem());
         }
     }
 
@@ -422,7 +426,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         final String[] item = value.qariName;
         new AlertDialog.Builder(this)
                 .setTitle("قاری خود را انتخاب کنید")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setSingleChoiceItems(item, 0, null)
                 .setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
                     @Override
@@ -431,9 +435,11 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                         SaveManager.get(getApplication()).change_qari(result);
                         Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
                         createListAudioAya(place);
+                        setNameQari();
+                        clickOnStop();
                     }
                 })
-                .setSingleChoiceItems(item, 0, new DialogInterface.OnClickListener() {
+                .setSingleChoiceItems(item, 12, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         result = items[i];
@@ -449,5 +455,23 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    private void setNameQari(){
+        String qariSaveManager = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
+        final String[] items = value.qari;
+        final String[] item = value.qariName;
+        for (int i = 0; i < items.length; i++) {
+            if (qariSaveManager != null && qariSaveManager.equals(items[i])) {
+                qariName.setText(item[i]);
+            }
+        }
+
+    }
+
+    private void clickOnStop(){
+        btn_stop.setVisibility(View.GONE);
+        btn_play.setVisibility(View.VISIBLE);
+        btn_next.setVisibility(View.GONE);
+        btn_back.setVisibility(View.GONE);
     }
 }

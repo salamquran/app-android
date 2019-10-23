@@ -41,8 +41,8 @@ public class QuranList extends Fragment {
 
         NavQuran_adapterTab adapterTab = new NavQuran_adapterTab(getChildFragmentManager());
 
-        adapterTab.addFragment(new SureList() , "Sureh");
-        adapterTab.addFragment(new JuzList() , "Juz");
+        adapterTab.addFragment(new SureList() , "لیست سوره ها");
+        adapterTab.addFragment(new JuzList() , "لیست جزء ها");
 //        adapterTab.addFragment(new Bookmark() , "Bookmark");
 
         viewPager_NavQuran.setAdapter(adapterTab);

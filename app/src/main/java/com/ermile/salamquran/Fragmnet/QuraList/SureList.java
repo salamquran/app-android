@@ -83,17 +83,28 @@ public class SureList extends Fragment {
                     JSONArray surah_array = juz.getJSONArray("sura");
                     for (int vers = 0 ; vers <= surah_array.length();vers++) {
 
+                        String type = null;
                         if (!surah_array.isNull(vers)) {
                             JSONObject surah = surah_array.getJSONObject(vers);
                             number_surah = surah.getString("index");
                             title_surah = surah.getString("tname");
                             aya_surah = surah.getString("ayas");
                             MadeIn_surah = surah.getString("type");
+
+                            switch (MadeIn_surah){
+                                case "medinan":
+                                    type = "مدینه" ;
+                                    break;
+                                case "meccan":
+                                    type = "مکه" ;
+                                    break;
+                            }
+
                             page_surah = surah.getString("startpage");
                             quranlist.add(new item_QuranList(item_QuranList.SURAH_TYPE, 0,
                                     number_surah,
                                     title_surah,
-                                    MadeIn_surah + " - " + aya_surah + getString(R.string.aya),
+                                    type + " - " + aya_surah + getString(R.string.aya),
                                     page_surah, null, 0));
                             recylerview_surah.setLayoutManager(LayoutManager);
                             recylerview_surah.setItemAnimator(new DefaultItemAnimator());
