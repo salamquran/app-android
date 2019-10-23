@@ -252,7 +252,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         LinearLayout LinearLayout_headerSura = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.item_header_sura,null);
         LinearLayout_headerSura.setLayoutParams(layoutParams);
         background_slide.addView(LinearLayout_headerSura);
-        
+
         TextView textView = LinearLayout_headerSura.findViewById(R.id.aa);
         textView.setText(QuranValue.listSura[vars]);
         textView.setTag(vars+"Title");

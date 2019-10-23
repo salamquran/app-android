@@ -1,11 +1,14 @@
 package com.ermile.salamquran.Actitvty;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -200,6 +203,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
     /*Play AudioPlayer*/
     private void playSound() {
+        boolean playFromStorage = false;
         int aya = playAudioList.get(ayaNumber).getAya();
         int sura = playAudioList.get(ayaNumber).getVers();
         int page = playAudioList.get(ayaNumber).getPage();
@@ -217,6 +221,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             besmellahIsPlaying = false;
             String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
             if (FileManager.findFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3)){
+                playFromStorage = true;
                 File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3);
                 pathAudio = fileBesmellah.getPath();
                 if (!ayaIsEND()){
@@ -231,6 +236,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
             }
             else {
+                playFromStorage = false;
                 Download.Aya(this,pathAudio,qariName,String.valueOf(sura),String.valueOf(aya));
                 if (!ayaIsEND() && ayaNumber != 0){
                     String urlAyaNext = playAudioList.get(ayaNumber+1).getUrl();
@@ -239,21 +245,28 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                     Download.Aya(this,urlAyaNext,qariName,String.valueOf(suraNext),String.valueOf(ayaNext));
                 }
             }
-            try {
-                if (ayaNumber < playAudioList.size()) {
-                    viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
-                    Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                    setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
-                    mediaPlayer = new MediaPlayer();
-                    Log.d(tag.important, "playSound: "+pathAudio);
-                    mediaPlayer.setDataSource(pathAudio);
-                    mediaPlayer.prepare();
-                    mediaPlayer.start();
-                    mediaPlayer.setOnCompletionListener(this);
-                }
-
-            } catch (IOException ignored) {
+            if (!playFromStorage && !isNetworkAvailable()){
+                Toast.makeText(this, "Network Error!", Toast.LENGTH_SHORT).show();
+                stopSound();
             }
+            else {
+                try {
+                    if (ayaNumber < playAudioList.size()) {
+                        viewpager.setCurrentItem(playAudioList.get(ayaNumber).getPage(), true);
+                        Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
+                        setBgPlaying(playAudioList.get(ayaNumber).getIndex(),true);
+                        mediaPlayer = new MediaPlayer();
+                        Log.d(tag.important, "playSound: "+pathAudio);
+                        mediaPlayer.setDataSource(pathAudio);
+                        mediaPlayer.prepare();
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(this);
+                    }
+
+                } catch (IOException ignored) {
+                }
+            }
+
         }
     }
 
@@ -428,5 +441,13 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
                 })
                 .create()
                 .show();
+    }
+
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }
