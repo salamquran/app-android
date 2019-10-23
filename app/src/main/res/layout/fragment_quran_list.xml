@@ -13,13 +13,15 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.tabs.TabLayout
+            app:tabTextAppearance="@style/MineCustomTabText"
             android:id="@+id/tabLayout_NavQuran"
-            android:background="?attr/colorPrimary"
+            android:background="#444443"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_45sdp"
             app:tabMaxWidth="0dp"
             app:tabGravity="fill"
             app:tabMode="fixed"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
 
