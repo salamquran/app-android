@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragmnet.QuraList.QuranList">
 
@@ -12,11 +13,13 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout_NavQuran"
+            android:background="?attr/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tabLayout_NavQuran"
-            android:background="?attr/colorPrimary" />
-
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"/>
     </com.google.android.material.appbar.AppBarLayout>
 
 
