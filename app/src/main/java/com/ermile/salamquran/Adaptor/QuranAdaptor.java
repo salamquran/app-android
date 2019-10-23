@@ -96,7 +96,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         int testLine =0;
         int lineRender = 1;
-        Typeface font = Typeface.createFromAsset(context.getAssets(),"font/font_nabi.ttf");
+        @SuppressLint("SdCardPath") Typeface font = Typeface.createFromFile("/data/user/0/com.ermile.salamquran/files/font_nabi.ttf");
         if (position > 0){
             if (FileManager.findFile_storage("/"+file.font_OsmanTaha+"/","p"+position+format.ttf)){
                 File fontFile = FileManager.getFile_storage("/"+file.font_OsmanTaha+"/","p"+position+ format.ttf);
@@ -150,11 +150,12 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
                     int t = line - lineRender;
                     switch (t){
                         case 2:
-                            Log.e(tag.important, "Page: "+page +" TWO" );
-                            lineRender = line+1;
-                            crateTitelVers(context,background_slide,sura);
-                            crateBesmellah(context,background_slide,index);
-
+                            if (page != 1){
+                                Log.e(tag.important, "Page: "+page +" TWO" );
+                                lineRender = line+1;
+                                crateTitelVers(context,background_slide,sura);
+                                crateBesmellah(context,background_slide,index);
+                            }
                             break;
                         case 1:
                             if (page == 1 || line == 1){
@@ -220,10 +221,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
         wordQuran.setTypeface(font);
         if (hasFontOsmani){
-            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._8ssp));
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._9ssp));
             wordQuran.setText(Html.fromHtml(code).toString());
         }else {
-            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._5ssp));
+            wordQuran.setTextSize(context.getResources().getDimension(R.dimen._6ssp));
             if ("end".equals(type)) {
                 wordQuran.setText(" ( " + aya + " ) ");
             } else {
@@ -243,10 +244,10 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.topMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
-        layoutParams.bottomMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
-        layoutParams.leftMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
-        layoutParams.rightMargin = (int) context.getResources().getDimension(R.dimen._5sdp);
+        layoutParams.topMargin = (int) context.getResources().getDimension(R.dimen._7sdp);
+        layoutParams.bottomMargin = (int) context.getResources().getDimension(R.dimen._7sdp);
+        layoutParams.setMarginStart((int) context.getResources().getDimension(R.dimen._12sdp));
+        layoutParams.setMarginEnd((int) context.getResources().getDimension(R.dimen._12sdp));
         layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
 
         LinearLayout linearLayout_Lines = new LinearLayout(context);
@@ -267,7 +268,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
     }
     private void crateBesmellah(Context context , LinearLayout background_slide,int index ){
-        Typeface font_besmellah = Typeface.createFromAsset(context.getAssets(), "font/bismillah.ttf");
+        @SuppressLint("SdCardPath") Typeface font_besmellah = Typeface.createFromFile("/data/user/0/com.ermile.salamquran/files/bismillah.ttf");
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
