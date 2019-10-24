@@ -16,18 +16,22 @@ import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
 import com.ermile.salamquran.Static.url;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
-public class GetAndroidDetail {
+public class Get {
 
-    public static void GetJson(final Context context, final JsonLocalListener jsonLocalListener){
-        Log.d(tag.function, "GetAndroidDetail > GetJson");
+    public static void app(final Context context, final Get_app_Listener getappListener){
+        Log.d(tag.function, "Get > app");
         StringRequest get_local = new StringRequest(Request.Method.GET, url.setting, new Response.Listener<String>()
         {
             @Override
             public void onResponse(String response)
             {
-                jsonLocalListener.onGetJson_Online(response);
+                getappListener.onGetJson_Online(response);
 
             }
         }, new Response.ErrorListener()
@@ -42,9 +46,9 @@ public class GetAndroidDetail {
                     if (settingApp.length() < 20)
                     {
                         String valueJson = ReadFile.FromAsset(context,AppLanguage,format.json, charset.UTF8);
-                        jsonLocalListener.onGetJson_Offline(valueJson);
+                        getappListener.onGetJson_Offline(valueJson);
                     }else {
-                        jsonLocalListener.OnGetJson_OfflineNoNULL();
+                        getappListener.OnGetJson_OfflineNoNULL();
                     }
                 }
                 catch (IOException e) {
@@ -55,13 +59,42 @@ public class GetAndroidDetail {
         AppContoroler.getInstance().addToRequestQueue(get_local);
 
     }
-
-    public interface JsonLocalListener {
-
+    public interface Get_app_Listener {
         void onGetJson_Online(String ResponeOnline);
-
         void onGetJson_Offline(String ResponeOffline);
-
         void OnGetJson_OfflineNoNULL();
+    }
+
+    public static void qariList(final Get_qariList_Listener qariListListener){
+        Log.d(tag.function, "Get > qariList");
+        StringRequest get_local = new StringRequest(Request.Method.GET, url.qariList, new Response.Listener<String>()
+        {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject main = new JSONObject(response);
+                    if (main.getBoolean("ok")){
+                        JSONArray result = main.getJSONArray("result");
+                        qariListListener.response(String.valueOf(result));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    qariListListener.failed();
+                }
+
+
+            }
+        }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                qariListListener.failed();
+            }
+        });
+        AppContoroler.getInstance().addToRequestQueue(get_local);
+    }
+    public interface Get_qariList_Listener {
+        void response(String respone);
+        void failed();
     }
 }

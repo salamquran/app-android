@@ -7,6 +7,7 @@ public class file {
     public static String list_juz = "juz_hezb";
     public static String quran_wbw = "quran_wbw";
     public static String font_OsmanTaha = "font-osman-taha";
+    public static String qari_image = "/Qari-image/";
 
 
 

@@ -11,6 +11,7 @@ public class url {
     public static String user_add = apiV6+"android/user/add";
     public static String enter = "https://salamquran.com/fa/api/v6/enter";
     public static String verify = "https://salamquran.com/fa/api/v6/enter/verify";
+    public static String qariList = "https://salamquran.com/fa/api/v6/qari";
 
 
 

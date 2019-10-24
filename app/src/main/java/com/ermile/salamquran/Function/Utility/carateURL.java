@@ -15,7 +15,7 @@ public class carateURL {
         String  repl_vers,
                 repl_aya;
 
-        String qari = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari);
+        String qari_Link = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari_Link);
 
         switch (vers.length()){
             default:
@@ -40,14 +40,14 @@ public class carateURL {
                 break;
         }
 
-        Log.d(tag.carateURL, url.dl_ayat + qari + value.slash + repl_vers + repl_aya + format.mp3);
-        return url.dl_ayat + qari + value.slash + repl_vers + repl_aya + format.mp3;
+        Log.d(tag.carateURL, qari_Link+ repl_vers + repl_aya + format.mp3);
+        return qari_Link+ repl_vers + repl_aya + format.mp3;
     }
 
     public static String besmellah(Context context){
-        String qari = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari);
-
-        return url.dl_ayat + qari + value.slash + "001" + "001" + format.mp3;
+        String qari_Link = SaveManager.get(context).getstring_appINFO().get(SaveManager.qari_Link);
+        Log.e(tag.important, "besmellah: "+qari_Link + "001" + "001" + format.mp3 );
+        return qari_Link + "001" + "001" + format.mp3;
     }
 
 }

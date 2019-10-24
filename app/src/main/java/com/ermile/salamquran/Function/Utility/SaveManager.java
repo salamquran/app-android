@@ -26,7 +26,10 @@ public class SaveManager extends ContextWrapper {
     }
 
     /** Ghari */
-    public static final String qari = "qari";
+    public static final String qari_Link = "qariLink";
+    public static final String qari_Name = "qariName";
+    public static final String qari_Slug = "qariSlug";
+    public static final String qari_Type = "qariType";
 
     /** App Info */
     public static final String introIsChacked = "introIsChacked";
@@ -42,8 +45,11 @@ public class SaveManager extends ContextWrapper {
     public static final String zoneID = "zoneID";
 
 
-    public void change_qari(String qaris) {
-        editor.putString(qari, qaris);
+    public void change_qari(String link , String name , String slug,String type) {
+        editor.putString(qari_Link, link);
+        editor.putString(qari_Name, name);
+        editor.putString(qari_Slug, slug);
+        editor.putString(qari_Type, type);
         editor.apply();
     }
 
@@ -92,7 +98,10 @@ public class SaveManager extends ContextWrapper {
 
     public Map<String, String> getstring_appINFO() {
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put(qari, sharedPreferences.getString(qari, "parhizgar-murattal-48" ));
+        hashMap.put(qari_Link, sharedPreferences.getString(qari_Link, "https://dl.salamquran.com/ayat/parhizgar-murattal-48/" ));
+        hashMap.put(qari_Name, sharedPreferences.getString(qari_Name, "پرهیزکار" ));
+        hashMap.put(qari_Slug, sharedPreferences.getString(qari_Slug, "parhizgar" ));
+        hashMap.put(qari_Type, sharedPreferences.getString(qari_Type, "ترتیل" ));
         hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, null ));
 
         hashMap.put(apiKey, sharedPreferences.getString(apiKey, null ));

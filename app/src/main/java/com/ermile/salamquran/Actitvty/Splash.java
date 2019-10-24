@@ -13,7 +13,7 @@ import com.ermile.salamquran.Function.Utility.FileManager;
 import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.Function.Utility.SaveManager;
 import com.ermile.salamquran.Function.Utility.WriteFile;
-import com.ermile.salamquran.Function.api.GetAndroidDetail;
+import com.ermile.salamquran.Function.api.Get;
 import com.ermile.salamquran.Function.api.SingUpUser;
 import com.ermile.salamquran.Function.api.Token;
 import com.ermile.salamquran.R;
@@ -105,7 +105,7 @@ public class Splash extends AppCompatActivity {
         }
     }
     private void setSettingApp(){
-        GetAndroidDetail.GetJson(this, new GetAndroidDetail.JsonLocalListener() {
+        Get.app(this, new Get.Get_app_Listener() {
             @Override
             public void onGetJson_Online(String ResponeOnline) {
                 new WriteFile(getApplicationContext(),file.setting,format.json,ResponeOnline);

@@ -15,4 +15,13 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <!-- custom dialog activity theme -->
+    <style name="AppTheme.Dialog" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+        <!-- removing the dialog's action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/iransans</item>
+        <item name="android:layoutDirection">rtl</item>
+    </style>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.ermile.salamquran.Fragmnet.QuraList;
+package com.ermile.salamquran.Fragmnet.QuranList;
 
 
 import android.os.Bundle;

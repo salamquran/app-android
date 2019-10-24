@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -14,16 +16,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.viewpager.widget.ViewPager;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
@@ -35,9 +34,9 @@ import com.ermile.salamquran.Function.Utility.carateURL;
 import com.ermile.salamquran.Item.item_PlayAudio;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
+import com.ermile.salamquran.Static.file;
 import com.ermile.salamquran.Static.format;
 import com.ermile.salamquran.Static.tag;
-import com.ermile.salamquran.Static.value;
 
 import java.io.File;
 import java.io.IOException;
@@ -57,13 +56,10 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     RelativeLayout boxMediaControl;
     ImageView btn_next, btn_back,
             btn_play, btn_pause, btn_stop;
-    ImageView btn_changeQari;
-    TextView qariName ;
+    ImageView imageQari;
+    TextView qariName , typeQari;
     int place;
     boolean besmellahIsPlaying = false;
-
-    /*Test*/
-    String result = null;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -81,12 +77,14 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         btn_play = findViewById(R.id.play);         // MediaControl (Play Audio)
         btn_pause = findViewById(R.id.pause);       // MediaControl (Pause Audio)
         btn_stop = findViewById(R.id.stop);         // MediaControl (Stop Audio)
-        btn_changeQari = findViewById(R.id.Imageqari);
+
+        imageQari = findViewById(R.id.imageQari);
         qariName = findViewById(R.id.nameQari);
+        typeQari = findViewById(R.id.typeQari);
         setNameQari();
 
         /*Change Qari*/
-        btn_changeQari.setOnClickListener(new View.OnClickListener() {
+        imageQari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 runAlert();
@@ -226,7 +224,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             playBesmellah();
         } else {
             besmellahIsPlaying = false;
-            String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
+            String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari_Slug);
             if (FileManager.findFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3)){
                 playFromStorage = true;
                 File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/"+sura+"/",aya+ format.mp3);
@@ -360,7 +358,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
 
     private void playBesmellah() {
-        String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
+        String qariName = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari_Slug);
         String pathAudio = carateURL.besmellah(this);
         if (FileManager.findFile_storage("/"+qariName+"/1/","1"+ format.mp3)){
             File fileBesmellah = FileManager.getFile_storage("/"+qariName+"/1/","1"+ format.mp3);
@@ -424,31 +422,17 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     /*Oder Method*/
 
     private void runAlert() {
-        final String[] items = value.qari;
-        final String[] item = value.qariName;
-        new AlertDialog.Builder(this)
-                .setTitle("قاری خود را انتخاب کنید")
-                .setCancelable(true)
-                .setSingleChoiceItems(item, 0, null)
-                .setPositiveButton(getString(R.string.save), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        stopSound();
-                        SaveManager.get(getApplication()).change_qari(result);
-                        Objects.requireNonNull(viewpager.getAdapter()).notifyDataSetChanged();
-                        createListAudioAya(place);
-                        setNameQari();
-                        clickOnStop();
-                    }
-                })
-                .setSingleChoiceItems(item, 12, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        result = items[i];
-                    }
-                })
-                .create()
-                .show();
+        QariList qariList = new QariList(Quran.this);
+        qariList.setTitle("قاری خود را انتخاب کنید");
+        qariList.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                stopSound();
+                clickOnStop();
+                setNameQari();
+            }
+        });
+        qariList.show();
     }
 
 
@@ -458,15 +442,21 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
-    private void setNameQari(){
-        String qariSaveManager = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari);
-        final String[] items = value.qari;
-        final String[] item = value.qariName;
-        for (int i = 0; i < items.length; i++) {
-            if (qariSaveManager != null && qariSaveManager.equals(items[i])) {
-                qariName.setText(item[i]);
+    public void setNameQari(){
+        String qari_Name = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari_Name);
+        String qari_Slug = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari_Slug);
+        String qari_Type = SaveManager.get(this).getstring_appINFO().get(SaveManager.qari_Type);
+        qariName.setText(qari_Name);
+        typeQari.setText(qari_Type);
+        if (FileManager.findFile_storage(file.qari_image,qari_Slug+format.png)){
+            File imgFiles = FileManager.getFile_storage(file.qari_image,qari_Slug+format.png);
+            if(imgFiles.exists()){
+                Bitmap myBitmap = BitmapFactory.decodeFile(imgFiles.getAbsolutePath());
+                imageQari.setImageBitmap(myBitmap);
             }
         }
+        createListAudioAya(viewpager.getCurrentItem());
+
 
     }
 

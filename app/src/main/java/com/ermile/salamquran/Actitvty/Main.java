@@ -1,6 +1,5 @@
 package com.ermile.salamquran.Actitvty;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,10 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.ermile.salamquran.Actitvty.View.About;
-import com.ermile.salamquran.Fragmnet.Lms.LMS;
-import com.ermile.salamquran.Fragmnet.QuraList.QuranList;
-import com.ermile.salamquran.Fragmnet.Setting;
+import com.ermile.salamquran.Fragmnet.QuranList.QuranList;
 import com.ermile.salamquran.Function.Utility.ReadFile;
 import com.ermile.salamquran.R;
 import com.ermile.salamquran.Static.file;
