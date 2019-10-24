@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
     android:orientation="vertical"
-    tools:context=".Fragmnet.QuraList.JuzList">
+    tools:context=".Fragmnet.QuranList.JuzList">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recylerview_juz"

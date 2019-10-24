@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layoutDirection="rtl"
-    tools:context=".Fragmnet.QuraList.SureList">
+    tools:context=".Fragmnet.QuranList.SureList">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recylerview_surah"
