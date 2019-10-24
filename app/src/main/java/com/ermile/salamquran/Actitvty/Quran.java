@@ -74,13 +74,13 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         setContentView(R.layout.activity_quran);
 
         // Chang ID XML
-        viewpager = findViewById(R.id.view_pagers);    // RTL viewpager in XML
+        viewpager = findViewById(R.id.view_pagers);  // RTL viewpager in XML
         boxMediaControl = findViewById(R.id.box_media_contoroler);
-        btn_back = findViewById(R.id.back);        // MediaControl (Back Audio)
-        btn_next = findViewById(R.id.next);        // MediaControl (Next Audio)
-        btn_play = findViewById(R.id.play);        // MediaControl (Play Audio)
-        btn_pause = findViewById(R.id.pause);      // MediaControl (Pause Audio)
-        btn_stop = findViewById(R.id.stop);        // MediaControl (Stop Audio)
+        btn_back = findViewById(R.id.back);          // MediaControl (Back Audio)
+        btn_next = findViewById(R.id.next);          // MediaControl (Next Audio)
+        btn_play = findViewById(R.id.play);         // MediaControl (Play Audio)
+        btn_pause = findViewById(R.id.pause);       // MediaControl (Pause Audio)
+        btn_stop = findViewById(R.id.stop);         // MediaControl (Stop Audio)
         btn_changeQari = findViewById(R.id.Imageqari);
         qariName = findViewById(R.id.nameQari);
         setNameQari();
@@ -118,17 +118,13 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isNetworkAvailable()){
-                    stopSound();
-                    playSound();
-                    btn_stop.setVisibility(View.VISIBLE);
-                    btn_play.setVisibility(View.GONE);
-                    btn_next.setVisibility(View.VISIBLE);
-                    btn_back.setVisibility(View.VISIBLE);
-                }
-                else {
-                    Toast.makeText(Quran.this, "به اینترنت متصل شوید", Toast.LENGTH_SHORT).show();
-                }
+                btn_stop.setVisibility(View.VISIBLE);
+                btn_play.setVisibility(View.GONE);
+                btn_next.setVisibility(View.VISIBLE);
+                btn_back.setVisibility(View.VISIBLE);
+                stopSound();
+                playSound();
+
 
             }
         });
@@ -247,7 +243,6 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
 
             }
             else {
-                playFromStorage = false;
                 Download.Aya(this,pathAudio,qariName,String.valueOf(sura),String.valueOf(aya));
                 if (!ayaIsEND() && ayaNumber != 0){
                     String urlAyaNext = playAudioList.get(ayaNumber+1).getUrl();
@@ -259,6 +254,7 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
             if (!playFromStorage && !isNetworkAvailable()){
                 Toast.makeText(this, "به اینترنت متصل شوید", Toast.LENGTH_SHORT).show();
                 stopSound();
+                clickOnStop();
             }
             else {
                 try {

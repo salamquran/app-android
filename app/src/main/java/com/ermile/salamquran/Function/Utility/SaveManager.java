@@ -57,9 +57,7 @@ public class SaveManager extends ContextWrapper {
         editor.putString(zoneID, ZoneID);
         editor.apply();
     }
-
-
-
+    
     public void change_hasNewVersion(Boolean HasNewVersion) {
         editor.putBoolean(hasNewVersion, HasNewVersion);
         editor.apply();
@@ -94,7 +92,7 @@ public class SaveManager extends ContextWrapper {
 
     public Map<String, String> getstring_appINFO() {
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put(qari, sharedPreferences.getString(qari, "afasy-murattal-192" ));
+        hashMap.put(qari, sharedPreferences.getString(qari, "parhizgar-murattal-48" ));
         hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, null ));
 
         hashMap.put(apiKey, sharedPreferences.getString(apiKey, null ));
