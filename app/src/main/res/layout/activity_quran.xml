@@ -94,7 +94,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                
+
                 android:id="@+id/imageQari"
                 android:src="@drawable/icon_qari"
                 android:layout_width="@dimen/_30sdp"

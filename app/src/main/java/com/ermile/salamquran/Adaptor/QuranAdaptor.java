@@ -21,6 +21,7 @@ import androidx.annotation.NonNull;
 
 import com.ermile.salamquran.Function.Utility.Download;
 import com.ermile.salamquran.Function.Utility.FileManager;
+import com.ermile.salamquran.Function.Utility.convertNumber;
 import com.ermile.salamquran.Function.Utility.even_odd;
 import com.ermile.salamquran.MyDatabase;
 import com.ermile.salamquran.R;
@@ -131,9 +132,9 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
 
                 if (!pageInfoIsSet){
                     pageInfoIsSet = true;
-                    Top_surah.setText(context.getString(R.string.surah)+sura);
-                    Top_juz.setText(context.getString(R.string.juz)+juz);
-                    bottom_numberPage.setText(String.valueOf(page));
+                    Top_surah.setText(context.getString(R.string.surah)+QuranValue.listSura[sura]);
+                    Top_juz.setText(context.getString(R.string.juz)+ convertNumber.toFarsi(juz));
+                    bottom_numberPage.setText(convertNumber.toFarsi(page));
                 }
 
 
@@ -207,7 +208,8 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
     }
 
 
-    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , Typeface font, String text , String code, final int index , int aya,String type ){
+    @SuppressLint("SetTextI18n")
+    private void crateWordQuran(Context context, final LinearLayout background_slide, LinearLayout linearLayout_Line , Typeface font, String text , String code, final int index , int aya, String type ){
         TextView wordQuran = new TextView(context);
         wordQuran.setTextColor(Color.parseColor("#000000"));
         wordQuran.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -223,7 +225,7 @@ public class QuranAdaptor extends androidx.viewpager.widget.PagerAdapter {
         }else {
             wordQuran.setTextSize(context.getResources().getDimension(R.dimen._5ssp));
             if ("end".equals(type)) {
-                wordQuran.setText(" ( " + aya + " ) ");
+                wordQuran.setText(" ( " + convertNumber.toFarsi(aya) + " ) ");
             } else {
                 wordQuran.setText(" " + text + " ");
             }
