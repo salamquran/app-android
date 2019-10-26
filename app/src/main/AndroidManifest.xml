@@ -6,8 +6,8 @@
     <!-- dist -->
     <dist:module dist:instant="true" /> <!-- uses-permission -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -24,7 +24,9 @@
             android:theme="@style/Theme.AppCompat.Dialog"/>
         <activity android:name=".Actitvty.Lms.Level" />
         <activity android:name=".Actitvty.Lms.Level_List" />
-        <activity android:name=".Actitvty.CalclutorHefzProgram" /> <!-- activity -->
+        <activity android:name=".Actitvty.CalclutorHefzProgram" />
+
+        <!-- activity -->
         <activity android:name=".Actitvty.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +51,9 @@
         <activity android:name=".Actitvty.Login" />
         <activity android:name=".Actitvty.Intro" />
         <activity android:name=".Actitvty.Language" />
-        <activity android:name=".Actitvty.Main" /> <!-- service -->
+        <activity android:name=".Actitvty.Main" />
+
+        <!-- service -->
         <service
             android:name=".Service.AudioForeground"
             android:enabled="true"
