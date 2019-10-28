@@ -54,10 +54,9 @@ public class Quran extends AppCompatActivity implements MediaPlayer.OnCompletion
     Integer ayaNumber = 0;
 
     RelativeLayout boxMediaControl;
-    ImageView btn_next, btn_back,
-            btn_play, btn_pause, btn_stop;
+    ImageView btn_next,btn_back,btn_play,btn_pause,btn_stop;
     ImageView imageQari;
-    TextView qariName , typeQari;
+    TextView qariName,typeQari;
     int place;
     boolean besmellahIsPlaying = false;
 

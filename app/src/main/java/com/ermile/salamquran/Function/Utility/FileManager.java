@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.ermile.salamquran.Static.filePath;
 import com.ermile.salamquran.Static.tag;
 
@@ -13,6 +15,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.zip.ZipEntry;
@@ -90,24 +93,21 @@ public class FileManager {
     }
 
 
-    public static void WriteFile(Context context, String Folder , String FileName, String Format, String Values) {
+    public static void WriteFile(String Folder , String FileName, String Format, String Values) {
+        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String pathDir = baseDir + "/"+ filePath.android_data_files + Folder;
         try {
-            File file = new File(context.getExternalFilesDir(null),   FileName+Format);
-            FileOutputStream fileOutput = new FileOutputStream(file);
-            OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutput);
-            outputStreamWriter.write(Values);
-            outputStreamWriter.flush();
-            fileOutput.getFD().sync();
-            outputStreamWriter.close();
-            Log.d(tag.FileManager, "WriteFile: FileOutputStream: " + file + "\n value: "+Values);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            Log.e(tag.error, "WriteFile: ",e );
-            Log.e(tag.FileManager, "WriteFile: ",e );
+            File file = new File(pathDir);
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+            File gpxfile = new File(file, FileName+Format);
+            FileWriter writer = new FileWriter(gpxfile);
+            writer.append(Values);
+            writer.flush();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.e(tag.error, "WriteFile: ",e );
-            Log.e(tag.FileManager, "WriteFile: ",e );
         }
     }
 

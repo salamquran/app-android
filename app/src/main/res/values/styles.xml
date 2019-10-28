@@ -24,4 +24,10 @@
         <item name="android:layoutDirection">rtl</item>
     </style>
 
+    <style name="Cells">
+        <item name="android:background">#FF9800</item>
+        <item name="android:layout_margin">@dimen/_1sdp</item>
+
+    </style>
+
 </resources>
