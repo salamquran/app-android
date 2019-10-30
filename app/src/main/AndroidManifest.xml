@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Activity.Quran"></activity>
+        <activity android:name=".Activity.GhariList"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+        <activity android:name=".Activity.Quran" />
         <activity android:name=".Activity.Intro" />
         <activity android:name=".Activity.ChangeLanguage" />
         <activity android:name=".Activity.Splash">

@@ -24,11 +24,56 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class api {
+
+    public static void ghariList(final api_interface.ghariList_Listener qariListListener){
+        Log.d(tag.function, "Get > ghariList");
+        if (!FileManager.findFile_storage("list/","ghariList"+format.json)){
+            StringRequest get_local = new StringRequest(Request.Method.GET, url.qariList, new Response.Listener<String>()
+            {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject main = new JSONObject(response);
+                        if (main.getBoolean("ok")){
+                            JSONArray result = main.getJSONArray("result");
+                            FileManager.write_InStorage("list/","ghariList",format.json,String.valueOf(result));
+                            qariListListener.response(String.valueOf(result));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        qariListListener.failed();
+                    }
+
+
+                }
+            }, new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    qariListListener.failed();
+                }
+            });
+            AppContoroler.getInstance().addToRequestQueue(get_local);
+        }
+        else {
+            File file = FileManager.getFile_storage("list/","ghariList"+format.json);
+            try {
+                String result = FileManager.readFile(file);
+                qariListListener.response(result);
+            }
+            catch (IOException e) {
+                qariListListener.failed();
+                e.printStackTrace();
+            }
+        }
+
+    }
 
     /**
      * Get App Detail Json

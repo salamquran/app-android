@@ -88,7 +88,7 @@ public class SaveManager extends ContextWrapper {
 
     public Map<String, Integer> getInt_appINFO() {
         HashMap<String, Integer> hashMap = new HashMap<>();
-        hashMap.put(introIsChacked, sharedPreferences.getInt(introIsChacked, 1021 ));
+        hashMap.put(qari_Index, sharedPreferences.getInt(qari_Index, 1021 ));
         return hashMap;
     }
 

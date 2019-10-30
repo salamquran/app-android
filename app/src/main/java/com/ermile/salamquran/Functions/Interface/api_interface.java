@@ -16,4 +16,9 @@ public class api_interface {
         void onRecive_Offline(String ResponeOffline);
         void onRecive_OfflineNoNULL();
     }
+
+    public interface ghariList_Listener {
+        void response(String respone);
+        void failed();
+    }
 }

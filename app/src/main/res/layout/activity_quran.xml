@@ -1,9 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
     tools:context=".Activity.Quran">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--View Pager Quran-->
+    <androidx.viewpager.widget.ViewPager
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layoutDirection="rtl"
+        android:id="@+id/view_pagers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <RelativeLayout
+        android:id="@+id/box_media_contoroler"
+        android:layout_alignParentBottom="true"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/boxQari"
+            android:id="@+id/boxMedia"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/back"
+                android:layout_alignParentStart="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fast_back"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/stop"
+                android:layout_toEndOf="@id/back"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_stop"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_toEndOf="@id/stop"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_play"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/pause"
+                android:layout_toEndOf="@id/play"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pause"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/next"
+                android:layout_toEndOf="@+id/pause"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fast_next"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/boxQari"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:id="@+id/imageQari"
+                android:src="@drawable/icon_qari"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"/>
+
+            <TextView
+                android:id="@+id/nameQari"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/imageQari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/typeQari"
+                android:textSize="@dimen/_7ssp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameQari"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/imageQari"/>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
