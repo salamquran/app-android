@@ -1,71 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.ermile.salamquran">
-    <!-- dist -->
-    <dist:module dist:instant="true" /> <!-- uses-permission -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name=".Network.AppContoroler"
         android:allowBackup="true"
-        android:icon="@drawable/logo_salamquran"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_salamquran"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Actitvty.QariList"
-            android:theme="@style/Theme.AppCompat.Dialog"/>
-        <activity android:name=".Actitvty.Lms.Level" />
-        <activity android:name=".Actitvty.Lms.Level_List" />
-        <activity android:name=".Actitvty.CalclutorHefzProgram" />
-
-        <!-- activity -->
-        <activity android:name=".Actitvty.Splash">
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Actitvty.View.WebViewFetcher" />
-        <activity android:name=".Actitvty.View.Video" />
-        <activity android:name=".Actitvty.Look.LookFinger" />
-        <activity android:name=".Actitvty.Look.LookNumber" />
-        <activity android:name=".Actitvty.Look.LookPattern" />
-        <activity android:name=".Actitvty.User.SessionManager" />
-        <activity android:name=".Actitvty.User.Profile" />
-        <activity android:name=".Actitvty.Support.Notifecation" />
-        <activity android:name=".Actitvty.Support.TicketChat" />
-        <activity android:name=".Actitvty.Support.TicketList" />
-        <activity android:name=".Actitvty.Support.HelpCenter" />
-        <activity android:name=".Actitvty.View.Share" />
-        <activity android:name=".Actitvty.View.About" />
-        <activity android:name=".Actitvty.Quran" />
-        <activity android:name=".Actitvty.Login" />
-        <activity android:name=".Actitvty.Intro" />
-        <activity android:name=".Actitvty.Language" />
-        <activity android:name=".Actitvty.Main" />
-
-        <!-- service -->
-        <service
-            android:name=".Service.AudioForeground"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedService" />
-        <service
-            android:name=".Service.AlarmBackground"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedService" />
     </application>
 
 </manifest>

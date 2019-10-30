@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">سلام قرآن</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="slogan">قل مرحباً للقرآن!</string>
-    <string name="juz">" جزء "</string>
-    <string name="surah">" سوره "</string>
-    <string name="aya">" آيه "</string>
-</resources>

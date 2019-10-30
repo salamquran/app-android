@@ -1,27 +1,3 @@
 <resources>
-    <string name="app_name">Salam Quran</string>
-    <string name="name">Salam Quran</string>
-    <string name="slogan">Say Hello To Quran!</string>
-
-
-    <string name="nav_learn">Learn</string>
-    <string name="nav_mag">Magazine</string>
-    <string name="nav_quran">Quran</string>
-    <string name="navQuran_surah">Surah</string>
-    <string name="navQuran_juz">Juz</string>
-    <string name="navQuran_bookmark">Bookmark</string>
-    <string name="nav_search">Search</string>
-    <string name="navSearch_title">Salam Quran</string>
-    <string name="navSearch_cancel">Cancel</string>
-    <string name="nav_setting">Setting</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="_20">20</string>
-    <string name="min_fa">دقیقه</string>
-    <string name="juz">" جزء "</string>
-    <string name="surah">" سوره "</string>
-    <string name="aya">" آیه "</string>
-    <string name="save">ثبت</string>
-    <string name="selected">انتخاب</string>
+    <string name="app_name">SalamQuran</string>
 </resources>
