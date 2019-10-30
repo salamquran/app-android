@@ -1,0 +1,329 @@
+{
+    "ok": true,
+    "result": {
+        "lang_list": {
+            "fa": {
+                "name": "fa",
+                "direction": "rtl",
+                "iso": "fa_IR",
+                "localname": "فارسی",
+                "api_url": "https://jibres.ir/fa/api/v6"
+            },
+            "en": {
+                "name": "en",
+                "direction": "ltr",
+                "iso": "en_US",
+                "localname": "English",
+                "api_url": "https://jibres.ir/en/api/v6"
+            }
+        },
+        "url": {
+            "site": "https://jibres.ir",
+            "kingdom": "https://jibres.ir/fa",
+            "domain": "jibres.ir",
+            "root": "jibres",
+            "update": "https://jibres.ir/fa/app"
+        },
+        "site": {
+            "name": "جیبرس",
+            "desc": "Jibres is not just an online accounting software; We try to create the best financial platform that has everything you need to sale and manage your financial life.",
+            "slogan": "فروش یکپارچه و حسابداری آنلاین",
+            "logo": "https://jibres.ir/static/images/logo.png"
+        },
+        "version": {
+            "last": "19.4",
+            "deprecated": "14.0.1",
+            "deprecated_title": "این نسخه منقضی شده است",
+            "deprecated_desc": "برای دانلود نسخه جدید بر روی لینک زیر کلیک کنید",
+            "update_title": "نسخه جدید منتشر شده است",
+            "update_desc": "برای دانلود نسخه جدید بر روی لینک زیر کلیک کنید"
+        },
+        "menu": [
+            {
+                "icon": "info",
+                "type": "menu",
+                "title": "درباره",
+                "link": null,
+                "child": [
+                    {
+                        "icon": "android",
+                        "type": "define",
+                        "title": "دریاره این نسخه",
+                        "link": null
+                    },
+                    {
+                        "icon": "info",
+                        "type": "api",
+                        "title": "درباره ما",
+                        "link": "https://jibres.ir/fa/api/v6/about"
+                    },
+                    {
+                        "icon": "lock",
+                        "type": "api",
+                        "title": "حریم خصوصی",
+                        "link": "https://jibres.ir/fa/api/v6/privacy"
+                    },
+                    {
+                        "icon": "list",
+                        "type": "api",
+                        "title": "عبارات",
+                        "link": "https://jibres.ir/fa/api/v6/terms"
+                    }
+                ]
+            },
+            {
+                "icon": null,
+                "type": "api",
+                "title": "تماس",
+                "link": "https://jibres.ir/fa/api/v6/contact",
+                "child": null
+            },
+            {
+                "icon": null,
+                "type": "api",
+                "title": "چشم‌انداز",
+                "link": "https://jibres.ir/fa/api/v6/vision",
+                "child": null
+            },
+            {
+                "icon": null,
+                "type": "api",
+                "title": "ماموریت",
+                "link": "https://jibres.ir/fa/api/v6/mission",
+                "child": null
+            },
+            {
+                "icon": null,
+                "type": "url",
+                "title": "وب‌سایت",
+                "link": "https://jibres.ir/fa",
+                "child": null
+            }
+        ],
+        "transalate": {
+            "version": "نسخه",
+            "changelang": "تغییر زبان",
+            "close": "بستن",
+            "back": "بازگشت",
+            "go": "برو",
+            "enter": "ورود"
+        },
+        "navigation": [
+            {
+                "icon": "setting",
+                "type": "define",
+                "title": "تنظیمات",
+                "link": null
+            },
+            {
+                "icon": "more",
+                "type": "define",
+                "title": "بیشتر",
+                "link": null
+            },
+            {
+                "icon": "home",
+                "type": "url",
+                "title": "صفحه نخست",
+                "link": "https://jibres.ir/fa/app"
+            }
+        ],
+        "intro": [
+            {
+                "title": "جیبرس",
+                "desc": "Jibres is not just an online accounting software; We try to create the best financial platform that has everything you need to sale and manage your financial life.",
+                "bg_from": "#ffffff",
+                "bg_to": "#ffffff",
+                "title_color": "#000000",
+                "desc_color": "#000000",
+                "image": "https://jibres.ir/static/images/logo.png",
+                "btn": [
+                    {
+                        "title": "بعدی",
+                        "action": "next"
+                    }
+                ]
+            },
+            {
+                "title": "آسان",
+                "desc": "به سادگی قابل استفاده است",
+                "bg_from": "#ffffff",
+                "bg_to": "#ffffff",
+                "title_color": "#000000",
+                "desc_color": "#000000",
+                "image": "https://jibres.ir/static/images/logo.png",
+                "btn": [
+                    {
+                        "title": "قبلی",
+                        "action": "prev"
+                    },
+                    {
+                        "title": "بعدی",
+                        "action": "next"
+                    }
+                ]
+            },
+            {
+                "title": "پرقدرت",
+                "desc": "بهترین برنامه",
+                "bg_from": "#ffffff",
+                "bg_to": "#ffffff",
+                "title_color": "#000000",
+                "desc_color": "#000000",
+                "image": "https://jibres.ir/static/images/logo.png",
+                "btn": [
+                    {
+                        "title": "قبلی",
+                        "action": "prev"
+                    },
+                    {
+                        "title": "بعدی",
+                        "action": "next"
+                    }
+                ]
+            },
+            {
+                "title": "لذت ببرید",
+                "desc": "به جمع ما خوش‌آمدید",
+                "bg_from": "#ffffff",
+                "bg_to": "#ffffff",
+                "title_color": "#000000",
+                "desc_color": "#000000",
+                "image": "https://jibres.ir/static/images/logo.png",
+                "btn": [
+                    {
+                        "title": "شروع",
+                        "action": "start"
+                    }
+                ]
+            }
+        ],
+        "theme": {
+            "default": {
+                "splash": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000"
+                },
+                "global": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "btn_from": "#ffffff",
+                    "btn_to": "#ffffff",
+                    "btn_color": "#000000"
+                },
+                "intro": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "header_from": "#ffffff",
+                    "header_to": "#ffffff",
+                    "header_color": "#000000",
+                    "footer_from": "#ffffff",
+                    "footer_to": "#ffffff",
+                    "footer_color": "#000000"
+                },
+                "share": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "header_from": "#ffffff",
+                    "header_to": "#ffffff",
+                    "header_color": "#000000",
+                    "footer_from": "#ffffff",
+                    "footer_to": "#ffffff",
+                    "footer_color": "#000000"
+                },
+                "btn": {
+                    "success": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "danger": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "warn": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "info": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    }
+                }
+            },
+            "night": {
+                "splash": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000"
+                },
+                "global": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "btn_from": "#ffffff",
+                    "btn_to": "#ffffff",
+                    "btn_color": "#000000"
+                },
+                "intro": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "header_from": "#ffffff",
+                    "header_to": "#ffffff",
+                    "header_color": "#000000",
+                    "footer_from": "#ffffff",
+                    "footer_to": "#ffffff",
+                    "footer_color": "#000000"
+                },
+                "share": {
+                    "bg_from": "#ffffff",
+                    "bg_to": "#ffffff",
+                    "color": "#000000",
+                    "header_from": "#ffffff",
+                    "header_to": "#ffffff",
+                    "header_color": "#000000",
+                    "footer_from": "#ffffff",
+                    "footer_to": "#ffffff",
+                    "footer_color": "#000000"
+                },
+                "btn": {
+                    "success": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "danger": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "warn": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    },
+                    "info": {
+                        "bg_from": "#ffffff",
+                        "bg_to": "#ffffff",
+                        "color": "#000000"
+                    }
+                }
+            }
+        },
+        "ad": {
+            "top": {
+                "content": null,
+                "link": null
+            },
+            "bottom": []
+        }
+    }
+}
