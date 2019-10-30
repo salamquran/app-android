@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:gravity="center"
+    android:padding="0dp">
+
+    <!--Left Object Page-->
+    <RelativeLayout
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <!--Cut Page -->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/cutPage_L"
+            android:layout_width="@dimen/_1sdp"
+            android:src="@drawable/cut_page"
+            android:scaleType="fitXY"
+            android:rotation="180"
+            android:layout_height="match_parent"/>
+        <!--Space Page-->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/spacePage_L"
+            android:layout_width="@dimen/_50sdp"
+            android:alpha="0.7"
+            android:src="@drawable/space_page"
+            android:scaleType="fitXY"
+            android:rotation="0"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <!--Right Object Page-->
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <!--Cut Page -->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/cutPage_R"
+            android:layout_width="@dimen/_1sdp"
+            android:src="@drawable/cut_page"
+            android:scaleType="fitXY"
+            android:rotation="0"
+            android:layout_height="match_parent"/>
+        <!--Space Page-->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/spacePage_R"
+            android:layout_width="@dimen/_50sdp"
+            android:alpha="0.7"
+            android:src="@drawable/space_page"
+            android:scaleType="fitXY"
+            android:rotation="180"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <!--Quran-->
+    <LinearLayout
+        android:id="@+id/background_slide"
+        android:gravity="center"
+        android:textDirection="rtl"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <RelativeLayout
+        android:padding="@dimen/_2sdp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+
+            android:text="@string/juz"
+            android:id="@+id/quranItemViewPager_titleJuz"
+            android:textColor="#000"
+            android:textSize="@dimen/_8ssp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+
+            android:text="@string/surah"
+            android:id="@+id/quranItemViewPager_titleSurah"
+            android:textColor="#000"
+            android:textSize="@dimen/_8ssp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:text="1"
+        android:id="@+id/quranItemViewPager_pageNumber"
+        android:textColor="#000"
+        android:textSize="@dimen/_10ssp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
