@@ -45,7 +45,7 @@ dependencies {
     /*API*/
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'org.jetbrains:annotations-java5:15.0'
-    
+
     /*Database*/
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 
