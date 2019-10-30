@@ -1,4 +1,4 @@
-package com.ermile.salamquran;
+package com.ermile.salamquran.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +12,9 @@ import com.ermile.salamquran.Functions.FileManager;
 import com.ermile.salamquran.Functions.Interface.api_interface;
 import com.ermile.salamquran.Functions.SaveManager;
 import com.ermile.salamquran.Functions.api;
+import com.ermile.salamquran.R;
 import com.ermile.salamquran.Value.file;
 import com.ermile.salamquran.Value.format;
-import com.ermile.salamquran.Value.statics;
 import com.ermile.salamquran.Value.tag;
 
 import java.io.IOException;
@@ -207,7 +207,7 @@ public class Splash extends AppCompatActivity {
         }
         else {
             finish();
-            startActivity(new Intent(this, Intro.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
     }
 

@@ -15,16 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Intro"></activity>
-        <activity android:name=".ChangeLanguage" />
-        <activity android:name=".Splash">
+        <activity android:name=".Activity.Quran"></activity>
+        <activity android:name=".Activity.Intro" />
+        <activity android:name=".Activity.ChangeLanguage" />
+        <activity android:name=".Activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>
