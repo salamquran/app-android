@@ -279,7 +279,6 @@ public class Quran extends AppCompatActivity implements ViewPager.OnPageChangeLi
     /*Stop AudioPlayer*/
     private void stopSound() {
         if (mediaPlayer != null) {
-            ayaNumber = 0;
             mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
