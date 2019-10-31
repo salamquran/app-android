@@ -269,7 +269,9 @@ public class Quran extends AppCompatActivity implements ViewPager.OnPageChangeLi
                         mediaPlayer.setOnCompletionListener(this);
                     }
 
-                } catch (IOException ignored) {
+                }
+                catch (IOException ignored) {
+
                 }
             }
 
