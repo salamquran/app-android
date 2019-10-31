@@ -60,7 +60,7 @@ public class Adaptor_Quran extends androidx.viewpager.widget.PagerAdapter {
     @SuppressLint({"ResourceType", "SetTextI18n", "ClickableViewAccessibility"})
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
+    public Object instantiateItem(@NonNull final ViewGroup container, int position) {
         hasFontOsmani = false;
         Context context = container.getContext();
 

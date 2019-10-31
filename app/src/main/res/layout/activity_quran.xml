@@ -9,7 +9,7 @@
     tools:context=".Activity.Quran">
 
     <!--View Pager Quran-->
-    <androidx.viewpager.widget.ViewPager
+    <com.duolingo.open.rtlviewpager.RtlViewPager
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:layoutDirection="rtl"

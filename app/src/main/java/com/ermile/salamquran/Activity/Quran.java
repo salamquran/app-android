@@ -1,6 +1,9 @@
 package com.ermile.salamquran.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -16,12 +19,15 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.ermile.salamquran.Adaptors.Adaptor_ListQuran;
 import com.ermile.salamquran.Adaptors.Adaptor_Quran;
 import com.ermile.salamquran.Functions.Download;
@@ -43,7 +49,7 @@ import java.util.Objects;
 
 public class Quran extends AppCompatActivity implements ViewPager.OnPageChangeListener, MediaPlayer.OnCompletionListener {
 
-    ViewPager viewpager;
+    RtlViewPager viewpager;
     Adaptor_Quran PagerAdapter;
 
     List<item_PlayAudio> playAudioList;
@@ -60,6 +66,8 @@ public class Quran extends AppCompatActivity implements ViewPager.OnPageChangeLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quran);
 
         // Chang ID XML
@@ -104,7 +112,6 @@ public class Quran extends AppCompatActivity implements ViewPager.OnPageChangeLi
         viewpager.setCurrentItem(Integer.valueOf(getPage_FromListQuran));
         viewpager.clearOnPageChangeListeners();
         viewpager.addOnPageChangeListener(this);
-
 
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
