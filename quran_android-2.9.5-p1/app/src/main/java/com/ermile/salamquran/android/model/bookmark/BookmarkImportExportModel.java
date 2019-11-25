@@ -22,7 +22,7 @@ import okio.Okio;
 
 
 public class BookmarkImportExportModel {
-  private static final String FILE_NAME = "quran_android.backup";
+  private static final String FILE_NAME = "salam_quran.backup";
 
   private final Context appContext;
   private final BookmarkJsonModel jsonModel;

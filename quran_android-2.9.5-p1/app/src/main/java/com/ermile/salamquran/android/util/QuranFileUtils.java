@@ -39,7 +39,7 @@ import okio.Source;
 import timber.log.Timber;
 
 public class QuranFileUtils {
-  private static final String QURAN_BASE = "quran_android/";
+  private static final String QURAN_BASE = "salam_quran/";
 
   // server urls
   private final String IMG_BASE_URL;
