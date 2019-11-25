@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">قرآن</string>
+  <string name="app_name">سلام قرآن</string>
   <string name="downloadPrompt_title">فایل‌های موردنیاز بارگذاری شود؟</string>
   <string name="downloadPrompt">برای عملکرد بهینه بایستی تعدادی فایل از اینترنت دریافت گردد. این کار قدری طول خواهد کشید. آیا آمادگی این کار را دارید؟</string>
   <string name="downloadPrompt_ok">بلی</string>
