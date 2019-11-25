@@ -55,11 +55,11 @@ public class QuranDownloadService extends Service implements
 
   // intent actions
   public static final String ACTION_DOWNLOAD_URL =
-      "com.quran.labs.androidquran.DOWNLOAD_URL";
+      "com.ermile.salamquran.android.DOWNLOAD_URL";
   public static final String ACTION_CANCEL_DOWNLOADS =
-      "com.quran.labs.androidquran.CANCEL_DOWNLOADS";
+      "com.ermile.salamquran.android.CANCEL_DOWNLOADS";
   public static final String ACTION_RECONNECT =
-      "com.quran.labs.androidquran.RECONNECT";
+      "com.ermile.salamquran.android.RECONNECT";
 
   // extras
   public static final String EXTRA_URL = "url";

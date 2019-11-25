@@ -35,7 +35,7 @@ public class QuranDataProvider extends ContentProvider {
   public static final Uri SEARCH_URI = Uri.parse("content://" + AUTHORITY + "/quran/search");
 
   public static final String VERSES_MIME_TYPE =
-      ContentResolver.CURSOR_DIR_BASE_TYPE + "/vnd.com.quran.labs.androidquran";
+      ContentResolver.CURSOR_DIR_BASE_TYPE + "/vnd.com.ermile.salamquran.android";
   public static final String QURAN_ARABIC_DATABASE = QuranFileConstants.ARABIC_DATABASE;
 
   // UriMatcher stuff

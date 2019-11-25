@@ -103,14 +103,14 @@ public class AudioService extends Service implements OnCompletionListener,
   // the fact these constants exist in our class is a mere convenience: what
   // really defines the actions our service can handle are the <action> tags
   // in the <intent-filters> tag for our service in AndroidManifest.xml.
-  public static final String ACTION_PLAYBACK = "com.quran.labs.androidquran.action.PLAYBACK";
-  public static final String ACTION_PLAY = "com.quran.labs.androidquran.action.PLAY";
-  public static final String ACTION_PAUSE = "com.quran.labs.androidquran.action.PAUSE";
-  public static final String ACTION_STOP = "com.quran.labs.androidquran.action.STOP";
-  public static final String ACTION_SKIP = "com.quran.labs.androidquran.action.SKIP";
-  public static final String ACTION_REWIND = "com.quran.labs.androidquran.action.REWIND";
-  public static final String ACTION_CONNECT = "com.quran.labs.androidquran.action.CONNECT";
-  public static final String ACTION_UPDATE_REPEAT = "com.quran.labs.androidquran.action.UPDATE_REPEAT";
+  public static final String ACTION_PLAYBACK = "com.ermile.salamquran.android.action.PLAYBACK";
+  public static final String ACTION_PLAY = "com.ermile.salamquran.android.action.PLAY";
+  public static final String ACTION_PAUSE = "com.ermile.salamquran.android.action.PAUSE";
+  public static final String ACTION_STOP = "com.ermile.salamquran.android.action.STOP";
+  public static final String ACTION_SKIP = "com.ermile.salamquran.android.action.SKIP";
+  public static final String ACTION_REWIND = "com.ermile.salamquran.android.action.REWIND";
+  public static final String ACTION_CONNECT = "com.ermile.salamquran.android.action.CONNECT";
+  public static final String ACTION_UPDATE_REPEAT = "com.ermile.salamquran.android.action.UPDATE_REPEAT";
 
   // pending notification request codes
   private static final int REQUEST_CODE_MAIN = 0;
@@ -122,7 +122,7 @@ public class AudioService extends Service implements OnCompletionListener,
 
   public static class AudioUpdateIntent {
 
-    public static final String INTENT_NAME = "com.quran.labs.androidquran.audio.AudioUpdate";
+    public static final String INTENT_NAME = "com.ermile.salamquran.android.audio.AudioUpdate";
     public static final String STATUS = "status";
     public static final String SURA = "sura";
     public static final String AYAH = "ayah";
@@ -156,7 +156,7 @@ public class AudioService extends Service implements OnCompletionListener,
   private AudioQueue audioQueue = null;
 
   // so user can pass in a serializable LegacyAudioRequest to the intent
-  public static final String EXTRA_PLAY_INFO = "com.quran.labs.androidquran.PLAY_INFO";
+  public static final String EXTRA_PLAY_INFO = "com.ermile.salamquran.android.PLAY_INFO";
 
   // indicates the state our service:
   private enum State {

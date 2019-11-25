@@ -35,7 +35,7 @@ public class QuranDownloadNotifier {
 
   public static class ProgressIntent {
     public static final String INTENT_NAME =
-        "com.quran.labs.androidquran.download.ProgressUpdate";
+        "com.ermile.salamquran.android.download.ProgressUpdate";
     static final String NAME = "notificationTitle";
     public static final String DOWNLOAD_KEY = "downloadKey";
     public static final String DOWNLOAD_TYPE = "downloadType";

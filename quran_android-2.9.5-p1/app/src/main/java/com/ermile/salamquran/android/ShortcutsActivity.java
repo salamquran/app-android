@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ermile.salamquran.android.ui.QuranActivity;
 
 public class ShortcutsActivity extends AppCompatActivity {
-  public static final String ACTION_JUMP_TO_LATEST = "com.quran.labs.androidquran.last_page";
+  public static final String ACTION_JUMP_TO_LATEST = "com.ermile.salamquran.android.last_page";
 
   private static final String JUMP_TO_LATEST_SHORTCUT_NAME = "lastPage";
 

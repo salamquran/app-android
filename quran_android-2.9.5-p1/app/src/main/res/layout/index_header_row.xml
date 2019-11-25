@@ -9,21 +9,23 @@
     android:orientation="horizontal"
     android:background="@drawable/list_header_background">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textColor="@color/header_text_color"
-        android:textSize="16sp"
-        tools:text="Juz' 1"/>
+  <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:textColor="@color/header_text_color"
+      android:textSize="16sp"
+      tools:text="Juz' 1"/>
 
-    <TextView
-        android:id="@+id/pageNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textColor="@color/sura_number_color"
-        android:textSize="16sp"
-        tools:text="1"/>
+  <TextView
+      android:id="@+id/pageNumber"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:textColor="@color/sura_number_color"
+      android:textSize="16sp"
+      tools:text="1"/>
+
+
 </com.ermile.salamquran.android.widgets.QuranHeaderView>

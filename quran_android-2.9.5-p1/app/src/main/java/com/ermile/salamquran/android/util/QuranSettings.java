@@ -22,7 +22,7 @@ import androidx.annotation.VisibleForTesting;
 
 
 public class QuranSettings {
-  private static final String PREFS_FILE = "com.quran.labs.androidquran.per_installation";
+  private static final String PREFS_FILE = "com.ermile.salamquran.android.per_installation";
 
   private static QuranSettings instance;
 
