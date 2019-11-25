@@ -1,7 +1,7 @@
-package com.quran.labs.androidquran.data;
+package com.ermile.salamquran.android.data;
 
-import com.quran.labs.androidquran.database.DatabaseHandler;
-import com.quran.labs.androidquran.ui.util.TypefaceManager;
+import com.ermile.salamquran.android.database.DatabaseHandler;
+import com.ermile.salamquran.android.ui.util.TypefaceManager;
 
 public class QuranFileConstants {
   // server urls

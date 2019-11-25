@@ -1,4 +1,4 @@
-package com.quran.labs.androidquran;
+package com.ermile.salamquran.android;
 
 import com.squareup.leakcanary.LeakCanary;
 

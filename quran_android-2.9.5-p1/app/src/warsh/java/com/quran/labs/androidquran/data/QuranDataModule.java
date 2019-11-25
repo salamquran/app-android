@@ -1,6 +1,6 @@
-package com.quran.labs.androidquran.data;
+package com.ermile.salamquran.android.data;
 
-import com.quran.data.source.PageProvider;
+import com.ermile.data.source.PageProvider;
 
 import java.util.Map;
 
