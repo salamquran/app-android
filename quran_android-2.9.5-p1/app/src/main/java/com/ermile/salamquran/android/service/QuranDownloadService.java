@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.StatFs;
+import android.util.Log;
 
 //import com.crashlytics.android.Crashlytics; //1L
 //import com.crashlytics.android.answers.Answers; //1L
@@ -458,6 +459,8 @@ public class QuranDownloadService extends Service implements
 
   private boolean downloadFileWrapper(String urlString, String destination,
       String outputFile, NotificationDetails details) {
+    Log.d("amingoli", "onHandleIntent: "+urlString);
+
     boolean previouslyCorrupted = false;
 
     int res = DOWNLOAD_SUCCESS;
