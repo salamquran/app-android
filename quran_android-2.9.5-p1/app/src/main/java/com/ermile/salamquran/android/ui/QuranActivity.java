@@ -12,9 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
@@ -28,6 +26,7 @@ import com.ermile.salamquran.android.ShortcutsActivity;
 import com.ermile.salamquran.android.data.Constants;
 import com.ermile.salamquran.android.model.bookmark.RecentPageModel;
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
+import com.ermile.salamquran.android.salamquran.LearnFragment;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
 import com.ermile.salamquran.android.ui.fragment.BookmarksFragment;
@@ -56,6 +55,7 @@ import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
@@ -99,9 +99,12 @@ public class QuranActivity extends QuranActionBarActivity
   @Inject TranslationManagerPresenter translationManagerPresenter;
 
   //salamquran
+  Fragment fragment = null;
   LinearLayout linear_quranList;
   BottomNavigationView bottomNavigation;
   FrameLayout frameLayout;
+
+  //----------
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -167,8 +170,7 @@ public class QuranActivity extends QuranActionBarActivity
 
     bottomNavigation.setOnNavigationItemSelectedListener(this::onOptionsItemSelected);
     bottomNavigation.setSelectedItemId(R.id.quran);
-
-
+    //----------
 
     updateTranslationsListAsNeeded();
   }
@@ -272,14 +274,19 @@ public class QuranActivity extends QuranActionBarActivity
         return true;
       }
       case R.id.lms:{
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         linear_quranList.setVisibility(View.INVISIBLE);
         frameLayout.setVisibility(View.VISIBLE);
+        fragment = new LearnFragment();
+        if ( fragment != null) {
+          final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+          transaction.replace(R.id.frame_layout, fragment);
+          transaction.addToBackStack(null);
+          transaction.commit();
+        }
         return true;
       }
 
       default: {
-        Toast.makeText(this, ""+item.getTitle(), Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
       }
     }
