@@ -135,5 +135,8 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:${espressoVersion}"
 //  implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
 
+//  BottomNavigation
+    implementation 'com.google.android.material:material:1.2.0-alpha02'
+
     errorprone 'com.google.errorprone:error_prone_core:2.3.2'
 }
