@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
@@ -35,6 +40,7 @@ import com.ermile.salamquran.android.util.AudioUtils;
 import com.ermile.salamquran.android.util.QuranSettings;
 import com.ermile.salamquran.android.util.QuranUtils;
 import com.ermile.salamquran.android.widgets.SlidingTabLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -92,6 +98,11 @@ public class QuranActivity extends QuranActionBarActivity
   @Inject RecentPageModel recentPageModel;
   @Inject TranslationManagerPresenter translationManagerPresenter;
 
+  //salamquran
+  LinearLayout linear_quranList;
+  BottomNavigationView bottomNavigation;
+  FrameLayout frameLayout;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     QuranApplication quranApp = (QuranApplication) getApplication();
@@ -148,6 +159,16 @@ public class QuranActivity extends QuranActionBarActivity
         jumpToLastPage();
       }
     }
+
+    //salamquran
+    linear_quranList = findViewById(R.id.linear_quran_list);
+    bottomNavigation = findViewById(R.id.bottom_navigation);
+    frameLayout = findViewById(R.id.frame_layout);
+
+    bottomNavigation.setOnNavigationItemSelectedListener(this::onOptionsItemSelected);
+    bottomNavigation.setSelectedItemId(R.id.quran);
+
+
 
     updateTranslationsListAsNeeded();
   }
@@ -233,12 +254,32 @@ public class QuranActivity extends QuranActionBarActivity
         intent.setData(Uri.parse("market://search?q=pub:quran.com"));
         if (getPackageManager().resolveActivity(intent,
             PackageManager.MATCH_DEFAULT_ONLY) == null) {
-          intent.setData(Uri.parse("http://play.google.com/store/search?q=pub:quran.com"));
+          intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Ermile"));
         }
         startActivity(intent);
         return true;
       }
+
+      //salamquran
+      case R.id.mag:{
+        linear_quranList.setVisibility(View.INVISIBLE);
+        frameLayout.setVisibility(View.VISIBLE);
+        return true;
+      }
+      case R.id.quran:{
+        linear_quranList.setVisibility(View.VISIBLE);
+        frameLayout.setVisibility(View.GONE);
+        return true;
+      }
+      case R.id.lms:{
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+        linear_quranList.setVisibility(View.INVISIBLE);
+        frameLayout.setVisibility(View.VISIBLE);
+        return true;
+      }
+
       default: {
+        Toast.makeText(this, ""+item.getTitle(), Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
       }
     }
