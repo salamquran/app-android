@@ -292,5 +292,8 @@
     <item quantity="many">تم حذف %d عنصر</item>
   </plurals>
   <string name="undo">تراجع</string>
+  <string name="menu_btn_quran">قرآن</string>
+  <string name="menu_btn_magazin">مجلة</string>
+  <string name="menu_btn_learn">تعلم</string>
 
 </resources>

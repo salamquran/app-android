@@ -287,4 +287,7 @@
     <item>سه بار</item>
     <item>بی‌پایان</item>
   </string-array>
+  <string name="menu_btn_quran">قرآن</string>
+  <string name="menu_btn_magazin">مجله</string>
+  <string name="menu_btn_learn">یادگیری</string>
 </resources>

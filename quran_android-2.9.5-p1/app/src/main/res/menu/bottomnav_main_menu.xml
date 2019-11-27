@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+      android:id="@+id/mag"
+      android:title="@string/menu_btn_magazin"
+      android:icon="@drawable/ic_magezin"
+      app:showAsAction="never" />
+  <item
+      android:id="@+id/quran"
+      android:icon="@drawable/ic_quran"
+      android:title="@string/menu_btn_quran"
+      app:showAsAction="never" />
+  <item
+      android:id="@+id/lms"
+      android:title="@string/menu_btn_learn"
+      android:icon="@drawable/ic_learn"
+      app:showAsAction="never" />
+
+
+</menu>
