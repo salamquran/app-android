@@ -28,33 +28,7 @@
     <item>@string/saeediyan_murattal_16</item>
   </string-array>
 
-  <integer-array translatable="false" name="quran_readers_have_gapless_equivalents">
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-    <item>-1</item>
-  </integer-array>
+  <integer-array translatable="false" name="quran_readers_have_gapless_equivalents"/>
 
   <string-array translatable="false" name="quran_readers_path">
     <item>"parhizgar_murattal_48"</item>
@@ -82,35 +56,37 @@
     <item>"muhammad_jibreel_murattal_32"</item>
     <item>"mustafa_ismail_murattal_32"</item>
     <item>"saeediyan_murattal_16"</item>
+  </string-array>
 
+  <string-array translatable="false" name="quran_readers_type">
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tafsir</item>
+    <item>@string/translate</item>
+    <item>@string/translate</item>
+    <item>@string/translate</item>
+    <item>@string/tajwid</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tajwid</item>
+    <item>@string/learn</item>
+    <item>@string/tartil</item>
+    <item>@string/tajwid</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/translate</item>
+    <item>@string/translate</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
+    <item>@string/tartil</item>
   </string-array>
 
   <string-array translatable="false" name="quran_readers_db_name">
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
-    <item>s</item>
   </string-array>
 
   <string-array translatable="false" name="quran_readers_urls">
@@ -167,4 +143,10 @@
   <string name="muhammad_jibreel_murattal_32"> "Muhammad jibreel"</string>
   <string name="mustafa_ismail_murattal_32"> "Mustafa Ismail"</string>
   <string name="saeediyan_murattal_16"> "Hossein Saeediyan"</string>
+
+  <string name="tartil"> "Murattal"</string>
+  <string name="tajwid"> "Mujawwad"</string>
+  <string name="tafsir"> "Commentary"</string>
+  <string name="translate"> "Translate"</string>
+  <string name="learn"> "Muallim"</string>
 </resources>

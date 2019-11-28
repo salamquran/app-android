@@ -42,17 +42,14 @@ constructor(private val quranInfo: QuranInfo, private val quranFileUtils: QuranF
   fun getQariList(context: Context): List<QariItem> {
     val resources = context.resources
     val shuyookh = resources.getStringArray(R.array.quran_readers_name)
+    val shuyookh_type = resources.getStringArray(R.array.quran_readers_type)
     val paths = resources.getStringArray(R.array.quran_readers_path)
     val urls = resources.getStringArray(R.array.quran_readers_urls)
 //    val databases = resources.getStringArray(R.array.quran_readers_db_name)
-    val hasGaplessEquivalent = resources.getIntArray(R.array.quran_readers_have_gapless_equivalents)
+//    val hasGaplessEquivalent = resources.getIntArray(R.array.quran_readers_have_gapless_equivalents)
     val items = mutableListOf<QariItem>()
     for (i in shuyookh.indices) {
-      if (hasGaplessEquivalent[i] == 0 || haveAnyFiles(context, paths[i])) {
-        items += QariItem(i, shuyookh[i], urls[i], paths[i], null)
-      }else{
-        items += QariItem(i, shuyookh[i], urls[i], paths[i], null)
-      }
+      items += QariItem(i, shuyookh[i] + " ("+shuyookh_type[i]+") ", urls[i], paths[i], null)
     }
 
     return items.sortedWith(Comparator { lhs, rhs ->

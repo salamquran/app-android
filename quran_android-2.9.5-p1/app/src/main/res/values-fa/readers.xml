@@ -25,4 +25,10 @@
   <string name="muhammad_jibreel_murattal_32">"محمد جبرئیل"</string>
   <string name="mustafa_ismail_murattal_32">"مصطفی اسماعیل"</string>
   <string name="saeediyan_murattal_16">"حسین سعیدیان"</string>
+
+  <string name="tartil"> "ترتیل"</string>
+  <string name="tajwid"> "تحقیق"</string>
+  <string name="tafsir"> "تفسیر"</string>
+  <string name="translate"> "ترجمه"</string>
+  <string name="learn"> "آموزشی"</string>
 </resources>
