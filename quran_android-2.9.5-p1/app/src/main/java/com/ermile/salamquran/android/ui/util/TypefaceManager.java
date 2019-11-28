@@ -19,12 +19,12 @@ public class TypefaceManager {
       final String fontName;
       switch (QuranFileConstants.FONT_TYPE) {
         case TYPE_NOOR_HAYAH: {
-          fontName = "noorehira.ttf";
+          fontName = "iransans.ttf";
           break;
         }
         case TYPE_UTHMANI_HAFS:
         default: {
-          fontName = "uthmanic_hafs_ver12.otf";
+          fontName = "iransans.ttf";
         }
       }
       typeface = Typeface.createFromAsset(context.getAssets(), fontName);
@@ -34,7 +34,7 @@ public class TypefaceManager {
 
   public static Typeface getTafseerTypeface(@NonNull Context context) {
     if (arabicTafseerTypeface == null) {
-      arabicTafseerTypeface = Typeface.createFromAsset(context.getAssets(), "kitab.ttf");
+      arabicTafseerTypeface = Typeface.createFromAsset(context.getAssets(), "iransans.ttf");
     }
     return arabicTafseerTypeface;
   }
