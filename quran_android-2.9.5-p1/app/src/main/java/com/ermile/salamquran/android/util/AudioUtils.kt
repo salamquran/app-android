@@ -44,12 +44,14 @@ constructor(private val quranInfo: QuranInfo, private val quranFileUtils: QuranF
     val shuyookh = resources.getStringArray(R.array.quran_readers_name)
     val paths = resources.getStringArray(R.array.quran_readers_path)
     val urls = resources.getStringArray(R.array.quran_readers_urls)
-    val databases = resources.getStringArray(R.array.quran_readers_db_name)
+//    val databases = resources.getStringArray(R.array.quran_readers_db_name)
     val hasGaplessEquivalent = resources.getIntArray(R.array.quran_readers_have_gapless_equivalents)
     val items = mutableListOf<QariItem>()
     for (i in shuyookh.indices) {
       if (hasGaplessEquivalent[i] == 0 || haveAnyFiles(context, paths[i])) {
-        items += QariItem(i, shuyookh[i], urls[i], paths[i], databases[i])
+        items += QariItem(i, shuyookh[i], urls[i], paths[i], null)
+      }else{
+        items += QariItem(i, shuyookh[i], urls[i], paths[i], null)
       }
     }
 

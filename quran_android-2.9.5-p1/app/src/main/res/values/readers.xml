@@ -1,72 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string-array name="quran_readers_name">
-    <item>@string/qari_minshawi_murattal_gapless</item>
-    <item>@string/qari_husary_gapless</item>
+    <item>@string/parhizgar_murattal_48</item>
+    <item>@string/mansouri_murattal_40</item>
+    <item>@string/sabzali_murattal_32</item>
+    <item>@string/khalafi_murattal_192</item>
+    <item>@string/qaraati_fa_qaraati_tafsir_16</item>
+    <item>@string/ansarian_fa_salimi_translation_16</item>
+    <item>@string/foladvand_fa_hedayatfar_translation_40</item>
+    <item>@string/makarem_fa_kabiri_translation_16</item>
+    <item>@string/abdulbasit_mujawwad_128</item>
+    <item>@string/abdulbasit_murattal_192</item>
+    <item>@string/afasy_murattal_192</item>
+    <item>@string/husary_murattal_128</item>
+    <item>@string/husary_mujawwad_128</item>
+    <item>@string/husary_muallim_128</item>
+    <item>@string/minshawi_murattal_128</item>
+    <item>@string/minshawi_mujawwad_128</item>
+    <item>@string/rifai_murattal_192</item>
+    <item>@string/shatri_murattal_128</item>
+    <item>@string/shuraym_murattal_128</item>
+    <item>@string/sudais_murattal_192</item>
+    <item>@string/azerbaijani_az_balayev_translation_128</item>
+    <item>@string/sahih_international_en_ibrahim_walk_translation_32</item>
+    <item>@string/muhammad_jibreel_murattal_32</item>
+    <item>@string/mustafa_ismail_murattal_32</item>
+    <item>@string/saeediyan_murattal_16</item>
   </string-array>
 
   <integer-array translatable="false" name="quran_readers_have_gapless_equivalents">
-    <item>0</item>
-    <item>0</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
+    <item>-1</item>
   </integer-array>
 
   <string-array translatable="false" name="quran_readers_path">
-    <item>minshawi_murattal</item>
-    <item>husary</item>
+    <item>"parhizgar_murattal_48"</item>
+    <item>"mansouri_murattal_40"</item>
+    <item>"sabzali_murattal_32"</item>
+    <item>"khalafi_murattal_192"</item>
+    <item>"qaraati_fa_qaraati_tafsir_16"</item>
+    <item>"ansarian_fa_salimi_translation_16"</item>
+    <item>"foladvand_fa_hedayatfar_translation_40"</item>
+    <item>"makarem_fa_kabiri_translation_16"</item>
+    <item>"abdulbasit_mujawwad_128"</item>
+    <item>"abdulbasit_murattal_192"</item>
+    <item>"afasy_murattal_192"</item>
+    <item>"husary_murattal_128"</item>
+    <item>"husary_mujawwad_128"</item>
+    <item>"husary_muallim_128"</item>
+    <item>"minshawi_murattal_128"</item>
+    <item>"minshawi_mujawwad_128"</item>
+    <item>"rifai_murattal_192"</item>
+    <item>"shatri_murattal_128"</item>
+    <item>"shuraym_murattal_128"</item>
+    <item>"sudais_murattal_192"</item>
+    <item>"azerbaijani_az_balayev_translation_128"</item>
+    <item>"sahih_international_en_ibrahim_walk_translation_32"</item>
+    <item>"muhammad_jibreel_murattal_32"</item>
+    <item>"mustafa_ismail_murattal_32"</item>
+    <item>"saeediyan_murattal_16"</item>
+
   </string-array>
 
   <string-array translatable="false" name="quran_readers_db_name">
-    <item>minshawi_murattal</item>
-    <item>husary</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
+    <item>s</item>
   </string-array>
 
   <string-array translatable="false" name="quran_readers_urls">
-    <item>https://download.quranicaudio.com/quran/muhammad_siddeeq_al-minshaawee/</item>
-    <item>https://download.quranicaudio.com/quran/mahmood_khaleel_al-husaree/</item>
+    <item>"https://dl.salamquran.com/ayat/parhizgar-murattal-48/"</item>
+    <item>"https://dl.salamquran.com/ayat/mansouri-murattal-40/"</item>
+    <item>"https://dl.salamquran.com/ayat/sabzali-murattal-32/"</item>
+    <item>"https://dl.salamquran.com/ayat/khalafi-murattal-192/"</item>
+    <item>"https://dl.salamquran.com/ayat/qaraati.fa.qaraati-tafsir-16/"</item>
+    <item>"https://dl.salamquran.com/ayat/ansarian.fa.salimi-translation-16/"</item>
+    <item>"https://dl.salamquran.com/ayat/foladvand.fa.hedayatfar-translation-40/"</item>
+    <item>"https://dl.salamquran.com/ayat/makarem.fa.kabiri-translation-16/"</item>
+    <item>"https://dl.salamquran.com/ayat/abdulbasit-mujawwad-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/abdulbasit-murattal-192/"</item>
+    <item>"https://dl.salamquran.com/ayat/afasy-murattal-192/"</item>
+    <item>"https://dl.salamquran.com/ayat/husary-murattal-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/husary-mujawwad-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/husary-muallim-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/minshawi-murattal-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/minshawi-mujawwad-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/rifai-murattal-192/"</item>
+    <item>"https://dl.salamquran.com/ayat/shatri-murattal-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/shuraym-murattal-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/sudais-murattal-192/"</item>
+    <item>"https://dl.salamquran.com/ayat/azerbaijani.az.balayev-translation-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/sahih_international.en.ibrahim_walk-translation-32/"</item>
+    <item>"https://dl.salamquran.com/ayat/muhammad_jibreel-murattal-32/"</item>
+    <item>"https://dl.salamquran.com/ayat/mustafa_ismail-murattal-32/"</item>
+    <item>"https://dl.salamquran.com/ayat/saeediyan-murattal-16/"</item>
   </string-array>
 
   <!-- actual qari names -->
-  <string name="qari_minshawi_murattal_gapless">Minshawi Murattal (gapless)</string>
-  <string name="qari_husary_gapless">Husary (gapless)</string>
-  <string name="qari_sudais_gapless">Abdurrahman As-Sudais (gapless)</string>
-  <string name="qari_qatami_gapless">Nasser Al Qatami (gapless)</string>
-  <string name="qari_abdulbaset">Abd Al-Basit</string>
-  <string name="qari_abdulbaset_mujawwad">Abd Al-Basit Mujawwad</string>
-  <string name="qari_basfar">Abdullah Basfar</string>
-  <string name="qari_suadis">Abdurrahmaan As-Sudais</string>
-  <string name="qari_shatri">Abu Bakr Ash-Shatri</string>
-  <string name="qari_afasy">Mishary Al-Afasy</string>
-  <string name="qari_saad_al_ghamdi">Saad Al-Ghamdi</string>
-  <string name="qari_walk">Ibrahim Walk (English Trans.)</string>
-  <string name="qari_hani_rifai">Hani Ar-Rifai</string>
-  <string name="qari_husary_mujawwad">Husary Mujawwad</string>
-  <string name="qari_hudhayfi">Ali Al-Hudhaify</string>
-  <string name="qari_muaiqly">Maher Al Muaiqly</string>
-  <string name="qari_minshawi_mujawwad">Minshawy Mujawwad</string>
-  <string name="qari_tablawy">Mohammad al Tablaway</string>
-  <string name="qari_ayyoub">Muhammad Ayyoub</string>
-  <string name="qari_jibreel">Muhammad Jibreel</string>
-  <string name="qari_shuraym">Saood Ash-Shuraym</string>
-  <string name="qari_dussary">Yasser Ad-Dussary</string>
-  <string name="qari_abdulbaset_gapless">Abd Al-Basit (gapless)</string>
-  <string name="qari_abdulbaset_mujawwad_gapless">Abd Al-Basit Mujawwad (gapless)</string>
-  <string name="qari_aziz_alili_gapless">Aziz Alili (gapless)</string>
-  <string name="qari_salah_budair_gapless">Salah Budair (gapless)</string>
-  <string name="qari_shuraym_gapless">Saood Ash-Shuraym (gapless)</string>
-  <string name="qari_yasser_dussary_gapless">Yasser Ad-Dussary (gapless)</string>
-  <string name="qari_mohammad_altablawi_gapless">Mohammad al Tablawy (gapless)</string>
-  <string name="qari_sahl_yaseen_gapless">Sahl Yaseen (gapless)</string>
-  <string name="qari_shatri_gapless">Abu Bakr Ash-Shatri (gapless)</string>
-  <string name="qari_ahmad_nauina_gapless">Ahmad Nauina (gapless)</string>
-  <string name="qari_akram_al_alaqmi">Akram Al-Alaqmi (gapless)</string>
-  <string name="qari_ali_hajjaj_alsouasi_gapless">Ali Hajjaj Alsouasi (gapless)</string>
-  <string name="qari_saad_al_ghamidi_gapless">Saad Al-Ghamdi (gapless)</string>
-  <string name="qari_bandar_baleela_gapless">Bandar Baleela (gapless)</string>
-  <string name="qari_mahmoud_ali_albana_gapless">Mahmoud Ali al Bana (gapless)</string>
-  <string name="qari_abdulrahman_alshahat_gapless">Abdulrahman Al-Shahat (gapless)</string>
-  <string name="qari_abdurrashid_sufi_gapless">Abdur-Rashid Sufi (gapless)</string>
-  <string name="qari_mostafa_ismaeel_gapless">Mostafa Ismaeel (gapless)</string>
-  <string name="qari_husary_iza3a_gapless">Husary Broadcast (gapless)</string>
-  <string name="qari_abdulaziz_zahrani_gapless">Abdulaziz Az-Zahrani (gapless)</string>
-  <string name="qari_ayman_suwaid">Dr. Ayman Suwaid</string>
+  <string name="parhizgar_murattal_48"> "Shahriyar parhizgar"</string>
+  <string name="mansouri_murattal_40">"Karim mansouri"</string>
+  <string name="sabzali_murattal_32"> "Mohammad Hossein Sabzali"</string>
+  <string name="khalafi_murattal_192"> "Hannaneh Khalafi"</string>
+  <string name="qaraati_fa_qaraati_tafsir_16">"Mohsen Qaraati" </string>
+  <string name="ansarian_fa_salimi_translation_16"> "Hossein Ansarian"</string>
+  <string name="foladvand_fa_hedayatfar_translation_40"> "Mohammad mahdi foladvand"</string>
+  <string name="makarem_fa_kabiri_translation_16"> "Naser makarem shirazi"</string>
+  <string name="abdulbasit_mujawwad_128"> "AbdulBaset AbdulSamad"</string>
+  <string name="abdulbasit_murattal_192"> "AbdulBaset AbdulSamad"</string>
+  <string name="afasy_murattal_192">"Mishary Rashid Alafasy"</string>
+  <string name="husary_murattal_128"> "Mahmoud Khalil Al-Husary" </string>
+  <string name="husary_mujawwad_128"> "Mahmoud Khalil Al-Husary" </string>
+  <string name="husary_muallim_128"> "Mahmoud Khalil Al-Husary" </string>
+  <string name="minshawi_murattal_128">"Mohamed Siddiq al-Minshawi" </string>
+  <string name="minshawi_mujawwad_128"> "Mohamed Siddiq al-Minshawi"</string>
+  <string name="rifai_murattal_192"> "Hani ar-Rifai"</string>
+  <string name="shatri_murattal_128">  "Abu Bakr al-Shatri"</string>
+  <string name="shuraym_murattal_128"> "Sa`ud ash-Shuraym"</string>
+  <string name="sudais_murattal_192"> "Abdur-Rahman as-Sudais"</string>
+  <string name="azerbaijani_az_balayev_translation_128"> "Rasim Balayev"</string>
+  <string name="sahih_international_en_ibrahim_walk_translation_32"> "Ibrahim Walk"</string>
+  <string name="muhammad_jibreel_murattal_32"> "Muhammad jibreel"</string>
+  <string name="mustafa_ismail_murattal_32"> "Mustafa Ismail"</string>
+  <string name="saeediyan_murattal_16"> "Hossein Saeediyan"</string>
 </resources>
