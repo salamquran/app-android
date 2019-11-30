@@ -53,7 +53,7 @@ public class QuranAppUtils {
     try {
       Map<String, String> params = new HashMap<>();
       params.put("surah", sura + "");
-      fallbackUrl = Constants.QURAN_APP_BASE + "s" +sura;
+      fallbackUrl = Constants.QURAN_APP_BASE +"s"+sura;
       if (startAyah != null) {
         params.put("start_ayah", startAyah.toString());
         fallbackUrl += "/" + startAyah;

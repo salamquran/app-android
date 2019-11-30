@@ -28,7 +28,8 @@ public class Constants {
 
   // quranapp
   public static final String QURAN_APP_BASE = "http://salamquran.com/";
-  public static final String QURAN_APP_ENDPOINT = "http://quranapp.com/note";
+//  public static final String QURAN_APP_ENDPOINT = "http://salamquran.com/note";
+  public static final String QURAN_APP_ENDPOINT = "http://salamquran.com";
 
   // Settings Key (some of these have corresponding values in preference_keys.xml)
   public static final String PREF_APP_LOCATION = "appLocation";
