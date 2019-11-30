@@ -27,7 +27,7 @@ public class Constants {
   public static final int MAX_RECENT_PAGES = 3;
 
   // quranapp
-  public static final String QURAN_APP_BASE = "http://quranapp.com/";
+  public static final String QURAN_APP_BASE = "http://salamquran.com/";
   public static final String QURAN_APP_ENDPOINT = "http://quranapp.com/note";
 
   // Settings Key (some of these have corresponding values in preference_keys.xml)
