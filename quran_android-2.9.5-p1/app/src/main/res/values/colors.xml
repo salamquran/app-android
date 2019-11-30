@@ -111,6 +111,9 @@
   <!--Quran List > Bookmark-->
   <color name="bookmark_background">@color/quranList_background</color> <!-- No Replace -->
   <color name="onClick_ripple_BookmarkList">#57ADC7</color>
+  <color name="ic_aya_bookmark">#57ADC7</color>
+  <color name="ic_page_bookmark">#57ADC7</color>
+  <color name="ic_lastPage_bookmark">#57ADC7</color>
 
   <!--Quran List > Bookmark > Tag -->
   <color name="tagBackgroundColor_bookmark">#66000000</color>

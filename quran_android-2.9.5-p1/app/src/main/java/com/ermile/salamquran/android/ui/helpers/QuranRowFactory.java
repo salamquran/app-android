@@ -48,7 +48,9 @@ public class QuranRowFactory {
         .withSura(quranInfo.safelyGetSuraOnPage(page))
         .withPage(page)
         .withDate(timeStamp)
-        .withImageResource(R.drawable.bookmark_currentpage).build();
+        .withImageResource(R.drawable.bookmark_currentpage)
+        .withImageOverlayColor(ContextCompat.getColor(context, R.color.ic_lastPage_bookmark))
+        .build();
   }
 
   public QuranRow fromBookmark(Context context, Bookmark bookmark) {
@@ -66,7 +68,8 @@ public class QuranRowFactory {
           .withBookmark(bookmark)
           .withDate(bookmark.getTimestamp())
           .withSura(sura)
-          .withImageResource(R.drawable.ic_favorite);
+          .withImageResource(R.drawable.ic_favorite)
+          .withImageOverlayColor(ContextCompat.getColor(context, R.color.ic_page_bookmark));
     } else {
       String ayahText = bookmark.getAyahText();
 
@@ -87,7 +90,7 @@ public class QuranRowFactory {
           .withBookmark(bookmark)
           .withDate(bookmark.getTimestamp())
           .withImageResource(R.drawable.ic_favorite)
-          .withImageOverlayColor(ContextCompat.getColor(context, R.color.ayah_bookmark_color));
+          .withImageOverlayColor(ContextCompat.getColor(context, R.color.ic_aya_bookmark));
     }
 
     if (tagId != null) {
