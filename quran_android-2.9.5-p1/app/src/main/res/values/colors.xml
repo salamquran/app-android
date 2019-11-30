@@ -1,30 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="accent_color">#ffb2dfdb</color>
-  <color name="accent_color_dark">@color/color_control_normal</color>
+  <!--salamquran-->
+  <color name="nemidonam">#FF0000</color>
+  <color name="mother_color">#08a9dc</color>
+
+
+  <!--Main-->
+    <!--Toolbar-->
+  <color name="toolbar_main_bg">@color/mother_color</color>
+    <!--TabLayout-->
+  <color name="tabLayout_background">@color/toolbar_main_bg</color>
+  <color name="tabLayout_title_true">#FFFFFF</color>
+  <color name="tabLayout_title_false">#A3FFFFFF</color>
+  <color name="tabLayout_liner">#037DA3</color>
+    <!--BottomNav-->
+  <color name="bottomNav_background">#fff</color>
+  <color name="bottomNav_text_true">#333</color>
+  <color name="bottomNav_text_false">#A3333333</color>
+  <color name="bottomNav_icon_true">#333</color>
+  <color name="bottomNav_icon_false">#A3333333</color>
+
+  <!--Page Quran-->
+    <!--Toolbar-->
+  <color name="pq_toolbar_background">#F208A9DC</color>
+    <!--Audio Manager-->
+  <color name="pq_audioManager_background">#F208A9DC</color>
+    <!--Action Aya (on long click aya and show box)-->
+  <color name="pq_actionAya_background">@color/mother_color</color>
+  <color name="pq_actionAya_liner">#037DA3</color>
+
+
+
+
+
+
+
+
+
+
+
+  <!--  Sure & Juz List Text View-->
+  <!--  Page quran Sura Header & audio-->
+  <color name="transparent_actionbar_color">#000E69</color>
+
+
+  <!--Mother-->
+  <color name="accent_color">#54abd8</color>
   <color name="color_control_activated">@color/accent_color</color>
-  <color name="color_control_normal">#89b2dfdb</color>
-  <color name="page_background">#FFF4CB</color>
-  <color name="header_background">#ff424242</color>
-  <color name="ripple_dark">#33ffffff</color>
-  <color name="header_text_color">@color/sura_number_color</color>
-  <color name="title_color">#ffffffff</color>
-  <color name="sura_number_color">#7fffffff</color>
-  <color name="sura_details_color">#b2ffffff</color>
-  <color name="transparent_actionbar_color">#AA000000</color>
-  <color name="panel_background_color">#ff424242</color>
-  <color name="translation_hdr_color">#ff777777</color>
+
+  <color name="color_control_normal">#00FFE9</color>
+  <color name="accent_color_dark">#ff0000</color>
+  <color name="page_background">#7D0ACE</color>
+  <color name="header_background">#9EFF00</color>
+  <color name="title_color">#7D0ACE</color>
+  <color name="ripple_dark">#FF0000</color>
+
+<!--  -->
+  <color name="panel_label">#eee</color>
+
+  <color name="translation_hdr_color">#00BCD4</color>
   <color name="translation_sura_header">#fff1ecd8</color>
-  <color name="translation_sura_header_night">#ff424242</color>
+  <color name="translation_sura_header_night">#071879</color>
   <color name="translation_verse_text_color">#ff858383</color>
   <color name="translation_verse_background_color">#fff2f2f2</color>
   <color name="translation_verse_background_night_color">#ff333333</color>
   <color name="translation_translator_color">#ff22a5ad</color>
   <color name="translation_text_color">#ff777777</color>
   <color name="translation_divider_color">#ffe8e8e8</color>
-  <color name="translation_background_color_night">#ff1d1f21</color>
+  <color name="translation_background_color_night">#011758</color>
   <color name="translation_ayah_selected_color">#ffe0f2f1</color>
-  <color name="translation_ayah_selected_color_night">#ff2d2d2d</color>
+  <color name="translation_ayah_selected_color_night">#03A9F4</color>
   <color name="overlay_text_color">#ff888888</color>
   <color name="selection_highlight">#404694A6</color>
   <color name="audio_highlight">#404698A6</color>
@@ -33,14 +78,54 @@
   <color name="translation_highlight">#ff33b5e5</color>
   <color name="toolbar_background">#ed2b5836</color>
   <color name="toolbar_item_pressed">#552bff36</color>
-  <color name="indicator_color">@color/accent_color</color>
-  <color name="panel_label">@color/accent_color</color>
   <color name="notification_color">#ff112e44</color>
   <color name="audio_notification_color">@color/download_button_background</color>
   <color name="audio_notification_background_color">#ffd8d8d8</color>
   <color name="ayah_bookmark_color">#ff81c784</color>
   <color name="download_button_background">#ff556f79</color>
   <color name="snackbar_background_color">@color/download_button_background</color>
-  <color name="overlay_panel">#bb000000</color>
-  <color name="navbar_night_color">#ff000000</color>
+  <color name="overlay_panel">#333</color>
+  <color name="navbar_night_color">#333</color>
+
+
+
+
+  <!--Quran List > Recycler-->
+  <color name="quranList_background">#FFFFFF</color>
+
+
+  <!--Quran List > Juz-->
+  <color name="background_juz">#eeeeee</color>  <!--Background Juz & Title bookmark-->
+  <color name="Juz_number">#333333</color>
+  <color name="Juz_pageNumber">#333333</color>
+
+
+
+  <!--Quran List > Sura-->
+  <color name="sura_background">@color/quranList_background</color> <!-- No Replace -->
+  <color name="sura_number">#333333</color>
+  <color name="sura_title">#333333</color>
+  <color name="sura_detail">#333333</color>
+  <color name="sura_pageNumber">#333333</color>
+
+  <!--Quran List > Bookmark-->
+  <color name="bookmark_background">@color/quranList_background</color> <!-- No Replace -->
+  <color name="onClick_ripple_BookmarkList">#57ADC7</color>
+
+  <!--Quran List > Bookmark > Tag -->
+  <color name="tagBackgroundColor_bookmark">#66000000</color>
+
+  <!--Quran List > Hizb-->
+  <color name="circlHizb_Number">#FFFFFF</color>
+  <color name="circlHizb">#045F7C</color>
+  <color name="circlHizb_background">#B6E0EE</color>
+
+
+
+
+
+  <!--On click-->
+  <color name="onClick_activated">#91CFE2</color>
+  <color name="onClick_pressed">#E3FFFF</color>
+  <color name="onClick_ripple">#91CFE2</color>
 </resources>

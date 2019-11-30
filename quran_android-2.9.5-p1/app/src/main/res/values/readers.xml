@@ -86,8 +86,7 @@
     <item>@string/tartil</item>
   </string-array>
 
-  <string-array translatable="false" name="quran_readers_db_name">
-  </string-array>
+  <string-array translatable="false" name="quran_readers_db_name"/>
 
   <string-array translatable="false" name="quran_readers_urls">
     <item>"https://dl.salamquran.com/ayat/parhizgar-murattal-48/"</item>

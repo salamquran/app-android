@@ -111,11 +111,11 @@ public class SlidingTabLayout extends HorizontalScrollView {
     mTitleOffset = (int) (TITLE_OFFSET_DIPS * density);
     mTabPadding = (int) (TAB_VIEW_PADDING_DIPS * density);
 
-    mSelectedTabColor = ContextCompat.getColor(context, R.color.color_control_activated);
-    mUnselectedTabColor = ContextCompat.getColor(context, R.color.color_control_normal);
+    mSelectedTabColor = ContextCompat.getColor(context, R.color.tabLayout_title_true);
+    mUnselectedTabColor = ContextCompat.getColor(context, R.color.tabLayout_title_false);
 
     mTabStrip = new SlidingTabStrip(context);
-    mTabStrip.setSelectedIndicatorColors(ContextCompat.getColor(context, R.color.indicator_color));
+    mTabStrip.setSelectedIndicatorColors(ContextCompat.getColor(context, R.color.tabLayout_liner));
     addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
   }
 
@@ -183,7 +183,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
     TextView textView = new TextView(context);
     textView.setGravity(Gravity.CENTER);
     textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, TAB_VIEW_TEXT_SIZE_SP);
-    textView.setTypeface(Typeface.DEFAULT_BOLD);
+    Typeface typeface = Typeface.createFromAsset(context.getAssets(),"dana_regular.ttf");
+    textView.setTypeface(typeface);
+//    textView.setTypeface(Typeface.DEFAULT_BOLD);
     textView.setSingleLine();
     textView.setTextColor(mUnselectedTabColor);
 

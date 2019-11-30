@@ -35,8 +35,8 @@ public class JuzView extends Drawable {
 
   public JuzView(Context context, int type, String overlayText) {
     final Resources resources = context.getResources();
-    final int circleColor = ContextCompat.getColor(context, R.color.accent_color);
-    final int circleBackground = ContextCompat.getColor(context, R.color.accent_color_dark);
+    final int circleColor = ContextCompat.getColor(context, R.color.circlHizb);
+    final int circleBackground = ContextCompat.getColor(context, R.color.circlHizb_background);
 
     circlePaint = new Paint();
     circlePaint.setStyle(Paint.Style.FILL);
@@ -50,7 +50,7 @@ public class JuzView extends Drawable {
 
     this.overlayText = overlayText;
     if (!TextUtils.isEmpty(this.overlayText)) {
-      final int textColor = ContextCompat.getColor(context, R.color.header_background);
+      final int textColor = ContextCompat.getColor(context, R.color.circlHizb_Number);
       final int textSize =
           resources.getDimensionPixelSize(R.dimen.juz_overlay_text_size);
       overlayTextPaint = new TextPaint();

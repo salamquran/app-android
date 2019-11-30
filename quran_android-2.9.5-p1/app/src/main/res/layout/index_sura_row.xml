@@ -17,7 +17,7 @@
       android:layout_height="wrap_content"
       android:gravity="center"
       android:layout_gravity="center"
-      android:textColor="@color/sura_number_color"
+      android:textColor="@color/sura_number"
       android:textSize="24sp"
       tools:text="23"
       />
@@ -45,6 +45,7 @@
       >
     <TextView
         android:id="@+id/title"
+        android:textColor="@color/sura_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:textColor="@color/sura_details_color"
+        android:textColor="@color/sura_detail"
         android:textSize="14sp"
         tools:text="Makki - 286 Verses - Jan 01, 08:00" />
 
@@ -79,7 +80,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
-      android:textColor="@color/sura_details_color"
+      android:textColor="@color/sura_pageNumber"
       android:textSize="14sp"
       tools:text="1"
       />

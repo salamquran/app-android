@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Quran" parent="Theme.AppCompat">
         <item name="colorAccent">@color/accent_color</item>
         <item name="spinnerStyle">?attr/actionDropDownStyle</item>
         <item name="spinnerDropDownItemStyle">@style/SherlockDropDownItem</item>
         <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
+      <!--salamquran-->
+        <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
     </style>
 
     <style name="QuranToolBar" parent="Theme.AppCompat.NoActionBar">
@@ -13,9 +15,13 @@
         <item name="spinnerStyle">?attr/actionDropDownStyle</item>
         <item name="spinnerDropDownItemStyle">@style/SherlockDropDownItem</item>
         <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
+      <!--salamquran-->
+       <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
     </style>
 
     <style name="QuranToolBar.Overlay">
         <item name="windowActionBarOverlay">true</item>
+      <!--salamquran-->
+       <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
     </style>
 </resources>
