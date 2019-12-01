@@ -7,6 +7,7 @@
         <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
       <!--salamquran-->
         <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
+      <!---->
     </style>
 
     <style name="QuranToolBar" parent="Theme.AppCompat.NoActionBar">
@@ -17,11 +18,13 @@
         <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
       <!--salamquran-->
        <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
+      <!---->
     </style>
 
     <style name="QuranToolBar.Overlay">
         <item name="windowActionBarOverlay">true</item>
       <!--salamquran-->
        <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
+      <!---->
     </style>
 </resources>

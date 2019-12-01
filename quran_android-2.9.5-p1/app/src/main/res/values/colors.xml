@@ -2,6 +2,7 @@
 <resources>
   <!--salamquran-->
   <color name="nemidonam">#FF0000</color>
+  <color name="colorPrimary">#08a9dc</color>
   <color name="mother_color">#08a9dc</color>
 
 
