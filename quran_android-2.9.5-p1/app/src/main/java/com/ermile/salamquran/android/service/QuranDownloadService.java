@@ -472,7 +472,7 @@ public class QuranDownloadService extends Service implements
       String url = urlString;
       if (i > 0) {
         // let's try http instead of https?
-        if (urlString.contains("quran.com") || urlString.contains("quranicaudio.com")) {
+        if (urlString.contains("salamquran.com") || urlString.contains("dl.salamquran.com")) {
           url = urlString.replace("https://", "http://");
         }
 
