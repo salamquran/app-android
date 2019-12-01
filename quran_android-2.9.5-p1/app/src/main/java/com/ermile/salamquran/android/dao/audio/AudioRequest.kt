@@ -16,5 +16,5 @@ data class AudioRequest(val start: SuraAyah,
                         val audioPathInfo: AudioPathInfo) : Parcelable {
   fun isGapless() = qari.isGapless
   fun needsIsti3athaAudio() =
-      !isGapless() || audioPathInfo.gaplessDatabase?.contains("minshawi_murattal") ?: false
+      !isGapless() || audioPathInfo.gaplessDatabase?.contains("parhizgar_murattal_48") ?: false
 }
