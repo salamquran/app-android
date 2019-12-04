@@ -1,148 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!--salamquran-->
-  <color name="nemidonam">#FF0000</color>
+  <!--??-->
+  <color name="translation_divider_color">#ffe8e8e8</color> <!--fff-->
+  <color name="toolbar_background">#ed2b5836</color>
+  <color name="toolbar_item_pressed">#552bff36</color>
+  <color name="navbar_night_color">#333</color>
+  <color name="overlay_text_color">#A00000</color>
+
+  <!--Main color-->
   <color name="colorAccent">#0587B1</color>
   <color name="colorPrimary">#08a9dc</color>
   <color name="colorPrimaryDark">#08a9dc</color>
-
-  <color name="mother_color">#08a9dc</color>
-
-
-
-
-
-
-
-
-
-
-  <!--  Sure & Juz List Text View-->
-  <!--  Page quran Sura Header & audio-->
-  <color name="transparent_actionbar_color">#000E69</color>
-
-
-  <!--Mother-->
   <color name="accent_color">#54abd8</color>
-  <color name="color_control_activated">@color/accent_color</color>
-
-  <color name="color_control_normal">#00FFE9</color>
-  <color name="accent_color_dark">#ff0000</color>
-  <color name="page_background">#FFFFFF</color>
-  <color name="header_background">#9EFF00</color>
   <color name="title_color">#333</color>
-  <color name="ripple_dark">#FF0000</color>
 
-<!--  -->
+  <!--icon-->
+  <color name="download_button_background">#ff556f79</color> <!--Download Manager (Qari)-->
+  <color name="menuIcon">#FFFFFF</color> <!-- color icon (In Toolbar > Main & PageQuran)-->
 
-
-
-  <color name="translation_divider_color">#ffe8e8e8</color> <!--fff-->
-
-  <color name="overlay_text_color">#ff888888</color>
-  <color name="selection_highlight">#404694A6</color>
-  <color name="audio_highlight">#404698A6</color>
-  <color name="note_highlight">#40EBEB21</color>
-  <color name="bookmark_highlight">#40A4A4A4</color>
-  <color name="toolbar_background">#ed2b5836</color>
-  <color name="toolbar_item_pressed">#552bff36</color>
+  <!--Notification-->
   <color name="notification_color">#ff112e44</color>
   <color name="audio_notification_color">@color/download_button_background</color>
   <color name="audio_notification_background_color">#ffd8d8d8</color>
-  <color name="ayah_bookmark_color">#ff81c784</color>
-  <color name="download_button_background">#ff556f79</color>
+
+  <!--highlight-->
+  <color name="audio_highlight">#404698A6</color>
+  <color name="selection_highlight">#404694A6</color>
+  <color name="bookmark_highlight">#40A4A4A4</color>
+
+  <!--Note (No use)-->
+  <color name="note_highlight">#40EBEB21</color>
   <color name="overlay_panel">#333</color>
-  <color name="navbar_night_color">#333</color>
-
-
 
   <!--Main (List of Sura & Juz & Bookmark )-->
-    <!--Toolbar-->
-  <color name="toolbar_main_bg">@color/mother_color</color>
-    <!--TabLayout-->
-  <color name="tabLayout_background">@color/toolbar_main_bg</color>
-  <color name="tabLayout_title_true">#FFFFFF</color>
-  <color name="tabLayout_title_false">#A3FFFFFF</color>
-  <color name="tabLayout_liner">#037DA3</color>
-    <!--BottomNav-->
-  <color name="bottomNav_background">#fff</color>
-  <color name="bottomNav_text_true">#333</color>
-  <color name="bottomNav_text_false">#75333333</color>
-  <color name="bottomNav_icon_true">#333</color>
-  <color name="bottomNav_icon_false">#75333333</color>
-   <!--Quran List > Recycler-->
-  <color name="quranList_background">#FFFFFF</color>
-   <!--Quran List > Juz-->
-  <color name="background_juz">#F3F3F3</color>  <!--Background Juz & Title bookmark-->
-  <color name="Juz_number">#333333</color>
-  <color name="Juz_pageNumber">#333333</color>
-    <!--Quran List > Sura-->
-  <color name="sura_background">@color/quranList_background</color> <!-- No Replace -->
-  <color name="sura_number">#333333</color>
-  <color name="sura_title">#333333</color>
-  <color name="sura_detail">#333333</color>
-  <color name="sura_pageNumber">#333333</color>
-    <!--Quran List > Hizb-->
-  <color name="circlHizb_Number">#FFFFFF</color>
-  <color name="circlHizb">#0797B1</color>
-  <color name="circlHizb_background">#43B6E0EE</color>
-    <!--Quran List > Bookmark-->
-  <color name="bookmark_background">@color/quranList_background</color> <!-- No Replace -->
-  <color name="onClick_ripple_BookmarkList">#57ADC7</color>
-  <color name="ic_aya_bookmark">#AD207003</color>
-  <color name="ic_page_bookmark">#AD607003</color>
-  <color name="ic_lastPage_bookmark">#0797B1</color>
-   <!--Quran List > Bookmark > Tag -->
-  <color name="tagTextColor_bookmark_inList">#FFFFFF</color>
-  <color name="tagBackgroundColor_bookmark_inList">#66000000</color>
-  <color name="snackbar_tag_background">#0E80B3</color>
-  <color name="snackbar_tag_action">#0E80B3</color>
+      <!--Toolbar-->
+  <color name="toolbar_main_bg">#08a9dc</color>
+      <!--TabLayout-->
+      <color name="tabLayout_background">@color/toolbar_main_bg</color>
+      <color name="tabLayout_title_true">#FFFFFF</color>
+      <color name="tabLayout_title_false">#A3FFFFFF</color>
+      <color name="tabLayout_liner">#037DA3</color>
+      <!--BottomNav-->
+      <color name="bottomNav_background">#fff</color>
+      <color name="bottomNav_text_true">#333</color>
+      <color name="bottomNav_text_false">#75333333</color>
+      <color name="bottomNav_icon_true">#333</color>
+      <color name="bottomNav_icon_false">#75333333</color>
+           <!--Quran List > Recycler-->
+          <color name="quranList_background">#FFFFFF</color>
+                <!--Quran List > Juz-->
+                <color name="background_juz">#F3F3F3</color> <!--Background Juz & Title bookmark-->
+                <color name="Juz_number">#333333</color>
+                <color name="Juz_pageNumber">#333333</color>
+                <!--Quran List > Sura-->
+                <color name="sura_number">#333333</color>
+                <color name="sura_title">#333333</color>
+                <color name="sura_detail">#333333</color>
+                <color name="sura_pageNumber">#333333</color>
+                    <!--Quran List > Hizb-->
+                    <color name="circlHizb_Number">#FFFFFF</color>
+                    <color name="circlHizb">#0797B1</color>
+                    <color name="circlHizb_background">#43B6E0EE</color>
+                <!--Quran List > Bookmark-->
+                <color name="tagManager_icon">#026483</color> <!--Action Bookmark (Tag Manager)-->
+                <color name="onClick_ripple_BookmarkList">#57ADC7</color>
+                <color name="ic_aya_bookmark">#AD207003</color>
+                <color name="ic_page_bookmark">#AD607003</color>
+                <color name="ic_lastPage_bookmark">#0797B1</color>
+                    <!--Quran List > Bookmark > Tag -->
+                    <color name="tagTextColor_bookmark_inList">#FFFFFF</color>
+                    <color name="tagBackgroundColor_bookmark_inList">#66000000</color>
+                    <color name="snackbar_tag_background">#0E80B3</color>
+                    <color name="snackbar_tag_action">#0E80B3</color>
+                        <!--Quran List > Bookmark > Tag > Dialog -->
+                        <color name="tag_text">#333</color>
+                        <color name="tag_ic_add">#333</color>
+
     <!--On click-->
   <color name="onClick_activated">#B1B1B1</color>
   <color name="onClick_pressed">#FFFFFF</color>
   <color name="onClick_ripple">#C7CACA</color>
 
-
-
-
-
-
-
-
-
-
-
-  <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
-  <color name="spinner_chose_translate">#333333</color>
-  <color name="spinner_title_pageQuran">#ffffff</color>
-  <color name="spinner_subtitle_pageQuran">#ffffff</color>
-
-  <!-- color icon (In Toolbar > Main & PageQuran)-->
-  <color name="menuIcon">#FFFFFF</color>
-
   <!--PageQuran (Quran)-->
-    <!--Toolbar-->
-  <color name="pageQuran_toolbar_background">#BC383838</color>
-    <!--AudioPlayer-->
-  <color name="pageQuran_audioManager_background">#BC383838</color>
-  <color name="ic_play">#FFFFFF</color>
-  <color name="separator_ic_play">#FFFFFF</color>
-  <color name="qari_spinner">#FFFFFF</color>
-    <!--ActionAya (on long click aya and show box)-->
-  <color name="actionAya_background">#383838</color>
-  <color name="actionAya_icon">#97383838</color>
-  <color name="actionAya_liner">#BC058CB6</color>
-        <!--Translate Manager-->
-  <color name="actionAya_translateManager_number">#333</color> <!--next & back-->
-  <color name="actionAya_translateManager_text">#333</color> <!--next & back-->
-  <color name="actionAya_translateManager_btn">#026483</color> <!--next & back-->
-        <!--Audio Manager-->
-  <color name="actionAya_audioManager_text">#333333</color>
-  <color name="actionAya_audioManager_spinner_selected">#333333</color>
+  <color name="page_background">#FFFFFF</color>
+      <!--Toolbar-->
+      <color name="pageQuran_toolbar_background">#BC383838</color>
+          <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
+          <color name="spinner_chose_translate">#333333</color>
+          <color name="spinner_title_pageQuran">#ffffff</color>
+          <color name="spinner_subtitle_pageQuran">#ffffff</color>
+      <!--AudioPlayer-->
+      <color name="pageQuran_audioManager_background">#BC383838</color>
+      <color name="ic_play">#FFFFFF</color>
+      <color name="separator_ic_play">#FFFFFF</color>
+      <color name="qari_spinner">#FFFFFF</color>
+      <!--ActionAya (on long click aya and show box)-->
+      <color name="actionAya_background">#383838</color>
+      <color name="actionAya_icon">#97383838</color>
+      <color name="actionAya_liner">#BC058CB6</color>
+          <!--Translate Manager-->
+          <color name="actionAya_translateManager_number">#333</color> <!--next & back-->
+          <color name="actionAya_translateManager_text">#333</color> <!--next & back-->
+          <color name="actionAya_translateManager_btn">#026483</color> <!--next & back-->
+          <!--Audio Manager-->
+          <color name="actionAya_audioManager_text">#333333</color>
+          <color name="actionAya_audioManager_spinner_selected">#333333</color>
 
   <!--PageQuran (Translate)-->
   <color name="translation_text_color">#333</color>
-  <color name="translation_selected_color">#fff</color> <!--fff-->
+  <color name="translation_selected_color">#fff</color>
   <color name="translation_hdr_color">#FFFFFF</color>
   <color name="translation_sura_header">#B9B9B9</color>
   <color name="translation_background_color_night">#333</color>
@@ -154,35 +120,8 @@
   <color name="translation_ayah_background_color">#77F1F1E0</color>
   <color name="translation_ayah_background_night_color">#555454</color>
 
-
-
-
-
-
-
-
-
-  <!--Action Bookmark (Tag Manager)-->
-  <color name="tagManager_icon">#026483</color>
-
-
-  <!--Page Translate (Download Manager)-->
+  <!--Download Manager (Translate)-->
   <color name="translate_manager_title">#333</color>
   <color name="translate_manager_desc">#A3333333</color>
   <color name="translate_manager_icon">#86333333</color>
-
-
-
-
-
-
-
-
-
-  <!--Dialog-->
-    <!--Tag-->
-  <color name="tag_text">#333</color>
-  <color name="tag_ic_add">#333</color>
-
-
 </resources>
