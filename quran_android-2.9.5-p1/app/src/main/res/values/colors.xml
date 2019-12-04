@@ -147,4 +147,9 @@
   <color name="separator_ic_play">#FFFFFF</color>
   <color name="qari_spinner">#FFFFFF</color>
 
+  <!--Page Translate (Download Manager)-->
+  <color name="translate_manager_title">#333</color>
+  <color name="translate_manager_desc">#A3333333</color>
+  <color name="translate_manager_icon">#86333333</color>
+
 </resources>

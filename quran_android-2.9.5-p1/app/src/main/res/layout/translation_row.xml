@@ -16,6 +16,7 @@
       android:layout_width="48dp"
       android:layout_height="48dp"
       android:scaleType="center"
+      android:tint="@color/translate_manager_icon"
       android:contentDescription="@null"
       />
   <LinearLayout
@@ -30,7 +31,7 @@
         android:id="@+id/translation_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#F3F4E6"
+        android:textColor="@color/translate_manager_title"
         android:textSize="16sp"
         />
     <TextView
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:textSize="12sp"
+        android:textColor="@color/translate_manager_desc"
         tools:ignore="RtlHardcoded" />
   </LinearLayout>
 
@@ -47,6 +49,7 @@
       android:layout_width="48dp"
       android:layout_height="match_parent"
       android:scaleType="center"
+      android:tint="@color/translate_manager_icon"
       android:contentDescription="@null"
       />
 
@@ -56,6 +59,7 @@
       android:layout_width="48dp"
       android:layout_height="match_parent"
       android:scaleType="center"
+      android:tint="@color/translate_manager_icon"
       tools:ignore="ContentDescription"
       />
 </LinearLayout>
