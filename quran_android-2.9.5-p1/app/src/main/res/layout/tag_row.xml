@@ -20,6 +20,7 @@
       android:src="@drawable/ic_new"
       android:scaleType="center"
       android:visibility="gone"
+      android:tint="@color/tag_ic_add"
       android:contentDescription="@null"
       />
   <TextView
@@ -27,7 +28,7 @@
       android:layout_width="0dp"
       android:layout_height="48dp"
       android:layout_weight="1"
-      android:textColor="#F3F4E6"
+      android:textColor="@color/tag_text"
       android:gravity="center_vertical"
       />
 </LinearLayout>
