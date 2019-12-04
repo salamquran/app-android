@@ -195,6 +195,7 @@ public class IconPageIndicator extends HorizontalScrollView implements
     for (int i = 0; i < count; i++) {
       ImageView view = new ImageView(getContext(), null, R.attr.actionButtonStyle);
       view.setImageResource(iconAdapter.getIconResId(i));
+      view.setColorFilter(getResources().getColor(R.color.actionAya_icon));
       view.setTag(i);
       view.setOnClickListener(this);
       mIconsLayout.addView(view, new LayoutParams(WRAP_CONTENT, MATCH_PARENT));
