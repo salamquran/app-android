@@ -25,6 +25,7 @@ import com.ermile.salamquran.android.SearchActivity;
 import com.ermile.salamquran.android.ShortcutsActivity;
 import com.ermile.salamquran.android.data.Constants;
 import com.ermile.salamquran.android.model.bookmark.RecentPageModel;
+import com.ermile.salamquran.android.presenter.bookmark.BookmarksContextualModePresenter;
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
 import com.ermile.salamquran.android.salamquran.LearnFragment;
 import com.ermile.salamquran.android.service.AudioService;
@@ -103,6 +104,8 @@ public class QuranActivity extends QuranActionBarActivity
   LinearLayout linear_quranList;
   BottomNavigationView bottomNavigation;
   FrameLayout frameLayout;
+  @Inject
+  BookmarksContextualModePresenter bookmarksContextualModePresenter;
 
   //----------
 
@@ -274,6 +277,7 @@ public class QuranActivity extends QuranActionBarActivity
         return true;
       }
       case R.id.lms:{
+        bookmarksContextualModePresenter.finishActionMode();
         linear_quranList.setVisibility(View.INVISIBLE);
         frameLayout.setVisibility(View.VISIBLE);
         fragment = new LearnFragment();

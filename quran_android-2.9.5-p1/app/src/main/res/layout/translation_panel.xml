@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_translation_left"
         android:contentDescription="@string/next"
-        android:backgroundTint="@color/pq_actionAya_btn_nextAya"
+        android:backgroundTint="@color/actionAya_translateManager_btn"
         tools:targetApi="lollipop" />
     <Space
         android:layout_width="0dp"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_translation_right"
         android:contentDescription="@string/previous"
-        android:backgroundTint="@color/pq_actionAya_btn_nextAya"
+        android:backgroundTint="@color/actionAya_translateManager_btn"
         tools:targetApi="lollipop"
         />
   </com.ermile.salamquran.android.widgets.LeftToRightLinearLayout>

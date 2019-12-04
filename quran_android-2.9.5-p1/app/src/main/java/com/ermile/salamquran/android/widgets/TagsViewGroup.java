@@ -61,8 +61,8 @@ public class TagsViewGroup extends LinearLayout {
     mTagWidth = resources.getDimensionPixelSize(R.dimen.tag_width);
     mTagsMargin = resources.getDimensionPixelSize(R.dimen.tag_margin);
     mTagsTextSize = resources.getDimensionPixelSize(R.dimen.tag_text_size);
-    mDefaultTagBackgroundColor = ContextCompat.getColor(context, R.color.tagBackgroundColor_bookmark);
-    mDefaultTagTextColor = ContextCompat.getColor(context, R.color.tagTextColor_bookmark);
+    mDefaultTagBackgroundColor = ContextCompat.getColor(context, R.color.tagBackgroundColor_bookmark_inList);
+    mDefaultTagTextColor = ContextCompat.getColor(context, R.color.tagTextColor_bookmark_inList);
     font_dana = Typeface.createFromAsset(context.getAssets(),"dana_regular.ttf");
     mTagsToShow = MAX_TAGS;
     mIsRtl = QuranSettings.getInstance(context).isArabicNames();

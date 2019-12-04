@@ -2,23 +2,11 @@
 <resources>
   <!--salamquran-->
   <color name="nemidonam">#FF0000</color>
+  <color name="colorAccent">#0587B1</color>
   <color name="colorPrimary">#08a9dc</color>
+  <color name="colorPrimaryDark">#08a9dc</color>
+
   <color name="mother_color">#08a9dc</color>
-
-
-
-
-  <!--Page Quran-->
-    <!--Toolbar-->
-  <color name="pq_toolbar_background">#7A000000</color>
-    <!--Audio Manager-->
-  <color name="pq_audioManager_background">#7A000000</color>
-    <!--Action Aya (on long click aya and show box)-->
-  <color name="pq_actionAya_background">@color/mother_color</color>
-  <color name="pq_actionAya_liner">#037DA3</color>
-  <color name="pq_actionAya_btn_nextAya">#026483</color>
-
-
 
 
 
@@ -40,13 +28,12 @@
 
   <color name="color_control_normal">#00FFE9</color>
   <color name="accent_color_dark">#ff0000</color>
-  <color name="page_background">#7D0ACE</color>
+  <color name="page_background">#FFFFFF</color>
   <color name="header_background">#9EFF00</color>
   <color name="title_color">#333</color>
   <color name="ripple_dark">#FF0000</color>
 
 <!--  -->
-  <color name="panel_label">#eee</color>
 
   <color name="translation_hdr_color">#00BCD4</color>
   <color name="translation_sura_header">#fff1ecd8</color>
@@ -56,9 +43,9 @@
   <color name="translation_verse_background_night_color">#ff333333</color>
   <color name="translation_translator_color">#ff22a5ad</color>
   <color name="translation_text_color">#ff777777</color>
-  <color name="translation_divider_color">#ffe8e8e8</color>
+  <color name="translation_divider_color">#ffe8e8e8</color> <!--fff-->
   <color name="translation_background_color_night">#011758</color>
-  <color name="translation_ayah_selected_color">#ffe0f2f1</color>
+  <color name="translation_ayah_selected_color">#000000</color> <!--fff-->
   <color name="translation_ayah_selected_color_night">#03A9F4</color>
   <color name="overlay_text_color">#ff888888</color>
   <color name="selection_highlight">#404694A6</color>
@@ -73,7 +60,6 @@
   <color name="audio_notification_background_color">#ffd8d8d8</color>
   <color name="ayah_bookmark_color">#ff81c784</color>
   <color name="download_button_background">#ff556f79</color>
-  <color name="snackbar_background_color">#0E80B3</color>
   <color name="overlay_panel">#333</color>
   <color name="navbar_night_color">#333</color>
 
@@ -116,8 +102,10 @@
   <color name="ic_page_bookmark">#AD607003</color>
   <color name="ic_lastPage_bookmark">#0797B1</color>
    <!--Quran List > Bookmark > Tag -->
-  <color name="tagTextColor_bookmark">#FFFFFF</color>
-  <color name="tagBackgroundColor_bookmark">#66000000</color>
+  <color name="tagTextColor_bookmark_inList">#FFFFFF</color>
+  <color name="tagBackgroundColor_bookmark_inList">#66000000</color>
+  <color name="snackbar_tag_background">#0E80B3</color>
+  <color name="snackbar_tag_action">#0E80B3</color>
     <!--On click-->
   <color name="onClick_activated">#B1B1B1</color>
   <color name="onClick_pressed">#FFFFFF</color>
@@ -134,7 +122,7 @@
 
 
   <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
-  <color name="spinner_chose_translate">#000000</color>
+  <color name="spinner_chose_translate">#333333</color>
   <color name="spinner_title_pageQuran">#ffffff</color>
   <color name="spinner_subtitle_pageQuran">#ffffff</color>
 
@@ -142,14 +130,44 @@
   <color name="menuIcon">#FFFFFF</color>
 
   <!--PageQuran (Show Quran)-->
+    <!--Toolbar-->
+  <color name="pageQuran_toolbar_background">#BC383838</color>
     <!--AudioPlayer-->
+  <color name="pageQuran_audioManager_background">#BC383838</color>
   <color name="ic_play">#FFFFFF</color>
   <color name="separator_ic_play">#FFFFFF</color>
   <color name="qari_spinner">#FFFFFF</color>
+    <!--ActionAya (on long click aya and show box)-->
+  <color name="actionAya_background">#383838</color>
+  <color name="actionAya_icon">#383838</color>
+  <color name="actionAya_liner">#BC058CB6</color>
+        <!--Translate Manager-->
+  <color name="actionAya_translateManager_btn">#026483</color> <!--next & back-->
+        <!--Audio Manager-->
+  <color name="actionAya_audioManager_text">#333333</color>
+  <color name="actionAya_audioManager_spinner_selected">#333333</color>
+
+  <!--Action Bookmark (Tag Manager)-->
+  <color name="tagManager_icon">#026483</color>
+
 
   <!--Page Translate (Download Manager)-->
   <color name="translate_manager_title">#333</color>
   <color name="translate_manager_desc">#A3333333</color>
   <color name="translate_manager_icon">#86333333</color>
+
+
+
+
+
+
+
+
+
+  <!--Dialog-->
+    <!--Tag-->
+  <color name="tag_text">#333</color>
+  <color name="tag_ic_add">#333</color>
+
 
 </resources>

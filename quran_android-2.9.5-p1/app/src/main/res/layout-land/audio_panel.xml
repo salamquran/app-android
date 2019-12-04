@@ -125,6 +125,7 @@
 
       <CheckBox
           android:id="@+id/restrict_to_range"
+          android:textColor="@color/actionAya_audioManager_text"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="@string/play_restrict_range"

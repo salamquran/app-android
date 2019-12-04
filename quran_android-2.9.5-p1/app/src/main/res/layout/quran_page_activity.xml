@@ -24,7 +24,7 @@
       android:id="@+id/toolbar_area"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/pq_toolbar_background"
+      android:background="@color/pageQuran_toolbar_background"
       >
     <View
         android:id="@+id/status_bg"
@@ -57,6 +57,6 @@
       android:layout_alignParentBottom="true"
       android:visibility="gone"
       android:itemBackground="?attr/selectableItemBackgroundBorderless"
-      android:background="@color/pq_audioManager_background"
+      android:background="@color/pageQuran_audioManager_background"
       />
 </com.ermile.salamquran.android.widgets.FitSystemRelativeLayout>

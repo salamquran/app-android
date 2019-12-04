@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Quran" parent="Theme.AppCompat.Light">
-        <item name="colorAccent">#3A889E</item>
-<!--        <item name="colorPrimary">#08a9dc</item>-->
-        <item name="colorPrimaryDark">#08a9dc</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="spinnerStyle">?attr/actionDropDownStyle</item>
         <item name="spinnerDropDownItemStyle">@style/SherlockDropDownItem</item>
         <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
       <!--salamquran-->
       <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
       <item name="actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
+      <item name="actionModeStyle">@style/ActionModeStyle</item>
+      <item name="checkboxStyle"></item>
+
 
       <!---->
     </style>
 
     <style name="QuranToolBar" parent="Theme.AppCompat.Light.NoActionBar">
-      <item name="colorAccent">#3A889E</item>
-<!--      <item name="colorPrimary">#08a9dc</item>-->
-      <item name="colorPrimaryDark">#08a9dc</item>
+      <item name="colorAccent">@color/colorAccent</item>
+      <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="spinnerStyle">?attr/actionDropDownStyle</item>
         <item name="spinnerDropDownItemStyle">@style/SherlockDropDownItem</item>
@@ -25,6 +26,7 @@
       <!--salamquran-->
       <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
       <item name="actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
+      <item name="actionModeStyle">@style/ActionModeStyle</item>
 
       <!---->
     </style>
@@ -37,7 +39,16 @@
       <!---->
     </style>
 
+  <!--salamquran-->
   <style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
     <item name="android:tint">@color/menuIcon</item>
+  </style>
+
+  <style name="ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+    <item name="background">@color/toolbar_main_bg</item>
+  </style>
+
+  <style name="ActionModeStyles" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+
   </style>
 </resources>

@@ -107,6 +107,7 @@
     </LinearLayout>
 
     <CheckBox
+        android:textColor="@color/actionAya_audioManager_text"
         android:id="@+id/restrict_to_range"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

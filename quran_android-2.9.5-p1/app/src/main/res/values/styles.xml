@@ -56,7 +56,7 @@
     </style>
 
     <style name="PanelLabel">
-        <item name="android:textColor">@color/panel_label</item>
+        <item name="android:textColor">@color/actionAya_audioManager_text</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -69,7 +69,7 @@
 
     <style name="SherlockDropDownItemText">
         <item name="android:textColor">@color/sherlock_primary_text_disable</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
     </style>
 
@@ -81,7 +81,7 @@
 
     <style name="SherlockSpinnerItemText">
         <item name="android:textColor">@color/sherlock_primary_text</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
     </style>
 
@@ -91,6 +91,9 @@
   </style>
   <style name="Toolbar.Subtitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
     <item name="android:textSize">14sp</item>
-    <item name="android:subtitleTextStyle">@style/Toolbar.TitleText</item>
+  </style>
+
+  <style name="spinnerTheme">
+    <item name="android:textColor">#333333</item>
   </style>
 </resources>
