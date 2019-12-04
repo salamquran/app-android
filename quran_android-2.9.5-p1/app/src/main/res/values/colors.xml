@@ -5,7 +5,6 @@
   <color name="toolbar_background">#ed2b5836</color>
   <color name="toolbar_item_pressed">#552bff36</color>
   <color name="navbar_night_color">#333</color>
-  <color name="overlay_text_color">#A00000</color>
 
   <!--Main color-->
   <color name="colorAccent">#0587B1</color>
@@ -33,6 +32,7 @@
   <color name="overlay_panel">#333</color>
 
   <!--Main (List of Sura & Juz & Bookmark )-->
+  <color name="listQuran_background">#fff</color>
       <!--Toolbar-->
   <color name="toolbar_main_bg">#08a9dc</color>
       <!--TabLayout-->
@@ -71,7 +71,7 @@
                     <color name="tagTextColor_bookmark_inList">#FFFFFF</color>
                     <color name="tagBackgroundColor_bookmark_inList">#66000000</color>
                     <color name="snackbar_tag_background">#0E80B3</color>
-                    <color name="snackbar_tag_action">#0E80B3</color>
+                    <color name="snackbar_tag_action">#EEEEEE</color>
                         <!--Quran List > Bookmark > Tag > Dialog -->
                         <color name="tag_text">#333</color>
                         <color name="tag_ic_add">#333</color>
@@ -83,7 +83,8 @@
 
   <!--PageQuran (Quran)-->
   <color name="page_background">#FFFFFF</color>
-      <!--Toolbar-->
+  <color name="info_page_text">#333</color> <!--Number Page & sura name & juz name-->
+  <!--Toolbar-->
       <color name="pageQuran_toolbar_background">#BC383838</color>
           <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
           <color name="spinner_chose_translate">#333333</color>
@@ -101,7 +102,7 @@
           <!--Translate Manager-->
           <color name="actionAya_translateManager_number">#333</color> <!--next & back-->
           <color name="actionAya_translateManager_text">#333</color> <!--next & back-->
-          <color name="actionAya_translateManager_btn">#026483</color> <!--next & back-->
+          <color name="actionAya_translateManager_btn">#6F333333</color> <!--next & back-->
           <!--Audio Manager-->
           <color name="actionAya_audioManager_text">#333333</color>
           <color name="actionAya_audioManager_spinner_selected">#333333</color>
