@@ -144,13 +144,13 @@ internal class TranslationAdapter(private val context: Context,
       this.arabicTextColor = textColor
       this.dividerColor = textColor
       this.suraHeaderColor = ContextCompat.getColor(context, R.color.translation_sura_header_night)
-      this.ayahSelectionColor = ContextCompat.getColor(context, R.color.translation_ayah_selected_color_night)
+      this.ayahSelectionColor = ContextCompat.getColor(context, R.color.translation_selected_night)
     } else {
       this.textColor = ContextCompat.getColor(context, R.color.translation_text_color)
       this.dividerColor = ContextCompat.getColor(context, R.color.translation_divider_color)
       this.arabicTextColor = Color.BLACK
       this.suraHeaderColor = ContextCompat.getColor(context, R.color.translation_sura_header)
-      this.ayahSelectionColor = ContextCompat.getColor(context, R.color.translation_ayah_selected_color)
+      this.ayahSelectionColor = ContextCompat.getColor(context, R.color.translation_selected_color)
     }
 
     if (this.data.isNotEmpty()) {

@@ -31,6 +31,7 @@ public class InlineTranslationView extends ScrollView {
   private int topBottomMargin;
   @StyleRes private int textStyle;
   private int fontSize;
+  private Typeface font_dana;
   private int footerSpacerHeight;
 
   private LocalTranslation[] translations;
@@ -70,6 +71,7 @@ public class InlineTranslationView extends ScrollView {
   private void initResources() {
     QuranSettings settings = QuranSettings.getInstance(context);
     fontSize = settings.getTranslationTextSize();
+    font_dana = Typeface.createFromAsset(context.getAssets(),"dana_regular.ttf");
     textStyle = R.style.TranslationText;
   }
 
@@ -108,15 +110,16 @@ public class InlineTranslationView extends ScrollView {
     final int suraNumber = ayah.sura;
     final int ayahNumber = ayah.ayah;
     TextView ayahHeader = new TextView(context);
-    ayahHeader.setTextColor(Color.WHITE);
+    ayahHeader.setTextColor(getResources().getColor(R.color.actionAya_translateManager_number));
     ayahHeader.setTextSize(fontSize);
-    ayahHeader.setTypeface(null, Typeface.BOLD);
+    ayahHeader.setTypeface(font_dana, Typeface.BOLD);
     ayahHeader.setText(resources.getString(R.string.sura_ayah, suraNumber, ayahNumber));
     linearLayout.addView(ayahHeader, params);
 
     TextView ayahView = new TextView(context);
     ayahView.setTextAppearance(context, textStyle);
-    ayahView.setTextColor(Color.WHITE);
+    ayahView.setTextColor(getResources().getColor(R.color.actionAya_translateManager_text));
+    ayahView.setTypeface(font_dana);
     ayahView.setTextSize(fontSize);
 
     // translation
