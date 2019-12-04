@@ -130,7 +130,7 @@
   <color name="qari_spinner">#FFFFFF</color>
     <!--ActionAya (on long click aya and show box)-->
   <color name="actionAya_background">#383838</color>
-  <color name="actionAya_icon">#CD383838</color>
+  <color name="actionAya_icon">#97383838</color>
   <color name="actionAya_liner">#BC058CB6</color>
         <!--Translate Manager-->
   <color name="actionAya_translateManager_number">#333</color> <!--next & back-->
@@ -141,18 +141,18 @@
   <color name="actionAya_audioManager_spinner_selected">#333333</color>
 
   <!--PageQuran (Translate)-->
-  <color name="translation_background_color_night">#011758</color>
+  <color name="translation_text_color">#333</color>
   <color name="translation_selected_color">#fff</color> <!--fff-->
-  <color name="translation_selected_night">#CD7ECBF7</color>
-  <color name="translation_sura_header">#fff1ecd8</color>
-  <color name="translation_sura_header_night">#071879</color>
-  <color name="translation_text_color">#ff777777</color>
-  <color name="translation_highlight">#0030A7</color>
-  <color name="translation_hdr_color">#D47500</color>
-  <color name="translation_translator_color">#055302</color>
-  <color name="translation_ayah_text_color">#ff858383</color>
-  <color name="translation_ayah_background_color">#fff2f2f2</color>
-  <color name="translation_ayah_background_night_color">#ff333333</color>
+  <color name="translation_hdr_color">#FFFFFF</color>
+  <color name="translation_sura_header">#B9B9B9</color>
+  <color name="translation_background_color_night">#333</color>
+  <color name="translation_selected_night">#424242</color>
+  <color name="translation_sura_header_night">#7C7C7C</color>
+  <color name="translation_translator_color">#4B8B02</color>        <!--Aya of quran in Tafsir-->
+  <color name="translation_highlight">#039B4C</color>               <!--??-->
+  <color name="translation_ayah_text_color">#FFFFFF</color>
+  <color name="translation_ayah_background_color">#77F1F1E0</color>
+  <color name="translation_ayah_background_night_color">#555454</color>
 
 
 
