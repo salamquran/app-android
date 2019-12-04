@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
@@ -56,6 +57,7 @@ public class HighlightingImageView extends AppCompatImageView {
 
   // Params for drawing text
   private int fontSize;
+  private Typeface font_dana;
   private OverlayParams overlayParams = null;
   private RectF pageBounds = null;
   private boolean didDraw = false;
@@ -71,7 +73,7 @@ public class HighlightingImageView extends AppCompatImageView {
     super(context, attrs);
     if (overlayTextColor == -1) {
       final Resources res = context.getResources();
-      overlayTextColor = ContextCompat.getColor(context, R.color.overlay_text_color);
+      overlayTextColor = ContextCompat.getColor(context, R.color.info_page_text);
       headerFooterSize = res.getDimensionPixelSize(R.dimen.page_overlay_size);
       scrollableHeaderFooterSize = res.getDimensionPixelSize(R.dimen.page_overlay_size_scrollable);
       headerFooterFontSize = res.getDimensionPixelSize(R.dimen.page_overlay_font_size);
@@ -84,6 +86,7 @@ public class HighlightingImageView extends AppCompatImageView {
     int topBottom = scrollable ? scrollableHeaderFooterSize : headerFooterSize;
     setPadding(getPaddingLeft(), topBottom, getPaddingRight(), topBottom);
     fontSize = scrollable ? scrollableHeaderFooterFontSize : headerFooterFontSize;
+    font_dana = Typeface.createFromAsset(getContext().getAssets(),"dana_regular.ttf");
   }
 
   public void unHighlight(int sura, int ayah, HighlightType type) {
@@ -196,7 +199,8 @@ public class HighlightingImageView extends AppCompatImageView {
     overlayParams.pageText = pageText;
     overlayParams.rub3Text = rub3Text;
     overlayParams.paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DEV_KERN_TEXT_FLAG);
-    overlayParams.paint.setTextSize(fontSize);
+    overlayParams.paint.setTextSize(fontSize -3f);
+    overlayParams.paint.setTypeface(font_dana);
 
     if (!didDraw) {
       invalidate();
