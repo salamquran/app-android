@@ -218,7 +218,7 @@ public class BookmarksFragment extends Fragment implements QuranListAdapter.Qura
           snackbar.getView().setBackgroundColor(ContextCompat.getColor(activity,
               R.color.snackbar_tag_background));
           snackbar.setActionTextColor(getResources().getColor(R.color.snackbar_tag_action));
-          snackbar.setDuration(1000);
+          snackbar.setDuration(2000);
           snackbar.show();
           return true;
         }
