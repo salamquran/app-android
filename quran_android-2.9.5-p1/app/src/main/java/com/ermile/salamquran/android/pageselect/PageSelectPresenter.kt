@@ -20,7 +20,7 @@ class PageSelectPresenter @Inject
                 private val pageTypes:
                 Map<@JvmSuppressWildcards String, @JvmSuppressWildcards PageProvider>) :
     Presenter<PageSelectActivity> {
-  private val baseUrl = "https://android.quran.com/data/pagetypes"
+  private val baseUrl = "https://dl.salamquran.com/app/pagetypes"
   private val compositeDisposable = CompositeDisposable()
   private val downloadingSet = mutableSetOf<String>()
   private var currentView: PageSelectActivity? = null

@@ -3,7 +3,7 @@ package com.ermile.salamquran.android.data;
 public class Constants {
 
   // data domain
-  public static final String HOST = "https://android.quran.com/";
+  public static final String HOST = "https://dl.salamquran.com/";
 
   // Numerics
   public static final int DEFAULT_NIGHT_MODE_TEXT_BRIGHTNESS = 255;

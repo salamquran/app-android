@@ -8,7 +8,7 @@ import com.ermile.data.source.PageSizeCalculator
 import com.ermile.salamquran.android.pages.madani.R
 
 class MadaniPageProvider : PageProvider {
-  private val baseUrl = "https://android.quran.com/data"
+  private val baseUrl = "https://dl.salamquran.com/app"
   private val dataSource = MadaniDataSource()
 
   override fun getDataSource() = dataSource
@@ -24,7 +24,7 @@ class MadaniPageProvider : PageProvider {
 
   override fun getPatchBaseUrl() = "$baseUrl/patches/v"
 
-  override fun getAyahInfoBaseUrl() = "$baseUrl/databases/ayahinfo/"
+  override fun getAyahInfoBaseUrl() = "$baseUrl/databases/"
 
   override fun getAudioDirectoryName() = "audio"
 
