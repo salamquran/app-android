@@ -6,26 +6,13 @@
   <color name="mother_color">#08a9dc</color>
 
 
-  <!--Main-->
-    <!--Toolbar-->
-  <color name="toolbar_main_bg">@color/mother_color</color>
-    <!--TabLayout-->
-  <color name="tabLayout_background">@color/toolbar_main_bg</color>
-  <color name="tabLayout_title_true">#FFFFFF</color>
-  <color name="tabLayout_title_false">#A3FFFFFF</color>
-  <color name="tabLayout_liner">#037DA3</color>
-    <!--BottomNav-->
-  <color name="bottomNav_background">#fff</color>
-  <color name="bottomNav_text_true">#333</color>
-  <color name="bottomNav_text_false">#75333333</color>
-  <color name="bottomNav_icon_true">#333</color>
-  <color name="bottomNav_icon_false">#75333333</color>
+
 
   <!--Page Quran-->
     <!--Toolbar-->
-  <color name="pq_toolbar_background">#F208A9DC</color>
+  <color name="pq_toolbar_background">#7A000000</color>
     <!--Audio Manager-->
-  <color name="pq_audioManager_background">#F208A9DC</color>
+  <color name="pq_audioManager_background">#7A000000</color>
     <!--Action Aya (on long click aya and show box)-->
   <color name="pq_actionAya_background">@color/mother_color</color>
   <color name="pq_actionAya_liner">#037DA3</color>
@@ -92,40 +79,46 @@
 
 
 
-
-  <!--Quran List > Recycler-->
+  <!--Main (List of Sura & Juz & Bookmark )-->
+    <!--Toolbar-->
+  <color name="toolbar_main_bg">@color/mother_color</color>
+    <!--TabLayout-->
+  <color name="tabLayout_background">@color/toolbar_main_bg</color>
+  <color name="tabLayout_title_true">#FFFFFF</color>
+  <color name="tabLayout_title_false">#A3FFFFFF</color>
+  <color name="tabLayout_liner">#037DA3</color>
+    <!--BottomNav-->
+  <color name="bottomNav_background">#fff</color>
+  <color name="bottomNav_text_true">#333</color>
+  <color name="bottomNav_text_false">#75333333</color>
+  <color name="bottomNav_icon_true">#333</color>
+  <color name="bottomNav_icon_false">#75333333</color>
+   <!--Quran List > Recycler-->
   <color name="quranList_background">#FFFFFF</color>
-
-
-  <!--Quran List > Juz-->
+   <!--Quran List > Juz-->
   <color name="background_juz">#F3F3F3</color>  <!--Background Juz & Title bookmark-->
   <color name="Juz_number">#333333</color>
   <color name="Juz_pageNumber">#333333</color>
-  <!--Quran List > Sura-->
+    <!--Quran List > Sura-->
   <color name="sura_background">@color/quranList_background</color> <!-- No Replace -->
   <color name="sura_number">#333333</color>
   <color name="sura_title">#333333</color>
   <color name="sura_detail">#333333</color>
   <color name="sura_pageNumber">#333333</color>
-  <!--Quran List > Hizb-->
+    <!--Quran List > Hizb-->
   <color name="circlHizb_Number">#FFFFFF</color>
   <color name="circlHizb">#0797B1</color>
   <color name="circlHizb_background">#43B6E0EE</color>
-  <!--Quran List > Bookmark-->
+    <!--Quran List > Bookmark-->
   <color name="bookmark_background">@color/quranList_background</color> <!-- No Replace -->
   <color name="onClick_ripple_BookmarkList">#57ADC7</color>
   <color name="ic_aya_bookmark">#AD207003</color>
   <color name="ic_page_bookmark">#AD607003</color>
   <color name="ic_lastPage_bookmark">#0797B1</color>
-  <!--Quran List > Bookmark > Tag -->
+   <!--Quran List > Bookmark > Tag -->
   <color name="tagTextColor_bookmark">#FFFFFF</color>
   <color name="tagBackgroundColor_bookmark">#66000000</color>
-
-
-
-
-
-  <!--On click-->
+    <!--On click-->
   <color name="onClick_activated">#B1B1B1</color>
   <color name="onClick_pressed">#FFFFFF</color>
   <color name="onClick_ripple">#C7CACA</color>
@@ -140,14 +133,18 @@
 
 
 
-  <!--Spinner-->
+  <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
   <color name="spinner_chose_translate">#000000</color>
   <color name="spinner_title_pageQuran">#ffffff</color>
   <color name="spinner_subtitle_pageQuran">#ffffff</color>
 
-  <!-- ":" menu icon color in toolbar-->
-  <color name="menuIcon">#ffffff</color>
+  <!-- color icon (In Toolbar > Main & PageQuran)-->
+  <color name="menuIcon">#FFFFFF</color>
 
-
+  <!--PageQuran (Show Quran)-->
+    <!--AudioPlayer-->
+  <color name="ic_play">#FFFFFF</color>
+  <color name="separator_ic_play">#FFFFFF</color>
+  <color name="qari_spinner">#FFFFFF</color>
 
 </resources>

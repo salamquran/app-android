@@ -287,7 +287,7 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
   }
 
   private void addButtonPlay(){
-    addButton(R.drawable.ic_play,R.color.header_background, false);
+    addButton(R.drawable.ic_play,R.color.ic_play, false);
   }
 
   private void addSpinner() {
@@ -455,7 +455,7 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
 
   private void addSeparator() {
     ImageView separator = new ImageView(context);
-    separator.setBackgroundColor(Color.WHITE);
+    separator.setBackgroundColor(getResources().getColor(R.color.separator_ic_play));
     separator.setPadding(0, separatorSpacing, 0, separatorSpacing);
     LinearLayout.LayoutParams paddingParams =
         new LayoutParams(separatorWidth, LayoutParams.MATCH_PARENT);
