@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FFFFFF"
         android:maxLines="1"
         android:text="@string/help_title"
         android:textStyle="bold"
@@ -27,10 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#FFFFFF"
         android:id="@+id/txtHelp"
         android:textSize="16sp"
         android:paddingBottom="8dp"
+        android:textColor="#333"
         android:lineSpacingExtra="4dip"
         />
 

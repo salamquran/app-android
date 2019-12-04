@@ -60,6 +60,8 @@
       android:title="@string/menu_settings"
       app:showAsAction="never" />
   <item
+      android:visible="false"
+      android:enabled="false"
       android:id="@+id/help"
       android:title="@string/menu_help"
       app:showAsAction="never" />

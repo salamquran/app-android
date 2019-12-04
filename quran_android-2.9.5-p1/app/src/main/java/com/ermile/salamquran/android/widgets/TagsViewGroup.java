@@ -3,6 +3,7 @@ package com.ermile.salamquran.android.widgets;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Build;
 import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
@@ -27,6 +28,8 @@ public class TagsViewGroup extends LinearLayout {
   private int mTagsMargin;
   private int mTagsTextSize;
   private int mDefaultTagBackgroundColor;
+  private int mDefaultTagTextColor;
+  private Typeface font_dana;
   private boolean mIsRtl;
   private Context mContext;
 
@@ -59,6 +62,8 @@ public class TagsViewGroup extends LinearLayout {
     mTagsMargin = resources.getDimensionPixelSize(R.dimen.tag_margin);
     mTagsTextSize = resources.getDimensionPixelSize(R.dimen.tag_text_size);
     mDefaultTagBackgroundColor = ContextCompat.getColor(context, R.color.tagBackgroundColor_bookmark);
+    mDefaultTagTextColor = ContextCompat.getColor(context, R.color.tagTextColor_bookmark);
+    font_dana = Typeface.createFromAsset(context.getAssets(),"dana_regular.ttf");
     mTagsToShow = MAX_TAGS;
     mIsRtl = QuranSettings.getInstance(context).isArabicNames();
   }
@@ -76,6 +81,8 @@ public class TagsViewGroup extends LinearLayout {
 
       TextView tv = new TextView(mContext);
       tv.setText(tag.getName());
+      tv.setTypeface(font_dana);
+      tv.setTextColor(mDefaultTagTextColor);
       tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTagsTextSize);
       tv.setBackgroundColor(mDefaultTagBackgroundColor);
       tv.setGravity(Gravity.CENTER);

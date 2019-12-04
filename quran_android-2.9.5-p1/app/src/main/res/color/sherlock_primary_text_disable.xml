@@ -14,6 +14,6 @@
      limitations under the License.
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:color="#ff4c4c4c"/>
+    <item android:state_enabled="false" android:color="#043499"/>
     <item android:color="#fff3f3f3"/> <!-- not selected -->
 </selector>

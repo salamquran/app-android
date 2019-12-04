@@ -18,7 +18,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:textColor="@color/sura_pageNumber"
-      android:textSize="14sp"
+      android:textSize="12sp"
       tools:text="1"
       />
 
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:textColor="@color/sura_detail"
-        android:textSize="14sp"
+        android:textSize="12sp"
         tools:text="Makki - 286 Verses"
         />
 
@@ -83,7 +83,7 @@
       android:gravity="center"
       android:layout_gravity="center"
       android:textColor="@color/sura_number"
-      android:textSize="24sp"
+      android:textSize="22sp"
       tools:text="23"
       />
 </LinearLayout>

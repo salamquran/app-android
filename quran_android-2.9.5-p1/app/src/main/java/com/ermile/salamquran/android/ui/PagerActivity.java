@@ -1,5 +1,6 @@
 package com.ermile.salamquran.android.ui;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
@@ -12,6 +13,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -86,6 +89,7 @@ import com.ermile.salamquran.android.widgets.SlidingUpPanelLayout;
 import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -326,6 +330,7 @@ public class PagerActivity extends QuranActionBarActivity implements
     if (ab != null) {
       ab.setDisplayShowHomeEnabled(true);
       ab.setDisplayHomeAsUpEnabled(true);
+      Objects.requireNonNull(toolbar.getNavigationIcon()).setColorFilter(getResources().getColor(R.color.menuIcon), PorterDuff.Mode.SRC_ATOP);
     }
 
     initAyahActionPanel();
@@ -1167,8 +1172,10 @@ public class PagerActivity extends QuranActionBarActivity implements
 
             String sura = quranInfo.getSuraNameFromPage(PagerActivity.this, page, true);
             holder.title.setText(sura);
+            holder.title.setTextColor(getResources().getColor(R.color.spinner_title_pageQuran));
             String desc = quranInfo.getPageSubtitle(PagerActivity.this, page);
             holder.subtitle.setText(desc);
+            holder.subtitle.setTextColor(getResources().getColor(R.color.spinner_subtitle_pageQuran));
             holder.subtitle.setVisibility(View.VISIBLE);
           }
           return convertView;

@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
@@ -220,9 +222,9 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
     if (isRtl) {
       addSpinner();
       addSeparator();
-      addButton(R.drawable.ic_play, false);
+      addButtonPlay();
     } else {
-      addButton(R.drawable.ic_play, false);
+      addButtonPlay();
       addSeparator();
       addSpinner();
     }
@@ -284,6 +286,10 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
     }
   }
 
+  private void addButtonPlay(){
+    addButton(R.drawable.ic_play,R.color.header_background, false);
+  }
+
   private void addSpinner() {
     if (spinner == null) {
       spinner = new QuranSpinner(context, null,
@@ -325,15 +331,15 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
     removeAllViews();
 
     if (isRtl) {
-      addButton(R.drawable.ic_cancel, false);
+      addButton(R.drawable.ic_cancel,0, false);
       addDownloadOver3gPrompt();
       addSeparator();
-      addButton(R.drawable.ic_accept, false);
+      addButton(R.drawable.ic_accept,0, false);
     } else {
-      addButton(R.drawable.ic_accept, false);
+      addButton(R.drawable.ic_accept,0, false);
       addSeparator();
       addDownloadOver3gPrompt();
-      addButton(R.drawable.ic_cancel, false);
+      addButton(R.drawable.ic_cancel,0, false);
     }
   }
 
@@ -359,9 +365,9 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
     if (isRtl) {
       addDownloadProgress(text);
       addSeparator();
-      addButton(R.drawable.ic_cancel, false);
+      addButton(R.drawable.ic_cancel,0, false);
     } else {
-      addButton(R.drawable.ic_cancel, false);
+      addButton(R.drawable.ic_cancel,0, false);
       addSeparator();
       addDownloadProgress(text);
     }
@@ -413,24 +419,28 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
       currentMode = PLAYING_MODE;
     }
 
-    addButton(R.drawable.ic_stop, withWeight);
-    addButton(R.drawable.ic_previous, withWeight);
-    addButton(button, withWeight);
-    addButton(R.drawable.ic_next, withWeight);
+    addButton(R.drawable.ic_stop,0, withWeight);
+    addButton(R.drawable.ic_previous,0, withWeight);
+    addButton(button,0, withWeight);
+    addButton(R.drawable.ic_next,0, withWeight);
 
     repeatButton = new RepeatButton(context);
-    addButton(repeatButton, R.drawable.ic_repeat, withWeight);
+    addButton(repeatButton, R.drawable.ic_repeat,0, withWeight);
     updateRepeatButtonText();
 
-    addButton(R.drawable.ic_action_settings, withWeight);
+    addButton(R.drawable.ic_action_settings,0, withWeight);
   }
 
-  private void addButton(int imageId, boolean withWeight) {
-    addButton(new ImageView(context), imageId, withWeight);
+  private void addButton(int imageId,int color, boolean withWeight) {
+    addButton(new ImageView(context), imageId,color, withWeight);
   }
 
-  private void addButton(@NonNull ImageView button, int imageId, boolean withWeight) {
-    button.setImageResource(imageId);
+  private void addButton(@NonNull ImageView button, int imageId,int color, boolean withWeight) {
+    final Drawable icon = getResources().getDrawable(imageId);
+    if (color !=0){
+      icon.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
+    }
+    button.setImageDrawable(icon);
     button.setScaleType(ImageView.ScaleType.CENTER);
     button.setOnClickListener(onClickListener);
     button.setTag(imageId);

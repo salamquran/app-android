@@ -36,8 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:titleTextAppearance="@style/Toolbar.TitleText"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        app:titleTextColor="@color/spinner_title_pageQuran"
+        app:subtitleTextColor="@color/spinner_subtitle_pageQuran"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         >
       <com.ermile.salamquran.android.widgets.QuranSpinner
           android:id="@+id/spinner"

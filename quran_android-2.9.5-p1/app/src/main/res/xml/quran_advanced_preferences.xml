@@ -22,9 +22,9 @@
       android:title="@string/prefs_app_location_title"
       app:iconSpaceReserved="false"/>
 
-  <Preference
+<!--  <Preference
       android:key="@string/prefs_send_logs"
       android:summary="@string/prefs_send_logs_summary"
       android:title="@string/prefs_send_logs_title"
-      app:iconSpaceReserved="false"/>
+      app:iconSpaceReserved="false"/>-->
 </PreferenceScreen>

@@ -10,6 +10,7 @@
       android:text="@null" />
 
   <TextView
+      android:textColor="@color/spinner_chose_translate"
       android:id="@+id/text"
       style="?android:attr/spinnerDropDownItemStyle"
       android:layout_width="match_parent"
