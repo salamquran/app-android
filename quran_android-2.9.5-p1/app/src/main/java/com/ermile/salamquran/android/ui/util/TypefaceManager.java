@@ -24,7 +24,7 @@ public class TypefaceManager {
         }
         case TYPE_UTHMANI_HAFS:
         default: {
-          fontName = "dana_regular.ttf";
+          fontName = "quran_taha.ttf";
         }
       }
       typeface = Typeface.createFromAsset(context.getAssets(), fontName);
