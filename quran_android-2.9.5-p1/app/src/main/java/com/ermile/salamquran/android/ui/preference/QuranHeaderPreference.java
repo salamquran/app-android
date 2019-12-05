@@ -42,7 +42,7 @@ public class QuranHeaderPreference extends Preference {
     if (isEnabled()) {
       final TextView tv = (TextView) holder.findViewById(android.R.id.title);
       if (tv != null) {
-        tv.setTextColor(Color.WHITE);
+        tv.setTextColor(getContext().getResources().getColor(R.color.title_color));
       }
     }
   }
