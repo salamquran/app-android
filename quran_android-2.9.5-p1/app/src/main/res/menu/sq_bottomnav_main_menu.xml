@@ -8,15 +8,26 @@
       android:icon="@drawable/ic_magezin"
       app:showAsAction="never" />
   <item
+      android:id="@+id/lms"
+      android:title="@string/menu_btn_learn"
+      android:icon="@drawable/ic_learn"
+      app:showAsAction="never" />
+  <item
       android:id="@+id/quran"
       android:icon="@drawable/ic_quran"
       android:title="@string/menu_btn_quran"
       app:showAsAction="never" />
   <item
-      android:id="@+id/lms"
-      android:title="@string/menu_btn_learn"
-      android:icon="@drawable/ic_learn"
+      android:id="@+id/search"
+      android:title="@string/menu_btn_search"
+      android:icon="@drawable/ic_search"
       app:showAsAction="never" />
+  <item
+      android:id="@+id/setting"
+      android:title="@string/menu_btn_setting"
+      android:icon="@drawable/ic_setting"
+      app:showAsAction="never" />
+
 
 
 </menu>
