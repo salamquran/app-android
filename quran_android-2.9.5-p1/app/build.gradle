@@ -17,17 +17,17 @@ android {
     defaultConfig {
         minSdkVersion deps.android.build.minSdkVersion
         targetSdkVersion deps.android.build.targetSdkVersion
-        versionCode 2951
-        versionName "2.9.5-p1"
+        versionCode 5
+        versionName "5.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         release {
-            storeFile file("/Users/amin/Project's/Android Studio/Ermile/Key/key_salamquran.jks")
-            storePassword 'Pc122333'
-            keyAlias 'salamquran'
-            keyPassword 'Pc122333'
+            storeFile "FILE"
+            storePassword 'PASSWORD'
+            keyAlias 'KEY_ALIAS'
+            keyPassword 'PASSWORD'
         }
     }
 
