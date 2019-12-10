@@ -28,11 +28,13 @@ import com.ermile.salamquran.android.model.bookmark.RecentPageModel;
 import com.ermile.salamquran.android.presenter.bookmark.BookmarksContextualModePresenter;
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
 import com.ermile.salamquran.android.salamquran.LearnFragment;
+import com.ermile.salamquran.android.salamquran.SearchFragment;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
 import com.ermile.salamquran.android.ui.fragment.BookmarksFragment;
 import com.ermile.salamquran.android.ui.fragment.JumpFragment;
 import com.ermile.salamquran.android.ui.fragment.JuzListFragment;
+import com.ermile.salamquran.android.ui.fragment.QuranSettingsFragment;
 import com.ermile.salamquran.android.ui.fragment.SuraListFragment;
 import com.ermile.salamquran.android.ui.fragment.TagBookmarkDialog;
 import com.ermile.salamquran.android.ui.helpers.JumpDestination;
@@ -56,7 +58,6 @@ import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
@@ -65,7 +66,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import timber.log.Timber;
 
 public class QuranActivity extends QuranActionBarActivity
-    implements TagBookmarkDialog.OnBookmarkTagsUpdateListener, JumpDestination {
+    implements TagBookmarkDialog.OnBookmarkTagsUpdateListener, JumpDestination, BottomNavigationView.OnNavigationItemSelectedListener {
 
   private static int[] TITLES = new int[]{
       R.string.quran_sura,
@@ -100,10 +101,10 @@ public class QuranActivity extends QuranActionBarActivity
   @Inject TranslationManagerPresenter translationManagerPresenter;
 
   //salamquran
-  Fragment fragment = null;
   LinearLayout linear_quranList;
   BottomNavigationView bottomNavigation;
   FrameLayout frameLayout;
+  FragmentManager fragmentManagers = getSupportFragmentManager();
   @Inject
   BookmarksContextualModePresenter bookmarksContextualModePresenter;
 
@@ -169,9 +170,9 @@ public class QuranActivity extends QuranActionBarActivity
     //salamquran
     linear_quranList = findViewById(R.id.linear_quran_list);
     bottomNavigation = findViewById(R.id.bottom_navigation);
-    frameLayout = findViewById(R.id.frame_layout);
+    frameLayout = findViewById(R.id.frameLayout);
 
-    bottomNavigation.setOnNavigationItemSelectedListener(this::onOptionsItemSelected);
+    bottomNavigation.setOnNavigationItemSelectedListener(this);
     bottomNavigation.setSelectedItemId(R.id.quran);
     //----------
 
@@ -264,37 +265,69 @@ public class QuranActivity extends QuranActionBarActivity
         startActivity(intent);
         return true;
       }
-
-      //salamquran
-      case R.id.mag:{
-        linear_quranList.setVisibility(View.INVISIBLE);
-        frameLayout.setVisibility(View.VISIBLE);
-        return true;
-      }
-      case R.id.quran:{
-        linear_quranList.setVisibility(View.VISIBLE);
-        frameLayout.setVisibility(View.GONE);
-        return true;
-      }
-      case R.id.lms:{
-        bookmarksContextualModePresenter.finishActionMode();
-        linear_quranList.setVisibility(View.INVISIBLE);
-        frameLayout.setVisibility(View.VISIBLE);
-        fragment = new LearnFragment();
-        if ( fragment != null) {
-          final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-          transaction.replace(R.id.frame_layout, fragment);
-          transaction.addToBackStack(null);
-          transaction.commit();
-        }
-        return true;
-      }
-
       default: {
         return super.onOptionsItemSelected(item);
       }
     }
+
   }
+
+  //salamquran
+  @Override
+  public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    switch (item.getItemId()){
+      case R.id.mag:{
+        loadFragment(new LearnFragment());
+        break;
+      }
+
+      case R.id.lms:{
+        loadFragment(new LearnFragment());
+        break;
+      }
+
+      case R.id.quran:{
+        loadFragment(null);
+        break;
+      }
+
+      case R.id.search:{
+        loadFragment(new SearchFragment());
+        break;
+      }
+
+      case R.id.setting:{
+        loadFragment(new QuranSettingsFragment());
+        break;
+      }
+    }
+    return true;
+  }
+  private void hiddenQuranList(boolean isQuran) {
+    if (supportActionMode != null) {
+      supportActionMode.finish();
+    } else if (searchItem != null && searchItem.isActionViewExpanded()) {
+      searchItem.collapseActionView();
+    }
+    if (isQuran){
+      linear_quranList.setVisibility(View.VISIBLE);
+      frameLayout.setVisibility(View.GONE);
+    }else {
+      frameLayout.setVisibility(View.VISIBLE);
+      linear_quranList.setVisibility(View.GONE);
+    }
+  }
+  private void loadFragment(Fragment fragment) {
+    if (fragment == null){
+      hiddenQuranList(true);
+    }else {
+      hiddenQuranList(false);
+      fragmentManagers.beginTransaction()
+          .replace(R.id.frameLayout, fragment)
+          .commit();
+    }
+  }
+
 
   @Override
   public void onSupportActionModeFinished(@NonNull ActionMode mode) {
@@ -443,6 +476,7 @@ public class QuranActivity extends QuranActionBarActivity
     AddTagDialog dialog = new AddTagDialog();
     dialog.show(fm, AddTagDialog.TAG);
   }
+
 
   private class PagerAdapter extends FragmentPagerAdapter {
 
