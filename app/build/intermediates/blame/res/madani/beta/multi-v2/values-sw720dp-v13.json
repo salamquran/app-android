@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/incremental/mergeMadaniBetaResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/values-sw720dp/booleans.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "3",
+                        "startOffsets": "55",
+                        "endColumns": "59",
+                        "endOffsets": "111"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "60",
+                        "endOffsets": "111"
+                    }
+                }
+            ]
+        }
+    ]
+}

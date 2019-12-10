@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml:1:1-59
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml:1:1-59
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml:1:1-59
+	package
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml:1:11-57
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml:1:1-59
+uses-sdk
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/src/main/AndroidManifest.xml
