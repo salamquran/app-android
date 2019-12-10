@@ -51,7 +51,8 @@ public class QuranApplication extends Application {
 
     final Locale locale;
     if ("ar".equals(language)) {
-      locale = new Locale("ar");
+//      locale = new Locale("ar");
+      locale = new Locale("fa");
     } else if (force) {
       // get the system locale (since we overwrote the default locale)
       locale = Resources.getSystem().getConfiguration().locale;
