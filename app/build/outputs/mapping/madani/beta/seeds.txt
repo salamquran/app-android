@@ -14147,6 +14147,7 @@ com.salamquran.android.R$color: int dim_foreground_disabled_material_light
 com.salamquran.android.R$color: int dim_foreground_material_dark
 com.salamquran.android.R$color: int dim_foreground_material_light
 com.salamquran.android.R$color: int download_button_background
+com.salamquran.android.R$color: int download_progress_bar
 com.salamquran.android.R$color: int error_color_material_dark
 com.salamquran.android.R$color: int error_color_material_light
 com.salamquran.android.R$color: int foreground_material_dark

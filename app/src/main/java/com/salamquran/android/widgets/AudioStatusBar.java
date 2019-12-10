@@ -379,6 +379,9 @@ public class AudioStatusBar extends LeftToRightLinearLayout {
 
     progressBar = (ProgressBar) LayoutInflater.from(context)
         .inflate(R.layout.download_progress_bar, this, false);
+    /*progressBar
+        .getIndeterminateDrawable()
+        .setColorFilter(getResources().getColor(R.color.download_progress_bar), PorterDuff.Mode.MULTIPLY);*/
     progressBar.setIndeterminate(true);
     progressBar.setVisibility(View.VISIBLE);
 

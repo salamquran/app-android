@@ -28,6 +28,7 @@
   <color name="bookmark_highlight">#40A4A4A4</color>
 
   <!--Note (No use)-->
+  <color name="download_progress_bar">#AFAFAF</color>
   <color name="note_highlight">#40EBEB21</color>
   <color name="overlay_panel">#333</color>
 
@@ -85,13 +86,13 @@
   <color name="page_background">#FFFFFF</color>
   <color name="info_page_text">#333</color> <!--Number Page & sura name & juz name-->
   <!--Toolbar-->
-      <color name="pageQuran_toolbar_background">#BC383838</color>
-          <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
+      <color name="pageQuran_toolbar_background">#D30166AC</color>
+      <!--Spinner Translate (In Page Quran > Toolbar (Translate) > Spinner )-->
           <color name="spinner_chose_translate">#333333</color>
           <color name="spinner_title_pageQuran">#ffffff</color>
           <color name="spinner_subtitle_pageQuran">#ffffff</color>
-      <!--AudioPlayer-->
-      <color name="pageQuran_audioManager_background">#BC383838</color>
+  <!--AudioPlayer-->
+      <color name="pageQuran_audioManager_background">#D30166AC</color>
       <color name="ic_play">#FFFFFF</color>
       <color name="separator_ic_play">#FFFFFF</color>
       <color name="qari_spinner">#FFFFFF</color>

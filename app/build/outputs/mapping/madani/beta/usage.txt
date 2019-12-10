@@ -7173,7 +7173,7 @@ com.salamquran.android.R$raw
 com.salamquran.android.R$string
 com.salamquran.android.R$style
 com.salamquran.android.R$styleable:
-    9531:9531:public R$styleable()
+    8615:8615:public R$styleable()
 com.salamquran.android.R$xml
 com.salamquran.android.SearchActivity:
     public static final java.lang.String SEARCH_INFO_DOWNLOAD_KEY

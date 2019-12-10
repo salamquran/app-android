@@ -950,6 +950,7 @@ color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
 color download_button_background
+color download_progress_bar
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
