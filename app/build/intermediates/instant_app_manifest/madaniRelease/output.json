@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_APP_MANIFEST"},"apkData":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0.0 beta","enabled":true,"outputFile":"app-madani-release.apk","fullName":"madaniRelease","baseName":"madani-release"},"path":"AndroidManifest.xml","properties":{"packageId":"com.salamquran.android","split":"","minSdkVersion":"14"}}]

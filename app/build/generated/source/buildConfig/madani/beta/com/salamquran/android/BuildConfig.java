@@ -8,6 +8,6 @@ public final class BuildConfig {
   public static final String APPLICATION_ID = "com.salamquran.android";
   public static final String BUILD_TYPE = "beta";
   public static final String FLAVOR = "madani";
-  public static final int VERSION_CODE = 5;
-  public static final String VERSION_NAME = "5.0.0-beta";
+  public static final int VERSION_CODE = 1;
+  public static final String VERSION_NAME = "1.0.0 beta-beta";
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Values from the variant -->
+    <string name="authority" translatable="false">com.salamquran.android.data.QuranDataProvider</string>
+    <string name="file_authority" translatable="false">com.salamquran.android.fileprovider</string>
+
+</resources>

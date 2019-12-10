@@ -1,0 +1,444 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+MERGED from [:pages:madani] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/pages/madani/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:common:pages] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:common:search] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.preference:preference:1.1.0-alpha04] /Users/amin/.gradle/caches/transforms-2/files-2.1/4dba97a590eeb4aa1d8cb40e3b9311e0/preference-1.1.0-alpha04/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1aed9c3103306b2e6f0a37ba369ee63e/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/21b7cf8d619485118824662cfceb2f9d/media-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/3a124b8eaca2bb60f11914c96814e2bf/viewpager2-1.0.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/93019e632c853bb35b19128f2d238f47/recyclerview-1.1.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/f49f4be176a0e29f5b281c9a1398437e/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/84cebf6553946621a1e5dbf0a8408887/jetified-timber-4.7.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7a493fcde806488285a7c228fe28b1f7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7c0489f4b2d4c04638a3fda44ae5972e/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2caba867cea09abc2990ce750ce4950c/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/30560f9f3f5cb4901914c7f1398a738b/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/9cd51116166c9e3c5adb19f1f133d758/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/45c52e3016bc9ab1a585c1f1627c2e66/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/74ab3ae7f75f4d9195227063846f89e4/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/5a7be4e74e3b23aaaf950732d1bf30a4/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/88f157192a67f07168f95bc2e8bb51fc/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2fe88593d456b9c029169705fcd127dd/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/407decd5b05604d2501129551efe7223/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/17092198b84938b26e9bf999898adb6a/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/082bb3b1019fd12971093d348e13b0ee/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc316b7d072984e49c716ff457636674/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/f8edd032a120f7566ee6088cbfd29a3e/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc74577f2fb3f9a98517e5ddab6d9739/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/6da765eb369b3c4f4259b6acd12cd068/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/479b679106b685ecf0d8ed6e3d6f2ce3/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/b3f8e7be91d5b20c9de2c2116c02158c/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/556fed022717446fda6e4312f0aa06cc/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3b54173d6020cf1bd713d3e03b413d72/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/678d6193b20e6cd2d4b48b7ddf6174ae/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/ca9f842b4c400970895058835a06e7b0/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/0011fb2262d252b78390465edef66c06/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/90915fdc1d0f0e912da60b0fe8985156/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/49dab2bad8b9a63f9f86820ca0ede5dc/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/117d11eb0421a81fa40cebbfa52ec9b9/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3e89c2e74324651f942615f5c077f984/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/e75111d5c0b44617912ad6289033cda5/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+	package
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:4:5-37
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:5:5-35
+uses-sdk
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+MERGED from [:pages:madani] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/pages/madani/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:pages:madani] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/pages/madani/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:common:pages] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:common:pages] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:common:search] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:common:search] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.0-alpha04] /Users/amin/.gradle/caches/transforms-2/files-2.1/4dba97a590eeb4aa1d8cb40e3b9311e0/preference-1.1.0-alpha04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.preference:preference:1.1.0-alpha04] /Users/amin/.gradle/caches/transforms-2/files-2.1/4dba97a590eeb4aa1d8cb40e3b9311e0/preference-1.1.0-alpha04/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1aed9c3103306b2e6f0a37ba369ee63e/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1aed9c3103306b2e6f0a37ba369ee63e/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/21b7cf8d619485118824662cfceb2f9d/media-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/21b7cf8d619485118824662cfceb2f9d/media-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/3a124b8eaca2bb60f11914c96814e2bf/viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/3a124b8eaca2bb60f11914c96814e2bf/viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/93019e632c853bb35b19128f2d238f47/recyclerview-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/93019e632c853bb35b19128f2d238f47/recyclerview-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/f49f4be176a0e29f5b281c9a1398437e/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/f49f4be176a0e29f5b281c9a1398437e/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/84cebf6553946621a1e5dbf0a8408887/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/84cebf6553946621a1e5dbf0a8408887/jetified-timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7a493fcde806488285a7c228fe28b1f7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7a493fcde806488285a7c228fe28b1f7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7c0489f4b2d4c04638a3fda44ae5972e/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/7c0489f4b2d4c04638a3fda44ae5972e/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2caba867cea09abc2990ce750ce4950c/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2caba867cea09abc2990ce750ce4950c/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/30560f9f3f5cb4901914c7f1398a738b/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/30560f9f3f5cb4901914c7f1398a738b/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/9cd51116166c9e3c5adb19f1f133d758/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/9cd51116166c9e3c5adb19f1f133d758/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/45c52e3016bc9ab1a585c1f1627c2e66/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/45c52e3016bc9ab1a585c1f1627c2e66/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/74ab3ae7f75f4d9195227063846f89e4/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/74ab3ae7f75f4d9195227063846f89e4/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/5a7be4e74e3b23aaaf950732d1bf30a4/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /Users/amin/.gradle/caches/transforms-2/files-2.1/5a7be4e74e3b23aaaf950732d1bf30a4/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/88f157192a67f07168f95bc2e8bb51fc/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/88f157192a67f07168f95bc2e8bb51fc/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2fe88593d456b9c029169705fcd127dd/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/2fe88593d456b9c029169705fcd127dd/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/407decd5b05604d2501129551efe7223/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/407decd5b05604d2501129551efe7223/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/17092198b84938b26e9bf999898adb6a/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/17092198b84938b26e9bf999898adb6a/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/082bb3b1019fd12971093d348e13b0ee/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/082bb3b1019fd12971093d348e13b0ee/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc316b7d072984e49c716ff457636674/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc316b7d072984e49c716ff457636674/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/f8edd032a120f7566ee6088cbfd29a3e/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/f8edd032a120f7566ee6088cbfd29a3e/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc74577f2fb3f9a98517e5ddab6d9739/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/bc74577f2fb3f9a98517e5ddab6d9739/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/6da765eb369b3c4f4259b6acd12cd068/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/6da765eb369b3c4f4259b6acd12cd068/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/479b679106b685ecf0d8ed6e3d6f2ce3/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/479b679106b685ecf0d8ed6e3d6f2ce3/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/b3f8e7be91d5b20c9de2c2116c02158c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/b3f8e7be91d5b20c9de2c2116c02158c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/556fed022717446fda6e4312f0aa06cc/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/556fed022717446fda6e4312f0aa06cc/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3b54173d6020cf1bd713d3e03b413d72/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3b54173d6020cf1bd713d3e03b413d72/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/678d6193b20e6cd2d4b48b7ddf6174ae/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/678d6193b20e6cd2d4b48b7ddf6174ae/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/ca9f842b4c400970895058835a06e7b0/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/ca9f842b4c400970895058835a06e7b0/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/0011fb2262d252b78390465edef66c06/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/0011fb2262d252b78390465edef66c06/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/90915fdc1d0f0e912da60b0fe8985156/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/90915fdc1d0f0e912da60b0fe8985156/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/49dab2bad8b9a63f9f86820ca0ede5dc/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/49dab2bad8b9a63f9f86820ca0ede5dc/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/117d11eb0421a81fa40cebbfa52ec9b9/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/117d11eb0421a81fa40cebbfa52ec9b9/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3e89c2e74324651f942615f5c077f984/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3e89c2e74324651f942615f5c077f984/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/e75111d5c0b44617912ad6289033cda5/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/e75111d5c0b44617912ad6289033cda5/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+	tools:overrideLibrary
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:13-47
+	android:targetSdkVersion
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
+		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:9:3-65
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:9:20-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:10:3-79
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:10:20-76
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:11:3-77
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:11:20-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:12:3-66
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:12:20-63
+uses-permission-sdk-23#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:13:3-82
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:13:27-79
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:16:3-68
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:16:20-66
+uses-feature#android.hardware.touchscreen
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:18:3-20:34
+	android:required
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:20:7-31
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:19:7-50
+application
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:22:3-172:17
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/84cebf6553946621a1e5dbf0a8408887/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/amin/.gradle/caches/transforms-2/files-2.1/84cebf6553946621a1e5dbf0a8408887/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3b54173d6020cf1bd713d3e03b413d72/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3b54173d6020cf1bd713d3e03b413d72/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:30:7-33
+	android:label
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:27:7-39
+	android:fullBackupContent
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:25:7-46
+	tools:ignore
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:32:7-37
+	android:roundIcon
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:29:7-41
+	android:icon
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:26:7-36
+	android:allowBackup
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:24:7-33
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:31:7-35
+	android:networkSecurityConfig
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:28:7-67
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:23:7-39
+activity#com.salamquran.android.Splash
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:33:5-41:16
+	android:configChanges
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:35:9-70
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:36:9-65
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:34:9-31
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:37:7-40:23
+action#android.intent.action.MAIN
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:38:9-61
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:38:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:39:9-69
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:39:19-66
+activity#com.salamquran.android.QuranDataActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:42:5-50:16
+	android:label
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:45:9-41
+	android:configChanges
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:44:9-70
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:46:9-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:43:9-42
+meta-data#android.app.shortcuts
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:47:7-49:47
+	android:resource
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:49:11-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:48:11-47
+activity#com.salamquran.android.ShortcutsActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:51:5-53:35
+	android:exported
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:53:9-32
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:52:9-42
+activity#com.salamquran.android.ui.QuranActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:54:5-56:47
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:56:9-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:55:9-41
+activity#com.salamquran.android.AboutUsActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:57:5-59:47
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:59:9-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:58:9-40
+activity#com.salamquran.android.HelpActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:60:5-46
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:60:15-43
+activity#com.salamquran.android.ui.PagerActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:61:5-64:55
+	android:launchMode
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:63:9-39
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:64:9-52
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:62:9-41
+activity#com.salamquran.android.ui.TranslationManagerActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:65:5-67:73
+	android:configChanges
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:67:9-70
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:66:9-54
+activity#com.salamquran.android.QuranPreferenceActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:68:5-71:47
+	android:configChanges
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:70:9-70
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:71:9-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:69:9-48
+activity#com.salamquran.android.QuranAdvancedPreferenceActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:72:5-75:47
+	android:configChanges
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:74:9-70
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:75:9-44
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:73:9-56
+activity#com.salamquran.android.SearchActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:76:5-86:16
+	android:launchMode
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:78:9-39
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:77:9-39
+intent-filter#action:name:android.intent.action.SEARCH
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:79:7-81:23
+action#android.intent.action.SEARCH
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:80:9-63
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:80:17-60
+meta-data#android.app.searchable
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:83:7-85:48
+	android:resource
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:85:11-45
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:84:11-48
+activity#com.salamquran.android.QuranForwarderActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:87:5-95:16
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:87:15-53
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:quran
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:88:7-94:23
+action#android.intent.action.VIEW
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:89:9-61
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:89:17-58
+category#android.intent.category.DEFAULT
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:91:9-68
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:91:19-65
+data
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:93:9-40
+	android:host
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:137:13-29
+	android:scheme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:93:15-37
+	android:pathPattern
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:139:13-46
+	android:mimeType
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:128:15-50
+activity#com.salamquran.android.ui.AudioManagerActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:96:5-98:40
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:98:9-37
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:97:9-48
+meta-data#android.app.default_searchable
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:99:5-101:43
+	android:value
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:101:9-40
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:100:9-54
+provider#com.salamquran.android.data.QuranDataProvider
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:102:5-105:36
+	android:authorities
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:104:9-48
+	android:exported
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:105:9-33
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:103:9-47
+provider#androidx.core.content.FileProvider
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:106:5-114:16
+	android:grantUriPermissions
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:110:9-43
+	android:authorities
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:108:9-53
+	android:exported
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:109:9-33
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:107:9-58
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:111:7-113:48
+	android:resource
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:113:11-45
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:112:11-61
+receiver#androidx.media.session.MediaButtonReceiver
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:116:5-120:16
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:116:15-72
+intent-filter#action:name:android.intent.action.MEDIA_BUTTON
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:117:7-119:23
+action#android.intent.action.MEDIA_BUTTON
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:118:9-69
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:118:17-66
+activity#com.salamquran.android.QuranImportActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:122:5-157:16
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:122:15-50
+intent-filter#action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+data:mimeType:application/json
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:123:7-129:23
+action#android.intent.action.SEND
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:124:9-61
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:124:17-58
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:host:*+data:host:*+data:host:*+data:mimeType:*/*+data:mimeType:*/*+data:mimeType:*/*+data:mimeType:*/*+data:pathPattern:.*\\..*\\..*\\..*\\.backup+data:pathPattern:.*\\..*\\..*\\.backup+data:pathPattern:.*\\..*\\.backup+data:pathPattern:.*\\.backup+data:scheme:file+data:scheme:file+data:scheme:file+data:scheme:file
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:130:7-156:23
+category#android.intent.category.BROWSABLE
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:134:9-70
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:134:19-67
+activity#com.salamquran.android.pageselect.PageSelectActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:158:5-160:68
+	android:theme
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:160:9-65
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:159:9-54
+service#com.salamquran.android.service.QuranDownloadService
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:162:5-164:34
+	android:enabled
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:164:9-31
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:163:9-53
+service#com.salamquran.android.service.AudioService
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:165:5-171:15
+	android:exported
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:167:9-33
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:166:9-45

@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/incremental/mergeMadaniReleaseResources/merged.dir/values-v19/values-v19.xml",
+            "map": [
+                {
+                    "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/values-v19/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "224"
+                    }
+                }
+            ]
+        }
+    ]
+}
