@@ -2224,6 +2224,7 @@ layout help
 layout image_frame
 layout index_header_row
 layout index_sura_row
+layout item_lms_group
 layout jump_dialog
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

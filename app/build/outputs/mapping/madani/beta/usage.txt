@@ -4242,7 +4242,6 @@ androidx.fragment.app.FragmentManager:
     public abstract void popBackStack(java.lang.String,int)
     public abstract boolean popBackStackImmediate(java.lang.String,int)
     public abstract boolean popBackStackImmediate(int,int)
-    public abstract int getBackStackEntryCount()
     public abstract androidx.fragment.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
     public abstract void addOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
     public abstract void removeOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
@@ -7173,7 +7172,7 @@ com.salamquran.android.R$raw
 com.salamquran.android.R$string
 com.salamquran.android.R$style
 com.salamquran.android.R$styleable:
-    9532:9532:public R$styleable()
+    9533:9533:public R$styleable()
 com.salamquran.android.R$xml
 com.salamquran.android.SearchActivity:
     public static final java.lang.String SEARCH_INFO_DOWNLOAD_KEY

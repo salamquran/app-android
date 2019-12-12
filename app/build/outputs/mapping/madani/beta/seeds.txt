@@ -15421,6 +15421,7 @@ com.salamquran.android.R$layout: int help
 com.salamquran.android.R$layout: int image_frame
 com.salamquran.android.R$layout: int index_header_row
 com.salamquran.android.R$layout: int index_sura_row
+com.salamquran.android.R$layout: int item_lms_group
 com.salamquran.android.R$layout: int jump_dialog
 com.salamquran.android.R$layout: int mtrl_alert_dialog
 com.salamquran.android.R$layout: int mtrl_alert_dialog_actions
