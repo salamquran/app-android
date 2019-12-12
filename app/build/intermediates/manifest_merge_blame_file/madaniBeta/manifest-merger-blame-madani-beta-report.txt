@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.salamquran.android"
 4    android:installLocation="auto"
-5    android:versionCode="5"
-6    android:versionName="5.0.0-beta" >
+5    android:versionCode="1"
+6    android:versionName="1.0.0 beta-beta" >
 7
 8    <uses-sdk
 8-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50

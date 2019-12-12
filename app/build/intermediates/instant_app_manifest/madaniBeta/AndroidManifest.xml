@@ -3,8 +3,8 @@
     package="com.salamquran.android"
     android:installLocation="auto"
     android:targetSandboxVersion="2"
-    android:versionCode="5"
-    android:versionName="5.0.0-beta" >
+    android:versionCode="1"
+    android:versionName="1.0.0 beta-beta" >
 
     <uses-sdk
         android:minSdkVersion="14"
