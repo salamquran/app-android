@@ -1,4 +1,0 @@
-#Sat Dec 14 17:38:22 IRST 2019
-base.0=/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/dex/madaniBeta/mergeDexMadaniBeta/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
