@@ -3,7 +3,7 @@
 3    package="com.salamquran.android.common.pages" >
 4
 5    <uses-sdk
-6        android:minSdkVersion="14"
+6        android:minSdkVersion="16"
 6-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="28" />
 7-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/src/main/AndroidManifest.xml

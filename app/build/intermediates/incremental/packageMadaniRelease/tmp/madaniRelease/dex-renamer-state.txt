@@ -1,4 +1,4 @@
-#Tue Dec 10 12:56:54 IRST 2019
+#Sat Dec 14 17:45:07 IRST 2019
 base.0=/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/dex/madaniRelease/mergeDexMadaniRelease/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

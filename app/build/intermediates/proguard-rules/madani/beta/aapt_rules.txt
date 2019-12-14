@@ -121,7 +121,7 @@
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/layout/abc_screen_simple.xml:25
 -keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
 
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/item_lms_group.xml:13
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/item_lms_group.xml:12
 -keep class androidx.cardview.widget.CardView { <init>(...); }
 
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/design_bottom_sheet_dialog.xml:26
@@ -145,6 +145,7 @@
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/4dba97a590eeb4aa1d8cb40e3b9311e0/preference-1.1.0-alpha04/res/layout/preference_recyclerview.xml:18
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_months.xml:18
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_horizontal.xml:29
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/fragment_learn.xml:16
 # Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/audio_manager.xml:3
 -keep class androidx.recyclerview.widget.RecyclerView { <init>(...); }
 

@@ -1,46 +1,46 @@
 # Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:26
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:111
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:112
 -keep class androidx.core.content.FileProvider { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:121
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:122
 -keep class androidx.media.session.MediaButtonReceiver { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:62
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:63
 -keep class com.salamquran.android.AboutUsActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:65
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:66
 -keep class com.salamquran.android.HelpActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:77
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:78
 -keep class com.salamquran.android.QuranAdvancedPreferenceActivity { <init>(); }
 # Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:26
 -keep class com.salamquran.android.QuranApplication { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:47
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:48
 -keep class com.salamquran.android.QuranDataActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:92
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:93
 -keep class com.salamquran.android.QuranForwarderActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:127
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:128
 -keep class com.salamquran.android.QuranImportActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:73
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:74
 -keep class com.salamquran.android.QuranPreferenceActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:81
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:82
 -keep class com.salamquran.android.SearchActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:56
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:57
 -keep class com.salamquran.android.ShortcutsActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:37
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:38
 -keep class com.salamquran.android.Splash { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:107
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:108
 -keep class com.salamquran.android.data.QuranDataProvider { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:163
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:164
 -keep class com.salamquran.android.pageselect.PageSelectActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:170
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:171
 -keep class com.salamquran.android.service.AudioService { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:167
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:168
 -keep class com.salamquran.android.service.QuranDownloadService { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:101
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:102
 -keep class com.salamquran.android.ui.AudioManagerActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:66
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:67
 -keep class com.salamquran.android.ui.PagerActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:59
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:60
 -keep class com.salamquran.android.ui.QuranActivity { <init>(); }
-# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:70
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/merged_manifests/madaniRelease/AndroidManifest.xml:71
 -keep class com.salamquran.android.ui.TranslationManagerActivity { <init>(); }
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/layout-watch-v20/abc_alert_dialog_title_material.xml:53
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_alert_dialog_title.xml:41
@@ -121,6 +121,9 @@
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/layout/abc_screen_simple.xml:25
 -keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
 
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/item_lms_group.xml:12
+-keep class androidx.cardview.widget.CardView { <init>(...); }
+
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/design_bottom_sheet_dialog.xml:26
 -keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
 
@@ -142,6 +145,7 @@
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/4dba97a590eeb4aa1d8cb40e3b9311e0/preference-1.1.0-alpha04/res/layout/preference_recyclerview.xml:18
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_months.xml:18
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_horizontal.xml:29
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/fragment_learn.xml:16
 # Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/audio_manager.xml:3
 -keep class androidx.recyclerview.widget.RecyclerView { <init>(...); }
 

@@ -2588,6 +2588,7 @@ id content
 id contentPanel
 id controls
 id coordinator
+id count_level
 id custom
 id customPanel
 id cut
@@ -2638,6 +2639,7 @@ id give_us_a_review_landmine_button
 id give_us_a_review_landmine_main_layout
 id give_us_a_review_landmine_text_1
 id give_us_a_review_landmine_text_2
+id glide_custom_view_target_tag
 id gone
 id goto_quran
 id goto_translation
@@ -2844,6 +2846,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tags
+id techer_name
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -2862,8 +2865,6 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
-id title_learn
-id title_learn2
 id title_template
 id toolbar
 id toolbar_area
@@ -2895,7 +2896,6 @@ id verseLocation
 id verseText
 id view_offset_helper
 id visible
-id webView_WebView
 id withText
 id wrap
 id wrap_content

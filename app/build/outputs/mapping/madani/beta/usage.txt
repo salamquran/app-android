@@ -6186,199 +6186,85 @@ androidx.viewpager2.widget.ViewPager2$Orientation
 androidx.viewpager2.widget.ViewPager2$ScrollState
 com.android.volley.AuthFailureError:
     29:31:public AuthFailureError(android.content.Intent)
-    34:35:public AuthFailureError(com.android.volley.NetworkResponse)
     38:39:public AuthFailureError(java.lang.String)
     42:43:public AuthFailureError(java.lang.String,java.lang.Exception)
     46:46:public android.content.Intent getResolutionIntent()
 com.android.volley.BuildConfig
 com.android.volley.Cache:
-    public abstract com.android.volley.Cache$Entry get(java.lang.String)
-    public abstract void put(java.lang.String,com.android.volley.Cache$Entry)
-    public abstract void initialize()
     public abstract void invalidate(java.lang.String,boolean)
     public abstract void remove(java.lang.String)
     public abstract void clear()
-com.android.volley.Cache$Entry:
-    public byte[] data
-    public java.lang.String etag
-    public long serverDate
-    public long lastModified
-    public long ttl
-    public long softTtl
-    public java.util.Map responseHeaders
-    public java.util.List allResponseHeaders
-    66:93:public Cache$Entry()
-    103:103:public boolean isExpired()
-    108:108:public boolean refreshNeeded()
-com.android.volley.CacheDispatcher
-com.android.volley.CacheDispatcher$1
-com.android.volley.CacheDispatcher$WaitingRequestManager
-com.android.volley.ClientError:
-    28:29:public ClientError(com.android.volley.NetworkResponse)
 com.android.volley.DefaultRetryPolicy:
-    private int mCurrentRetryCount
     public static final int DEFAULT_TIMEOUT_MS
     public static final int DEFAULT_MAX_RETRIES
     public static final float DEFAULT_BACKOFF_MULT
-    63:63:public int getCurrentTimeout()
-    69:69:public int getCurrentRetryCount()
     74:74:public float getBackoffMultiplier()
-    84:89:public void retry(com.android.volley.VolleyError)
-    93:93:protected boolean hasAttemptRemaining()
-com.android.volley.ExecutorDelivery
-com.android.volley.ExecutorDelivery$1
-com.android.volley.ExecutorDelivery$ResponseDeliveryRunnable
-com.android.volley.Header
-com.android.volley.Network
-com.android.volley.NetworkDispatcher
+com.android.volley.ExecutorDelivery:
+    48:50:public ExecutorDelivery(java.util.concurrent.Executor)
 com.android.volley.NetworkError:
-    27:28:public NetworkError(java.lang.Throwable)
     31:32:public NetworkError(com.android.volley.NetworkResponse)
 com.android.volley.NetworkResponse:
-    public final int statusCode
-    public final byte[] data
-    public final java.util.Map headers
-    public final java.util.List allHeaders
-    public final boolean notModified
-    public final long networkTimeMs
-    48:49:public NetworkResponse(int,byte[],java.util.Map,boolean,long)
-    66:67:public NetworkResponse(int,byte[],boolean,long,java.util.List)
     83:84:public NetworkResponse(int,byte[],java.util.Map,boolean)
     92:98:public NetworkResponse(byte[])
-    111:117:public NetworkResponse(byte[],java.util.Map)
-    125:136:private NetworkResponse(int,byte[],java.util.Map,java.util.List,boolean,long)
-    165:176:private static java.util.Map toHeaderMap(java.util.List)
-    180:190:private static java.util.List toAllHeaderList(java.util.Map)
-com.android.volley.NoConnectionError:
-    27:28:public NoConnectionError(java.lang.Throwable)
-com.android.volley.ParseError:
-    25:26:public ParseError(com.android.volley.NetworkResponse)
-    29:30:public ParseError(java.lang.Throwable)
 com.android.volley.R
 com.android.volley.Request:
     private static final java.lang.String DEFAULT_PARAMS_ENCODING
-    private java.lang.Object mTag
-    private com.android.volley.Request$NetworkRequestCompleteListener mRequestCompleteListener
     136:137:public Request(java.lang.String,com.android.volley.Response$ErrorListener)
-    156:156:public int getMethod()
-    166:167:public com.android.volley.Request setTag(java.lang.Object)
     176:176:public java.lang.Object getTag()
     182:184:public com.android.volley.Response$ErrorListener getErrorListener()
-    229:252:void finish(java.lang.String)
     277:280:public final int getSequence()
-    290:301:public java.lang.String getCacheKey()
-    311:312:public com.android.volley.Request setCacheEntry(com.android.volley.Cache$Entry)
-    317:317:public com.android.volley.Cache$Entry getCacheEntry()
-    357:357:public java.util.Map getHeaders()
-    372:372:protected java.util.Map getPostParams()
-    392:392:protected java.lang.String getPostParamsEncoding()
-    398:398:public java.lang.String getPostBodyContentType()
-    413:417:public byte[] getPostBody()
-    429:429:protected java.util.Map getParams()
-    446:446:protected java.lang.String getParamsEncoding()
-    451:451:public java.lang.String getBodyContentType()
-    464:468:public byte[] getBody()
-    473:491:private byte[] encodeParameters(java.util.Map,java.lang.String)
     501:502:public final com.android.volley.Request setShouldCache(boolean)
     516:517:public final com.android.volley.Request setShouldRetryServerErrors(boolean)
-    524:524:public final boolean shouldRetryServerErrors()
-    549:549:public final int getTimeoutMs()
-    554:554:public com.android.volley.RetryPolicy getRetryPolicy()
-    562:565:public void markDelivered()
-    569:571:public boolean hasHadResponseDelivered()
-    protected abstract com.android.volley.Response parseNetworkResponse(com.android.volley.NetworkResponse)
-    593:593:protected com.android.volley.VolleyError parseNetworkError(com.android.volley.VolleyError)
-    protected abstract void deliverResponse(java.lang.Object)
-    613:619:public void deliverError(com.android.volley.VolleyError)
-    627:630:void setNetworkRequestCompleteListener(com.android.volley.Request$NetworkRequestCompleteListener)
-    640:646:void notifyListenerResponseReceived(com.android.volley.Response)
-    654:660:void notifyListenerResponseNotUsable()
-    38:38:static synthetic com.android.volley.VolleyLog$MarkerLog access$000(com.android.volley.Request)
-com.android.volley.Request$1
 com.android.volley.Request$Method
-com.android.volley.Request$NetworkRequestCompleteListener
 com.android.volley.RequestQueue:
     private static final int DEFAULT_NETWORK_THREAD_POOL_SIZE
-    private final com.android.volley.Cache mCache
-    private final com.android.volley.Network mNetwork
-    private final com.android.volley.ResponseDelivery mDelivery
-    private final com.android.volley.NetworkDispatcher[] mDispatchers
-    private com.android.volley.CacheDispatcher mCacheDispatcher
-    private final java.util.List mFinishedListeners
-    47:95:public RequestQueue(com.android.volley.Cache,com.android.volley.Network,int,com.android.volley.ResponseDelivery)
-    105:110:public RequestQueue(com.android.volley.Cache,com.android.volley.Network,int)
-    119:120:public RequestQueue(com.android.volley.Cache,com.android.volley.Network)
-    124:136:public void start()
-    140:148:public void stop()
     157:157:public com.android.volley.Cache getCache()
     174:181:public void cancelAll(com.android.volley.RequestQueue$RequestFilter)
     188:198:public void cancelAll(java.lang.Object)
-    233:241:void finish(com.android.volley.Request)
     244:247:public void addRequestFinishedListener(com.android.volley.RequestQueue$RequestFinishedListener)
     251:254:public void removeRequestFinishedListener(com.android.volley.RequestQueue$RequestFinishedListener)
 com.android.volley.RequestQueue$1
 com.android.volley.RequestQueue$RequestFilter
-com.android.volley.RequestQueue$RequestFinishedListener
-com.android.volley.Response:
-    public final java.lang.Object result
-    public final com.android.volley.Cache$Entry cacheEntry
-    public final com.android.volley.VolleyError error
-    public boolean intermediate
-    43:43:public static com.android.volley.Response success(java.lang.Object,com.android.volley.Cache$Entry)
-    51:51:public static com.android.volley.Response error(com.android.volley.VolleyError)
-    68:68:public boolean isSuccess()
-    64:75:private Response(java.lang.Object,com.android.volley.Cache$Entry)
-    64:81:private Response(com.android.volley.VolleyError)
-com.android.volley.Response$ErrorListener:
-    public abstract void onErrorResponse(com.android.volley.VolleyError)
-com.android.volley.Response$Listener:
-    public abstract void onResponse(java.lang.Object)
-com.android.volley.ResponseDelivery
-com.android.volley.RetryPolicy:
-    public abstract int getCurrentTimeout()
-    public abstract int getCurrentRetryCount()
-    public abstract void retry(com.android.volley.VolleyError)
-com.android.volley.ServerError:
-    23:24:public ServerError(com.android.volley.NetworkResponse)
 com.android.volley.VolleyError:
-    private long networkTimeMs
-    29:31:public VolleyError(com.android.volley.NetworkResponse)
     34:36:public VolleyError(java.lang.String)
     39:41:public VolleyError(java.lang.String,java.lang.Throwable)
-    44:46:public VolleyError(java.lang.Throwable)
-    49:50:void setNetworkTimeMs(long)
     53:53:public long getNetworkTimeMs()
 com.android.volley.VolleyLog:
     49:54:public static void setTag(java.lang.String)
-    57:60:public static varargs void v(java.lang.String,java.lang.Object[])
-    71:72:public static varargs void e(java.lang.Throwable,java.lang.String,java.lang.Object[])
     75:76:public static varargs void wtf(java.lang.String,java.lang.Object[])
     79:80:public static varargs void wtf(java.lang.Throwable,java.lang.String,java.lang.Object[])
 com.android.volley.VolleyLog$MarkerLog:
     private static final long MIN_DURATION_FOR_LOGGING_MS
-com.android.volley.toolbox.AdaptedHttpStack
 com.android.volley.toolbox.AndroidAuthenticator
 com.android.volley.toolbox.Authenticator
-com.android.volley.toolbox.BaseHttpStack
-com.android.volley.toolbox.BasicNetwork
-com.android.volley.toolbox.ByteArrayPool
-com.android.volley.toolbox.ByteArrayPool$1
+com.android.volley.toolbox.BasicNetwork:
+    private static final int SLOW_REQUEST_THRESHOLD_MS
+    private static final int DEFAULT_POOL_SIZE
+    275:277:protected void logError(java.lang.String,java.lang.String,long)
+    318:322:protected static java.util.Map convertHeaders(com.android.volley.Header[])
 com.android.volley.toolbox.ClearCacheRequest
-com.android.volley.toolbox.DiskBasedCache
-com.android.volley.toolbox.DiskBasedCache$CacheHeader
-com.android.volley.toolbox.DiskBasedCache$CountingInputStream
-com.android.volley.toolbox.HttpClientStack
-com.android.volley.toolbox.HttpClientStack$HttpPatch
-com.android.volley.toolbox.HttpHeaderParser
-com.android.volley.toolbox.HttpResponse
-com.android.volley.toolbox.HttpStack
-com.android.volley.toolbox.HurlStack
-com.android.volley.toolbox.HurlStack$UrlConnectionInputStream
-com.android.volley.toolbox.HurlStack$UrlRewriter
+com.android.volley.toolbox.DiskBasedCache:
+    private static final int DEFAULT_DISK_USAGE_BYTES
+    private static final float HYSTERESIS_FACTOR
+    private static final int CACHE_MAGIC
+    97:106:public synchronized void clear()
+    193:201:public synchronized void invalidate(java.lang.String,boolean)
+com.android.volley.toolbox.DiskBasedCache$CountingInputStream:
+    515:515:long bytesRead()
+com.android.volley.toolbox.HttpClientStack:
+    private static final java.lang.String HEADER_CONTENT_TYPE
+    69:73:private static java.util.List getPostParameterPairs(java.util.Map)
+com.android.volley.toolbox.HttpClientStack$HttpPatch:
+    public static final java.lang.String METHOD_NAME
+    186:188:public HttpClientStack$HttpPatch(java.net.URI)
+com.android.volley.toolbox.HttpHeaderParser:
+    static final java.lang.String HEADER_CONTENT_TYPE
+    private static final java.lang.String DEFAULT_CONTENT_CHARSET
+    private static final java.lang.String RFC1123_FORMAT
+    34:34:public HttpHeaderParser()
+com.android.volley.toolbox.HurlStack:
+    private static final int HTTP_CONTINUE
 com.android.volley.toolbox.ImageLoader:
-    private int mBatchResponseDelayMs
-    private final android.os.Handler mHandler
-    private java.lang.Runnable mRunnable
     47:87:public ImageLoader(com.android.volley.RequestQueue,com.android.volley.toolbox.ImageLoader$ImageCache)
     100:100:public static com.android.volley.toolbox.ImageLoader$ImageListener getImageListener(android.widget.ImageView,int,int)
     152:152:public boolean isCached(java.lang.String,int,int)
@@ -6386,54 +6272,947 @@ com.android.volley.toolbox.ImageLoader:
     184:184:public com.android.volley.toolbox.ImageLoader$ImageContainer get(java.lang.String,com.android.volley.toolbox.ImageLoader$ImageListener)
     193:193:public com.android.volley.toolbox.ImageLoader$ImageContainer get(java.lang.String,com.android.volley.toolbox.ImageLoader$ImageListener,int,int)
     293:294:public void setBatchedResponseDelay(int)
-    304:316:protected void onGetImageSuccess(java.lang.String,android.graphics.Bitmap)
-    326:335:protected void onGetImageError(java.lang.String,com.android.volley.VolleyError)
-    482:514:private void batchResponse(java.lang.String,com.android.volley.toolbox.ImageLoader$BatchedImageRequest)
-    42:42:static synthetic java.lang.Runnable access$602(com.android.volley.toolbox.ImageLoader,java.lang.Runnable)
 com.android.volley.toolbox.ImageLoader$1
-com.android.volley.toolbox.ImageLoader$2:
-    271:272:public void onResponse(android.graphics.Bitmap)
-    268:268:public bridge synthetic void onResponse(java.lang.Object)
-com.android.volley.toolbox.ImageLoader$3:
-    281:282:public void onErrorResponse(com.android.volley.VolleyError)
-com.android.volley.toolbox.ImageLoader$4
-com.android.volley.toolbox.ImageLoader$BatchedImageRequest:
-    private android.graphics.Bitmap mResponseBitmap
-    private com.android.volley.VolleyError mError
-    442:443:public void setError(com.android.volley.VolleyError)
-    447:447:public com.android.volley.VolleyError getError()
-    416:416:static synthetic android.graphics.Bitmap access$002(com.android.volley.toolbox.ImageLoader$BatchedImageRequest,android.graphics.Bitmap)
-    416:416:static synthetic android.graphics.Bitmap access$000(com.android.volley.toolbox.ImageLoader$BatchedImageRequest)
-com.android.volley.toolbox.ImageLoader$ImageCache:
-    public abstract void putBitmap(java.lang.String,android.graphics.Bitmap)
-com.android.volley.toolbox.ImageLoader$ImageContainer:
-    338:338:static synthetic com.android.volley.toolbox.ImageLoader$ImageListener access$400(com.android.volley.toolbox.ImageLoader$ImageContainer)
-    338:338:static synthetic android.graphics.Bitmap access$502(com.android.volley.toolbox.ImageLoader$ImageContainer,android.graphics.Bitmap)
 com.android.volley.toolbox.ImageRequest:
     public static final int DEFAULT_IMAGE_TIMEOUT_MS
     public static final int DEFAULT_IMAGE_MAX_RETRIES
     public static final float DEFAULT_IMAGE_BACKOFF_MULT
     107:115:public ImageRequest(java.lang.String,com.android.volley.Response$Listener,int,int,android.graphics.Bitmap$Config,com.android.volley.Response$ErrorListener)
-    141:177:private static int getResizedDimension(int,int,int,int,android.widget.ImageView$ScaleType)
-    183:190:protected com.android.volley.Response parseNetworkResponse(com.android.volley.NetworkResponse)
-    195:238:private com.android.volley.Response doParse(com.android.volley.NetworkResponse)
-    253:259:protected void deliverResponse(android.graphics.Bitmap)
-    273:281:static int findBestSampleSize(int,int,int,int)
-    34:34:protected bridge synthetic void deliverResponse(java.lang.Object)
 com.android.volley.toolbox.JsonArrayRequest
 com.android.volley.toolbox.JsonObjectRequest
 com.android.volley.toolbox.JsonRequest
-com.android.volley.toolbox.NetworkImageView:
-    27:27:static synthetic int access$000(com.android.volley.toolbox.NetworkImageView)
-com.android.volley.toolbox.NetworkImageView$1:
-    153:156:public void onErrorResponse(com.android.volley.VolleyError)
 com.android.volley.toolbox.NoCache
-com.android.volley.toolbox.PoolingByteArrayOutputStream
+com.android.volley.toolbox.PoolingByteArrayOutputStream:
+    private static final int DEFAULT_SIZE
+    40:41:public PoolingByteArrayOutputStream(com.android.volley.toolbox.ByteArrayPool)
 com.android.volley.toolbox.RequestFuture
-com.android.volley.toolbox.StringRequest
+com.android.volley.toolbox.StringRequest:
+    64:65:public StringRequest(java.lang.String,com.android.volley.Response$Listener,com.android.volley.Response$ErrorListener)
 com.android.volley.toolbox.Threads:
     6:6:private Threads()
-com.android.volley.toolbox.Volley
+com.android.volley.toolbox.Volley:
+    private static final java.lang.String DEFAULT_CACHE_DIR
+    28:28:public Volley()
+    82:85:public static com.android.volley.RequestQueue newRequestQueue(android.content.Context,com.android.volley.toolbox.HttpStack)
+com.bumptech.glide.BuildConfig
+com.bumptech.glide.GenericTransitionOptions:
+    24:24:public static com.bumptech.glide.GenericTransitionOptions withNoTransition()
+    35:35:public static com.bumptech.glide.GenericTransitionOptions with(int)
+    46:46:public static com.bumptech.glide.GenericTransitionOptions with(com.bumptech.glide.request.transition.ViewPropertyTransition$Animator)
+    57:57:public static com.bumptech.glide.GenericTransitionOptions with(com.bumptech.glide.request.transition.TransitionFactory)
+com.bumptech.glide.Glide:
+    private static final java.lang.String DEFAULT_DISK_CACHE_DIR
+    private static final java.lang.String TAG
+    128:128:public static java.io.File getPhotoCacheDir(android.content.Context)
+    141:153:public static java.io.File getPhotoCacheDir(android.content.Context,java.lang.String)
+    195:199:public static synchronized void init(com.bumptech.glide.Glide)
+    203:207:public static synchronized void init(android.content.Context,com.bumptech.glide.GlideBuilder)
+    211:218:public static synchronized void tearDown()
+    592:593:public varargs void preFillBitmapPool(com.bumptech.glide.load.engine.prefill.PreFillType$Builder[])
+    634:636:public void clearDiskCache()
+    662:668:public com.bumptech.glide.MemoryCategory setMemoryCategory(com.bumptech.glide.MemoryCategory)
+    719:719:public static com.bumptech.glide.RequestManager with(android.app.Activity)
+    732:732:public static com.bumptech.glide.RequestManager with(androidx.fragment.app.FragmentActivity)
+    745:745:public static com.bumptech.glide.RequestManager with(androidx.fragment.app.Fragment)
+    762:762:public static com.bumptech.glide.RequestManager with(android.app.Fragment)
+    792:792:public static com.bumptech.glide.RequestManager with(android.view.View)
+com.bumptech.glide.GlideBuilder:
+    59:60:public com.bumptech.glide.GlideBuilder setBitmapPool(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool)
+    72:73:public com.bumptech.glide.GlideBuilder setArrayPool(com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool)
+    87:88:public com.bumptech.glide.GlideBuilder setMemoryCache(com.bumptech.glide.load.engine.cache.MemoryCache)
+    103:104:public com.bumptech.glide.GlideBuilder setDiskCache(com.bumptech.glide.load.engine.cache.DiskCache$Factory)
+    126:126:public com.bumptech.glide.GlideBuilder setResizeExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor)
+    148:149:public com.bumptech.glide.GlideBuilder setSourceExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor)
+    171:172:public com.bumptech.glide.GlideBuilder setDiskCacheExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor)
+    191:192:public com.bumptech.glide.GlideBuilder setAnimationExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor)
+    207:208:public com.bumptech.glide.GlideBuilder setDefaultRequestOptions(com.bumptech.glide.request.RequestOptions)
+    232:233:public com.bumptech.glide.GlideBuilder setDefaultTransitionOptions(java.lang.Class,com.bumptech.glide.TransitionOptions)
+    249:249:public com.bumptech.glide.GlideBuilder setMemorySizeCalculator(com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder)
+    266:267:public com.bumptech.glide.GlideBuilder setMemorySizeCalculator(com.bumptech.glide.load.engine.cache.MemorySizeCalculator)
+    282:283:public com.bumptech.glide.GlideBuilder setConnectivityMonitorFactory(com.bumptech.glide.manager.ConnectivityMonitorFactory)
+    315:320:public com.bumptech.glide.GlideBuilder setLogLevel(int)
+    371:372:public com.bumptech.glide.GlideBuilder setIsActiveResourceRetentionAllowed(boolean)
+    381:382:com.bumptech.glide.GlideBuilder setEngine(com.bumptech.glide.load.engine.Engine)
+com.bumptech.glide.GlideContext:
+    85:85:public android.os.Handler getMainHandler()
+com.bumptech.glide.ListPreloader
+com.bumptech.glide.ListPreloader$PreloadModelProvider
+com.bumptech.glide.ListPreloader$PreloadSizeProvider
+com.bumptech.glide.ListPreloader$PreloadTarget
+com.bumptech.glide.ListPreloader$PreloadTargetQueue
+com.bumptech.glide.MemoryCategory:
+    32:32:public float getMultiplier()
+com.bumptech.glide.ModelTypes
+com.bumptech.glide.R
+com.bumptech.glide.R$attr
+com.bumptech.glide.R$bool
+com.bumptech.glide.R$color
+com.bumptech.glide.R$dimen
+com.bumptech.glide.R$drawable
+com.bumptech.glide.R$id
+com.bumptech.glide.R$integer
+com.bumptech.glide.R$layout
+com.bumptech.glide.R$string
+com.bumptech.glide.R$style
+com.bumptech.glide.R$styleable
+com.bumptech.glide.Registry:
+    public static final java.lang.String BUCKET_GIF
+    public static final java.lang.String BUCKET_BITMAP
+    public static final java.lang.String BUCKET_BITMAP_DRAWABLE
+    private static final java.lang.String BUCKET_PREPEND_ALL
+    private static final java.lang.String BUCKET_APPEND_ALL
+    89:89:public com.bumptech.glide.Registry register(java.lang.Class,com.bumptech.glide.load.Encoder)
+    126:127:public com.bumptech.glide.Registry prepend(java.lang.Class,com.bumptech.glide.load.Encoder)
+    215:216:public com.bumptech.glide.Registry prepend(java.lang.Class,java.lang.Class,com.bumptech.glide.load.ResourceDecoder)
+    246:247:public com.bumptech.glide.Registry prepend(java.lang.String,java.lang.Class,java.lang.Class,com.bumptech.glide.load.ResourceDecoder)
+    295:295:public com.bumptech.glide.Registry register(java.lang.Class,com.bumptech.glide.load.ResourceEncoder)
+    336:337:public com.bumptech.glide.Registry prepend(java.lang.Class,com.bumptech.glide.load.ResourceEncoder)
+    435:436:public com.bumptech.glide.Registry prepend(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+    467:468:public com.bumptech.glide.Registry replace(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+com.bumptech.glide.RequestBuilder:
+    92:96:protected RequestBuilder(java.lang.Class,com.bumptech.glide.RequestBuilder)
+    139:141:public com.bumptech.glide.RequestBuilder transition(com.bumptech.glide.TransitionOptions)
+    160:161:public com.bumptech.glide.RequestBuilder listener(com.bumptech.glide.request.RequestListener)
+    175:181:public com.bumptech.glide.RequestBuilder addListener(com.bumptech.glide.request.RequestListener)
+    208:209:public com.bumptech.glide.RequestBuilder error(com.bumptech.glide.RequestBuilder)
+    235:237:public com.bumptech.glide.RequestBuilder thumbnail(com.bumptech.glide.RequestBuilder)
+    273:298:public varargs com.bumptech.glide.RequestBuilder thumbnail(com.bumptech.glide.RequestBuilder[])
+    335:340:public com.bumptech.glide.RequestBuilder thumbnail(float)
+    386:387:public com.bumptech.glide.RequestBuilder load(android.graphics.Bitmap)
+    413:414:public com.bumptech.glide.RequestBuilder load(android.graphics.drawable.Drawable)
+    465:465:public com.bumptech.glide.RequestBuilder load(android.net.Uri)
+    489:489:public com.bumptech.glide.RequestBuilder load(java.io.File)
+    528:528:public com.bumptech.glide.RequestBuilder load(java.lang.Integer)
+    544:544:public com.bumptech.glide.RequestBuilder load(java.net.URL)
+    559:566:public com.bumptech.glide.RequestBuilder load(byte[])
+    729:729:public com.bumptech.glide.request.FutureTarget into(int,int)
+    746:746:public com.bumptech.glide.request.FutureTarget submit()
+    763:779:public com.bumptech.glide.request.FutureTarget submit(int,int)
+    802:803:public com.bumptech.glide.request.target.Target preload(int,int)
+    817:817:public com.bumptech.glide.request.target.Target preload()
+    833:833:public com.bumptech.glide.request.target.Target downloadOnly(com.bumptech.glide.request.target.Target)
+    851:851:public com.bumptech.glide.request.FutureTarget downloadOnly(int,int)
+    857:857:protected com.bumptech.glide.RequestBuilder getDownloadOnlyRequest()
+    47:47:public bridge synthetic java.lang.Object load(java.lang.Object)
+    47:47:public bridge synthetic java.lang.Object load(byte[])
+    47:47:public bridge synthetic java.lang.Object load(java.net.URL)
+    47:47:public bridge synthetic java.lang.Object load(java.lang.Integer)
+    47:47:public bridge synthetic java.lang.Object load(java.io.File)
+    47:47:public bridge synthetic java.lang.Object load(android.net.Uri)
+    47:47:public bridge synthetic java.lang.Object load(java.lang.String)
+    47:47:public bridge synthetic java.lang.Object load(android.graphics.drawable.Drawable)
+    47:47:public bridge synthetic java.lang.Object load(android.graphics.Bitmap)
+com.bumptech.glide.RequestBuilder$1
+com.bumptech.glide.RequestManager:
+    128:129:private void updateRequestOptions(com.bumptech.glide.request.RequestOptions)
+    151:152:public com.bumptech.glide.RequestManager applyDefaultRequestOptions(com.bumptech.glide.request.RequestOptions)
+    173:174:public com.bumptech.glide.RequestManager setDefaultRequestOptions(com.bumptech.glide.request.RequestOptions)
+    184:185:public boolean isPaused()
+    220:222:public void pauseAllRequests()
+    241:246:public void pauseRequestsRecursive()
+    267:272:public void resumeRequestsRecursive()
+    341:341:public com.bumptech.glide.RequestBuilder asGif()
+    369:369:public com.bumptech.glide.RequestBuilder load(android.graphics.Bitmap)
+    381:381:public com.bumptech.glide.RequestBuilder load(android.graphics.drawable.Drawable)
+    405:405:public com.bumptech.glide.RequestBuilder load(android.net.Uri)
+    417:417:public com.bumptech.glide.RequestBuilder load(java.io.File)
+    430:430:public com.bumptech.glide.RequestBuilder load(java.lang.Integer)
+    443:443:public com.bumptech.glide.RequestBuilder load(java.net.URL)
+    456:456:public com.bumptech.glide.RequestBuilder load(byte[])
+    469:469:public com.bumptech.glide.RequestBuilder load(java.lang.Object)
+    486:486:public com.bumptech.glide.RequestBuilder downloadOnly()
+    498:498:public com.bumptech.glide.RequestBuilder download(java.lang.Object)
+    513:513:public com.bumptech.glide.RequestBuilder asFile()
+    544:545:public void clear(android.view.View)
+    50:50:public bridge synthetic java.lang.Object load(java.lang.Object)
+    50:50:public bridge synthetic java.lang.Object load(byte[])
+    50:50:public bridge synthetic java.lang.Object load(java.net.URL)
+    50:50:public bridge synthetic java.lang.Object load(java.lang.Integer)
+    50:50:public bridge synthetic java.lang.Object load(java.io.File)
+    50:50:public bridge synthetic java.lang.Object load(android.net.Uri)
+    50:50:public bridge synthetic java.lang.Object load(java.lang.String)
+    50:50:public bridge synthetic java.lang.Object load(android.graphics.drawable.Drawable)
+    50:50:public bridge synthetic java.lang.Object load(android.graphics.Bitmap)
+com.bumptech.glide.RequestManager$ClearTarget
+com.bumptech.glide.TransitionOptions:
+    29:29:public final com.bumptech.glide.TransitionOptions dontTransition()
+    43:43:public final com.bumptech.glide.TransitionOptions transition(int)
+    57:57:public final com.bumptech.glide.TransitionOptions transition(com.bumptech.glide.request.transition.ViewPropertyTransition$Animator)
+    70:71:public final com.bumptech.glide.TransitionOptions transition(com.bumptech.glide.request.transition.TransitionFactory)
+    97:97:private com.bumptech.glide.TransitionOptions self()
+com.bumptech.glide.annotation.Excludes
+com.bumptech.glide.annotation.GlideExtension
+com.bumptech.glide.annotation.GlideModule
+com.bumptech.glide.annotation.GlideOption
+com.bumptech.glide.annotation.GlideType
+com.bumptech.glide.annotation.compiler.Index
+com.bumptech.glide.disklrucache.DiskLruCache:
+    static final java.lang.String JOURNAL_FILE
+    static final java.lang.String JOURNAL_FILE_TEMP
+    static final java.lang.String JOURNAL_FILE_BACKUP
+    static final java.lang.String MAGIC
+    static final java.lang.String VERSION_1
+    static final long ANY_SEQUENCE_NUMBER
+    private static final java.lang.String CLEAN
+    private static final java.lang.String DIRTY
+    private static final java.lang.String REMOVE
+    private static final java.lang.String READ
+    474:474:public java.io.File getDirectory()
+    482:482:public synchronized long getMaxSize()
+    490:492:public synchronized void setMaxSize(long)
+    500:500:public synchronized long size()
+    615:615:public synchronized boolean isClosed()
+    626:629:public synchronized void flush()
+    664:664:private static java.lang.String inputStreamToString(java.io.InputStream)
+    86:86:static synthetic com.bumptech.glide.disklrucache.DiskLruCache$Editor access$1700(com.bumptech.glide.disklrucache.DiskLruCache,java.lang.String,long)
+    86:86:static synthetic java.lang.String access$1800(java.io.InputStream)
+com.bumptech.glide.disklrucache.DiskLruCache$Editor:
+    722:734:private java.io.InputStream newInputStream(int)
+    742:743:public java.lang.String getString(int)
+    764:772:public void set(int,java.lang.String)
+com.bumptech.glide.disklrucache.DiskLruCache$Value:
+    687:687:public com.bumptech.glide.disklrucache.DiskLruCache$Editor edit()
+    696:697:public java.lang.String getString(int)
+    702:702:public long getLength(int)
+com.bumptech.glide.disklrucache.StrictLineReader:
+    private static final byte CR
+    private static final byte LF
+com.bumptech.glide.disklrucache.Util:
+    31:32:private Util()
+    36:44:static java.lang.String readFully(java.io.Reader)
+com.bumptech.glide.gifdecoder.BuildConfig
+com.bumptech.glide.gifdecoder.GifDecoder:
+    public static final int STATUS_OK
+    public static final int STATUS_FORMAT_ERROR
+    public static final int STATUS_OPEN_ERROR
+    public static final int STATUS_PARTIAL_DECODE
+    public static final int TOTAL_ITERATION_COUNT_FOREVER
+    public abstract int getWidth()
+    public abstract int getHeight()
+    public abstract int getStatus()
+    public abstract int getDelay(int)
+    public abstract int getLoopCount()
+    public abstract int getNetscapeLoopCount()
+    public abstract int getTotalIterationCount()
+    public abstract int read(java.io.InputStream,int)
+    public abstract void setData(com.bumptech.glide.gifdecoder.GifHeader,byte[])
+    public abstract void setData(com.bumptech.glide.gifdecoder.GifHeader,java.nio.ByteBuffer)
+    public abstract void setData(com.bumptech.glide.gifdecoder.GifHeader,java.nio.ByteBuffer,int)
+    public abstract int read(byte[])
+com.bumptech.glide.gifdecoder.GifDecoder$GifDecodeStatus
+com.bumptech.glide.gifdecoder.GifFrame:
+    static final int DISPOSAL_UNSPECIFIED
+    static final int DISPOSAL_NONE
+    static final int DISPOSAL_BACKGROUND
+    static final int DISPOSAL_PREVIOUS
+com.bumptech.glide.gifdecoder.GifHeader:
+    public static final int NETSCAPE_LOOP_COUNT_FOREVER
+    public static final int NETSCAPE_LOOP_COUNT_DOES_NOT_EXIST
+com.bumptech.glide.gifdecoder.GifHeaderParser:
+    private static final java.lang.String TAG
+    private static final int MASK_INT_LOWEST_BYTE
+    private static final int IMAGE_SEPARATOR
+    private static final int EXTENSION_INTRODUCER
+    private static final int TRAILER
+    private static final int LABEL_GRAPHIC_CONTROL_EXTENSION
+    private static final int LABEL_APPLICATION_EXTENSION
+    private static final int LABEL_COMMENT_EXTENSION
+    private static final int LABEL_PLAIN_TEXT_EXTENSION
+    private static final int GCE_MASK_DISPOSAL_METHOD
+    private static final int GCE_DISPOSAL_METHOD_SHIFT
+    private static final int GCE_MASK_TRANSPARENT_COLOR_FLAG
+    private static final int DESCRIPTOR_MASK_LCT_FLAG
+    private static final int DESCRIPTOR_MASK_INTERLACE_FLAG
+    private static final int DESCRIPTOR_MASK_LCT_SIZE
+    private static final int LSD_MASK_GCT_FLAG
+    private static final int LSD_MASK_GCT_SIZE
+    static final int MIN_FRAME_DELAY
+    static final int DEFAULT_FRAME_DELAY
+    private static final int MAX_BLOCK_SIZE
+    136:142:public com.bumptech.glide.gifdecoder.GifHeaderParser setData(byte[])
+    182:186:public boolean isAnimated()
+com.bumptech.glide.gifdecoder.R
+com.bumptech.glide.gifdecoder.StandardGifDecoder:
+    private static final int MAX_STACK_SIZE
+    private static final int NULL_CODE
+    private static final int INITIAL_FRAME_POINTER
+    private static final int BYTES_PER_INTEGER
+    private static final int MASK_INT_LOWEST_BYTE
+    private static final int COLOR_TRANSPARENT_BLACK
+    private com.bumptech.glide.gifdecoder.GifHeaderParser parser
+    126:127:public StandardGifDecoder(com.bumptech.glide.gifdecoder.GifDecoder$BitmapProvider,com.bumptech.glide.gifdecoder.GifHeader,java.nio.ByteBuffer)
+    144:144:public int getWidth()
+    149:149:public int getHeight()
+    160:160:public int getStatus()
+    204:207:public int getLoopCount()
+    212:212:public int getNetscapeLoopCount()
+    217:223:public int getTotalIterationCount()
+    289:316:public int read(java.io.InputStream,int)
+    341:342:public synchronized void setData(com.bumptech.glide.gifdecoder.GifHeader,byte[])
+    346:347:public synchronized void setData(com.bumptech.glide.gifdecoder.GifHeader,java.nio.ByteBuffer)
+    385:388:private com.bumptech.glide.gifdecoder.GifHeaderParser getHeaderParser()
+    394:399:public synchronized int read(byte[])
+com.bumptech.glide.load.HttpException:
+    private static final long serialVersionUID
+    public static final int UNKNOWN
+    43:43:public int getStatusCode()
+com.bumptech.glide.load.ImageHeaderParser:
+    public static final int UNKNOWN_ORIENTATION
+    public abstract int getOrientation(java.nio.ByteBuffer,com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool)
+com.bumptech.glide.load.ImageHeaderParserUtils:
+    private static final int MARK_POSITION
+    21:21:private ImageHeaderParserUtils()
+com.bumptech.glide.load.Key:
+    public static final java.lang.String STRING_CHARSET_NAME
+com.bumptech.glide.load.MultiTransformation
+com.bumptech.glide.load.Option:
+    75:75:public static com.bumptech.glide.load.Option disk(java.lang.String,com.bumptech.glide.load.Option$CacheKeyUpdater)
+com.bumptech.glide.load.data.AssetPathFetcher:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.data.ExifOrientationStream:
+    private static final int SEGMENT_START_POSITION
+com.bumptech.glide.load.data.HttpUrlFetcher:
+    private static final java.lang.String TAG
+    private static final int MAXIMUM_REDIRECTS
+    private static final int INVALID_STATUS_CODE
+com.bumptech.glide.load.data.InputStreamRewinder:
+    private static final int MARK_LIMIT
+com.bumptech.glide.load.data.LocalUriFetcher:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.data.StreamLocalUriFetcher:
+    private static final int ID_CONTACTS_LOOKUP
+    private static final int ID_CONTACTS_THUMBNAIL
+    private static final int ID_CONTACTS_CONTACT
+    private static final int ID_CONTACTS_PHOTO
+    private static final int ID_LOOKUP_BY_PHONE
+com.bumptech.glide.load.data.mediastore.MediaStoreUtil:
+    private static final int MINI_THUMB_WIDTH
+    private static final int MINI_THUMB_HEIGHT
+    15:17:private MediaStoreUtil()
+com.bumptech.glide.load.data.mediastore.ThumbFetcher:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.data.mediastore.ThumbFetcher$ImageThumbnailQuery:
+    private static final java.lang.String PATH_SELECTION
+com.bumptech.glide.load.data.mediastore.ThumbFetcher$VideoThumbnailQuery:
+    private static final java.lang.String PATH_SELECTION
+com.bumptech.glide.load.data.mediastore.ThumbnailStreamOpener:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.ActiveResources:
+    private static final int MSG_CLEAN_REF
+    148:149:void setDequeuedResourceCallback(com.bumptech.glide.load.engine.ActiveResources$DequeuedResourceCallback)
+    158:172:void shutdown()
+com.bumptech.glide.load.engine.DataCacheKey:
+    21:21:com.bumptech.glide.load.Key getSourceKey()
+com.bumptech.glide.load.engine.DecodeHelper:
+    132:132:java.lang.Class getModelClass()
+com.bumptech.glide.load.engine.DecodeJob:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.DecodePath:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.Engine:
+    private static final java.lang.String TAG
+    private static final int JOB_POOL_SIZE
+    334:335:public void clearDiskCache()
+    339:342:public void shutdown()
+com.bumptech.glide.load.engine.Engine$EngineJobFactory:
+    488:492:void shutdown()
+    511:523:private static void shutdownAndAwaitTermination(java.util.concurrent.ExecutorService)
+com.bumptech.glide.load.engine.Engine$LazyDiskCacheProvider:
+    372:376:synchronized void clearDiskCacheIfCreated()
+com.bumptech.glide.load.engine.EngineJob:
+    private static final int MSG_COMPLETE
+    private static final int MSG_EXCEPTION
+    private static final int MSG_CANCELLED
+    190:190:boolean isCancelled()
+com.bumptech.glide.load.engine.GlideException:
+    private static final long serialVersionUID
+com.bumptech.glide.load.engine.GlideException$IndentedAppendable:
+    private static final java.lang.String EMPTY_SEQUENCE
+    private static final java.lang.String INDENT
+com.bumptech.glide.load.engine.Jobs:
+    15:15:java.util.Map getAll()
+com.bumptech.glide.load.engine.LoadPath:
+    75:75:public java.lang.Class getDataClass()
+com.bumptech.glide.load.engine.ResourceRecycler$ResourceRecyclerCallback:
+    static final int RECYCLE_RESOURCE
+com.bumptech.glide.load.engine.SourceGenerator:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool:
+    public static final int STANDARD_BUFFER_SIZE_BYTES
+    public abstract void put(java.lang.Object,java.lang.Class)
+com.bumptech.glide.load.engine.bitmap_recycle.BaseKeyPool:
+    private static final int MAX_SIZE
+com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool:
+    public abstract long getMaxSize()
+    public abstract void setSizeMultiplier(float)
+com.bumptech.glide.load.engine.bitmap_recycle.BitmapPoolAdapter:
+    14:14:public long getMaxSize()
+    20:20:public void setSizeMultiplier(float)
+com.bumptech.glide.load.engine.bitmap_recycle.ByteArrayAdapter:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.bitmap_recycle.IntegerArrayAdapter:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.engine.bitmap_recycle.LruArrayPool:
+    private static final int DEFAULT_SIZE
+    static final int MAX_OVER_SIZE_MULTIPLE
+    private static final int SINGLE_ARRAY_MAX_SIZE_DIVISOR
+    54:55:public void put(java.lang.Object,java.lang.Class)
+    213:220:int getCurrentSize()
+com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool:
+    private static final java.lang.String TAG
+    68:69:public LruBitmapPool(long,java.util.Set)
+    78:80:public synchronized void setSizeMultiplier(float)
+com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool$ThrowingBitmapTracker
+com.bumptech.glide.load.engine.bitmap_recycle.PrettyPrintTreeMap
+com.bumptech.glide.load.engine.bitmap_recycle.SizeConfigStrategy:
+    private static final int MAX_SIZE_MULTIPLE
+com.bumptech.glide.load.engine.bitmap_recycle.SizeConfigStrategy$Key:
+    205:207:SizeConfigStrategy$Key(com.bumptech.glide.load.engine.bitmap_recycle.SizeConfigStrategy$KeyPool,int,android.graphics.Bitmap$Config)
+com.bumptech.glide.load.engine.bitmap_recycle.SizeStrategy
+com.bumptech.glide.load.engine.bitmap_recycle.SizeStrategy$Key
+com.bumptech.glide.load.engine.bitmap_recycle.SizeStrategy$KeyPool
+com.bumptech.glide.load.engine.cache.DiskCache:
+    public abstract void delete(com.bumptech.glide.load.Key)
+    public abstract void clear()
+com.bumptech.glide.load.engine.cache.DiskCache$Factory:
+    public static final int DEFAULT_DISK_CACHE_SIZE
+    public static final java.lang.String DEFAULT_DISK_CACHE_DIR
+com.bumptech.glide.load.engine.cache.DiskCacheAdapter:
+    24:24:public void delete(com.bumptech.glide.load.Key)
+    29:29:public void clear()
+com.bumptech.glide.load.engine.cache.DiskCacheAdapter$Factory
+com.bumptech.glide.load.engine.cache.DiskCacheWriteLocker$WriteLockPool:
+    private static final int MAX_POOL_SIZE
+com.bumptech.glide.load.engine.cache.DiskLruCacheFactory:
+    26:32:public DiskLruCacheFactory(java.lang.String,long)
+    36:42:public DiskLruCacheFactory(java.lang.String,java.lang.String,long)
+com.bumptech.glide.load.engine.cache.DiskLruCacheFactory$1
+com.bumptech.glide.load.engine.cache.DiskLruCacheFactory$2
+com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper:
+    private static final java.lang.String TAG
+    private static final int APP_VERSION
+    private static final int VALUE_COUNT
+    private static com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper wrapper
+    49:52:public static synchronized com.bumptech.glide.load.engine.cache.DiskCache get(java.io.File,long)
+    152:160:public void delete(com.bumptech.glide.load.Key)
+    165:176:public synchronized void clear()
+    179:180:private synchronized void resetDiskCache()
+com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory
+com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory$1
+com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory
+com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory$1
+com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory:
+    20:21:public InternalCacheDiskCacheFactory(android.content.Context,long)
+com.bumptech.glide.load.engine.cache.MemoryCache:
+    public abstract long getCurrentSize()
+    public abstract long getMaxSize()
+    public abstract void setSizeMultiplier(float)
+com.bumptech.glide.load.engine.cache.MemoryCacheAdapter
+com.bumptech.glide.load.engine.cache.MemorySizeCalculator:
+    private static final java.lang.String TAG
+    static final int BYTES_PER_ARGB_8888_PIXEL
+    private static final int LOW_MEMORY_BYTE_ARRAY_POOL_DIVISOR
+com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder:
+    static final int MEMORY_CACHE_TARGET_SCREENS
+    static final float MAX_SIZE_MULTIPLIER
+    static final float LOW_MEMORY_MAX_SIZE_MULTIPLIER
+    static final int ARRAY_POOL_SIZE_BYTES
+    187:190:public com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setMemoryCacheScreens(float)
+    199:202:public com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setBitmapPoolScreens(float)
+    212:215:public com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setMaxSizeMultiplier(float)
+    227:231:public com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setLowMemoryMaxSizeMultiplier(float)
+    243:244:public com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setArrayPoolSize(int)
+    249:250:com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setActivityManager(android.app.ActivityManager)
+    255:256:com.bumptech.glide.load.engine.cache.MemorySizeCalculator$Builder setScreenDimensions(com.bumptech.glide.load.engine.cache.MemorySizeCalculator$ScreenDimensions)
+com.bumptech.glide.load.engine.executor.GlideExecutor:
+    private static final java.lang.String DEFAULT_SOURCE_EXECUTOR_NAME
+    private static final java.lang.String DEFAULT_DISK_CACHE_EXECUTOR_NAME
+    private static final int DEFAULT_DISK_CACHE_EXECUTOR_THREADS
+    private static final java.lang.String TAG
+    private static final java.lang.String SOURCE_UNLIMITED_EXECUTOR_NAME
+    private static final java.lang.String ANIMATION_EXECUTOR_NAME
+    private static final int MAXIMUM_AUTOMATIC_THREAD_COUNT
+    100:100:public static com.bumptech.glide.load.engine.executor.GlideExecutor newDiskCacheExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy)
+    165:166:public static com.bumptech.glide.load.engine.executor.GlideExecutor newSourceExecutor(com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy)
+com.bumptech.glide.load.engine.executor.GlideExecutor$DefaultThreadFactory:
+    private static final int DEFAULT_PRIORITY
+com.bumptech.glide.load.engine.executor.RuntimeCompat:
+    private static final java.lang.String TAG
+    private static final java.lang.String CPU_NAME_REGEX
+    private static final java.lang.String CPU_LOCATION
+    19:21:private RuntimeCompat()
+com.bumptech.glide.load.engine.prefill.BitmapPreFillRunner
+com.bumptech.glide.load.engine.prefill.BitmapPreFillRunner$Clock
+com.bumptech.glide.load.engine.prefill.BitmapPreFillRunner$UniqueKey
+com.bumptech.glide.load.engine.prefill.BitmapPreFiller:
+    private com.bumptech.glide.load.engine.prefill.BitmapPreFillRunner current
+    36:54:public varargs void preFill(com.bumptech.glide.load.engine.prefill.PreFillType$Builder[])
+    58:76:varargs com.bumptech.glide.load.engine.prefill.PreFillQueue generateAllocationOrder(com.bumptech.glide.load.engine.prefill.PreFillType[])
+    80:80:private static int getSizeInBytes(com.bumptech.glide.load.engine.prefill.PreFillType)
+com.bumptech.glide.load.engine.prefill.PreFillQueue
+com.bumptech.glide.load.engine.prefill.PreFillType
+com.bumptech.glide.load.engine.prefill.PreFillType$Builder
+com.bumptech.glide.load.model.AssetUriLoader:
+    private static final java.lang.String ASSET_PATH_SEGMENT
+    private static final java.lang.String ASSET_PREFIX
+com.bumptech.glide.load.model.AssetUriLoader$FileDescriptorFactory:
+    109:109:public void teardown()
+com.bumptech.glide.load.model.AssetUriLoader$StreamFactory:
+    79:79:public void teardown()
+com.bumptech.glide.load.model.ByteArrayLoader$ByteBufferFactory:
+    119:119:public void teardown()
+com.bumptech.glide.load.model.ByteArrayLoader$StreamFactory:
+    146:146:public void teardown()
+com.bumptech.glide.load.model.ByteBufferEncoder:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.model.ByteBufferFileLoader:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.model.ByteBufferFileLoader$Factory:
+    47:47:public void teardown()
+com.bumptech.glide.load.model.DataUrlLoader:
+    private static final java.lang.String DATA_SCHEME_IMAGE
+    private static final java.lang.String BASE64_TAG
+com.bumptech.glide.load.model.DataUrlLoader$StreamFactory:
+    169:169:public void teardown()
+com.bumptech.glide.load.model.FileLoader:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.model.FileLoader$Factory:
+    128:128:public final void teardown()
+com.bumptech.glide.load.model.GlideUrl:
+    private static final java.lang.String ALLOWED_URI_CHARS
+    83:83:public java.lang.String toStringUrl()
+com.bumptech.glide.load.model.LazyHeaders$Builder:
+    private static final java.lang.String USER_AGENT_HEADER
+    136:136:public com.bumptech.glide.load.model.LazyHeaders$Builder addHeader(java.lang.String,java.lang.String)
+    150:156:public com.bumptech.glide.load.model.LazyHeaders$Builder addHeader(java.lang.String,com.bumptech.glide.load.model.LazyHeaderFactory)
+    170:170:public com.bumptech.glide.load.model.LazyHeaders$Builder setHeader(java.lang.String,java.lang.String)
+    180:193:public com.bumptech.glide.load.model.LazyHeaders$Builder setHeader(java.lang.String,com.bumptech.glide.load.model.LazyHeaderFactory)
+    197:202:private java.util.List getFactories(java.lang.String)
+    206:210:private void copyIfNecessary()
+    221:227:private java.util.Map copyHeaders()
+com.bumptech.glide.load.model.MediaStoreFileLoader$Factory:
+    121:121:public void teardown()
+com.bumptech.glide.load.model.ModelCache:
+    private static final int DEFAULT_SIZE
+    72:73:public void clear()
+com.bumptech.glide.load.model.ModelLoaderFactory:
+    public abstract void teardown()
+com.bumptech.glide.load.model.ModelLoaderRegistry:
+    44:46:public synchronized void prepend(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+    50:52:public synchronized void remove(java.lang.Class,java.lang.Class)
+    58:60:public synchronized void replace(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+    64:67:private void tearDown(java.util.List)
+    94:94:public synchronized com.bumptech.glide.load.model.ModelLoader build(java.lang.Class,java.lang.Class)
+com.bumptech.glide.load.model.MultiModelLoaderFactory:
+    53:54:synchronized void prepend(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+    70:73:synchronized java.util.List replace(java.lang.Class,java.lang.Class,com.bumptech.glide.load.model.ModelLoaderFactory)
+    80:88:synchronized java.util.List remove(java.lang.Class,java.lang.Class)
+    173:173:private com.bumptech.glide.load.model.ModelLoaderFactory getFactory(com.bumptech.glide.load.model.MultiModelLoaderFactory$Entry)
+com.bumptech.glide.load.model.ResourceLoader:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.model.ResourceLoader$AssetFileDescriptorFactory:
+    129:129:public void teardown()
+com.bumptech.glide.load.model.ResourceLoader$FileDescriptorFactory:
+    105:105:public void teardown()
+com.bumptech.glide.load.model.ResourceLoader$StreamFactory:
+    80:80:public void teardown()
+com.bumptech.glide.load.model.ResourceLoader$UriFactory:
+    152:152:public void teardown()
+com.bumptech.glide.load.model.StreamEncoder:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.model.StringLoader$AssetFileDescriptorFactory:
+    119:119:public void teardown()
+com.bumptech.glide.load.model.StringLoader$FileDescriptorFactory:
+    101:101:public void teardown()
+com.bumptech.glide.load.model.StringLoader$StreamFactory:
+    82:82:public void teardown()
+com.bumptech.glide.load.model.UnitModelLoader$Factory:
+    117:117:public void teardown()
+com.bumptech.glide.load.model.UriLoader$AssetFileDescriptorFactory:
+    147:147:public void teardown()
+com.bumptech.glide.load.model.UriLoader$FileDescriptorFactory:
+    123:123:public void teardown()
+com.bumptech.glide.load.model.UriLoader$StreamFactory:
+    93:93:public void teardown()
+com.bumptech.glide.load.model.UrlUriLoader$StreamFactory:
+    62:62:public void teardown()
+com.bumptech.glide.load.model.stream.BaseGlideUrlLoader
+com.bumptech.glide.load.model.stream.HttpGlideUrlLoader$Factory:
+    78:78:public void teardown()
+com.bumptech.glide.load.model.stream.HttpUriLoader$Factory:
+    56:56:public void teardown()
+com.bumptech.glide.load.model.stream.MediaStoreImageThumbLoader$Factory:
+    63:63:public void teardown()
+com.bumptech.glide.load.model.stream.MediaStoreVideoThumbLoader$Factory:
+    77:77:public void teardown()
+com.bumptech.glide.load.model.stream.UrlLoader$StreamFactory:
+    52:52:public void teardown()
+com.bumptech.glide.load.resource.bitmap.BitmapDrawableDecoder:
+    28:29:public BitmapDrawableDecoder(android.content.Context,com.bumptech.glide.load.ResourceDecoder)
+    40:41:public BitmapDrawableDecoder(android.content.res.Resources,com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,com.bumptech.glide.load.ResourceDecoder)
+com.bumptech.glide.load.resource.bitmap.BitmapDrawableResource
+com.bumptech.glide.load.resource.bitmap.BitmapDrawableTransformation
+com.bumptech.glide.load.resource.bitmap.BitmapEncoder:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
+com.bumptech.glide.load.resource.bitmap.CenterCrop:
+    private static final java.lang.String ID
+com.bumptech.glide.load.resource.bitmap.CenterInside:
+    private static final java.lang.String ID
+com.bumptech.glide.load.resource.bitmap.CircleCrop
+com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser:
+    private static final java.lang.String TAG
+    private static final int GIF_HEADER
+    private static final int PNG_HEADER
+    static final int EXIF_MAGIC_NUMBER
+    private static final int MOTOROLA_TIFF_MAGIC_NUMBER
+    private static final int INTEL_TIFF_MAGIC_NUMBER
+    private static final java.lang.String JPEG_EXIF_SEGMENT_PREAMBLE
+    private static final int SEGMENT_SOS
+    private static final int MARKER_EOI
+    static final int SEGMENT_START_ID
+    static final int EXIF_SEGMENT_TYPE
+    private static final int ORIENTATION_TAG_TYPE
+    private static final int RIFF_HEADER
+    private static final int WEBP_HEADER
+    private static final int VP8_HEADER
+    private static final int VP8_HEADER_MASK
+    private static final int VP8_HEADER_TYPE_MASK
+    private static final int VP8_HEADER_TYPE_EXTENDED
+    private static final int VP8_HEADER_TYPE_LOSSLESS
+    private static final int WEBP_EXTENDED_ALPHA_FLAG
+    private static final int WEBP_LOSSLESS_ALPHA_FLAG
+    82:83:public int getOrientation(java.nio.ByteBuffer,com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool)
+com.bumptech.glide.load.resource.bitmap.Downsampler:
+    static final java.lang.String TAG
+    private static final java.lang.String WBMP_MIME_TYPE
+    private static final java.lang.String ICO_MIME_TYPE
+    private static final int MARK_POSITION
+com.bumptech.glide.load.resource.bitmap.DrawableToBitmapConverter:
+    private static final java.lang.String TAG
+    24:26:private DrawableToBitmapConverter()
+com.bumptech.glide.load.resource.bitmap.ExifInterfaceImageHeaderParser:
+    52:52:public int getOrientation(java.nio.ByteBuffer,com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool)
+com.bumptech.glide.load.resource.bitmap.FitCenter:
+    private static final java.lang.String ID
+com.bumptech.glide.load.resource.bitmap.HardwareConfigState:
+    private static final int MIN_HARDWARE_DIMENSION
+    private static final int MINIMUM_DECODES_BETWEEN_FD_CHECKS
+    private static final int MAXIMUM_FDS_FOR_HARDWARE_CONFIGS
+com.bumptech.glide.load.resource.bitmap.LazyBitmapDrawableResource:
+    31:35:public static com.bumptech.glide.load.resource.bitmap.LazyBitmapDrawableResource obtain(android.content.Context,android.graphics.Bitmap)
+    45:46:public static com.bumptech.glide.load.resource.bitmap.LazyBitmapDrawableResource obtain(android.content.res.Resources,com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,android.graphics.Bitmap)
+com.bumptech.glide.load.resource.bitmap.RecyclableBufferedInputStream$InvalidMarkException:
+    private static final long serialVersionUID
+com.bumptech.glide.load.resource.bitmap.RoundedCorners
+com.bumptech.glide.load.resource.bitmap.TransformationUtils:
+    private static final java.lang.String TAG
+    public static final int PAINT_FLAGS
+    private static final int CIRCLE_CROP_PAINT_FLAGS
+    98:100:private TransformationUtils()
+    259:272:public static android.graphics.Bitmap rotateImage(android.graphics.Bitmap,int)
+    368:408:public static android.graphics.Bitmap circleCrop(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,android.graphics.Bitmap,int,int)
+    413:424:private static android.graphics.Bitmap getAlphaSafeBitmap(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,android.graphics.Bitmap)
+    429:436:private static android.graphics.Bitmap$Config getAlphaSafeConfig(android.graphics.Bitmap)
+    459:459:public static android.graphics.Bitmap roundedCorners(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,android.graphics.Bitmap,int,int,int)
+    477:506:public static android.graphics.Bitmap roundedCorners(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,android.graphics.Bitmap,int)
+com.bumptech.glide.load.resource.bitmap.VideoBitmapDecoder
+com.bumptech.glide.load.resource.bitmap.VideoDecoder:
+    private static final java.lang.String TAG
+    public static final long DEFAULT_FRAME
+    static final int DEFAULT_FRAME_OPTION
+com.bumptech.glide.load.resource.drawable.DrawableDecoderCompat:
+    20:22:private DrawableDecoderCompat()
+com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+com.bumptech.glide.load.resource.drawable.ResourceDrawableDecoder:
+    private static final int NAME_URI_PATH_SEGMENTS
+    private static final int TYPE_PATH_SEGMENT_INDEX
+    private static final int NAME_PATH_SEGMENT_INDEX
+    private static final int ID_PATH_SEGMENTS
+    private static final int RESOURCE_ID_SEGMENT_INDEX
+com.bumptech.glide.load.resource.gif.ByteBufferGifDecoder:
+    private static final java.lang.String TAG
+    49:51:public ByteBufferGifDecoder(android.content.Context)
+com.bumptech.glide.load.resource.gif.GifBitmapProvider:
+    24:25:public GifBitmapProvider(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool)
+com.bumptech.glide.load.resource.gif.GifDrawable:
+    public static final int LOOP_FOREVER
+    public static final int LOOP_INTRINSIC
+    private static final int GRAVITY
+    110:111:public GifDrawable(android.content.Context,com.bumptech.glide.gifdecoder.GifDecoder,com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool,com.bumptech.glide.load.Transformation,int,int,android.graphics.Bitmap)
+    156:158:GifDrawable(com.bumptech.glide.load.resource.gif.GifFrameLoader,android.graphics.Paint)
+    176:176:public com.bumptech.glide.load.Transformation getFrameTransformation()
+    207:210:public void startFromFirstFrame()
+    276:277:void setIsRunning(boolean)
+    373:373:boolean isRecycled()
+    379:391:public void setLoopCount(int)
+com.bumptech.glide.load.resource.gif.GifDrawableEncoder:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.resource.gif.GifFrameLoader:
+    103:103:com.bumptech.glide.load.Transformation getFrameTransformation()
+    161:161:int getLoopCount()
+    237:243:void setNextStartFromFirstFrame()
+    247:248:void setOnEveryFrameReadyListener(com.bumptech.glide.load.resource.gif.GifFrameLoader$OnEveryFrameListener)
+com.bumptech.glide.load.resource.gif.GifFrameLoader$FrameLoaderCallback:
+    static final int MSG_DELAY
+    static final int MSG_CLEAR
+com.bumptech.glide.load.resource.gif.GifOptions:
+    29:31:private GifOptions()
+com.bumptech.glide.load.resource.gif.StreamGifDecoder:
+    private static final java.lang.String TAG
+com.bumptech.glide.load.resource.transcode.BitmapDrawableTranscoder:
+    25:26:public BitmapDrawableTranscoder(android.content.Context)
+    34:35:public BitmapDrawableTranscoder(android.content.res.Resources,com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool)
+com.bumptech.glide.manager.DefaultConnectivityMonitor:
+    private static final java.lang.String TAG
+com.bumptech.glide.manager.DefaultConnectivityMonitorFactory:
+    private static final java.lang.String TAG
+    private static final java.lang.String NETWORK_PERMISSION
+com.bumptech.glide.manager.EmptyRequestManagerTreeNode:
+    15:15:public java.util.Set getDescendants()
+com.bumptech.glide.manager.RequestManagerFragment:
+    private static final java.lang.String TAG
+    103:118:java.util.Set getDescendantRequestManagerFragments()
+    150:158:private boolean isDescendant(android.app.Fragment)
+com.bumptech.glide.manager.RequestManagerFragment$FragmentRequestManagerTreeNode:
+    231:238:public java.util.Set getDescendants()
+com.bumptech.glide.manager.RequestManagerRetriever:
+    static final java.lang.String FRAGMENT_TAG
+    private static final java.lang.String TAG
+    private static final int ID_REMOVE_FRAGMENT_MANAGER
+    private static final int ID_REMOVE_SUPPORT_FRAGMENT_MANAGER
+    private static final java.lang.String FRAGMENT_INDEX_KEY
+    141:147:public com.bumptech.glide.RequestManager get(androidx.fragment.app.Fragment)
+    167:194:public com.bumptech.glide.RequestManager get(android.view.View)
+    200:211:private static void findAllSupportFragmentsWithViews(java.util.Collection,java.util.Map)
+    215:234:private androidx.fragment.app.Fragment findSupportFragment(android.view.View,androidx.fragment.app.FragmentActivity)
+    241:260:private android.app.Fragment findFragment(android.view.View,android.app.Activity)
+    271:281:private void findAllFragmentsWithViews(android.app.FragmentManager,androidx.collection.ArrayMap)
+    288:307:private void findAllFragmentsWithViewsPreO(android.app.FragmentManager,androidx.collection.ArrayMap)
+    311:316:private android.app.Activity findActivity(android.content.Context)
+    332:340:public com.bumptech.glide.RequestManager get(android.app.Fragment)
+com.bumptech.glide.manager.RequestManagerTreeNode:
+    public abstract java.util.Set getDescendants()
+com.bumptech.glide.manager.RequestTracker:
+    private static final java.lang.String TAG
+    56:57:void addRequest(com.bumptech.glide.request.Request)
+    91:91:public boolean isPaused()
+    109:116:public void pauseAllRequests()
+com.bumptech.glide.manager.SupportRequestManagerFragment:
+    private static final java.lang.String TAG
+    95:107:java.util.Set getDescendantRequestManagerFragments()
+    132:140:private boolean isDescendant(androidx.fragment.app.Fragment)
+com.bumptech.glide.manager.SupportRequestManagerFragment$SupportFragmentRequestManagerTreeNode:
+    211:219:public java.util.Set getDescendants()
+com.bumptech.glide.module.ManifestParser:
+    private static final java.lang.String TAG
+    private static final java.lang.String GLIDE_MODULE_VALUE
+com.bumptech.glide.provider.EncoderRegistry:
+    33:34:public synchronized void prepend(java.lang.Class,com.bumptech.glide.load.Encoder)
+com.bumptech.glide.provider.ModelToResourceClassCache:
+    44:47:public void clear()
+com.bumptech.glide.provider.ResourceDecoderRegistry:
+    83:84:public synchronized void prepend(java.lang.String,com.bumptech.glide.load.ResourceDecoder,java.lang.Class,java.lang.Class)
+com.bumptech.glide.provider.ResourceEncoderRegistry:
+    25:26:public synchronized void prepend(java.lang.Class,com.bumptech.glide.load.ResourceEncoder)
+com.bumptech.glide.request.FutureTarget
+com.bumptech.glide.request.RequestFutureTarget
+com.bumptech.glide.request.RequestFutureTarget$Waiter
+com.bumptech.glide.request.RequestOptions:
+    private static final int UNSET
+    private static final int SIZE_MULTIPLIER
+    private static final int DISK_CACHE_STRATEGY
+    private static final int PRIORITY
+    private static final int ERROR_PLACEHOLDER
+    private static final int ERROR_ID
+    private static final int PLACEHOLDER
+    private static final int PLACEHOLDER_ID
+    private static final int IS_CACHEABLE
+    private static final int OVERRIDE
+    private static final int SIGNATURE
+    private static final int TRANSFORMATION
+    private static final int RESOURCE_CLASS
+    private static final int FALLBACK
+    private static final int FALLBACK_ID
+    private static final int THEME
+    private static final int TRANSFORMATION_ALLOWED
+    private static final int TRANSFORMATION_REQUIRED
+    private static final int USE_UNLIMITED_SOURCE_GENERATORS_POOL
+    private static final int ONLY_RETRIEVE_FROM_CACHE
+    private static final int USE_ANIMATION_POOL
+    private static com.bumptech.glide.request.RequestOptions skipMemoryCacheTrueOptions
+    private static com.bumptech.glide.request.RequestOptions skipMemoryCacheFalseOptions
+    private static com.bumptech.glide.request.RequestOptions fitCenterOptions
+    private static com.bumptech.glide.request.RequestOptions centerInsideOptions
+    private static com.bumptech.glide.request.RequestOptions centerCropOptions
+    private static com.bumptech.glide.request.RequestOptions circleCropOptions
+    private static com.bumptech.glide.request.RequestOptions noTransformOptions
+    private static com.bumptech.glide.request.RequestOptions noAnimationOptions
+    129:129:public static com.bumptech.glide.request.RequestOptions sizeMultiplierOf(float)
+    148:148:public static com.bumptech.glide.request.RequestOptions priorityOf(com.bumptech.glide.Priority)
+    157:157:public static com.bumptech.glide.request.RequestOptions placeholderOf(android.graphics.drawable.Drawable)
+    166:166:public static com.bumptech.glide.request.RequestOptions placeholderOf(int)
+    175:175:public static com.bumptech.glide.request.RequestOptions errorOf(android.graphics.drawable.Drawable)
+    184:184:public static com.bumptech.glide.request.RequestOptions errorOf(int)
+    193:202:public static com.bumptech.glide.request.RequestOptions skipMemoryCacheOf(boolean)
+    215:215:public static com.bumptech.glide.request.RequestOptions overrideOf(int,int)
+    226:226:public static com.bumptech.glide.request.RequestOptions overrideOf(int)
+    244:249:public static com.bumptech.glide.request.RequestOptions fitCenterTransform()
+    259:264:public static com.bumptech.glide.request.RequestOptions centerInsideTransform()
+    274:279:public static com.bumptech.glide.request.RequestOptions centerCropTransform()
+    289:294:public static com.bumptech.glide.request.RequestOptions circleCropTransform()
+    304:304:public static com.bumptech.glide.request.RequestOptions bitmapTransform(com.bumptech.glide.load.Transformation)
+    314:319:public static com.bumptech.glide.request.RequestOptions noTransformation()
+    329:329:public static com.bumptech.glide.request.RequestOptions option(com.bumptech.glide.load.Option,java.lang.Object)
+    348:348:public static com.bumptech.glide.request.RequestOptions formatOf(com.bumptech.glide.load.DecodeFormat)
+    358:358:public static com.bumptech.glide.request.RequestOptions frameOf(long)
+    368:368:public static com.bumptech.glide.request.RequestOptions downsampleOf(com.bumptech.glide.load.resource.bitmap.DownsampleStrategy)
+    377:377:public static com.bumptech.glide.request.RequestOptions timeoutOf(int)
+    388:388:public static com.bumptech.glide.request.RequestOptions encodeQualityOf(int)
+    399:399:public static com.bumptech.glide.request.RequestOptions encodeFormatOf(android.graphics.Bitmap$CompressFormat)
+    410:415:public static com.bumptech.glide.request.RequestOptions noAnimation()
+    463:470:public com.bumptech.glide.request.RequestOptions useUnlimitedSourceGeneratorsPool(boolean)
+    506:513:public com.bumptech.glide.request.RequestOptions onlyRetrieveFromCache(boolean)
+    572:582:public com.bumptech.glide.request.RequestOptions placeholder(android.graphics.drawable.Drawable)
+    597:607:public com.bumptech.glide.request.RequestOptions placeholder(int)
+    628:638:public com.bumptech.glide.request.RequestOptions fallback(android.graphics.drawable.Drawable)
+    659:669:public com.bumptech.glide.request.RequestOptions fallback(int)
+    683:693:public com.bumptech.glide.request.RequestOptions error(android.graphics.drawable.Drawable)
+    707:716:public com.bumptech.glide.request.RequestOptions error(int)
+    740:747:public com.bumptech.glide.request.RequestOptions theme(android.content.res.Resources$Theme)
+    806:806:public com.bumptech.glide.request.RequestOptions override(int)
+    899:899:public final boolean isLocked()
+    909:909:public com.bumptech.glide.request.RequestOptions encodeFormat(android.graphics.Bitmap$CompressFormat)
+    919:919:public com.bumptech.glide.request.RequestOptions encodeQuality(int)
+    935:935:public com.bumptech.glide.request.RequestOptions frame(long)
+    963:965:public com.bumptech.glide.request.RequestOptions format(com.bumptech.glide.load.DecodeFormat)
+    988:988:public com.bumptech.glide.request.RequestOptions disallowHardwareConfig()
+    1018:1018:public com.bumptech.glide.request.RequestOptions timeout(int)
+    1048:1048:public com.bumptech.glide.request.RequestOptions centerCrop()
+    1082:1082:public com.bumptech.glide.request.RequestOptions fitCenter()
+    1114:1114:public com.bumptech.glide.request.RequestOptions centerInside()
+    1128:1128:public com.bumptech.glide.request.RequestOptions optionalCircleCrop()
+    1143:1143:public com.bumptech.glide.request.RequestOptions circleCrop()
+    1178:1178:private com.bumptech.glide.request.RequestOptions scaleOnlyTransform(com.bumptech.glide.load.resource.bitmap.DownsampleStrategy,com.bumptech.glide.load.Transformation)
+    1237:1237:public varargs com.bumptech.glide.request.RequestOptions transforms(com.bumptech.glide.load.Transformation[])
+    1257:1257:public com.bumptech.glide.request.RequestOptions optionalTransform(com.bumptech.glide.load.Transformation)
+    1301:1301:public com.bumptech.glide.request.RequestOptions optionalTransform(java.lang.Class,com.bumptech.glide.load.Transformation)
+    1345:1345:public com.bumptech.glide.request.RequestOptions transform(java.lang.Class,com.bumptech.glide.load.Transformation)
+    1356:1367:public com.bumptech.glide.request.RequestOptions dontTransform()
+    1382:1382:public com.bumptech.glide.request.RequestOptions dontAnimate()
+    1594:1594:protected boolean isAutoCloneEnabled()
+    1598:1598:public final boolean isDiskCacheStrategySet()
+    1602:1602:public final boolean isSkipMemoryCacheSet()
+com.bumptech.glide.request.SingleRequest:
+    private static final java.lang.String TAG
+    private static final java.lang.String GLIDE_TAG
+com.bumptech.glide.request.target.AppWidgetTarget
+com.bumptech.glide.request.target.BitmapImageViewTarget:
+    24:25:public BitmapImageViewTarget(android.widget.ImageView,boolean)
+com.bumptech.glide.request.target.BitmapThumbnailImageViewTarget
+com.bumptech.glide.request.target.CustomViewTarget
+com.bumptech.glide.request.target.CustomViewTarget$1
+com.bumptech.glide.request.target.CustomViewTarget$SizeDeterminer
+com.bumptech.glide.request.target.CustomViewTarget$SizeDeterminer$SizeDeterminerLayoutListener
+com.bumptech.glide.request.target.DrawableImageViewTarget:
+    23:24:public DrawableImageViewTarget(android.widget.ImageView,boolean)
+com.bumptech.glide.request.target.DrawableThumbnailImageViewTarget
+com.bumptech.glide.request.target.FixedSizeDrawable
+com.bumptech.glide.request.target.FixedSizeDrawable$State
+com.bumptech.glide.request.target.ImageViewTarget:
+    35:36:public ImageViewTarget(android.widget.ImageView,boolean)
+    45:45:public android.graphics.drawable.Drawable getCurrentDrawable()
+com.bumptech.glide.request.target.NotificationTarget
+com.bumptech.glide.request.target.PreloadTarget
+com.bumptech.glide.request.target.PreloadTarget$1
+com.bumptech.glide.request.target.Target:
+    public static final int SIZE_ORIGINAL
+com.bumptech.glide.request.target.ThumbnailImageViewTarget
+com.bumptech.glide.request.target.ViewTarget:
+    private static final java.lang.String TAG
+    84:88:public ViewTarget(android.view.View,boolean)
+    112:127:public final com.bumptech.glide.request.target.ViewTarget clearOnDetach()
+    132:136:void resumeMyRequest()
+    140:148:void pauseMyRequest()
+    172:173:public final com.bumptech.glide.request.target.ViewTarget waitForLayout()
+    206:206:public android.view.View getView()
+    322:327:public static void setTagId(int)
+com.bumptech.glide.request.target.ViewTarget$1
+com.bumptech.glide.request.target.ViewTarget$SizeDeterminer:
+    private static final int PENDING_SIZE
+com.bumptech.glide.request.transition.BitmapContainerTransitionFactory
+com.bumptech.glide.request.transition.BitmapContainerTransitionFactory$BitmapGlideAnimation
+com.bumptech.glide.request.transition.BitmapTransitionFactory
+com.bumptech.glide.request.transition.DrawableCrossFadeFactory
+com.bumptech.glide.request.transition.DrawableCrossFadeFactory$Builder
+com.bumptech.glide.request.transition.DrawableCrossFadeTransition
+com.bumptech.glide.request.transition.NoTransition:
+    44:44:public static com.bumptech.glide.request.transition.Transition get()
+com.bumptech.glide.request.transition.Transition$ViewAdapter:
+    public abstract android.view.View getView()
+    public abstract android.graphics.drawable.Drawable getCurrentDrawable()
+    public abstract void setDrawable(android.graphics.drawable.Drawable)
+com.bumptech.glide.request.transition.ViewAnimationFactory
+com.bumptech.glide.request.transition.ViewAnimationFactory$ConcreteViewTransitionAnimationFactory
+com.bumptech.glide.request.transition.ViewAnimationFactory$ResourceViewTransitionAnimationFactory
+com.bumptech.glide.request.transition.ViewPropertyAnimationFactory
+com.bumptech.glide.request.transition.ViewPropertyTransition
+com.bumptech.glide.request.transition.ViewPropertyTransition$Animator
+com.bumptech.glide.request.transition.ViewTransition
+com.bumptech.glide.request.transition.ViewTransition$ViewTransitionAnimationFactory
+com.bumptech.glide.signature.ApplicationVersionSignature
+com.bumptech.glide.signature.MediaStoreSignature
+com.bumptech.glide.util.ByteBufferUtil:
+    private static final int BUFFER_SIZE
+    24:26:private ByteBufferUtil()
+    95:112:public static void toStream(java.nio.ByteBuffer,java.io.OutputStream)
+    138:155:public static java.nio.ByteBuffer fromStream(java.io.InputStream)
+com.bumptech.glide.util.ByteBufferUtil$ByteBufferStream:
+    private static final int UNSET
+com.bumptech.glide.util.ContentLengthInputStream:
+    private static final java.lang.String TAG
+    private static final int UNKNOWN
+    25:25:public static java.io.InputStream obtain(java.io.InputStream,java.lang.String)
+    34:44:private static int parseContentLength(java.lang.String)
+com.bumptech.glide.util.ExceptionCatchingInputStream:
+    39:42:static void clearQueue()
+com.bumptech.glide.util.FixedPreloadSizeProvider
+com.bumptech.glide.util.LogTime:
+    14:16:private LogTime()
+com.bumptech.glide.util.LruCache:
+    42:47:public synchronized void setSizeMultiplier(float)
+    64:64:protected synchronized int getCount()
+    88:88:public synchronized long getCurrentSize()
+    98:98:public synchronized boolean contains(java.lang.Object)
+com.bumptech.glide.util.MarkEnforcingInputStream:
+    private static final int UNSET
+    private static final int END_OF_STREAM
+com.bumptech.glide.util.Preconditions:
+    13:15:private Preconditions()
+com.bumptech.glide.util.Synthetic
+com.bumptech.glide.util.Util:
+    private static final int HASH_MULTIPLIER
+    private static final int HASH_ACCUMULATOR
+    27:29:private Util()
+    65:65:public static int getSize(android.graphics.Bitmap)
+    150:153:public static void assertBackgroundThread()
+    219:219:public static int hashCode(int)
+    243:243:public static int hashCode(boolean)
+com.bumptech.glide.util.ViewPreloadSizeProvider
+com.bumptech.glide.util.ViewPreloadSizeProvider$SizeViewTarget
+com.bumptech.glide.util.pool.FactoryPools:
+    private static final java.lang.String TAG
+    private static final int DEFAULT_POOL_SIZE
+    26:26:private FactoryPools()
+com.bumptech.glide.util.pool.GlideTrace:
+    private static final boolean TRACING_ENABLED
+    private static final int MAX_LENGTH
+    16:18:private GlideTrace()
+    21:24:private static java.lang.String truncateTag(java.lang.String)
+    43:43:public static void beginSectionFormat(java.lang.String,java.lang.Object,java.lang.Object)
+com.bumptech.glide.util.pool.StateVerifier:
+    private static final boolean DEBUG
+com.bumptech.glide.util.pool.StateVerifier$DebugStateVerifier
 com.ermile.common.networking.NetworkModule:
     private static final int DEFAULT_READ_TIMEOUT_SECONDS
     private static final int DEFAULT_CONNECT_TIMEOUT_SECONDS
@@ -7384,11 +8163,7 @@ com.salamquran.android.QuranAdvancedPreferenceActivity:
     private static final java.lang.String SI_LOCATION_TO_WRITE
     private static final int REQUEST_WRITE_TO_SDCARD_PERMISSION
 com.salamquran.android.QuranApplication:
-    private com.android.volley.RequestQueue mRequestQueue
-    102:102:public static synchronized com.salamquran.android.QuranApplication getInstance()
-    106:109:public com.android.volley.RequestQueue getRequestQueue()
     113:115:public void addToRequestQueue(com.android.volley.Request,java.lang.String)
-    118:120:public void addToRequestQueue(com.android.volley.Request)
     123:126:public void cancelPendingRequests(java.lang.Object)
 com.salamquran.android.QuranDataActivity:
     public static final java.lang.String PAGES_DOWNLOAD_KEY
@@ -7723,19 +8498,39 @@ com.salamquran.android.presenter.translation.TranslationManagerPresenter_Factory
     49:49:public static com.salamquran.android.presenter.translation.TranslationManagerPresenter newTranslationManagerPresenter(android.content.Context,okhttp3.OkHttpClient,com.salamquran.android.util.QuranSettings,com.salamquran.android.database.TranslationsDBAdapter,com.salamquran.android.util.QuranFileUtils)
 com.salamquran.android.presenter.translation.TranslationPresenter_Factory:
     59:59:public static com.salamquran.android.presenter.translation.TranslationPresenter newTranslationPresenter(com.salamquran.android.model.translation.TranslationModel,com.salamquran.android.util.QuranSettings,com.salamquran.android.database.TranslationsDBAdapter,com.salamquran.android.util.TranslationUtil,com.salamquran.android.util.ShareUtil,com.salamquran.android.data.QuranInfo,java.lang.Integer[])
-com.salamquran.android.salamquran.LearnFragment:
-    private static final int FCR
-    private static final int FILECHOOSER_RESULTCODE
-    248:249:public void openFileChooser(android.webkit.ValueCallback)
-    252:253:public void openFileChooser(android.webkit.ValueCallback,java.lang.String)
-    256:260:public void openFileChooser(android.webkit.ValueCallback,java.lang.String,java.lang.String)
-    312:340:private void Dialog_WebView(boolean)
-com.salamquran.android.salamquran.LearnFragment$2:
-    108:156:protected void openFileChooser(android.webkit.ValueCallback,java.lang.String)
-    226:231:protected void openFileChooser(android.webkit.ValueCallback,java.lang.String,java.lang.String)
-    235:240:protected void openFileChooser(android.webkit.ValueCallback)
-com.salamquran.android.salamquran.LearnFragment$3
-com.salamquran.android.salamquran.LearnFragment$4
+com.salamquran.android.salamquran.Lms.LmsAdaptor:
+    android.widget.ImageView imageView
+com.salamquran.android.salamquran.Lms.LmsModel:
+    17:17:public java.lang.String getId()
+    21:22:public void setId(java.lang.String)
+    29:30:public void setImage(java.lang.String)
+    37:38:public void setTitle(java.lang.String)
+    45:46:public void setTecherName(java.lang.String)
+    49:49:public java.lang.String getType()
+    53:54:public void setType(java.lang.String)
+    61:62:public void setType_title(java.lang.String)
+    65:65:public java.lang.String getCountLevel()
+    69:70:public void setCountLevel(java.lang.String)
+com.salamquran.android.salamquran.SaveManager:
+    public static final java.lang.String SH_PREF_NAME
+    public static final java.lang.String local
+    public static final java.lang.String apikey
+    public static final java.lang.String userCode
+    public static final java.lang.String zonId
+    public static final java.lang.String mobile
+    35:37:public void save_local_url(java.lang.String)
+    39:44:public void save_user_info(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+com.salamquran.android.salamquran.User:
+    5:5:public User()
+    11:11:public static java.lang.String getUserCode(android.content.Context)
+    14:14:public static java.lang.String getZonId(android.content.Context)
+    17:17:public static java.lang.String getMobile(android.content.Context)
+com.salamquran.android.salamquran.api.LmsApi:
+    22:22:public LmsApi()
+com.salamquran.android.salamquran.url:
+    5:5:public url()
+    18:19:public static java.lang.String getLmsLevelList(android.content.Context,java.lang.String)
+    22:23:public static java.lang.String getLmsLevel(android.content.Context,java.lang.String)
 com.salamquran.android.service.AudioService:
     public static final java.lang.String ACTION_PLAYBACK
     public static final java.lang.String ACTION_PLAY
