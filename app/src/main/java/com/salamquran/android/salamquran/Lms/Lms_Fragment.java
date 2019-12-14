@@ -25,14 +25,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LearnFragment extends Fragment {
+public class Lms_Fragment extends Fragment {
 
   private RecyclerView recyclerView;
   private List<LmsModel_group> model;
-  private LmsAdaptor adaptor;
+  private LmsGroup_Adaptor adaptor;
   private LinearLayoutManager layoutManager;
 
-  public LearnFragment() {
+  public Lms_Fragment() {
     // Required empty public constructor
   }
 
@@ -44,7 +44,7 @@ public class LearnFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_learn, container, false);
     recyclerView = view.findViewById(R.id.recycler_view);
     model = new ArrayList<>();
-    adaptor = new LmsAdaptor(getContext(),model);
+    adaptor = new LmsGroup_Adaptor(getContext(),model);
     layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 

@@ -10,6 +10,7 @@ public class LmsModel_levelList {
       type ,
       type_title ,
       file ,
+      filepic,
       sort ,
       ratio ,
       unlockscore ,
@@ -18,9 +19,9 @@ public class LmsModel_levelList {
       xtype ;
 
   public LmsModel_levelList(String id, String lm_group_id, String title, String desc,
-                            String type, String type_title, String file, String sort,
-                            String ratio, String unlockscore, String badge, String userstar,
-                            String xtype) {
+                            String type, String type_title, String file, String filepic,
+                            String sort, String ratio, String unlockscore, String badge,
+                            String userstar, String xtype) {
     this.id = id;
     this.lm_group_id = lm_group_id;
     this.title = title;
@@ -28,6 +29,7 @@ public class LmsModel_levelList {
     this.type = type;
     this.type_title = type_title;
     this.file = file;
+    this.filepic = filepic;
     this.sort = sort;
     this.ratio = ratio;
     this.unlockscore = unlockscore;
@@ -90,6 +92,14 @@ public class LmsModel_levelList {
 
   public void setFile(String file) {
     this.file = file;
+  }
+
+  public String getFilepic() {
+    return filepic;
+  }
+
+  public void setFilepic(String filepic) {
+    this.filepic = filepic;
   }
 
   public String getSort() {

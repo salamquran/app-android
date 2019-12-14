@@ -18,24 +18,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LmsLevelActivity extends AppCompatActivity {
+public class LmsLevelList_Activity extends AppCompatActivity {
 
   String id = null;
 
   private RecyclerView recyclerView;
   private List<LmsModel_group> model;
-  private LmsAdaptor adaptor;
+  private LmsGroup_Adaptor adaptor;
   private LinearLayoutManager layoutManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_lms_level);
+    setContentView(R.layout.activity_lms_level_list);
     id = getIntent().getStringExtra("id");
 
     recyclerView = findViewById(R.id.recycler_view);
     model = new ArrayList<>();
-    adaptor = new LmsAdaptor(getApplication(),model);
+    adaptor = new LmsGroup_Adaptor(getApplication(),model);
     layoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 

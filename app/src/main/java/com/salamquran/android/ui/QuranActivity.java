@@ -28,7 +28,7 @@ import com.salamquran.android.data.Constants;
 import com.salamquran.android.model.bookmark.RecentPageModel;
 import com.salamquran.android.presenter.bookmark.BookmarksContextualModePresenter;
 import com.salamquran.android.presenter.translation.TranslationManagerPresenter;
-import com.salamquran.android.salamquran.Lms.LearnFragment;
+import com.salamquran.android.salamquran.Lms.Lms_Fragment;
 import com.salamquran.android.salamquran.SearchFragment;
 import com.salamquran.android.service.AudioService;
 import com.salamquran.android.ui.fragment.AddTagDialog;
@@ -278,12 +278,12 @@ public class QuranActivity extends QuranActionBarActivity
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     switch (item.getItemId()){
       case R.id.mag:{
-        loadFragment(new LearnFragment());
+        loadFragment(new Lms_Fragment());
         break;
       }
 
       case R.id.lms:{
-        loadFragment(new LearnFragment());
+        loadFragment(new Lms_Fragment());
         break;
       }
 
