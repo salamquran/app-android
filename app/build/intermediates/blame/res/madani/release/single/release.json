@@ -40,12 +40,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_mtrl_calendar_day_of_week.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_day_of_week.xml"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_mtrl_calendar_day_of_week.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/mtrl_calendar_day_of_week.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_material_slider_inactive_track_color.xml.flat",
@@ -136,12 +136,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable_abc_dialog_material_background.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable/abc_dialog_material_background.xml"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi_ic_stop.png.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-mdpi/ic_stop.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable_abc_dialog_material_background.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable/abc_dialog_material_background.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_custom_dialog.xml.flat",
@@ -216,16 +216,16 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_test_toolbar_surface.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/test_toolbar_surface.xml"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_mtrl_btn_stroke_color_selector.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/color/mtrl_btn_stroke_color_selector.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_test_toolbar_surface.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/test_toolbar_surface.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/anim_abc_tooltip_exit.xml.flat",
@@ -276,12 +276,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/interpolator_mtrl_fast_out_linear_in.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/interpolator/mtrl_fast_out_linear_in.xml"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable_abc_ratingbar_indicator_material.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/interpolator_mtrl_fast_out_linear_in.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/interpolator/mtrl_fast_out_linear_in.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -376,12 +376,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/animator/design_fab_show_motion_spec.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_night_mode.png.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_night_mode.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi_ic_previous.png.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-hdpi/ic_previous.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_night_mode.png.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_night_mode.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/interpolator_mtrl_linear.xml.flat",
@@ -440,12 +440,12 @@
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_stop.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_text_view_with_theme_line_height.xml.flat",
@@ -464,12 +464,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/raw_bismillah.mp3.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/raw/bismillah.mp3"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_design_navigation_menu_item.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/raw_bismillah.mp3.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/raw/bismillah.mp3"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi_ic_sort.png.flat",
@@ -488,12 +488,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi_ic_action_expand.png.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxxhdpi/ic_action_expand.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -508,12 +508,12 @@
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/generated/res/pngs/madani/release/drawable-hdpi/ic_quran.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_shortcut_last_page.png.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_shortcut_last_page.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi_ic_copy.png.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxxhdpi/ic_copy.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_shortcut_last_page.png.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_shortcut_last_page.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_abc_action_bar_title_item.xml.flat",
@@ -576,12 +576,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_abc_tint_edittext.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -592,12 +592,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_mtrl_navigation_item_text_color.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/color/mtrl_navigation_item_text_color.xml"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_mtrl_navigation_item_text_color.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/color/mtrl_navigation_item_text_color.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -632,12 +632,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-v21_quran_row_background.xml.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-v21/quran_row_background.xml"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable_list_header_background.xml.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable/list_header_background.xml"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-v21_quran_row_background.xml.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-v21/quran_row_background.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/layout_abc_list_menu_item_radio.xml.flat",
@@ -660,16 +660,16 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/interpolator/mtrl_linear_out_slow_in.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/interpolator_btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/interpolator_btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -696,12 +696,12 @@
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxxhdpi/ic_stop.png"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_search.png.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/generated/res/pngs/madani/release/drawable-xxhdpi/ic_search.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_search.png.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/generated/res/pngs/madani/release/drawable-xxhdpi/ic_search.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi_ic_setting.png.flat",
@@ -748,12 +748,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/anim/btn_checkbox_to_unchecked_box_inner_merged_animation.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi_ic_previous.png.flat",
-        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-mdpi/ic_previous.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi_ic_translation.png.flat",
         "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-xxhdpi/ic_translation.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-mdpi_ic_previous.png.flat",
+        "source": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/drawable-mdpi/ic_previous.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -856,12 +856,12 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/21b7cf8d619485118824662cfceb2f9d/media-1.0.1/res/layout/notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi_ic_goto_quran.png.flat",
@@ -1048,16 +1048,16 @@
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_material_on_background_emphasis_high_type.xml.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/color/material_on_background_emphasis_high_type.xml"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/color_material_on_background_emphasis_high_type.xml.flat",
+        "source": "/Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/color/material_on_background_emphasis_high_type.xml"
     },
     {
         "merged": "/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/build/intermediates/res/merged/madani/release/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
