@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#000"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -12,10 +11,9 @@
 
   <androidx.cardview.widget.CardView
       android:layout_centerInParent="true"
-      android:layout_margin="@dimen/_30sdp"
-      app:cardCornerRadius="20dp"
-      app:cardBackgroundColor="#C4C4C4"
-      android:layout_width="match_parent"
+      android:layout_margin="@dimen/_15sdp"
+      app:cardCornerRadius="15dp"
+      android:layout_width="@dimen/_230sdp"
       android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -23,9 +21,9 @@
         android:layout_height="match_parent">
 
       <ImageView
+          android:id="@+id/image"
           android:layout_alignParentTop="true"
           android:scaleType="centerCrop"
-          android:id="@+id/image"
           android:src="@drawable/test"
           android:layout_width="match_parent"
           android:layout_height="@dimen/_180sdp"/>
@@ -36,7 +34,7 @@
           android:paddingEnd="@dimen/_15sdp"
           android:paddingRight="@dimen/_15sdp"
           android:paddingLeft="@dimen/_15sdp"
-          android:paddingTop="@dimen/_5sdp"
+          android:paddingTop="@dimen/_15sdp"
           android:textSize="@dimen/_25ssp"
           android:textStyle="bold"
           android:text="Unit 2"
@@ -50,13 +48,14 @@
           android:layout_below="@+id/title"
           android:paddingStart="@dimen/_15sdp"
           android:paddingLeft="@dimen/_15sdp"
+          android:paddingTop="@dimen/_15sdp"
           android:paddingBottom="@dimen/_15sdp"
           android:orientation="vertical"
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/title_learn"
+            android:id="@+id/techer_name"
             android:paddingStart="@dimen/_5sdp"
             android:paddingLeft="@dimen/_5sdp"
             android:textSize="@dimen/_15ssp"
@@ -67,7 +66,7 @@
             android:layout_height="wrap_content"
             />
         <TextView
-            android:id="@+id/title_learn2"
+            android:id="@+id/count_level"
             android:paddingStart="@dimen/_5sdp"
             android:paddingLeft="@dimen/_5sdp"
             android:textSize="@dimen/_15ssp"
