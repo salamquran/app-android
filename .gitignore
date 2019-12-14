@@ -9,7 +9,17 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/app/build/
 /captures
 .externalNativeBuild
 .cxx
 /key/
+
+/app/build/intermediates/blame/res/madani/release/multi-v2/release.json
+/app/build/intermediates/blame/res/madani/release/single/release.json
+/app/build/intermediates/incremental/mergeMadaniReleaseResources/compile-file-map.properties
+/app/build/intermediates/incremental/packageMadaniRelease/tmp/madaniRelease/dex-renamer-state.txt
+/app/build/intermediates/incremental/packageMadaniRelease/tmp/madaniRelease/zip-cache/BAuFbL1A4BGTdeFQlZV56tdC5ec=
+/app/build/intermediates/processed_res/madaniRelease/processMadaniReleaseResources/out/resources-madaniRelease.ap_
+/app/build/kotlin/compileMadaniReleaseKotlin/build-history.bin
+/app/build/kotlin/compileMadaniReleaseKotlin/last-build.bin
