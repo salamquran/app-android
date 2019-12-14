@@ -72,7 +72,7 @@ public class LearnFragment extends Fragment {
     recyclerView = view.findViewById(R.id.recycler_view);
     model = new ArrayList<>();
     adaptor = new LmsAdaptor(getContext(),model);
-    layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+    layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 
 
