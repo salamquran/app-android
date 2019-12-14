@@ -10,7 +10,7 @@ build
 captures
 .externalNativeBuild
 .cxx
-key/
+/key/
 
 
 #built application files
