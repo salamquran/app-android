@@ -6184,6 +6184,256 @@ androidx.viewpager2.widget.ViewPager2:
 androidx.viewpager2.widget.ViewPager2$OffscreenPageLimit
 androidx.viewpager2.widget.ViewPager2$Orientation
 androidx.viewpager2.widget.ViewPager2$ScrollState
+com.android.volley.AuthFailureError:
+    29:31:public AuthFailureError(android.content.Intent)
+    34:35:public AuthFailureError(com.android.volley.NetworkResponse)
+    38:39:public AuthFailureError(java.lang.String)
+    42:43:public AuthFailureError(java.lang.String,java.lang.Exception)
+    46:46:public android.content.Intent getResolutionIntent()
+com.android.volley.BuildConfig
+com.android.volley.Cache:
+    public abstract com.android.volley.Cache$Entry get(java.lang.String)
+    public abstract void put(java.lang.String,com.android.volley.Cache$Entry)
+    public abstract void initialize()
+    public abstract void invalidate(java.lang.String,boolean)
+    public abstract void remove(java.lang.String)
+    public abstract void clear()
+com.android.volley.Cache$Entry:
+    public byte[] data
+    public java.lang.String etag
+    public long serverDate
+    public long lastModified
+    public long ttl
+    public long softTtl
+    public java.util.Map responseHeaders
+    public java.util.List allResponseHeaders
+    66:93:public Cache$Entry()
+    103:103:public boolean isExpired()
+    108:108:public boolean refreshNeeded()
+com.android.volley.CacheDispatcher
+com.android.volley.CacheDispatcher$1
+com.android.volley.CacheDispatcher$WaitingRequestManager
+com.android.volley.ClientError:
+    28:29:public ClientError(com.android.volley.NetworkResponse)
+com.android.volley.DefaultRetryPolicy:
+    private int mCurrentRetryCount
+    public static final int DEFAULT_TIMEOUT_MS
+    public static final int DEFAULT_MAX_RETRIES
+    public static final float DEFAULT_BACKOFF_MULT
+    63:63:public int getCurrentTimeout()
+    69:69:public int getCurrentRetryCount()
+    74:74:public float getBackoffMultiplier()
+    84:89:public void retry(com.android.volley.VolleyError)
+    93:93:protected boolean hasAttemptRemaining()
+com.android.volley.ExecutorDelivery
+com.android.volley.ExecutorDelivery$1
+com.android.volley.ExecutorDelivery$ResponseDeliveryRunnable
+com.android.volley.Header
+com.android.volley.Network
+com.android.volley.NetworkDispatcher
+com.android.volley.NetworkError:
+    27:28:public NetworkError(java.lang.Throwable)
+    31:32:public NetworkError(com.android.volley.NetworkResponse)
+com.android.volley.NetworkResponse:
+    public final int statusCode
+    public final byte[] data
+    public final java.util.Map headers
+    public final java.util.List allHeaders
+    public final boolean notModified
+    public final long networkTimeMs
+    48:49:public NetworkResponse(int,byte[],java.util.Map,boolean,long)
+    66:67:public NetworkResponse(int,byte[],boolean,long,java.util.List)
+    83:84:public NetworkResponse(int,byte[],java.util.Map,boolean)
+    92:98:public NetworkResponse(byte[])
+    111:117:public NetworkResponse(byte[],java.util.Map)
+    125:136:private NetworkResponse(int,byte[],java.util.Map,java.util.List,boolean,long)
+    165:176:private static java.util.Map toHeaderMap(java.util.List)
+    180:190:private static java.util.List toAllHeaderList(java.util.Map)
+com.android.volley.NoConnectionError:
+    27:28:public NoConnectionError(java.lang.Throwable)
+com.android.volley.ParseError:
+    25:26:public ParseError(com.android.volley.NetworkResponse)
+    29:30:public ParseError(java.lang.Throwable)
+com.android.volley.R
+com.android.volley.Request:
+    private static final java.lang.String DEFAULT_PARAMS_ENCODING
+    private java.lang.Object mTag
+    private com.android.volley.Request$NetworkRequestCompleteListener mRequestCompleteListener
+    136:137:public Request(java.lang.String,com.android.volley.Response$ErrorListener)
+    156:156:public int getMethod()
+    166:167:public com.android.volley.Request setTag(java.lang.Object)
+    176:176:public java.lang.Object getTag()
+    182:184:public com.android.volley.Response$ErrorListener getErrorListener()
+    229:252:void finish(java.lang.String)
+    277:280:public final int getSequence()
+    290:301:public java.lang.String getCacheKey()
+    311:312:public com.android.volley.Request setCacheEntry(com.android.volley.Cache$Entry)
+    317:317:public com.android.volley.Cache$Entry getCacheEntry()
+    357:357:public java.util.Map getHeaders()
+    372:372:protected java.util.Map getPostParams()
+    392:392:protected java.lang.String getPostParamsEncoding()
+    398:398:public java.lang.String getPostBodyContentType()
+    413:417:public byte[] getPostBody()
+    429:429:protected java.util.Map getParams()
+    446:446:protected java.lang.String getParamsEncoding()
+    451:451:public java.lang.String getBodyContentType()
+    464:468:public byte[] getBody()
+    473:491:private byte[] encodeParameters(java.util.Map,java.lang.String)
+    501:502:public final com.android.volley.Request setShouldCache(boolean)
+    516:517:public final com.android.volley.Request setShouldRetryServerErrors(boolean)
+    524:524:public final boolean shouldRetryServerErrors()
+    549:549:public final int getTimeoutMs()
+    554:554:public com.android.volley.RetryPolicy getRetryPolicy()
+    562:565:public void markDelivered()
+    569:571:public boolean hasHadResponseDelivered()
+    protected abstract com.android.volley.Response parseNetworkResponse(com.android.volley.NetworkResponse)
+    593:593:protected com.android.volley.VolleyError parseNetworkError(com.android.volley.VolleyError)
+    protected abstract void deliverResponse(java.lang.Object)
+    613:619:public void deliverError(com.android.volley.VolleyError)
+    627:630:void setNetworkRequestCompleteListener(com.android.volley.Request$NetworkRequestCompleteListener)
+    640:646:void notifyListenerResponseReceived(com.android.volley.Response)
+    654:660:void notifyListenerResponseNotUsable()
+    38:38:static synthetic com.android.volley.VolleyLog$MarkerLog access$000(com.android.volley.Request)
+com.android.volley.Request$1
+com.android.volley.Request$Method
+com.android.volley.Request$NetworkRequestCompleteListener
+com.android.volley.RequestQueue:
+    private static final int DEFAULT_NETWORK_THREAD_POOL_SIZE
+    private final com.android.volley.Cache mCache
+    private final com.android.volley.Network mNetwork
+    private final com.android.volley.ResponseDelivery mDelivery
+    private final com.android.volley.NetworkDispatcher[] mDispatchers
+    private com.android.volley.CacheDispatcher mCacheDispatcher
+    private final java.util.List mFinishedListeners
+    47:95:public RequestQueue(com.android.volley.Cache,com.android.volley.Network,int,com.android.volley.ResponseDelivery)
+    105:110:public RequestQueue(com.android.volley.Cache,com.android.volley.Network,int)
+    119:120:public RequestQueue(com.android.volley.Cache,com.android.volley.Network)
+    124:136:public void start()
+    140:148:public void stop()
+    157:157:public com.android.volley.Cache getCache()
+    174:181:public void cancelAll(com.android.volley.RequestQueue$RequestFilter)
+    188:198:public void cancelAll(java.lang.Object)
+    233:241:void finish(com.android.volley.Request)
+    244:247:public void addRequestFinishedListener(com.android.volley.RequestQueue$RequestFinishedListener)
+    251:254:public void removeRequestFinishedListener(com.android.volley.RequestQueue$RequestFinishedListener)
+com.android.volley.RequestQueue$1
+com.android.volley.RequestQueue$RequestFilter
+com.android.volley.RequestQueue$RequestFinishedListener
+com.android.volley.Response:
+    public final java.lang.Object result
+    public final com.android.volley.Cache$Entry cacheEntry
+    public final com.android.volley.VolleyError error
+    public boolean intermediate
+    43:43:public static com.android.volley.Response success(java.lang.Object,com.android.volley.Cache$Entry)
+    51:51:public static com.android.volley.Response error(com.android.volley.VolleyError)
+    68:68:public boolean isSuccess()
+    64:75:private Response(java.lang.Object,com.android.volley.Cache$Entry)
+    64:81:private Response(com.android.volley.VolleyError)
+com.android.volley.Response$ErrorListener:
+    public abstract void onErrorResponse(com.android.volley.VolleyError)
+com.android.volley.Response$Listener:
+    public abstract void onResponse(java.lang.Object)
+com.android.volley.ResponseDelivery
+com.android.volley.RetryPolicy:
+    public abstract int getCurrentTimeout()
+    public abstract int getCurrentRetryCount()
+    public abstract void retry(com.android.volley.VolleyError)
+com.android.volley.ServerError:
+    23:24:public ServerError(com.android.volley.NetworkResponse)
+com.android.volley.VolleyError:
+    private long networkTimeMs
+    29:31:public VolleyError(com.android.volley.NetworkResponse)
+    34:36:public VolleyError(java.lang.String)
+    39:41:public VolleyError(java.lang.String,java.lang.Throwable)
+    44:46:public VolleyError(java.lang.Throwable)
+    49:50:void setNetworkTimeMs(long)
+    53:53:public long getNetworkTimeMs()
+com.android.volley.VolleyLog:
+    49:54:public static void setTag(java.lang.String)
+    57:60:public static varargs void v(java.lang.String,java.lang.Object[])
+    71:72:public static varargs void e(java.lang.Throwable,java.lang.String,java.lang.Object[])
+    75:76:public static varargs void wtf(java.lang.String,java.lang.Object[])
+    79:80:public static varargs void wtf(java.lang.Throwable,java.lang.String,java.lang.Object[])
+com.android.volley.VolleyLog$MarkerLog:
+    private static final long MIN_DURATION_FOR_LOGGING_MS
+com.android.volley.toolbox.AdaptedHttpStack
+com.android.volley.toolbox.AndroidAuthenticator
+com.android.volley.toolbox.Authenticator
+com.android.volley.toolbox.BaseHttpStack
+com.android.volley.toolbox.BasicNetwork
+com.android.volley.toolbox.ByteArrayPool
+com.android.volley.toolbox.ByteArrayPool$1
+com.android.volley.toolbox.ClearCacheRequest
+com.android.volley.toolbox.DiskBasedCache
+com.android.volley.toolbox.DiskBasedCache$CacheHeader
+com.android.volley.toolbox.DiskBasedCache$CountingInputStream
+com.android.volley.toolbox.HttpClientStack
+com.android.volley.toolbox.HttpClientStack$HttpPatch
+com.android.volley.toolbox.HttpHeaderParser
+com.android.volley.toolbox.HttpResponse
+com.android.volley.toolbox.HttpStack
+com.android.volley.toolbox.HurlStack
+com.android.volley.toolbox.HurlStack$UrlConnectionInputStream
+com.android.volley.toolbox.HurlStack$UrlRewriter
+com.android.volley.toolbox.ImageLoader:
+    private int mBatchResponseDelayMs
+    private final android.os.Handler mHandler
+    private java.lang.Runnable mRunnable
+    47:87:public ImageLoader(com.android.volley.RequestQueue,com.android.volley.toolbox.ImageLoader$ImageCache)
+    100:100:public static com.android.volley.toolbox.ImageLoader$ImageListener getImageListener(android.widget.ImageView,int,int)
+    152:152:public boolean isCached(java.lang.String,int,int)
+    168:171:public boolean isCached(java.lang.String,int,int,android.widget.ImageView$ScaleType)
+    184:184:public com.android.volley.toolbox.ImageLoader$ImageContainer get(java.lang.String,com.android.volley.toolbox.ImageLoader$ImageListener)
+    193:193:public com.android.volley.toolbox.ImageLoader$ImageContainer get(java.lang.String,com.android.volley.toolbox.ImageLoader$ImageListener,int,int)
+    293:294:public void setBatchedResponseDelay(int)
+    304:316:protected void onGetImageSuccess(java.lang.String,android.graphics.Bitmap)
+    326:335:protected void onGetImageError(java.lang.String,com.android.volley.VolleyError)
+    482:514:private void batchResponse(java.lang.String,com.android.volley.toolbox.ImageLoader$BatchedImageRequest)
+    42:42:static synthetic java.lang.Runnable access$602(com.android.volley.toolbox.ImageLoader,java.lang.Runnable)
+com.android.volley.toolbox.ImageLoader$1
+com.android.volley.toolbox.ImageLoader$2:
+    271:272:public void onResponse(android.graphics.Bitmap)
+    268:268:public bridge synthetic void onResponse(java.lang.Object)
+com.android.volley.toolbox.ImageLoader$3:
+    281:282:public void onErrorResponse(com.android.volley.VolleyError)
+com.android.volley.toolbox.ImageLoader$4
+com.android.volley.toolbox.ImageLoader$BatchedImageRequest:
+    private android.graphics.Bitmap mResponseBitmap
+    private com.android.volley.VolleyError mError
+    442:443:public void setError(com.android.volley.VolleyError)
+    447:447:public com.android.volley.VolleyError getError()
+    416:416:static synthetic android.graphics.Bitmap access$002(com.android.volley.toolbox.ImageLoader$BatchedImageRequest,android.graphics.Bitmap)
+    416:416:static synthetic android.graphics.Bitmap access$000(com.android.volley.toolbox.ImageLoader$BatchedImageRequest)
+com.android.volley.toolbox.ImageLoader$ImageCache:
+    public abstract void putBitmap(java.lang.String,android.graphics.Bitmap)
+com.android.volley.toolbox.ImageLoader$ImageContainer:
+    338:338:static synthetic com.android.volley.toolbox.ImageLoader$ImageListener access$400(com.android.volley.toolbox.ImageLoader$ImageContainer)
+    338:338:static synthetic android.graphics.Bitmap access$502(com.android.volley.toolbox.ImageLoader$ImageContainer,android.graphics.Bitmap)
+com.android.volley.toolbox.ImageRequest:
+    public static final int DEFAULT_IMAGE_TIMEOUT_MS
+    public static final int DEFAULT_IMAGE_MAX_RETRIES
+    public static final float DEFAULT_IMAGE_BACKOFF_MULT
+    107:115:public ImageRequest(java.lang.String,com.android.volley.Response$Listener,int,int,android.graphics.Bitmap$Config,com.android.volley.Response$ErrorListener)
+    141:177:private static int getResizedDimension(int,int,int,int,android.widget.ImageView$ScaleType)
+    183:190:protected com.android.volley.Response parseNetworkResponse(com.android.volley.NetworkResponse)
+    195:238:private com.android.volley.Response doParse(com.android.volley.NetworkResponse)
+    253:259:protected void deliverResponse(android.graphics.Bitmap)
+    273:281:static int findBestSampleSize(int,int,int,int)
+    34:34:protected bridge synthetic void deliverResponse(java.lang.Object)
+com.android.volley.toolbox.JsonArrayRequest
+com.android.volley.toolbox.JsonObjectRequest
+com.android.volley.toolbox.JsonRequest
+com.android.volley.toolbox.NetworkImageView:
+    27:27:static synthetic int access$000(com.android.volley.toolbox.NetworkImageView)
+com.android.volley.toolbox.NetworkImageView$1:
+    153:156:public void onErrorResponse(com.android.volley.VolleyError)
+com.android.volley.toolbox.NoCache
+com.android.volley.toolbox.PoolingByteArrayOutputStream
+com.android.volley.toolbox.RequestFuture
+com.android.volley.toolbox.StringRequest
+com.android.volley.toolbox.Threads:
+    6:6:private Threads()
+com.android.volley.toolbox.Volley
 com.ermile.common.networking.NetworkModule:
     private static final int DEFAULT_READ_TIMEOUT_SECONDS
     private static final int DEFAULT_CONNECT_TIMEOUT_SECONDS
@@ -7115,6 +7365,16 @@ com.google.android.material.transformation.FabTransformationScrimBehavior:
     public static final long EXPAND_DURATION
     public static final long COLLAPSE_DELAY
     public static final long COLLAPSE_DURATION
+com.intuit.sdp.BuildConfig
+com.intuit.sdp.R
+com.intuit.sdp.R$dimen
+com.intuit.sdp.R$id
+com.intuit.sdp.R$layout
+com.intuit.ssp.BuildConfig
+com.intuit.ssp.R
+com.intuit.ssp.R$dimen
+com.intuit.ssp.R$id
+com.intuit.ssp.R$layout
 com.salamquran.android.AboutUsActivity:
     private java.util.HashMap _$_findViewCache
     public android.view.View _$_findCachedViewById(int)
@@ -7123,6 +7383,13 @@ com.salamquran.android.BuildConfig
 com.salamquran.android.QuranAdvancedPreferenceActivity:
     private static final java.lang.String SI_LOCATION_TO_WRITE
     private static final int REQUEST_WRITE_TO_SDCARD_PERMISSION
+com.salamquran.android.QuranApplication:
+    private com.android.volley.RequestQueue mRequestQueue
+    102:102:public static synchronized com.salamquran.android.QuranApplication getInstance()
+    106:109:public com.android.volley.RequestQueue getRequestQueue()
+    113:115:public void addToRequestQueue(com.android.volley.Request,java.lang.String)
+    118:120:public void addToRequestQueue(com.android.volley.Request)
+    123:126:public void cancelPendingRequests(java.lang.Object)
 com.salamquran.android.QuranDataActivity:
     public static final java.lang.String PAGES_DOWNLOAD_KEY
     private static final int REQUEST_WRITE_TO_SDCARD_PERMISSIONS
@@ -7172,7 +7439,7 @@ com.salamquran.android.R$raw
 com.salamquran.android.R$string
 com.salamquran.android.R$style
 com.salamquran.android.R$styleable:
-    9533:9533:public R$styleable()
+    10304:10304:public R$styleable()
 com.salamquran.android.R$xml
 com.salamquran.android.SearchActivity:
     public static final java.lang.String SEARCH_INFO_DOWNLOAD_KEY

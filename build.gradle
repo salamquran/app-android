@@ -12,7 +12,7 @@ buildscript {
     deps = [
         android: [
             build: [
-                minSdkVersion    : 14,
+                minSdkVersion    : 16,
                 targetSdkVersion : 28,
                 compileSdkVersion: 28
             ]

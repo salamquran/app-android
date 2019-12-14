@@ -7,7 +7,7 @@
 7
 8    <uses-sdk
 8-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
-9        android:minSdkVersion="14"
+9        android:minSdkVersion="16"
 9-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50
 10        android:targetSdkVersion="28" />
 10-->/Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:7:3-50

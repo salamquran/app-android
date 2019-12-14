@@ -121,6 +121,9 @@
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/2378e78f566b9a1e869a2eee22bad61a/appcompat-1.1.0/res/layout/abc_screen_simple.xml:25
 -keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
 
+# Referenced at /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/res/layout/item_lms_group.xml:13
+-keep class androidx.cardview.widget.CardView { <init>(...); }
+
 # Referenced at /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/res/layout/design_bottom_sheet_dialog.xml:26
 -keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
 

@@ -3,7 +3,7 @@
     package="com.salamquran.android.common.search" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="16"
         android:targetSdkVersion="28" />
 
 </manifest>
