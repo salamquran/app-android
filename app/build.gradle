@@ -24,12 +24,14 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("/Users/amin/Project's/Android Studio/Ermile/Key/key-android-salamquran.jks")
-            storePassword 'key_amin1378'
-            keyAlias 'salamquran'
-            keyPassword 'alias_amin1378'
+          storeFile file("FILE")
+          storePassword 'storePassword'
+          keyAlias 'keyAlias'
+          keyPassword 'keyPassword'
         }
     }
+
+
 
     flavorDimensions "pageType"
     productFlavors {
