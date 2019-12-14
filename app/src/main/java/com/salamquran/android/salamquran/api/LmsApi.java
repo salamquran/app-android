@@ -22,24 +22,21 @@ import java.util.Map;
 public class LmsApi {
 
   public static void group(Context context, groupListener listener){
-    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsGroup(context), new Response.Listener<String>(){
-      @Override
-      public void onResponse(String response) {
-        try {
-          JSONObject mainObject = new JSONObject(response);
-          if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
-            if (!mainObject.isNull("result")){
-              JSONArray result = mainObject.getJSONArray("result");
-              listener.onReceived(String.valueOf(result));
-            }
-          }else {
-            listener.onFiled();
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsGroup(context), response -> {
+      try {
+        JSONObject mainObject = new JSONObject(response);
+        if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
+          if (!mainObject.isNull("result")){
+            JSONArray result = mainObject.getJSONArray("result");
+            listener.onReceived(String.valueOf(result));
           }
-
-        } catch (JSONException e) {
-          e.printStackTrace();
+        }else {
           listener.onFiled();
         }
+
+      } catch (JSONException e) {
+        e.printStackTrace();
+        listener.onFiled();
       }
     }, new Response.ErrorListener() {
       @Override
@@ -63,4 +60,47 @@ public class LmsApi {
     void onReceived(String Result);
     void onFiled();
   }
+
+
+  public static void levelList(Context context,String id, levelListListener listener){
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsLevelList(context,id), response -> {
+      try {
+        JSONObject mainObject = new JSONObject(response);
+        if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
+          if (!mainObject.isNull("result")){
+            JSONArray result = mainObject.getJSONArray("result");
+            listener.onReceived(String.valueOf(result));
+          }
+        }else {
+          listener.onFiled();
+        }
+
+      } catch (JSONException e) {
+        e.printStackTrace();
+        listener.onFiled();
+      }
+    }, new Response.ErrorListener() {
+      @Override
+      public void onErrorResponse(VolleyError e) {
+        listener.onFiled();
+      }
+    })
+    {
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("apikey", User.getApikey(context));
+        return headers;
+      }
+    };
+    newsRQ.setRetryPolicy(new DefaultRetryPolicy(5 * 1000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(newsRQ);
+
+  }
+  public interface levelListListener{
+    void onReceived(String Result);
+    void onFiled();
+  }
+
+
 }

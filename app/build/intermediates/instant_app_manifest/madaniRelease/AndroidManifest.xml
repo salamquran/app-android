@@ -15,8 +15,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- foreground services need this when targeting Android 9+ (Api 28+) -->
     <uses-permission-sdk-23 android:name="android.permission.FOREGROUND_SERVICE" /> <!-- support chromebooks without touch screen -->
-
-
     <!-- salamquran -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -36,6 +34,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Quran" >
+        <activity android:name="com.salamquran.android.salamquran.Lms.LmsLevelActivity" />
         <activity
             android:name="com.salamquran.android.Splash"
             android:configChanges="keyboardHidden|orientation|screenSize"

@@ -24,10 +24,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("FILE")
-            storePassword 'storePassword'
-            keyAlias 'keyAlias'
-            keyPassword 'keyPassword'
+            storeFile file("/Users/amin/Project's/Android Studio/Ermile/Key/key-android-salamquran.jks")
+            storePassword 'key_amin1378'
+            keyAlias 'salamquran'
+            keyPassword 'alias_amin1378'
         }
     }
 
@@ -144,4 +144,8 @@ dependencies {
 //  salamquran
     implementation 'com.google.android.material:material:1.2.0-alpha02'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }

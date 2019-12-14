@@ -1,9 +1,9 @@
 package com.salamquran.android.salamquran.Lms;
 
-public class LmsModel {
+public class LmsModel_group {
   String id,image,title,techerName,type,type_title,countLevel;
 
-  public LmsModel(String id, String image, String title, String techerName, String type, String type_title, String countLevel) {
+  public LmsModel_group(String id, String image, String title, String techerName, String type, String type_title, String countLevel) {
     this.id = id;
     this.image = image;
     this.title = title;

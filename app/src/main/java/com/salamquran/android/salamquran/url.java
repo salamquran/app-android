@@ -3,7 +3,7 @@ package com.salamquran.android.salamquran;
 import android.content.Context;
 
 public class url {
-  public static String site = "https://salamquran.com";
+  public static String site = "https://salamquran.com/fa";
   public static String api = site+"/api/v6";
 
   public static String getLocal(Context context){

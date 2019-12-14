@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
 MERGED from [:pages:madani] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/pages/madani/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:common:pages] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/pages/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:common:search] /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/common/search/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
@@ -52,22 +52,22 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/amin/.gradle/caches/tr
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/117d11eb0421a81fa40cebbfa52ec9b9/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/3e89c2e74324651f942615f5c077f984/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/e75111d5c0b44617912ad6289033cda5/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
-INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
+INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
 	package
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:4:5-37
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-174:12
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:1-175:12
 		INJECTED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:2:11-69
@@ -206,17 +206,17 @@ ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/sr
 	android:name
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:13:27-79
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:16:3-68
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:15:3-69
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:16:20-66
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:15:20-66
 uses-feature#android.hardware.touchscreen
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:18:3-20:34
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:17:3-19:34
 	android:required
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:20:7-31
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:19:7-31
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:19:7-50
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:18:7-50
 application
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:22:3-172:17
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:21:3-173:17
 MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/amin/.gradle/caches/transforms-2/files-2.1/48d34b2a6cc1897feafc21cf86c0b270/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/amin/.gradle/caches/transforms-2/files-2.1/d7fc1ba31b2b5cff97b4d34ea0cc1a0e/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
@@ -236,27 +236,31 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/amin
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /Users/amin/.gradle/caches/transforms-2/files-2.1/1f98d01ff47bf946dd4c4151094b301d/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:30:7-33
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:29:7-33
 	android:label
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:27:7-39
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:26:7-39
 	android:fullBackupContent
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:25:7-46
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:24:7-46
 	tools:ignore
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:32:7-37
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:31:7-37
 	android:roundIcon
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:29:7-41
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:28:7-41
 	android:icon
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:26:7-36
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:25:7-36
 	android:allowBackup
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:24:7-33
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:23:7-33
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:31:7-35
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:30:7-35
 	android:networkSecurityConfig
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:28:7-67
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:27:7-67
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:23:7-39
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:22:7-39
+activity#com.salamquran.android.salamquran.Lms.LmsLevelActivity
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:32:5-74
+	android:name
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:32:15-62
 activity#com.salamquran.android.Splash
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:33:5-41:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:33:5-42:16
 	android:configChanges
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:35:9-70
 	android:theme
@@ -264,202 +268,202 @@ ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/sr
 	android:name
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:34:9-31
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:37:7-40:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:37:7-41:23
 action#android.intent.action.MAIN
 ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:38:9-61
 	android:name
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:38:17-58
 category#android.intent.category.LAUNCHER
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:39:9-69
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:40:9-69
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:39:19-66
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:40:19-66
 activity#com.salamquran.android.QuranDataActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:42:5-50:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:43:5-51:16
 	android:label
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:45:9-41
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:46:9-41
 	android:configChanges
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:44:9-70
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:45:9-70
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:46:9-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:47:9-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:43:9-42
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:44:9-42
 meta-data#android.app.shortcuts
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:47:7-49:47
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:48:7-50:47
 	android:resource
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:49:11-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:50:11-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:48:11-47
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:49:11-47
 activity#com.salamquran.android.ShortcutsActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:51:5-53:35
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:52:5-54:35
 	android:exported
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:53:9-32
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:54:9-32
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:52:9-42
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:53:9-42
 activity#com.salamquran.android.ui.QuranActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:54:5-56:47
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:55:5-57:47
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:56:9-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:57:9-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:55:9-41
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:56:9-41
 activity#com.salamquran.android.AboutUsActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:57:5-59:47
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:58:5-60:47
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:59:9-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:60:9-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:58:9-40
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:59:9-40
 activity#com.salamquran.android.HelpActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:60:5-46
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:61:5-46
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:60:15-43
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:61:15-43
 activity#com.salamquran.android.ui.PagerActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:61:5-64:55
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:62:5-65:55
 	android:launchMode
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:63:9-39
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:64:9-39
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:64:9-52
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:65:9-52
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:62:9-41
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:63:9-41
 activity#com.salamquran.android.ui.TranslationManagerActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:65:5-67:73
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:66:5-68:73
 	android:configChanges
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:67:9-70
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:68:9-70
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:66:9-54
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:67:9-54
 activity#com.salamquran.android.QuranPreferenceActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:68:5-71:47
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:69:5-72:47
 	android:configChanges
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:70:9-70
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:71:9-70
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:71:9-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:72:9-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:69:9-48
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:70:9-48
 activity#com.salamquran.android.QuranAdvancedPreferenceActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:72:5-75:47
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:73:5-76:47
 	android:configChanges
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:74:9-70
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:75:9-70
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:75:9-44
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:76:9-44
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:73:9-56
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:74:9-56
 activity#com.salamquran.android.SearchActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:76:5-86:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:77:5-87:16
 	android:launchMode
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:79:9-39
+	android:name
 		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:78:9-39
-	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:77:9-39
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:79:7-81:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:80:7-82:23
 action#android.intent.action.SEARCH
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:80:9-63
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:81:9-63
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:80:17-60
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:81:17-60
 meta-data#android.app.searchable
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:83:7-85:48
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:84:7-86:48
 	android:resource
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:85:11-45
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:86:11-45
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:84:11-48
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:85:11-48
 activity#com.salamquran.android.QuranForwarderActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:87:5-95:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:88:5-96:16
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:87:15-53
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:88:15-53
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:quran
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:88:7-94:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:89:7-95:23
 action#android.intent.action.VIEW
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:89:9-61
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:90:9-61
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:89:17-58
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:90:17-58
 category#android.intent.category.DEFAULT
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:91:9-68
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:92:9-68
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:91:19-65
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:92:19-65
 data
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:93:9-40
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:94:9-40
 	android:host
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:137:13-29
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:138:13-29
 	android:scheme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:93:15-37
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:94:15-37
 	android:pathPattern
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:139:13-46
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:140:13-46
 	android:mimeType
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:128:15-50
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:129:15-50
 activity#com.salamquran.android.ui.AudioManagerActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:96:5-98:40
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:97:5-99:40
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:98:9-37
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:99:9-37
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:97:9-48
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:98:9-48
 meta-data#android.app.default_searchable
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:99:5-101:43
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:100:5-102:43
 	android:value
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:101:9-40
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:102:9-40
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:100:9-54
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:101:9-54
 provider#com.salamquran.android.data.QuranDataProvider
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:102:5-105:36
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:103:5-106:36
 	android:authorities
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:104:9-48
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:105:9-48
 	android:exported
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:105:9-33
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:106:9-33
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:103:9-47
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:104:9-47
 provider#androidx.core.content.FileProvider
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:106:5-114:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:107:5-115:16
 	android:grantUriPermissions
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:110:9-43
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:111:9-43
 	android:authorities
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:108:9-53
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:109:9-53
 	android:exported
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:109:9-33
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:110:9-33
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:107:9-58
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:108:9-58
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:111:7-113:48
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:112:7-114:48
 	android:resource
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:113:11-45
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:114:11-45
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:112:11-61
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:113:11-61
 receiver#androidx.media.session.MediaButtonReceiver
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:116:5-120:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:117:5-121:16
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:116:15-72
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:117:15-72
 intent-filter#action:name:android.intent.action.MEDIA_BUTTON
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:117:7-119:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:118:7-120:23
 action#android.intent.action.MEDIA_BUTTON
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:118:9-69
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:119:9-69
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:118:17-66
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:119:17-66
 activity#com.salamquran.android.QuranImportActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:122:5-157:16
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:123:5-158:16
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:122:15-50
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:123:15-50
 intent-filter#action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+data:mimeType:application/json
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:123:7-129:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:124:7-130:23
 action#android.intent.action.SEND
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:124:9-61
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:125:9-61
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:124:17-58
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:125:17-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:host:*+data:host:*+data:host:*+data:mimeType:*/*+data:mimeType:*/*+data:mimeType:*/*+data:mimeType:*/*+data:pathPattern:.*\\..*\\..*\\..*\\.backup+data:pathPattern:.*\\..*\\..*\\.backup+data:pathPattern:.*\\..*\\.backup+data:pathPattern:.*\\.backup+data:scheme:file+data:scheme:file+data:scheme:file+data:scheme:file
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:130:7-156:23
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:131:7-157:23
 category#android.intent.category.BROWSABLE
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:134:9-70
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:135:9-70
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:134:19-67
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:135:19-67
 activity#com.salamquran.android.pageselect.PageSelectActivity
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:158:5-160:68
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:159:5-161:68
 	android:theme
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:160:9-65
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:161:9-65
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:159:9-54
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:160:9-54
 service#com.salamquran.android.service.QuranDownloadService
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:162:5-164:34
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:163:5-165:34
 	android:enabled
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:164:9-31
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:165:9-31
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:163:9-53
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:164:9-53
 service#com.salamquran.android.service.AudioService
-ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:165:5-171:15
+ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:166:5-172:15
 	android:exported
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:167:9-33
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:168:9-33
 	android:name
-		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:166:9-45
+		ADDED from /Users/amin/Project's/Android Studio/Ermile/SalamQuran-android/app/src/main/AndroidManifest.xml:167:9-45
