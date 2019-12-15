@@ -5,9 +5,13 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
+import android.text.TextUtils;
 
 //import com.crashlytics.android.Crashlytics; //1L
 //import com.crashlytics.android.core.CrashlyticsCore; //1L
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.ermile.salamquran.android.component.application.ApplicationComponent;
 import com.ermile.salamquran.android.component.application.DaggerApplicationComponent;
 import com.ermile.salamquran.android.module.application.ApplicationModule;
@@ -22,9 +26,21 @@ import androidx.annotation.NonNull;
 public class QuranApplication extends Application {
   private ApplicationComponent applicationComponent;
 
+  //  salamquran
+  public static final String TAG = QuranApplication.class.getSimpleName();
+  private RequestQueue mRequestQueue;
+  private static QuranApplication mInstance;
+//------------------
+
+
   @Override
   public void onCreate() {
     super.onCreate();
+
+//  salamquran
+    mInstance = this;
+//------------------
+
     //1L
     /*Fabric.with(this, new Crashlytics.Builder()
         .core(new CrashlyticsCore.Builder()
@@ -51,7 +67,8 @@ public class QuranApplication extends Application {
 
     final Locale locale;
     if ("ar".equals(language)) {
-      locale = new Locale("ar");
+//      locale = new Locale("ar");
+      locale = new Locale("fa");
     } else if (force) {
       // get the system locale (since we overwrote the default locale)
       locale = Resources.getSystem().getConfiguration().locale;
@@ -76,4 +93,37 @@ public class QuranApplication extends Application {
     }
     resources.updateConfiguration(config, resources.getDisplayMetrics());
   }
+
+
+
+
+  //  salamquran
+  public static synchronized QuranApplication getInstance() {
+    return mInstance;
+  }
+
+  public RequestQueue getRequestQueue() {
+    if (mRequestQueue == null) {
+      mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+    }
+    return mRequestQueue;
+  }
+  public <T> void addToRequestQueue(Request<T> req, String tag) {
+    // set the default tag if tag is empty
+    req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+    getRequestQueue().add(req);
+  }
+
+  public <T> void addToRequestQueue(Request<T> req) {
+    req.setTag(TAG);
+    getRequestQueue().add(req);
+  }
+
+  public void cancelPendingRequests(Object tag) {
+    if (mRequestQueue != null) {
+      mRequestQueue.cancelAll(tag);
+    }
+  }
+//------------------
+
 }
