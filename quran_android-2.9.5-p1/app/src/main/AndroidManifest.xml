@@ -29,7 +29,8 @@
       android:supportsRtl="true"
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
-    <activity android:name=".salamquran.Learn.LearnActivity"></activity>
+    <activity android:name=".salamquran.Learn.LearnActivity_level_info"></activity>
+    <activity android:name=".salamquran.Learn.LearnActivity_level_list" />
     <activity
         android:name=".Splash"
         android:configChanges="keyboardHidden|orientation|screenSize"
