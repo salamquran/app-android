@@ -18,7 +18,7 @@ public class url {
     String lms_level_list = "/lms/levellist?id="+id;
     return getLocal(context) + lms_level_list;
   }
-  public static String getLmsLevel(Context context,String id){
+  public static String getLmsLevelInfo(Context context, String id){
     String lms_level = "/lms/level?id="+id;
     return getLocal(context) + lms_level;
   }

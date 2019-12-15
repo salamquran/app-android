@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".salamquran.Learn.LearnActivity">
+    tools:context=".salamquran.Learn.LearnActivity_level_list">
 
   <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/recycler_views1"
+      android:id="@+id/recycler_view"
       android:layout_centerInParent="true"
       android:layout_width="match_parent"
       android:layout_height="match_parent"/>

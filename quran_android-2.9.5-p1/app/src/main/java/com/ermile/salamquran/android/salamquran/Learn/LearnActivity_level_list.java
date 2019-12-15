@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class LearnActivity extends AppCompatActivity {
+public class LearnActivity_level_list extends AppCompatActivity {
 
   private RecyclerView recyclerView;
   private ArrayList<LearnModel> mainModel;
@@ -27,10 +27,10 @@ public class LearnActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_learn);
+    setContentView(R.layout.activity_learn_level_list);
     String id = getIntent().getStringExtra("id");
 
-    recyclerView = findViewById(R.id.recycler_views1);
+    recyclerView = findViewById(R.id.recycler_view);
     mainModel = new ArrayList<>();
     level_listModel = new ArrayList<>();
     adaptor = new LearnAdaptor(getApplication(),mainModel,null,level_listModel);

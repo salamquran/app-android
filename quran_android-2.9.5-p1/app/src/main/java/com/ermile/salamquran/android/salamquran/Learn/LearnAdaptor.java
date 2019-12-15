@@ -44,11 +44,13 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
   public static class holder_level_list extends RecyclerView.ViewHolder {
 
+    View view;
     ImageView image;
     TextView title,desc;
 
     holder_level_list(View itemView) {
       super(itemView);
+      this.view = itemView;
       this.image = itemView.findViewById(R.id.image);
       this.title = itemView.findViewById(R.id.title);
       this.desc = itemView.findViewById(R.id.desc);
@@ -133,9 +135,9 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
           hGroup.desc.setText(item_group.getDesc());
           hGroup.type.setText(item_group.getType_title());
           hGroup.view.setOnClickListener(v -> {
-            if (item_group.id != null){
-              Intent intent = new Intent(mContext,LearnActivity.class);
-              intent.putExtra("id",item_group.id);
+            if (item_group.getId() != null){
+              Intent intent = new Intent(mContext, LearnActivity_level_list.class);
+              intent.putExtra("id",item_group.getId());
               mContext.startActivity(intent);
             }
 
@@ -152,7 +154,16 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 .into(hLeve_list.image );
           }
           hLeve_list.title.setText(item_level_list.getTitle());
-          hLeve_list.desc.setText(item_level_list.getDesc());
+          hLeve_list.desc.setText(item_level_list.getType_title());
+
+          hLeve_list.view.setOnClickListener(v -> {
+            if (item_level_list.getId() != null){
+              Intent intents = new Intent(mContext, LearnActivity_level_info.class);
+              intents.putExtra("id",item_level_list.getId());
+              intents.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+              mContext.startActivity(intents);
+            }
+          });
           break;
       }
     }
