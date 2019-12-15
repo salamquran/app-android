@@ -2,6 +2,7 @@ package com.ermile.salamquran.android.salamquran.Learn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
+import com.ermile.salamquran.android.salamquran.VideoShowActivity;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
 
 import org.json.JSONArray;
@@ -53,6 +55,7 @@ public class LearnActivity_level_info extends AppCompatActivity {
     try {
       JSONObject object = new JSONObject(Response);
       if (!object.isNull("file")){
+        String file = object.getString("file");
         if (!object.isNull("filepic")){
           Glide
               .with(getApplication())
@@ -61,9 +64,18 @@ public class LearnActivity_level_info extends AppCompatActivity {
         }else {
           Glide
               .with(getApplication())
-              .load(object.getString("file"))
+              .load(file)
               .into(image);
         }
+        image.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            Intent intent = new Intent(getApplication(), VideoShowActivity.class);
+            intent.putExtra("video",file);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+          }
+        });
       }
 
       if (!object.isNull("title")){
