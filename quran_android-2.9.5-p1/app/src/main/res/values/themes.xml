@@ -31,6 +31,26 @@
       <!---->
     </style>
 
+  <style name="QuranToolBarFullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="windowActionModeOverlay">true</item>
+    <item name="spinnerStyle">?attr/actionDropDownStyle</item>
+    <item name="spinnerDropDownItemStyle">@style/SherlockDropDownItem</item>
+    <item name="spinnerItemStyle">@style/SherlockSpinnerItem</item>
+    <!--salamquran-->
+    <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
+    <item name="actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
+    <item name="actionModeStyle">@style/ActionModeStyle</item>
+
+    <!---->
+  </style>
+
     <style name="QuranToolBar.Overlay">
         <item name="windowActionBarOverlay">true</item>
       <!--salamquran-->
