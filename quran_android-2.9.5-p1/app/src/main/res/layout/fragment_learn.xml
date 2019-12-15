@@ -7,17 +7,8 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".salamquran.Learn.LearnFragment">
 
-
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:id="@+id/swipRefresh_WebView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-  <WebView
-      android:id="@+id/webView_WebView"
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recycler_view"
       android:layout_width="match_parent"
       android:layout_height="match_parent"/>
-
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 </LinearLayout>
