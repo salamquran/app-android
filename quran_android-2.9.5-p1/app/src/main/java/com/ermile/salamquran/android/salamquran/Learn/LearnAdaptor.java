@@ -123,37 +123,36 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
       switch (item_main.type) {
         case LearnModel.GROUP:
           final LearnModel.group item_group = itemGroup.get(listPosition);
+          holder_group hGroup = ((holder_group) holder);
           if (item_group.getImage()!=null){
             Glide.with(mContext)
                 .load(item_group.getImage())
-                .into( ( (holder_group) holder).image );
+                .into( hGroup.image );
           }
-          ((holder_group) holder).title.setText(item_group.getTitle());
-          ((holder_group) holder).desc.setText(item_group.getDesc());
-          ((holder_group) holder).type.setText(item_group.getType_title());
-          ((holder_group) holder).view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if (item_group.id != null){
-                Intent intent = new Intent(mContext,LearnActivity.class);
-                intent.putExtra("id",item_group.id);
-                mContext.startActivity(intent);
-              }
-
+          hGroup.title.setText(item_group.getTitle());
+          hGroup.desc.setText(item_group.getDesc());
+          hGroup.type.setText(item_group.getType_title());
+          hGroup.view.setOnClickListener(v -> {
+            if (item_group.id != null){
+              Intent intent = new Intent(mContext,LearnActivity.class);
+              intent.putExtra("id",item_group.id);
+              mContext.startActivity(intent);
             }
+
           });
 
           break;
 
         case LearnModel.LEVEL_LIST:
           final LearnModel.level_list item_level_list = itemLevel_List.get(listPosition);
+          holder_level_list hLeve_list = ((holder_level_list) holder);
           if (item_level_list.getFilepic()!=null){
             Glide.with(mContext)
                 .load(item_level_list.getFilepic())
-                .into( ( (holder_group) holder).image );
+                .into(hLeve_list.image );
           }
-          ((holder_group) holder).title.setText(item_level_list.getTitle());
-          ((holder_group) holder).desc.setText(item_level_list.getDesc());
+          hLeve_list.title.setText(item_level_list.getTitle());
+          hLeve_list.desc.setText(item_level_list.getDesc());
           break;
       }
     }
