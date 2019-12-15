@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
@@ -343,6 +344,8 @@ public class QuranActivity extends QuranActionBarActivity
 
   @Override
   public void onBackPressed() {
+    Toast.makeText(this, ""+fragmentManagers.getBackStackEntryCount(), Toast.LENGTH_SHORT).show();
+
     if (supportActionMode != null) {
       supportActionMode.finish();
     } else if (searchItem != null && searchItem.isActionViewExpanded()) {
