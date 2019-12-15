@@ -1,8 +1,16 @@
 package com.ermile.salamquran.android.salamquran.Learn;
 
 public class LearnModel {
+  public static final int GROUP= 100;
+  public static final int LEVEL_LIST= 200;
 
-  class group{
+  public int type;
+
+  public LearnModel(int type) {
+    this.type = type;
+  }
+
+  static class group{
     String id,image,title,desc,type,type_title;
 
     public group(String id, String image, String title,
@@ -64,7 +72,7 @@ public class LearnModel {
     }
   }
 
-  class levelList{
+  static class level_list {
     private String
         id ,
         lm_group_id ,
@@ -81,9 +89,9 @@ public class LearnModel {
         userstar ,
         xtype ;
 
-    public levelList(String id, String lm_group_id, String title, String desc, String type,
-                     String type_title, String file, String filepic, String sort, String ratio,
-                     String unlockscore, String badge, String userstar, String xtype) {
+    public level_list(String id, String lm_group_id, String title, String desc, String type,
+                      String type_title, String file, String filepic, String sort, String ratio,
+                      String unlockscore, String badge, String userstar, String xtype) {
       this.id = id;
       this.lm_group_id = lm_group_id;
       this.title = title;
