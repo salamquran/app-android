@@ -27,7 +27,7 @@ import com.ermile.salamquran.android.data.Constants;
 import com.ermile.salamquran.android.model.bookmark.RecentPageModel;
 import com.ermile.salamquran.android.presenter.bookmark.BookmarksContextualModePresenter;
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
-import com.ermile.salamquran.android.salamquran.Lms.LearnFragment;
+import com.ermile.salamquran.android.salamquran.Learn.LearnFragment;
 import com.ermile.salamquran.android.salamquran.SearchFragment;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
