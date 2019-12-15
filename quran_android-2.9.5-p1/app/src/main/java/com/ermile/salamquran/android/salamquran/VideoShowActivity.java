@@ -1,8 +1,12 @@
 package com.ermile.salamquran.android.salamquran;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.ermile.salamquran.android.R;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -11,6 +15,7 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
@@ -21,10 +26,16 @@ public class VideoShowActivity extends AppCompatActivity{
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+//    LANDSCAPE
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+//    FullScreen
+/*    requestWindowFeature(Window.FEATURE_NO_TITLE);
+    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
+//    View
     setContentView(R.layout.activity_video_show);
     pvMain = findViewById(R.id.ep_video_view);
 
-    Context ctx =this;
     String CONTENT_URL = getIntent().getStringExtra("video");
     startPlayingVideo(CONTENT_URL);
 
@@ -34,9 +45,6 @@ public class VideoShowActivity extends AppCompatActivity{
   private void startPlayingVideo( String CONTENT_URL) {
     Context ctx = getApplicationContext();
 
-    //BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-    //TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory(bandwidthMeter);
-    //TrackSelector trackSelectorDef = new DefaultTrackSelector(videoTrackSelectionFactory);
     TrackSelector trackSelectorDef = new DefaultTrackSelector();
 
     absPlayerInternal = ExoPlayerFactory.newSimpleInstance(ctx, trackSelectorDef);
