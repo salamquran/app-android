@@ -4,6 +4,7 @@ package com.ermile.salamquran.android.salamquran.Learn;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +28,13 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
   public static class holder_group extends RecyclerView.ViewHolder {
 
+    View view;
     ImageView image;
     TextView title,desc,type;
 
     holder_group(View itemView) {
       super(itemView);
+      this.view = itemView;
       this.image = itemView.findViewById(R.id.image);
       this.title = itemView.findViewById(R.id.title);
       this.desc = itemView.findViewById(R.id.desc);
@@ -128,6 +131,18 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
           ((holder_group) holder).title.setText(item_group.getTitle());
           ((holder_group) holder).desc.setText(item_group.getDesc());
           ((holder_group) holder).type.setText(item_group.getType_title());
+          ((holder_group) holder).view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              if (item_group.id != null){
+                Intent intent = new Intent(mContext,LearnActivity.class);
+                intent.putExtra("id",item_group.id);
+                mContext.startActivity(intent);
+              }
+
+            }
+          });
+
           break;
 
         case LearnModel.LEVEL_LIST:
