@@ -29,8 +29,9 @@
       android:supportsRtl="true"
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
-    <activity android:name=".salamquran.Learn.LearnActivity_level_info"></activity>
-    <activity android:name=".salamquran.Learn.LearnActivity_level_list" />
+    <activity android:name=".salamquran.VideoShowActivity" android:theme="@style/QuranToolBar" />
+    <activity android:name=".salamquran.Learn.LearnActivity_level_info" android:theme="@style/QuranToolBar" />
+    <activity android:name=".salamquran.Learn.LearnActivity_level_list" android:theme="@style/QuranToolBar" />
     <activity
         android:name=".Splash"
         android:configChanges="keyboardHidden|orientation|screenSize"
