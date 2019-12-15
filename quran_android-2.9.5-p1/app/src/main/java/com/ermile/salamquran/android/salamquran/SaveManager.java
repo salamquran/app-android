@@ -50,7 +50,7 @@ public class SaveManager extends ContextWrapper {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put(local, sharedPreferences.getString(local, url.api ));
 
-    hashMap.put(apikey, sharedPreferences.getString(apikey, null));
+    hashMap.put(apikey, sharedPreferences.getString(apikey, "6f2d002a445db456d2bcea3dd02631af"));
     hashMap.put(userCode, sharedPreferences.getString(userCode, null));
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
