@@ -45,7 +45,7 @@ public class LmsLevelList_Adaptor extends RecyclerView.Adapter<LmsLevelList_Adap
       holder.title.setText(model.getTitle());
       holder.desc.setText(model.getDesc());
       holder.view.setOnClickListener(v -> {
-        Intent levelList = new Intent(context, LmsLevelList_Activity.class);
+        Intent levelList = new Intent(context, LmsLevel_Activity.class);
         levelList.putExtra("id",model.getId());
         context.startActivity(levelList);
       });
@@ -65,7 +65,7 @@ public class LmsLevelList_Adaptor extends RecyclerView.Adapter<LmsLevelList_Adap
 
         ViewHolder(View itemView) {
           super(itemView);
-          image = itemView.findViewById(R.id.image);
+          image = itemView.findViewById(R.id.images);
           title = itemView.findViewById(R.id.title);
           desc = itemView.findViewById(R.id.desc);
           view = itemView;

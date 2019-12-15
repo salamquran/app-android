@@ -23,8 +23,8 @@ public class LmsLevelList_Activity extends AppCompatActivity {
   String id = null;
 
   private RecyclerView recyclerView;
-  private List<LmsModel_group> model;
-  private LmsGroup_Adaptor adaptor;
+  private List<LmsModel_levelList> model;
+  private LmsLevelList_Adaptor adaptor;
   private LinearLayoutManager layoutManager;
 
   @Override
@@ -35,7 +35,7 @@ public class LmsLevelList_Activity extends AppCompatActivity {
 
     recyclerView = findViewById(R.id.recycler_view);
     model = new ArrayList<>();
-    adaptor = new LmsGroup_Adaptor(getApplication(),model);
+    adaptor = new LmsLevelList_Adaptor(getApplication(),model);
     layoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 
@@ -81,15 +81,22 @@ public class LmsLevelList_Activity extends AppCompatActivity {
   }*/
 
         model.add(
-            new LmsModel_group(
+            new LmsModel_levelList(
                 object.getString("id"),
-                object.getString("file"),
+                null,
                 object.getString("title"),
                 object.getString("desc"),
-                object.getString("type"),
-                object.getString("type_title"),
-                object.getString("xtype")
-            ));
+                null,
+                null,
+                object.getString("file"),
+                object.getString("filepic"),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+                ));
       }
     } catch (JSONException e) {
       e.printStackTrace();
