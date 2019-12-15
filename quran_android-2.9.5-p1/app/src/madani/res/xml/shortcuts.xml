@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+  <shortcut
+      android:shortcutId="lastPage"
+      android:enabled="true"
+      android:icon="@drawable/ic_shortcut_last_page"
+      android:shortcutShortLabel="@string/menu_jump_last_page"
+      android:shortcutLongLabel="@string/menu_jump_last_page">
+    <intent
+        android:action="com.ermile.salamquran.android.last_page"
+        android:targetPackage="com.ermile.salamquran.android"
+        android:targetClass="com.ermile.salamquran.android.ShortcutsActivity"
+        />
+  </shortcut>
+</shortcuts>

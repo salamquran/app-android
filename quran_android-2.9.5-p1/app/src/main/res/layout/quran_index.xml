@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/listQuran_background"
+    >
+
+  <LinearLayout
+      android:id="@+id/linear_quran_list"
+      android:layout_above="@+id/bottom_navigation"
+      android:layout_alignParentTop="true"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#fff"
+        android:background="@color/toolbar_main_bg"
+        style="@style/ToolBarArea"/>
+
+    <com.ermile.salamquran.android.widgets.SlidingTabLayout
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tabLayout_background"
+        style="@style/ToolBarArea"
+        />
+    <com.ermile.salamquran.android.widgets.QuranViewPager
+        android:id="@+id/index_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+  </LinearLayout>
+
+  <FrameLayout
+      android:id="@+id/frameLayout"
+      android:layout_above="@+id/bottom_navigation"
+      android:layout_alignParentTop="true"
+      android:layout_centerInParent="true"
+      android:visibility="gone"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:visibility="gone"
+      android:background="@color/bottomNav_background"
+      android:id="@+id/bottom_navigation"
+      android:layout_alignParentBottom="true"
+      android:layout_gravity="bottom"
+      app:itemIconTint="@drawable/bottom_navigation_icon"
+      app:itemTextColor="@drawable/bottom_navigation_text"
+      app:menu="@menu/sq_bottomnav_main_menu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+</RelativeLayout>

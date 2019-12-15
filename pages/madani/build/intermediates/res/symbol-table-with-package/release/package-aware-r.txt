@@ -1,3 +1,0 @@
-com.salamquran.android.pages.madani
-string madani_description
-string madani_title

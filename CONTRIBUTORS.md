@@ -1,2 +1,0 @@
-SalamQuran android contributors
-==========================
