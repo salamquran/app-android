@@ -104,4 +104,45 @@ public class LearnApi {
   }
 
 
+  public static void levelInfo(Context context,String id, levelInfoListener listener){
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsLevelInfo(context,id), response -> {
+      try {
+        JSONObject mainObject = new JSONObject(response);
+        if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
+          if (!mainObject.isNull("result")){
+            JSONObject result = mainObject.getJSONObject("result");
+            listener.onReceived(String.valueOf(result));
+          }
+        }else {
+          listener.onFiled();
+        }
+
+      } catch (JSONException e) {
+        e.printStackTrace();
+        listener.onFiled();
+      }
+    }, new Response.ErrorListener() {
+      @Override
+      public void onErrorResponse(VolleyError e) {
+        listener.onFiled();
+      }
+    })
+    {
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("apikey", User.getApikey(context));
+        return headers;
+      }
+    };
+    newsRQ.setRetryPolicy(new DefaultRetryPolicy(5 * 1000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(newsRQ);
+
+  }
+  public interface levelInfoListener{
+    void onReceived(String Result);
+    void onFiled();
+  }
+
+
 }
