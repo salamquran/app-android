@@ -185,6 +185,7 @@ public class QuranActivity extends QuranActionBarActivity
 
   @Override
   public void onResume() {
+    setVisibilityQuran();
     compositeDisposable.add(recentPages.subscribe());
     super.onResume();
     final boolean isRtl = isRtl();
@@ -321,9 +322,16 @@ public class QuranActivity extends QuranActionBarActivity
     }
   }
   private void setVisibilityQuran() {
-    bottomNavigation.setSelectedItemId(R.id.quran);
-    linear_quranList.setVisibility(View.VISIBLE);
-    frameLayout.setVisibility(View.GONE);
+    if (linear_quranList.getVisibility() == View.VISIBLE){
+      bottomNavigation.setSelectedItemId(R.id.quran);
+      linear_quranList.setVisibility(View.VISIBLE);
+      frameLayout.setVisibility(View.GONE);
+    }else {
+      if (frameLayout.getVisibility() != View.VISIBLE){
+        linear_quranList.setVisibility(View.GONE);
+        frameLayout.setVisibility(View.VISIBLE);
+      }
+    }
   }
   private void loadFragment(Fragment fragment) {
     if (fragment == null){
