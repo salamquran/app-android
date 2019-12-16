@@ -45,7 +45,16 @@ public class MagAdaptor extends RecyclerView.Adapter<MagAdaptor.ViewHolder>{
       @Override
       public void onClick(View v) {
         Intent levelList = new Intent(context, MagActivity.class);
-        levelList.putExtra("id",model.id);
+        levelList.putExtra("title",model.getTitle());
+        levelList.putExtra("excerpt",model.getExcerpt());
+        levelList.putExtra("content",model.getContent());
+        levelList.putExtra("image",model.getImage());
+        if (model.getGallery() != null){
+          levelList.putExtra("gallery",model.getGallery());
+        }
+        if (model.getSubtitle() != null){
+          levelList.putExtra("subtitle",model.getSubtitle());
+        }
         context.startActivity(levelList);
       }
     });

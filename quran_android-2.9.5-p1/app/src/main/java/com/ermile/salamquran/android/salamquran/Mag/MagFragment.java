@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -102,10 +103,14 @@ public class  MagFragment extends Fragment {
             image = mata.getString("thumb");
           }
 
-          /*if (!mata.isNull("gallery")){
-            JSONArray gallery = mata.getJSONArray("gallery");
-            gallery_array = String.valueOf(gallery);
-          }*/
+          try {
+            if (!mata.isNull("gallery")){
+              JSONArray gallery = mata.getJSONArray("gallery");
+              gallery_array = String.valueOf(gallery);
+            }
+          }catch (Exception e){
+            e.printStackTrace();
+          }
 
         }
         model.add(
