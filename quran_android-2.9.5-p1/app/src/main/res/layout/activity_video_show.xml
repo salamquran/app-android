@@ -8,9 +8,9 @@
 
   <com.google.android.exoplayer2.ui.PlayerView
       android:id="@+id/ep_video_view"
-      app:resize_mode="zoom"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      app:shutter_background_color="@color/colorAccent"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"

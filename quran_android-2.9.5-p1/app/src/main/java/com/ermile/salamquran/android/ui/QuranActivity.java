@@ -29,6 +29,7 @@ import com.ermile.salamquran.android.model.bookmark.RecentPageModel;
 import com.ermile.salamquran.android.presenter.bookmark.BookmarksContextualModePresenter;
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
 import com.ermile.salamquran.android.salamquran.Learn.LearnFragment;
+import com.ermile.salamquran.android.salamquran.Mag.MagFragment;
 import com.ermile.salamquran.android.salamquran.SearchFragment;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
@@ -111,6 +112,8 @@ public class QuranActivity extends QuranActionBarActivity
 
   //----------
 
+
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     QuranApplication quranApp = (QuranApplication) getApplication();
@@ -174,7 +177,7 @@ public class QuranActivity extends QuranActionBarActivity
     frameLayout = findViewById(R.id.frameLayout);
 
     bottomNavigation.setOnNavigationItemSelectedListener(this);
-    bottomNavigation.setSelectedItemId(R.id.quran);
+    setVisibilityQuran();
     //----------
 
     updateTranslationsListAsNeeded();
@@ -183,7 +186,6 @@ public class QuranActivity extends QuranActionBarActivity
   @Override
   public void onResume() {
     compositeDisposable.add(recentPages.subscribe());
-
     super.onResume();
     final boolean isRtl = isRtl();
     if (isRtl != this.isRtl) {
@@ -278,7 +280,7 @@ public class QuranActivity extends QuranActionBarActivity
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     switch (item.getItemId()){
       case R.id.mag:{
-        loadFragment(new LearnFragment());
+        loadFragment(new MagFragment());
         break;
       }
 
@@ -317,6 +319,11 @@ public class QuranActivity extends QuranActionBarActivity
       frameLayout.setVisibility(View.VISIBLE);
       linear_quranList.setVisibility(View.GONE);
     }
+  }
+  private void setVisibilityQuran() {
+    bottomNavigation.setSelectedItemId(R.id.quran);
+    linear_quranList.setVisibility(View.VISIBLE);
+    frameLayout.setVisibility(View.GONE);
   }
   private void loadFragment(Fragment fragment) {
     if (fragment == null){
