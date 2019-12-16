@@ -49,7 +49,7 @@ constructor(private val quranInfo: QuranInfo, private val quranFileUtils: QuranF
 //    val hasGaplessEquivalent = resources.getIntArray(R.array.quran_readers_have_gapless_equivalents)
     val items = mutableListOf<QariItem>()
     for (i in shuyookh.indices) {
-      items += QariItem(i, shuyookh[i] + " ("+shuyookh_type[i]+") ", urls[i], paths[i], null)
+      items += QariItem(i, shuyookh[i] + " "+shuyookh_type[i], urls[i], paths[i], null)
     }
 
     return items.sortedWith(Comparator { lhs, rhs ->
