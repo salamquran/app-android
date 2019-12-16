@@ -1,6 +1,7 @@
 package com.ermile.salamquran.android.salamquran;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ public class Adapter {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       View view;
       if (canZoomOnImage){
-        view = mInflater.inflate(R.layout.item_image_zooming, parent, false);
+        view = mInflater.inflate(R.layout.item_image_viewer, parent, false);
       }
       else {
         view = mInflater.inflate(R.layout.item_slider, parent, false);
@@ -52,6 +53,15 @@ public class Adapter {
           Glide.with(context).load(item).into(holder.photoView);
         }else {
           Glide.with(context).load(item).into(holder.imageViews);
+          holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Intent levelList = new Intent(context, ImageViewerActivity.class);
+              levelList.putExtra("image",item);
+              levelList.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+              context.startActivity(levelList);
+            }
+          });
         }
       }
 

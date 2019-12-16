@@ -10,6 +10,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Adapter;
@@ -31,6 +32,9 @@ public class MagActivity extends AppCompatActivity {
   LinearLayoutManager layoutManager;
 
   TextView title,subTitle,desc;
+
+  String result = null;
+  String image = null;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -51,7 +55,7 @@ public class MagActivity extends AppCompatActivity {
 
     if (getIntent().getExtras() != null){
       Intent e = getIntent();
-      String image = e.getStringExtra("image");
+      image = e.getStringExtra("image");
       item.add(image);
 
       String title_i = e.getStringExtra("title");
@@ -63,28 +67,13 @@ public class MagActivity extends AppCompatActivity {
       desc.setText(Html.fromHtml(content));
 
       if (e.getStringExtra("gallery") != null){
-        String result = e.getStringExtra("gallery");
+        result = e.getStringExtra("gallery");
         addItem(result);
-
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            Intent levelList = new Intent(getApplication(), ImageViewerActivity.class);
-            levelList.putExtra("image",image);
-            levelList.putExtra("gallery",result);
-            startActivity(levelList);
-          }
-        });
       }
       recyclerView.setLayoutManager(layoutManager);
       recyclerView.setItemAnimator(new DefaultItemAnimator());
       adaptor.notifyDataSetChanged();
-
-
     }
-
-
-
   }
 
   private void addItem(String Response){
@@ -97,5 +86,4 @@ public class MagActivity extends AppCompatActivity {
       e.printStackTrace();
     }
   }
-
 }
