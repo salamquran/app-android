@@ -19,7 +19,7 @@
     <item>@string/minshawi_murattal_32</item>
     <item>@string/minshawi_withchild_32</item>
     <item>@string/rifai_murattal_32</item>
-    <item>@string/azerbaijani_az_balayev_translation_128</item>
+    <item>@string/azerbaijani_az_balayev_translation_16</item>
     <item>@string/sahih_international_en_ibrahim_walk_translation_32</item>
     <item>@string/muhammad_jibreel_murattal_32</item>
     <item>@string/mustafa_ismail_murattal_32</item>
@@ -47,7 +47,7 @@
     <item>"minshawi_murattal_32"</item>
     <item>"minshawi_withchild_32"</item>
     <item>"rifai_murattal_32"</item>
-    <item>"azerbaijani_az_balayev_translation_128"</item>
+    <item>"azerbaijani_az_balayev_translation_16"</item>
     <item>"sahih_international_en_ibrahim_walk_translation_32"</item>
     <item>"muhammad_jibreel_murattal_32"</item>
     <item>"mustafa_ismail_murattal_32"</item>
@@ -56,7 +56,7 @@
 
   <string-array translatable="false" name="quran_readers_type">
     <item>@string/tartil</item>
-    <item>@string/tartil</item>
+    <item>@string/tajwid</item>
     <item>@string/tartil</item>
     <item>@string/tartil</item>
     <item></item>
@@ -101,7 +101,7 @@
     <item>"https://dl.salamquran.com/ayat/minshawi-murattal-32/"</item>
     <item>"https://dl.salamquran.com/ayat/minshawi-withchild-32/"</item>
     <item>"https://dl.salamquran.com/ayat/rifai-murattal-32/"</item>
-    <item>"https://dl.salamquran.com/ayat/azerbaijani.az.balayev-translation-128/"</item>
+    <item>"https://dl.salamquran.com/ayat/azerbaijani.az.balayev-translation-16/"</item>
     <item>"https://dl.salamquran.com/ayat/sahih_international.en.ibrahim_walk-translation-32/"</item>
     <item>"https://dl.salamquran.com/ayat/muhammad_jibreel-murattal-32/"</item>
     <item>"https://dl.salamquran.com/ayat/mustafa_ismail-murattal-32/"</item>
@@ -127,7 +127,7 @@
   <string name="minshawi_murattal_32" >"Minshawi"</string>
   <string name="minshawi_withchild_32" >"Minshawi"</string>
   <string name="rifai_murattal_32" >"Hani ar-Rifai"</string>
-  <string name="azerbaijani_az_balayev_translation_128" >"Rasim Balayev (Turkish translation)"</string>
+  <string name="azerbaijani_az_balayev_translation_16" >"Rasim Balayev (Turkish translation)"</string>
   <string name="sahih_international_en_ibrahim_walk_translation_32" >"Ibrahim Walk (English translation)"</string>
   <string name="muhammad_jibreel_murattal_32" >"Muhammad jibreel"</string>
   <string name="mustafa_ismail_murattal_32" >"Mustafa Ismail"</string>
