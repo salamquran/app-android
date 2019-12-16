@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
+import com.github.chrisbanes.photoview.PhotoView;
+
 import java.util.ArrayList;
 
 public class Adapter {
@@ -17,18 +19,27 @@ public class Adapter {
     private ArrayList<String> itemSliderList;
     private LayoutInflater mInflater;
     Context context;
+    boolean canZoomOnImage = false;
 
     // data is passed into the constructor
-    public slider(Context context, ArrayList<String> itemSliderList) {
+    public slider(Context context, ArrayList<String> itemSliderList , boolean canZoomOnImage) {
       this.context = context;
       this.mInflater = LayoutInflater.from(context);
       this.itemSliderList = itemSliderList;
+      this.canZoomOnImage = canZoomOnImage;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-      View view = mInflater.inflate(R.layout.item_slider, parent, false);
+      View view;
+      if (canZoomOnImage){
+        view = mInflater.inflate(R.layout.item_image_zooming, parent, false);
+      }
+      else {
+        view = mInflater.inflate(R.layout.item_slider, parent, false);
+      }
+
       return new ViewHolder(view);
     }
 
@@ -37,7 +48,11 @@ public class Adapter {
     public void onBindViewHolder(ViewHolder holder, final int position) {
       String item = itemSliderList.get(position);
       if (item != null){
-        Glide.with(context).load(item).into(holder.imageViews);
+        if (canZoomOnImage){
+          Glide.with(context).load(item).into(holder.photoView);
+        }else {
+          Glide.with(context).load(item).into(holder.imageViews);
+        }
       }
 
     }
@@ -53,11 +68,16 @@ public class Adapter {
     private class ViewHolder extends RecyclerView.ViewHolder{
       View view;
       ImageView imageViews;
+      PhotoView photoView;
 
       ViewHolder(View itemView) {
         super(itemView);
         view = itemView;
-        imageViews = itemView.findViewById(R.id.slider_image);
+        if (canZoomOnImage){
+          photoView = itemView.findViewById(R.id.slider_image);
+        }else {
+          imageViews = itemView.findViewById(R.id.slider_image);
+        }
       }
     }
 

@@ -12,6 +12,7 @@
 
     <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
         android:id="@+id/recyclerViewPager"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layoutDirection="ltr"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_180sdp"

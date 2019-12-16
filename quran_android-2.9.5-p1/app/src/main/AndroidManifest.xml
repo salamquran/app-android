@@ -29,7 +29,10 @@
       android:supportsRtl="true"
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
-    <activity android:name=".salamquran.Mag.MagActivity"
+    <activity android:name=".salamquran.ImageViewerActivity"
+        android:theme="@style/QuranToolBar" />
+    <activity
+        android:name=".salamquran.Mag.MagActivity"
         android:theme="@style/QuranToolBar" />
     <activity
         android:name=".salamquran.VideoShowActivity"
