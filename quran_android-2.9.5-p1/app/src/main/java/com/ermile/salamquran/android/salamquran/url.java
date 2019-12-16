@@ -22,4 +22,9 @@ public class url {
     String lms_level = "/lms/level?id="+id;
     return getLocal(context) + lms_level;
   }
+
+  public static String getMagList(Context context, int limit){
+    String lms_level = "/posts?limit="+limit;
+    return getLocal(context) + lms_level;
+  }
 }
