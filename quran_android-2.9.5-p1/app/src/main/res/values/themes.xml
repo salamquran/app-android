@@ -10,8 +10,6 @@
       <item name="android:fontFamily" tools:ignore="NewApi">@font/dana_regular</item>
       <item name="actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
       <item name="actionModeStyle">@style/ActionModeStyle</item>
-      <item name="checkboxStyle"></item>
-
 
       <!---->
     </style>

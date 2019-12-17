@@ -14,19 +14,31 @@
     <TextView
         android:padding="5dp"
         android:textSize="20sp"
-        android:textColor="@android:color/white"
+        android:textColor="#ffffff"
         android:text="@string/search_hint"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <android.widget.SearchView
-        android:id="@+id/searchView"
+
+    <RelativeLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_radus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:queryHint="@string/search_hint"
-        android:iconifiedByDefault="false"
-        />
+        android:layout_height="wrap_content">
+
+      <android.widget.SearchView
+          android:id="@+id/searchView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:queryHint="@string/search_hint"
+          android:iconifiedByDefault="false"
+          android:queryBackground="@null"
+          tools:ignore="UnusedAttribute" />
+
+    </RelativeLayout>
+
+
 
   </LinearLayout>
 
