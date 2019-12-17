@@ -45,6 +45,7 @@
       android:title="@string/menu_jump_last_page"
       app:showAsAction="ifRoom" />
   <item
+      android:visible="false"
       android:id="@+id/search"
       android:icon="@drawable/ic_ab_search"
       android:title="@string/menu_search"
