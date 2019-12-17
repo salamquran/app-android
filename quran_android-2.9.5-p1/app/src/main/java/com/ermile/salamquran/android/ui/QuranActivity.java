@@ -359,13 +359,15 @@ public class QuranActivity extends QuranActionBarActivity
 
   @Override
   public void onBackPressed() {
-    Toast.makeText(this, ""+fragmentManagers.getBackStackEntryCount(), Toast.LENGTH_SHORT).show();
-
     if (supportActionMode != null) {
       supportActionMode.finish();
     } else if (searchItem != null && searchItem.isActionViewExpanded()) {
       searchItem.collapseActionView();
-    } else {
+    } else if (linear_quranList.getVisibility() != View.VISIBLE){
+      bottomNavigation.setSelectedItemId(R.id.quran);
+      linear_quranList.setVisibility(View.VISIBLE);
+      frameLayout.setVisibility(View.GONE);
+    }else {
       super.onBackPressed();
     }
   }
