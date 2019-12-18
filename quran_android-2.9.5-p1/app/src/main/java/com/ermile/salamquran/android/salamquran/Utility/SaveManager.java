@@ -1,4 +1,4 @@
-package com.ermile.salamquran.android.salamquran;
+package com.ermile.salamquran.android.salamquran.Utility;
 
 
 import android.annotation.SuppressLint;
@@ -48,9 +48,9 @@ public class SaveManager extends ContextWrapper {
 
   public Map<String, String> getstring_appINFO() {
     HashMap<String, String> hashMap = new HashMap<>();
-    hashMap.put(local, sharedPreferences.getString(local, url.api ));
+    hashMap.put(local, sharedPreferences.getString(local, Url.api ));
 
-    hashMap.put(apikey, sharedPreferences.getString(apikey, "6f2d002a445db456d2bcea3dd02631af"));
+    hashMap.put(apikey, sharedPreferences.getString(apikey, null));
     hashMap.put(userCode, sharedPreferences.getString(userCode, null));
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));

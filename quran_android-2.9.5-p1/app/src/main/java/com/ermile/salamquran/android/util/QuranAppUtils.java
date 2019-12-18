@@ -68,10 +68,10 @@ public class QuranAppUtils {
       String result = getQuranAppUrl(params);
       if (!TextUtils.isEmpty(result)) {
         JSONObject json = new JSONObject(result);
-        url = json.getString("url");
+        url = json.getString("Url");
       }
     } catch (Exception e) {
-      Timber.d(e, "error getting QuranApp url");
+      Timber.d(e, "error getting QuranApp Url");
     }
 
     Timber.d("got back %s and fallback %s", url, fallbackUrl);

@@ -518,7 +518,7 @@ public class QuranDataActivity extends Activity implements
       }
     }
 
-    // if we have a patch url, just use that
+    // if we have a patch Url, just use that
     final String patchParam = dataStatus.getPatchParam();
     if (!TextUtils.isEmpty(patchParam)) {
       url = quranFileUtils.getPatchFileUrl(patchParam, quranPageProvider.getImageVersion());

@@ -9,8 +9,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.QuranApplication;
-import com.ermile.salamquran.android.salamquran.User;
-import com.ermile.salamquran.android.salamquran.url;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
+import com.ermile.salamquran.android.salamquran.Utility.Url;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +25,7 @@ public class MagApi {
     StringRequest newsRQ =
         new StringRequest(
             Request.Method.GET,
-            url.getMagList(context,limit),
+            Url.getMagList(context,limit),
             response -> {
               try {
                 JSONObject mainObject = new JSONObject(response);
@@ -52,7 +52,7 @@ public class MagApi {
           @Override
           public Map<String, String> getHeaders() throws AuthFailureError {
             HashMap<String, String> headers = new HashMap<>();
-            headers.put("apikey", User.getApikey(context));
+            headers.put("apikey", UserInfo.getApikey(context));
             return headers;
           }
         };

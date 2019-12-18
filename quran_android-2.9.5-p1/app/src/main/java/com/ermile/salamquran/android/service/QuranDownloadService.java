@@ -63,7 +63,7 @@ public class QuranDownloadService extends Service implements
       "com.ermile.salamquran.android.RECONNECT";
 
   // extras
-  public static final String EXTRA_URL = "url";
+  public static final String EXTRA_URL = "Url";
   public static final String EXTRA_DESTINATION = "destination";
   public static final String EXTRA_NOTIFICATION_NAME = "notificationName";
   public static final String EXTRA_DOWNLOAD_KEY = "downloadKey";

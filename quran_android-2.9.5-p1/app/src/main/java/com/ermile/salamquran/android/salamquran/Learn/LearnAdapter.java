@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
 import java.util.ArrayList;
 
-public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class LearnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
   private Context mContext;
   private ArrayList<LearnModel> itemMains;
@@ -57,7 +57,7 @@ public class LearnAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
   }
 
-  public LearnAdaptor(Context context,
+  public LearnAdapter(Context context,
                       ArrayList<LearnModel> model_Main,
                       ArrayList<LearnModel.group> model_Group,
                       ArrayList<LearnModel.level_list> model_Level_list) {

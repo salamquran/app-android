@@ -10,8 +10,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.QuranApplication;
-import com.ermile.salamquran.android.salamquran.User;
-import com.ermile.salamquran.android.salamquran.url;
+import com.ermile.salamquran.android.salamquran.Utility.Url;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +23,7 @@ import java.util.Map;
 public class LearnApi {
 
   public static void group(Context context, groupListener listener){
-    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsGroup(context), response -> {
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, Url.getLmsGroup(context), response -> {
       try {
         JSONObject mainObject = new JSONObject(response);
         if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
@@ -49,7 +49,7 @@ public class LearnApi {
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         HashMap<String, String> headers = new HashMap<>();
-        headers.put("apikey", User.getApikey(context));
+        headers.put("apikey", UserInfo.getApikey(context));
         return headers;
       }
     };
@@ -64,7 +64,7 @@ public class LearnApi {
 
 
   public static void levelList(Context context,String id, levelListListener listener){
-    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsLevelList(context,id), response -> {
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, Url.getLmsLevelList(context,id), response -> {
       try {
         JSONObject mainObject = new JSONObject(response);
         if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
@@ -90,7 +90,7 @@ public class LearnApi {
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         HashMap<String, String> headers = new HashMap<>();
-        headers.put("apikey", User.getApikey(context));
+        headers.put("apikey", UserInfo.getApikey(context));
         return headers;
       }
     };
@@ -105,7 +105,7 @@ public class LearnApi {
 
 
   public static void levelInfo(Context context,String id, levelInfoListener listener){
-    StringRequest newsRQ = new StringRequest(Request.Method.GET, url.getLmsLevelInfo(context,id), response -> {
+    StringRequest newsRQ = new StringRequest(Request.Method.GET, Url.getLmsLevelInfo(context,id), response -> {
       try {
         JSONObject mainObject = new JSONObject(response);
         if (!mainObject.isNull("ok") && mainObject.getBoolean("ok") ) {
@@ -131,7 +131,7 @@ public class LearnApi {
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         HashMap<String, String> headers = new HashMap<>();
-        headers.put("apikey", User.getApikey(context));
+        headers.put("apikey", UserInfo.getApikey(context));
         return headers;
       }
     };

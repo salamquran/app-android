@@ -41,7 +41,7 @@ constructor(private val quranInfo: QuranInfo,
       }
 
       // if we're still streaming, change the base qari format in audioPathInfo
-      // to a remote url format (instead of a path to a local directory)
+      // to a remote Url format (instead of a path to a local directory)
       val audioPath = if (stream) {
         audioPathInfo.copy(urlFormat = audioUtil.getQariUrl(qari))
       } else {

@@ -1,9 +1,11 @@
-package com.ermile.salamquran.android.salamquran;
+package com.ermile.salamquran.android.salamquran.Utility;
 
 import android.content.Context;
 
-public class url {
-  public static String site = "https://salamquran.com/fa";
+import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
+
+public class Url {
+  public static String site = "https://salamquran.com";
   public static String api = site+"/api/v6";
 
   public static String getLocal(Context context){
@@ -26,5 +28,14 @@ public class url {
   public static String getMagList(Context context, int limit){
     String lms_level = "/posts?limit="+limit;
     return getLocal(context) + lms_level;
+  }
+
+  public static String getToken(){
+    String token = "/token";
+    return api + token;
+  }
+  public static String getUserAdd(Context context){
+    String user_add = "/android/user/add";
+    return getLocal(context) + user_add;
   }
 }

@@ -45,7 +45,7 @@
         android:name=".salamquran.Learn.LearnActivity_level_list"
         android:theme="@style/QuranToolBar" />
     <activity
-        android:name=".Splash"
+        android:name=".salamquran.Splash"
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
       <intent-filter>

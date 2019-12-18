@@ -15,13 +15,13 @@ import android.view.ViewGroup;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
+import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +31,7 @@ public class LearnFragment extends Fragment {
   private RecyclerView recyclerView;
   private ArrayList<LearnModel> mainModel;
   private ArrayList<LearnModel.group> groupModel;
-  private LearnAdaptor adaptor;
+  private LearnAdapter adaptor;
   private LinearLayoutManager layoutManager;
 
   public LearnFragment() {
@@ -42,12 +42,13 @@ public class LearnFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
+    new TempLoginUtil(getContext());
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_learn, container, false);
     recyclerView = view.findViewById(R.id.recycler_view);
     mainModel = new ArrayList<>();
     groupModel = new ArrayList<>();
-    adaptor = new LearnAdaptor(getContext(),mainModel,groupModel,null);
+    adaptor = new LearnAdapter(getContext(),mainModel,groupModel,null);
     layoutManager =
         new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);

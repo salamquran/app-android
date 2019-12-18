@@ -20,7 +20,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +27,7 @@ import java.util.Iterator;
 public class  MagFragment extends Fragment {
   private RecyclerView recyclerView;
   private ArrayList<MagModel.list_long> model;
-  private MagAdaptor adaptor;
+  private MagAdapter adaptor;
   private LinearLayoutManager layoutManager;
 
   public MagFragment() {
@@ -43,7 +42,7 @@ public class  MagFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_learn, container, false);
     recyclerView = view.findViewById(R.id.recycler_view);
     model = new ArrayList<>();
-    adaptor = new MagAdaptor(getContext(),model);
+    adaptor = new MagAdapter(getContext(),model);
     layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 
@@ -94,8 +93,8 @@ public class  MagFragment extends Fragment {
             if (!source.isNull("title")){
               source_title = source.getString("title");
             }
-            if (!source.isNull("url")){
-              source_url = source.getString("url");
+            if (!source.isNull("Url")){
+              source_url = source.getString("Url");
             }
           }
 
@@ -140,7 +139,7 @@ public class  MagFragment extends Fragment {
   "meta": {
   	"source": {
 		"title": "خبرگذاری ایکنا",
-		"url": null
+		"Url": null
 	  },
     "thumb": "https://salamquran.com/files/1/180-73c70e9ee92dd6819093c5efe62727bd.jpg",
     "gallery": [

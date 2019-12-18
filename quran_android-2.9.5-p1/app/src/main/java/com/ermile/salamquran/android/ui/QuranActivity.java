@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
@@ -177,6 +176,9 @@ public class QuranActivity extends QuranActionBarActivity
     frameLayout = findViewById(R.id.frameLayout);
 
     bottomNavigation.setOnNavigationItemSelectedListener(this);
+
+    int iconSizeBottomNaigation = (int) getResources().getDimension(R.dimen._18sdp);
+    bottomNavigation.setItemIconSize(iconSizeBottomNaigation);
     setVisibilityQuran();
     //----------
 

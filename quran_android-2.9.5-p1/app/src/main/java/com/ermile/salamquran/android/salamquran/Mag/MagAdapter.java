@@ -14,14 +14,14 @@ import com.ermile.salamquran.android.R;
 import java.util.ArrayList;
 
 
-public class MagAdaptor extends RecyclerView.Adapter<MagAdaptor.ViewHolder>{
+public class MagAdapter extends RecyclerView.Adapter<MagAdapter.ViewHolder>{
 
   private ArrayList<MagModel.list_long> mData;
   private LayoutInflater mInflater;
   private Context context;
 
   // data is passed into the constructor
-  public MagAdaptor(Context context, ArrayList<MagModel.list_long> model) {
+  public MagAdapter(Context context, ArrayList<MagModel.list_long> model) {
     this.context = context;
     this.mInflater = LayoutInflater.from(context);
     this.mData = model;

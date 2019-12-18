@@ -21,7 +21,7 @@ public class LearnActivity_level_list extends AppCompatActivity {
   private RecyclerView recyclerView;
   private ArrayList<LearnModel> mainModel;
   private ArrayList<LearnModel.level_list> level_listModel;
-  private LearnAdaptor adaptor;
+  private LearnAdapter adaptor;
   private LinearLayoutManager layoutManager;
 
   @Override
@@ -33,7 +33,7 @@ public class LearnActivity_level_list extends AppCompatActivity {
     recyclerView = findViewById(R.id.recycler_view);
     mainModel = new ArrayList<>();
     level_listModel = new ArrayList<>();
-    adaptor = new LearnAdaptor(getApplication(),mainModel,null,level_listModel);
+    adaptor = new LearnAdapter(getApplication(),mainModel,null,level_listModel);
     layoutManager =
         new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);

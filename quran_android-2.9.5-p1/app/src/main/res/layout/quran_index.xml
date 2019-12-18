@@ -51,14 +51,15 @@
 
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottom_navigation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:labelVisibilityMode="labeled"
       android:visibility="visible"
       android:background="@color/bottomNav_background"
-      android:id="@+id/bottom_navigation"
       android:layout_alignParentBottom="true"
       android:layout_gravity="bottom"
       app:itemIconTint="@drawable/bottom_navigation_icon"
       app:itemTextColor="@drawable/bottom_navigation_text"
-      app:menu="@menu/sq_bottomnav_main_menu"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"/>
+      app:menu="@menu/sq_bottomnav_main_menu" />
 </RelativeLayout>
