@@ -29,13 +29,19 @@ public class SaveManager extends ContextWrapper {
 
   /** App Info */
   public static final String local = "local";
+  public static final String appLanguage = "appLanguage";
   public static final String apikey = "apikey";
   public static final String userCode = "userCode";
   public static final String zonId = "zonId";
   public static final String mobile = "mobile";
+  public static final String jsonAppLanguage = "jsonAppLanguage";
 
   public void save_local_url(String local_URL) {
     editor.putString(local, local_URL);
+    editor.apply();
+  }
+  public void save_app_language(String languageLocal) {
+    editor.putString(appLanguage, languageLocal);
     editor.apply();
   }
   public void save_user_info(String Apikey, String UserCode, String ZonId, String Mobile) {
@@ -46,14 +52,25 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
+  public void save_json_appLanguage(String json) {
+    editor.putString(jsonAppLanguage, json);
+    editor.apply();
+  }
+
   public Map<String, String> getstring_appINFO() {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put(local, sharedPreferences.getString(local, Url.api ));
+
+    hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, "fa" ));
 
     hashMap.put(apikey, sharedPreferences.getString(apikey, null));
     hashMap.put(userCode, sharedPreferences.getString(userCode, null));
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
+
+
+    hashMap.put(jsonAppLanguage, sharedPreferences
+            .getString(jsonAppLanguage, Json.defaultValue.appLanguage));
     return hashMap;
   }
 

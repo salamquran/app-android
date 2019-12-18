@@ -25,4 +25,8 @@ public class UserInfo {
     return getApikey(context) != null || getUserCode(context) != null || getZonId(context) != null;
   }
 
+  public static String getAppLanguage(Context context){
+    return SaveManager.get(context).getstring_appINFO().get(SaveManager.appLanguage);
+  }
+
 }

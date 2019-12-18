@@ -9,13 +9,24 @@
       android:title="@string/prefs_category_display_settings"
       app:iconSpaceReserved="false">
 
+    <PreferenceScreen
+        android:key="@string/prefs_key_change_language"
+        android:selectable="true"
+        android:persistent="true"
+        android:summary="@string/prefs_change_language"
+        android:title="@string/prefs_language_choosed"
+        app:icon="@drawable/ic_magezin"
+        app:iconSpaceReserved="true"/>
+
+    <!--Disable-->
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="false"
         android:disableDependentsState="false"
         android:key="@string/prefs_use_arabic_names"
         android:persistent="true"
-        android:summary="@string/prefs_use_arabic_summary_on"
-        android:title="@string/prefs_use_arabic_title"
+        android:summary="@string/prefs_change_language"
+        android:title="@string/prefs_language_choosed"
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
@@ -32,15 +43,6 @@
         android:summaryOff="@string/prefs_immersive_in_portrait_summary_disabled"
         android:summaryOn="@string/prefs_immersive_in_portrait_summary_enabled"
         android:title="@string/prefs_immersive_in_portrait_title"
-        app:iconSpaceReserved="false"/>
-
-    <CheckBoxPreference
-        android:defaultValue="@bool/use_tablet_interface_by_default"
-        android:key="@string/prefs_dual_page_enabled"
-        android:persistent="true"
-        android:summaryOff="@string/prefs_dual_page_mode_disabled"
-        android:summaryOn="@string/prefs_dual_page_mode_enabled"
-        android:title="@string/prefs_dual_page_mode_title"
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
@@ -77,6 +79,14 @@
         android:persistent="true"
         android:summary="@string/prefs_night_mode_text_brightness_summary"
         android:title="@string/prefs_night_mode_text_brightness_title"/>
+    <CheckBoxPreference
+        android:defaultValue="@bool/use_tablet_interface_by_default"
+        android:key="@string/prefs_dual_page_enabled"
+        android:persistent="true"
+        android:summaryOff="@string/prefs_dual_page_mode_disabled"
+        android:summaryOn="@string/prefs_dual_page_mode_enabled"
+        android:title="@string/prefs_dual_page_mode_title"
+        app:iconSpaceReserved="false" />
   </PreferenceCategory>
 
   <PreferenceCategory

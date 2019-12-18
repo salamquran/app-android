@@ -890,7 +890,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
   /**
    * Partially expand the sliding pane up to a specific offset
    *
-   * @param mSlideOffset Value between 0 and 1, where 0 is completely expanded.
+   * @param mSlideOffset Json between 0 and 1, where 0 is completely expanded.
    * @return true if the pane was slideable and is now expanded/in the process of expading
    */
   public boolean expandPane(float mSlideOffset) {

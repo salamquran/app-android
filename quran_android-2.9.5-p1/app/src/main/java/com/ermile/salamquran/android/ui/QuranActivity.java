@@ -550,4 +550,11 @@ public class QuranActivity extends QuranActionBarActivity
       return getString(resId);
     }
   }
+
+  public void restartActivity() {
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
+    Intent intent = getIntent();
+    finish();
+    startActivity(intent);
+  }
 }

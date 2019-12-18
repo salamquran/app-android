@@ -63,12 +63,12 @@ public class QuranApplication extends Application {
   }
 
   public void refreshLocale(@NonNull Context context, boolean force) {
-    final String language = QuranSettings.getInstance(this).isArabicNames() ? "ar" : null;
+    final String language = QuranSettings.getInstance(this).isArabicNames() ? "fa" : null;
 
     final Locale locale;
-    if ("ar".equals(language)) {
-//      locale = new Locale("ar");
+    if ("fa".equals(language)) {
       locale = new Locale("fa");
+//      locale = new Locale("ar");
     } else if (force) {
       // get the system locale (since we overwrote the default locale)
       locale = Resources.getSystem().getConfiguration().locale;
