@@ -1,17 +1,12 @@
 package com.ermile.salamquran.android.salamquran.Language;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 
@@ -23,10 +18,13 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.MyView
 
   private List<LanguageModel> itemList;
   private Context mContext;
+  private ItemClickListener mlistener;
 
-  public LanguageAdapter(List<LanguageModel> itemList, Context mContext) {
+
+  LanguageAdapter(List<LanguageModel> itemList, Context mContext, ItemClickListener listener) {
     this.itemList = itemList;
     this.mContext = mContext;
+    this.mlistener = listener;
   }
 
   @NotNull
@@ -63,17 +61,10 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.MyView
         break;
 
     }
-/*
-        holder.checkLanguage.setVisibility(aItem.getChBoxVisibel());
-*/
-
-    holder.view.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        String choseLanguage = holder.titleCountry.getTag().toString();
-        SaveManager.get(mContext).save_app_language(choseLanguage);
-
-      }
+    holder.view.setOnClickListener(view -> {
+      SaveManager.get(mContext).save_app_language(aItem.getTag());
+      SaveManager.get(mContext).save_local_url(aItem.getLocal_URL());
+      mlistener.onClick();
     });
 
   }
@@ -83,23 +74,21 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.MyView
     return itemList.size();
   }
 
-  public class MyViewHolder extends RecyclerView.ViewHolder {
-
+  class MyViewHolder extends RecyclerView.ViewHolder {
     View view;
     ImageView imgCountry, icChoosed;
     TextView titleCountry;
-
-
-    public MyViewHolder(View itemView) {
+    MyViewHolder(View itemView) {
       super(itemView);
       view = itemView;
       imgCountry = itemView.findViewById(R.id.imo_country);
       icChoosed = itemView.findViewById(R.id.icChoosed);
       titleCountry = itemView.findViewById(R.id.title_country);
-/*
-            checkLanguage = itemView.findViewById(R.id.checkLanguage);
-*/
     }
+  }
+
+  public interface ItemClickListener{
+    void onClick();
   }
 
 }

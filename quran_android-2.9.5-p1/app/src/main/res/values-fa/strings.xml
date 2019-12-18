@@ -72,7 +72,7 @@
   <string name="prefs_category_translation">تنظیمات ترجمه</string>
   <string name="prefs_category_display_settings">تنظیمات نمایش</string>
   <string name="prefs_language_choosed">زبان فارسی</string>
-  <string name="prefs_change_language">تغییر زبان برنامه به انگلیسی</string>
+  <string name="prefs_change_language">زبان خود را انتخاب کنید</string>
   <string name="prefs_lock_orientation_title">حفظ جهت نمایش</string>
   <string name="prefs_lock_orientation_summary_on">عدم تغییر خودکار جهت نمایش</string>
   <string name="prefs_lock_orientation_summary_off">تطبیق خودکار با جهت دستگاه</string>

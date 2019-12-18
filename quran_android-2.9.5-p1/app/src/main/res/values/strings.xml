@@ -160,7 +160,7 @@
   <string name="prefs_category_translation">Translation Preferences</string>
   <string name="prefs_category_display_settings">Display Settings</string>
   <string name="prefs_language_choosed">English Language</string>
-  <string name="prefs_change_language">Change to Persian Language</string>
+  <string name="prefs_change_language">Change Language</string>
   <string name="prefs_new_background_title">New background</string>
   <string name="prefs_immersive_in_portrait_title">Fullscreen in portrait mode</string>
   <string name="prefs_immersive_in_portrait_summary_enabled">Both portrait and landscape images are displayed  in full screen</string>

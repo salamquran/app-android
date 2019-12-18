@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import com.ermile.salamquran.android.BuildConfig;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.data.Constants;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.service.QuranDownloadService;
 
 import java.util.Collections;
@@ -49,7 +50,8 @@ public class QuranSettings {
   }
 
   public boolean isArabicNames() {
-    return prefs.getBoolean(Constants.PREF_USE_ARABIC_NAMES, false);
+//    return prefs.getBoolean(Constants.PREF_USE_ARABIC_NAMES, false);
+    return UserInfo.getAppLanguage(appContext).equals("fa") || UserInfo.getAppLanguage(appContext).equals("ar") ;
   }
 
   public boolean isLockOrientation() {

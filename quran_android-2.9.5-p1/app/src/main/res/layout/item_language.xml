@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layoutDirection="rtl"
     android:padding="@dimen/_5sdp"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/_180sdp"
     android:layout_height="wrap_content"
-    android:background="@color/listQuran_background"
+    android:background="@drawable/quran_row_background"
     tools:ignore="UnusedAttribute">
 
 
@@ -14,24 +13,25 @@
       android:layout_marginLeft="@dimen/_10sdp"
       android:layout_marginRight="@dimen/_10sdp"
 
+      android:layout_alignParentStart="true"
       android:src="@drawable/ic_en"
       android:layout_width="@dimen/_25sdp"
       android:layout_height="@dimen/_25sdp"
-      android:layout_alignParentLeft="true" />
+      tools:ignore="RtlCompat" />
 
   <TextView
       android:id="@+id/title_country"
       android:layout_marginLeft="@dimen/_10sdp"
       android:layout_marginRight="@dimen/_10sdp"
 
-      android:layout_toStartOf="@+id/imo_country"
+      android:layout_toEndOf="@+id/imo_country"
       android:layout_centerInParent="true"
       android:textColor="@color/title_color"
       android:text="English"
       android:textSize="@dimen/_14ssp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_toLeftOf="@+id/imo_country" />
+      tools:ignore="RtlCompat" />
 
   <ImageView
       android:id="@+id/icChoosed"
@@ -39,13 +39,12 @@
       android:layout_marginRight="@dimen/_10sdp"
 
       android:layout_centerInParent="true"
-      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true"
       android:tint="#326B00"
       android:src="@drawable/ic_choosed"
       android:layout_width="@dimen/_16sdp"
       android:layout_height="@dimen/_16sdp"
-      android:layout_toLeftOf="@+id/title_country"
-      android:layout_alignParentLeft="true" />
+      tools:ignore="RtlCompat" />
 
 
 

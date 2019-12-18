@@ -257,7 +257,7 @@
 
   <!-- audio manager -->
   <string name="audio_manager">إدارة الصوتيات</string>
-  <string name="prefs_change_language">سيتم تحويل التطبيق إلى اللغة العربية</string>
+  <string name="prefs_change_language">التطبيق اللغة لما ارید</string>
   <string name="prefs_language_choosed">الوضع العربي</string>
   <string name="play">تشغيل</string>
   <string name="stop">إيقاف</string>

@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 import com.ermile.salamquran.android.component.application.ApplicationComponent;
 import com.ermile.salamquran.android.component.application.DaggerApplicationComponent;
 import com.ermile.salamquran.android.module.application.ApplicationModule;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.util.QuranSettings;
 
 import java.util.Locale;
@@ -63,15 +64,12 @@ public class QuranApplication extends Application {
   }
 
   public void refreshLocale(@NonNull Context context, boolean force) {
-    final String language = QuranSettings.getInstance(this).isArabicNames() ? "fa" : null;
+    final String language = UserInfo.getAppLanguage(this);
 
     final Locale locale;
-    if ("fa".equals(language)) {
-      locale = new Locale("fa");
+    if (language != null) {
+      locale = new Locale(language);
 //      locale = new Locale("ar");
-    } else if (force) {
-      // get the system locale (since we overwrote the default locale)
-      locale = Resources.getSystem().getConfiguration().locale;
     } else {
       // nothing to do...
       return;

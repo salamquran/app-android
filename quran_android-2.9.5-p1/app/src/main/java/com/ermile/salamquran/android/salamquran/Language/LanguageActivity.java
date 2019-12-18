@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
+import com.ermile.salamquran.android.salamquran.Utility.ColorUtil;
 import com.ermile.salamquran.android.salamquran.Utility.Json;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
@@ -32,10 +35,12 @@ public class LanguageActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_choose_language);
+    View view = findViewById(R.id.relative_layout_main);
+    ColorUtil.setGradient(view,"#88c1d0","#07aedb");
 
     recyclerView = findViewById(R.id.recycler_view);
     item = new ArrayList<>();
-    adapter = new LanguageAdapter(item, this);
+    adapter = new LanguageAdapter(item, this, this::restartActivity);
     AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
     LinearLayoutManager sLayoutManager =
@@ -78,5 +83,12 @@ public class LanguageActivity extends AppCompatActivity {
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  public void restartActivity() {
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
+    Intent intent = this.getIntent();
+    finish();
+    startActivity(intent);
   }
 }
