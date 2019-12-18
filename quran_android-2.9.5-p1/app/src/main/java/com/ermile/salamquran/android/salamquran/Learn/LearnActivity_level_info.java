@@ -10,10 +10,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
-import com.ermile.salamquran.android.salamquran.VideoShowActivity;
+import com.ermile.salamquran.android.salamquran.Utility.VideoShowActivity;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

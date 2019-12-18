@@ -7,22 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Adapter;
-import com.ermile.salamquran.android.salamquran.ImageViewerActivity;
 import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MagActivity extends AppCompatActivity {
 

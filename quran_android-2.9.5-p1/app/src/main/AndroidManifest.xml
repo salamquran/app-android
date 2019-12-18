@@ -29,13 +29,13 @@
       android:supportsRtl="true"
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
-    <activity android:name=".salamquran.ImageViewerActivity"
+    <activity android:name=".salamquran.Utility.ImageViewerActivity"
         android:theme="@style/QuranToolBar" />
     <activity
         android:name=".salamquran.Mag.MagActivity"
         android:theme="@style/QuranToolBar" />
     <activity
-        android:name=".salamquran.VideoShowActivity"
+        android:name=".salamquran.Utility.VideoShowActivity"
         android:screenOrientation="landscape"
         android:theme="@style/QuranToolBarFullScreen" />
     <activity

@@ -1,4 +1,4 @@
-package com.ermile.salamquran.android.salamquran;
+package com.ermile.salamquran.android.salamquran.Utility;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;

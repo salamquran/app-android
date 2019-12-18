@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ermile.salamquran.android.R;
+import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
 import com.ermile.salamquran.android.salamquran.api.MagApi;
 
 import org.json.JSONArray;
@@ -38,6 +39,7 @@ public class  MagFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
+    new TempLoginUtil(getContext());
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_learn, container, false);
     recyclerView = view.findViewById(R.id.recycler_view);

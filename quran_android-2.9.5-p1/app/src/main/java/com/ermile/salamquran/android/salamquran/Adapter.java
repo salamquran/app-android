@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
+import com.ermile.salamquran.android.salamquran.Utility.ImageViewerActivity;
 import com.github.chrisbanes.photoview.PhotoView;
 
 import java.util.ArrayList;

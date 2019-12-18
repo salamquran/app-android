@@ -1,4 +1,4 @@
-package com.ermile.salamquran.android.salamquran;
+package com.ermile.salamquran.android.salamquran.Utility;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
