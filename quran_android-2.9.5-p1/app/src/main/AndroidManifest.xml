@@ -31,7 +31,7 @@
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
     <activity android:name=".salamquran.Language.LanguageActivity"/>
-    <activity android:name=".salamquran.IntroActivity" />
+    <activity android:name=".salamquran.Intro.IntroActivity" />
     <activity
         android:name=".salamquran.Utility.ImageViewerActivity"
         android:theme="@style/QuranToolBar" />

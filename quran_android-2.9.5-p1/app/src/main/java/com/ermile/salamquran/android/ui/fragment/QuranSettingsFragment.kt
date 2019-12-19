@@ -10,7 +10,6 @@ import com.ermile.salamquran.android.QuranApplication
 import com.ermile.salamquran.android.R
 import com.ermile.salamquran.android.data.Constants
 import com.ermile.salamquran.android.pageselect.PageSelectActivity
-import com.ermile.salamquran.android.salamquran.IntroActivity
 import com.ermile.salamquran.android.salamquran.Language.LanguageActivity
 import com.ermile.salamquran.android.ui.AudioManagerActivity
 import com.ermile.salamquran.android.ui.QuranActivity

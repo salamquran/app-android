@@ -1,4 +1,4 @@
-package com.ermile.salamquran.android.salamquran;
+package com.ermile.salamquran.android.salamquran.Intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
