@@ -30,11 +30,15 @@ public class SaveManager extends ContextWrapper {
   /** App Info */
   public static final String local = "local";
   public static final String appLanguage = "appLanguage";
+
   public static final String apikey = "apikey";
   public static final String userCode = "userCode";
   public static final String zonId = "zonId";
   public static final String mobile = "mobile";
+
   public static final String jsonAppLanguage = "jsonAppLanguage";
+  public static final String jsonAyaDay = "jsonAyaDay";
+  public static final String jsonPageDay = "jsonPageDay";
 
   public void save_local_url(String local_URL) {
     editor.putString(local, local_URL);
@@ -56,6 +60,14 @@ public class SaveManager extends ContextWrapper {
     editor.putString(jsonAppLanguage, json);
     editor.apply();
   }
+  public void save_json_ayaDay(String json) {
+    editor.putString(jsonAyaDay, json);
+    editor.apply();
+  }
+  public void save_json_pageDay(String json) {
+    editor.putString(jsonPageDay, json);
+    editor.apply();
+  }
 
   public Map<String, String> getstring_appINFO() {
     HashMap<String, String> hashMap = new HashMap<>();
@@ -68,9 +80,10 @@ public class SaveManager extends ContextWrapper {
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
 
-
     hashMap.put(jsonAppLanguage, sharedPreferences
-            .getString(jsonAppLanguage, Json.defaultValue.appLanguage));
+        .getString(jsonAppLanguage, Json.defaultValue.appLanguage));
+    hashMap.put(jsonAyaDay, sharedPreferences.getString(jsonAyaDay, Json.defaultValue.ayaDay));
+    hashMap.put(jsonPageDay, sharedPreferences.getString(jsonPageDay, Json.defaultValue.pageDay));
     return hashMap;
   }
 

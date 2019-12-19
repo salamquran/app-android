@@ -9,6 +9,7 @@ import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.salamquran.LookServer;
+import com.ermile.salamquran.android.salamquran.Utility.Json;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.salamquran.Utility.Url;
@@ -152,4 +153,40 @@ public class Api {
     void onMassage(String massage);
     void onFailed();
   }
+
+  public static void getAyaDay(Context context) {
+    StringRequest request =
+        new StringRequest(Request.Method.GET, Url.getAyaDay(context), response -> {
+      try {
+        if (!Json.Get.ayaDay(context).equals(response)) {
+          SaveManager.get(context).save_json_ayaDay(response);
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }, Throwable::printStackTrace);
+    request.setRetryPolicy(new DefaultRetryPolicy(
+        5 * 1000,
+        0,
+        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(request);
+  }
+  public static void getPageDay(Context context) {
+    StringRequest request =
+        new StringRequest(Request.Method.GET, Url.getPageDay(context), response -> {
+          try {
+            if (!Json.Get.pageDay(context).equals(response)) {
+              SaveManager.get(context).save_json_pageDay(response);
+            }
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }, Throwable::printStackTrace);
+    request.setRetryPolicy(new DefaultRetryPolicy(
+        5 * 1000,
+        0,
+        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(request);
+  }
+
 }

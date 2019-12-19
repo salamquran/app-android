@@ -11,7 +11,7 @@ public class Url {
   public static String getLocal(Context context){
     return SaveManager.get(context).getstring_appINFO().get(SaveManager.local);
   }
-
+//Learn
   public static String getLmsGroup(Context context){
     String lms_group = "/lms/group";
     return getLocal(context) + lms_group;
@@ -24,12 +24,12 @@ public class Url {
     String lms_level = "/lms/level?id="+id;
     return getLocal(context) + lms_level;
   }
-
+//Mag
   public static String getMagList(Context context, int limit){
     String lms_level = "/posts?limit="+limit;
     return getLocal(context) + lms_level;
   }
-
+//Token & Login
   public static String getToken(){
     String token = "/token";
     return api + token;
@@ -38,4 +38,15 @@ public class Url {
     String user_add = "/android/user/add";
     return getLocal(context) + user_add;
   }
+// Aya & Page Day
+  public static String getAyaDay(Context context){
+    String aya_day = "/aya/day";
+    return getLocal(context) + aya_day;
+  }
+  public static String getPageDay(Context context){
+    String page_day = "/page/day";
+    return getLocal(context) + page_day;
+  }
+
+
 }
