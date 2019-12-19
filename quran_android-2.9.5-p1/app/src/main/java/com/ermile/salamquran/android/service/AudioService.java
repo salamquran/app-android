@@ -1209,7 +1209,7 @@ public class AudioService extends Service implements OnCompletionListener,
       final Bitmap icon = notificationIcon;
       notificationBuilder = new NotificationCompat.Builder(appContext, NOTIFICATION_CHANNEL_ID);
       notificationBuilder
-          .setSmallIcon(R.drawable.logo_xml)
+          .setSmallIcon(R.drawable.ic_notification)
           .setColor(notificationColor)
           .setOngoing(true)
           .setContentTitle(getString(R.string.app_name))
@@ -1249,7 +1249,7 @@ public class AudioService extends Service implements OnCompletionListener,
       pausedNotificationBuilder =
           new NotificationCompat.Builder(appContext, NOTIFICATION_CHANNEL_ID);
       pausedNotificationBuilder
-          .setSmallIcon(R.drawable.logo_xml)
+          .setSmallIcon(R.drawable.ic_notification)
           .setColor(notificationColor)
           .setOngoing(true)
           .setContentTitle(getString(R.string.app_name))

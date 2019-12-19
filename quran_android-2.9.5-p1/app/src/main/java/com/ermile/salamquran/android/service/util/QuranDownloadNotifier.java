@@ -304,7 +304,7 @@ public class QuranDownloadNotifier {
       int maximum, int progress, boolean isIndeterminate, boolean shouldForeground) {
     NotificationCompat.Builder builder =
         new NotificationCompat.Builder(appContext, NOTIFICATION_CHANNEL_ID);
-    builder.setSmallIcon(R.drawable.logo_xml)
+    builder.setSmallIcon(R.drawable.ic_notification)
         .setColor(notificationColor)
         .setAutoCancel(true)
         .setOngoing(isOnGoing)

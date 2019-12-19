@@ -152,7 +152,7 @@ public class NotificationSearvic extends Service {
         .setSound(defaultSoundUri)
         .setContentIntent(pendingIntent)
         .setContentInfo(info)
-        .setSmallIcon(R.drawable.logo_xml)
+        .setSmallIcon(R.drawable.ic_notification)
         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.salamquran))
         .setColor(ContextCompat.getColor(this, R.color.colorPrimary));
     notificationManager.notify(100+randomNumber+id, builder.build());
