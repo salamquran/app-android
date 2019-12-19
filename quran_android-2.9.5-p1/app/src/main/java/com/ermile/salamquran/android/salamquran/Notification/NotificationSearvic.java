@@ -1,5 +1,6 @@
 package com.ermile.salamquran.android.salamquran.Notification;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -25,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Splash;
+import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
 import com.ermile.salamquran.android.salamquran.tag;
 
 import org.json.JSONArray;
@@ -37,6 +39,7 @@ import java.util.Random;
 
 import static com.ermile.salamquran.android.salamquran.Notification.Attribuites.FCM_ACTION_CLICK_NOTIFICATION;
 
+@SuppressLint("LogNotTimber")
 public class NotificationSearvic extends Service {
 
   public static final String CHANNEL_ID = "ForegroundServiceChannel";
@@ -49,6 +52,7 @@ public class NotificationSearvic extends Service {
     @Override
     public void run() {
       if (powerServic){
+        new TempLoginUtil(getApplicationContext());
         new NotificationApi(getApplicationContext(), resultArray -> Notif_is(resultArray));
         Log.d(tag.service_notification, "------------------------------------ runnable");
         handler.postDelayed(runnable, 30000);
@@ -97,9 +101,9 @@ public class NotificationSearvic extends Service {
       JSONArray result = new JSONArray(resultArray);
       for (int j = 0; j < result.length(); j++) {
         JSONObject jsonObject = result.getJSONObject(j);
-        String title = null;
-        String excerpt = null;
-        String desc = null;
+        String title = "";
+        String excerpt = "";
+        String desc = "";
         String info = getApplicationContext().getString(R.string.app_name);
 
         if (!jsonObject.isNull("title")){
@@ -136,10 +140,7 @@ public class NotificationSearvic extends Service {
     int randomNumber = new Random().nextInt(976431 ) + 20;
     builder = new NotificationCompat.Builder(this,CHANNEL_ID);
 
-    long[] pattern = {500,500,500,500,500}; //Notification vibration pattern
-
     Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION); //Notification alert sound
-
 
     notificationManager = NotificationManagerCompat.from(getApplicationContext());
     builder
@@ -147,7 +148,6 @@ public class NotificationSearvic extends Service {
         .setContentText(excerpt)
         .setStyle(new NotificationCompat.BigTextStyle().bigText(desc))
         .setAutoCancel(true)
-        .setVibrate(pattern)
         .setLights(Color.BLUE,1,1)
         .setSound(defaultSoundUri)
         .setContentIntent(pendingIntent)

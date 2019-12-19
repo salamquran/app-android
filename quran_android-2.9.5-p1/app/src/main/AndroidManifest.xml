@@ -13,6 +13,7 @@
   <uses-permission-sdk-23 android:name="android.permission.FOREGROUND_SERVICE" /> <!-- support chromebooks without touch screen -->
   <!-- salamquran -->
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
   <uses-feature
       android:name="android.hardware.touchscreen"
@@ -29,7 +30,7 @@
       android:supportsRtl="true"
       android:theme="@style/Quran"
       tools:ignore="UnusedAttribute">
-    <activity android:name=".salamquran.Language.LanguageActivity"></activity>
+    <activity android:name=".salamquran.Language.LanguageActivity"/>
     <activity android:name=".salamquran.IntroActivity" />
     <activity
         android:name=".salamquran.Utility.ImageViewerActivity"
@@ -187,6 +188,13 @@
         <action android:name="android.intent.action.MEDIA_BUTTON" />
       </intent-filter>
     </service>
+
+    <receiver android:name=".salamquran.CheckNetworkBroadCast">
+      <intent-filter>
+        <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
   </application>
 
 </manifest>
