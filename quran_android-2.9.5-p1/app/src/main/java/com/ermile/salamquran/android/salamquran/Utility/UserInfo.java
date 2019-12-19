@@ -29,4 +29,9 @@ public class UserInfo {
     return SaveManager.get(context).getstring_appINFO().get(SaveManager.appLanguage);
   }
 
+
+
+  public static Integer getSplash(Context context){
+    return SaveManager.get(context).getIntValue().get(SaveManager.splash);
+  }
 }

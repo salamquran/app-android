@@ -31,6 +31,7 @@ public class SaveManager extends ContextWrapper {
 
   /** App Info */
   public static final String local = "local";
+  public static final String splash = "splash";
   public static final String appLanguage = "appLanguage";
 
   public static final String apikey = "apikey";
@@ -45,6 +46,10 @@ public class SaveManager extends ContextWrapper {
 
   public void save_local_url(String local_URL) {
     editor.putString(local, local_URL);
+    editor.apply();
+  }
+  public void save_splash(int id) {
+    editor.putInt(splash, id);
     editor.apply();
   }
   public void save_app_language(String languageLocal) {
@@ -96,6 +101,11 @@ public class SaveManager extends ContextWrapper {
     return hashMap;
   }
 
+  public Map<String, Integer> getIntValue() {
+    HashMap<String, Integer> hashMap = new HashMap<>();
+    hashMap.put(splash, sharedPreferences.getInt(splash, 0 ));
+    return hashMap;
+  }
 
 
 }
