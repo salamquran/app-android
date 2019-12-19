@@ -154,6 +154,47 @@ public class Api {
     void onFailed();
   }
 
+  public static void getAndroidDetail(Context context) {
+    StringRequest request =
+        new StringRequest(Request.Method.GET, Url.getAndroidDetail(context), response -> {
+          try {
+            JSONObject mainObject = new JSONObject(response);
+            if (mainObject.getBoolean("ok")){
+              JSONObject result = mainObject.getJSONObject("result");
+
+              JSONArray intro = result.getJSONArray("intro");
+              if (intro.length() > 30){
+                SaveManager.get(context).save_json_intro(String.valueOf(intro));
+              }
+
+            }
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }, Throwable::printStackTrace);
+    request.setRetryPolicy(new DefaultRetryPolicy(
+        5 * 1000,
+        0,
+        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(request);
+  }
+
+  public static void getLanguageList(Context context) {
+    StringRequest request =
+        new StringRequest(Request.Method.GET, Url.getLanguageList(context), response -> {
+          try {
+            SaveManager.get(context).save_json_languageList(response);
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }, Throwable::printStackTrace);
+    request.setRetryPolicy(new DefaultRetryPolicy(
+        2 * 1000,
+        1,
+        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    QuranApplication.getInstance().addToRequestQueue(request);
+  }
+
   public static void getAyaDay(Context context) {
     StringRequest request =
         new StringRequest(Request.Method.GET, Url.getAyaDay(context), response -> {

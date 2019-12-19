@@ -35,6 +35,14 @@ public class Url {
   public static String getUserAdd(Context context){
     return getLocal(context) + "/android/user/add";
   }
+//  Get Android Detail
+  public static String getAndroidDetail(Context context){
+    return getLocal(context) + "/app";
+  }
+  //  Get Language List
+  public static String getLanguageList(Context context){
+    return getLocal(context) + "/language";
+  }
 // Aya & Page Day
   public static String getAyaDay(Context context){
     return getLocal(context) + "/aya/day";

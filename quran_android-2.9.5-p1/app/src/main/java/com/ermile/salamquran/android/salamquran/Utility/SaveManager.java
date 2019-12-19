@@ -36,7 +36,8 @@ public class SaveManager extends ContextWrapper {
   public static final String zonId = "zonId";
   public static final String mobile = "mobile";
 
-  public static final String jsonAppLanguage = "jsonAppLanguage";
+  public static final String jsonIntro = "jsonIntro";
+  public static final String jsonLanguageList = "jsonLanguageList";
   public static final String jsonAyaDay = "jsonAyaDay";
   public static final String jsonPageDay = "jsonPageDay";
 
@@ -56,8 +57,12 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
-  public void save_json_appLanguage(String json) {
-    editor.putString(jsonAppLanguage, json);
+  public void save_json_intro(String json) {
+    editor.putString(jsonIntro, json);
+    editor.apply();
+  }
+  public void save_json_languageList(String json) {
+    editor.putString(jsonLanguageList, json);
     editor.apply();
   }
   public void save_json_ayaDay(String json) {
@@ -73,15 +78,16 @@ public class SaveManager extends ContextWrapper {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put(local, sharedPreferences.getString(local, Url.api ));
 
-    hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, "fa" ));
+    hashMap.put(appLanguage, sharedPreferences.getString(appLanguage, "en" ));
 
     hashMap.put(apikey, sharedPreferences.getString(apikey, null));
     hashMap.put(userCode, sharedPreferences.getString(userCode, null));
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
 
-    hashMap.put(jsonAppLanguage, sharedPreferences
-        .getString(jsonAppLanguage, Json.defaultValue.appLanguage));
+    hashMap.put(jsonIntro, sharedPreferences.getString(jsonIntro, Json.defaultValue.intro_en));
+    hashMap.put(jsonLanguageList, sharedPreferences
+        .getString(jsonLanguageList, Json.defaultValue.appLanguage));
     hashMap.put(jsonAyaDay, sharedPreferences.getString(jsonAyaDay, Json.defaultValue.ayaDay));
     hashMap.put(jsonPageDay, sharedPreferences.getString(jsonPageDay, Json.defaultValue.pageDay));
     return hashMap;
