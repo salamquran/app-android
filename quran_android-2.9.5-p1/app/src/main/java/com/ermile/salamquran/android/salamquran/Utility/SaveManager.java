@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 
+import com.ermile.salamquran.android.R;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,7 +87,8 @@ public class SaveManager extends ContextWrapper {
     hashMap.put(zonId, sharedPreferences.getString(zonId, null));
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
 
-    hashMap.put(jsonIntro, sharedPreferences.getString(jsonIntro, Json.defaultValue.intro_en));
+    hashMap.put(jsonIntro, sharedPreferences.
+        getString(jsonIntro, getResources().getString(R.string.defult_json_intro)));
     hashMap.put(jsonLanguageList, sharedPreferences
         .getString(jsonLanguageList, Json.defaultValue.appLanguage));
     hashMap.put(jsonAyaDay, sharedPreferences.getString(jsonAyaDay, Json.defaultValue.ayaDay));

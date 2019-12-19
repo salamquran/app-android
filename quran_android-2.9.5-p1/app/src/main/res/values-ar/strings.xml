@@ -303,5 +303,7 @@
   <string name="menu_btn_search">بحث</string>
   <string name="about_tanzil" translatable="false">تنزیل</string>
   <string name="about_tanzil_summary">کثیر من الترجمات</string>
+  <string name="defult_json_intro">[{"title": "سلام قرآن", "desc": "Say hello to Quran! Quran is calling you. Access to Quran in your language. Free and Easy.", "bg_from": "#ffffff", "bg_to": "#ffffff", "title_color": "#000000", "desc_color": "#000000", "image": "https://salamquran.com/static/images/logo.png", "btn": [{"title": "التالي", "action": "next"} ] }, {"title": "Easy", "desc": "Easy to use", "bg_from": "#ffffff", "bg_to": "#ffffff", "title_color": "#000000", "desc_color": "#000000", "image": "https://salamquran.com/static/images/logo.png", "btn": [{"title": "Prev", "action": "prev"}, {"title": "التالي", "action": "next"} ] }, {"title": "Powerful", "desc": "Best application", "bg_from": "#ffffff", "bg_to": "#ffffff", "title_color": "#000000", "desc_color": "#000000", "image": "https://salamquran.com/static/images/logo.png", "btn": [{"title": "Prev", "action": "prev"}, {"title": "التالي", "action": "next"} ] }, {"title": "Enjoy", "desc": "Welcome to our collection", "bg_from": "#ffffff", "bg_to": "#ffffff", "title_color": "#000000", "desc_color": "#000000", "image": "https://salamquran.com/static/images/logo.png", "btn": [{"title": "Start", "action": "start"} ] } ]</string>
+
 
 </resources>
