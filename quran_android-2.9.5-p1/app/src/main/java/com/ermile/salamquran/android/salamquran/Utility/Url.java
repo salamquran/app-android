@@ -47,6 +47,15 @@ public class Url {
     String page_day = "/page/day";
     return getLocal(context) + page_day;
   }
+//  Notification
+  public static String getSmile(Context context){
+    String smile = "/smile";
+    return getLocal(context) + smile;
+  }
+  public static String getNotif(Context context){
+    String notif = "/notif";
+    return getLocal(context) + notif;
+  }
 
 
 }
