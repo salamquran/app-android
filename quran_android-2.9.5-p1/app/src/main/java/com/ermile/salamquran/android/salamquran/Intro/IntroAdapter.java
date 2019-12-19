@@ -17,7 +17,7 @@ public class IntroAdapter extends RecyclerView.Adapter<IntroAdapter.ViewHolder>{
 
     private List<IntroModel> itemIntroList;
     private LayoutInflater mInflater;
-    private Context context;
+    Context context;
 
     // data is passed into the constructor
     public IntroAdapter(Context context, List<IntroModel> itemIntroList) {

@@ -93,7 +93,7 @@ public class SaveManager extends ContextWrapper {
     hashMap.put(mobile, sharedPreferences.getString(mobile, null));
 
     hashMap.put(jsonIntro, sharedPreferences.
-        getString(jsonIntro, getResources().getString(R.string.defult_json_intro)));
+        getString(jsonIntro, Json.defaultValue.intro_en));
     hashMap.put(jsonLanguageList, sharedPreferences
         .getString(jsonLanguageList, Json.defaultValue.appLanguage));
     hashMap.put(jsonAyaDay, sharedPreferences.getString(jsonAyaDay, Json.defaultValue.ayaDay));

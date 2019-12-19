@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,6 +55,7 @@ public class IntroActivity extends AppCompatActivity {
 
 
     try {
+      Log.d("amingoli", "onCreate: "+Json.Get.intro(getApplication()));
       JSONArray intro = new JSONArray( Json.Get.intro(getApplication()) );
 
       for (int i = 0; i < intro.length(); i++) {
