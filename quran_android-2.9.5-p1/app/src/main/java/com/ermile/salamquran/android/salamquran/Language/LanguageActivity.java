@@ -87,8 +87,6 @@ public class LanguageActivity extends AppCompatActivity {
 
   public void restartActivity() {
     ((QuranApplication) getApplication()).refreshLocale(this, true);
-    Intent intent = this.getIntent();
     finish();
-    startActivity(intent);
   }
 }
