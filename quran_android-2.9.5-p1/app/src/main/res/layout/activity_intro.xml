@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layoutDirection="ltr"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".salamquran.Intro.IntroActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.viewpager.widget.ViewPager
+      android:id="@+id/recyclerViewPager_intro"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      app:rvp_triggerOffset="0.1"
+      app:rvp_singlePageFling="true"
+      android:clipToPadding="false"/>
+
+  <LinearLayout
+      android:id="@+id/layoutDots"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="20dp"
+      android:gravity="center"
+      android:orientation="horizontal">
+
+  </LinearLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:alpha=".5"
+      android:background="@android:color/white" />
+
+  <Button
+      android:layout_margin="@dimen/_5sdp"
+      android:textSize="@dimen/_12ssp"
+      android:id="@+id/btn_next"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:background="@null"
+      android:textColor="#1a1414" />
+
+  <Button
+      android:layout_margin="@dimen/_5sdp"
+      android:textSize="@dimen/_12ssp"
+      android:id="@+id/btn_prav"
+      android:visibility="gone"
+      android:gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentLeft="true"
+      android:background="@null"
+      android:text=""
+      android:textColor="#1a1414" />
+
+</RelativeLayout>

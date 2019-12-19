@@ -13,6 +13,9 @@ public class Json {
   }
 
   public static class Get{
+    public static String intro(Context context){
+      return SaveManager.get(context).getstring_appINFO().get(SaveManager.jsonIntro);
+    }
     public static String appLnaguage(Context context){
       return SaveManager.get(context).getstring_appINFO().get(SaveManager.jsonLanguageList);
     }
