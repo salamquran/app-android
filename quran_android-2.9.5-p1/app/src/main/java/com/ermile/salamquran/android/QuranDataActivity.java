@@ -88,6 +88,7 @@ public class QuranDataActivity extends Activity implements
   @Override
   protected void onResume() {
     super.onResume();
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
     quranDataPresenter.bind(this);
 
     downloadReceiver = new DefaultDownloadReceiver(this,
