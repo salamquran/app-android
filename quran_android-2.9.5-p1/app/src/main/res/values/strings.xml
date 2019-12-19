@@ -66,6 +66,8 @@
   <string name="about_noorhidayat_summary">Noorehira font and Mufti Taqi Translation</string>
   <string name="about_noorhidayat_url" translatable="false">http://www.noorehidayat.org</string>
   <string name="about_open_source">Open Source Projects</string>
+  <string name="about_quran_android">Quran Android</string>
+  <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
   <string name="about_androidx" translatable="false">AndroidX</string>
   <string name="about_androidx_url" translatable="false">https://developer.android.com/jetpack/androidx</string>
   <string name="about_dagger2" translatable="false">Dagger 2</string>
