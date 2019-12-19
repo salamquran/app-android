@@ -13,9 +13,9 @@
         android:key="@string/prefs_key_change_language"
         android:selectable="true"
         android:persistent="true"
-        android:summary="@string/prefs_change_language"
-        android:title="@string/prefs_language_choosed"
-        app:icon="@drawable/ic_magezin"
+        android:title="@string/prefs_change_language"
+        android:summary="@string/prefs_language_choosed"
+        app:icon="@drawable/ic_language"
         app:iconSpaceReserved="true"/>
 
     <!--Disable-->
