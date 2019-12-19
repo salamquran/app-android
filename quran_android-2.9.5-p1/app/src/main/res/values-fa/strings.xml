@@ -184,11 +184,12 @@
   <!-- bookmark & tag list -->
   <string name="bookmarks_list_empty">نشانکی وجود ندارد</string>
   <string name="about_data_sources">منبع داده‌ها</string>
-  <string name="about_description">این برنامه رایگان است. تهیه‌کنندگانش را از دعای خود محروم نسازید.</string>
+  <string name="about_title">حضرت محمد (ص) پیامبر اسلام</string>
+  <string name="about_description">من در میان شما دو چیز باقی می‌گذارم که اگر آنها را دستاویز قرار دهید، هرگز گمراه نخواهید شد: کتاب خدا و عترتم که اهل بیتم هستند. ای مردم بشنوید! من به شما رساندم که شما در کنار حوض بر من وارد می‌شوید، پس من از شما درباره رفتارتان با این دو یادگار ارزشمند سوال خواهم کرد، یعنی کتاب خدا و اهل بیتم.</string>
   <string name="about_images">تصاویر</string>
   <string name="about_madani_images">تصاویر صفحه‌های این قرآن متعلق به چاپخانه ملک فهد در مدینه منوره می‌باشد.</string>
   
-  <string name="about_quranicaudio_summary">تلاوت‌های قرآنی (بی‌وقفه)</string>
+  <string name="about_quranicaudio_summary">سلام قرآن</string>
   <string name="about_quran_ksu">پروژه مصحف الکترونیکی</string>
   <string name="about_quran_ksu_summary">پروژه مصحف الکترونیکی در دانشگاه ملک سعود منبع تفاسیر عربی و برخی ترجمه‌هاست.</string>
   <string name="about_tanzil_summary">بسیاری از ترجمه‌ها</string>
@@ -293,4 +294,5 @@
   <string name="about_quranicaudio" translatable="false">تلاوت قرآن</string>
   <string name="menu_btn_setting">تنظیمات</string>
   <string name="menu_btn_search">جستجو</string>
+  <string name="about_tanzil" translatable="false">تنزیل</string>
 </resources>

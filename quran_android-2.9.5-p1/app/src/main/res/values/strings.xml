@@ -41,7 +41,8 @@
   <string name="cancel">Cancel</string>
 
   <!-- about -->
-  <string name="about_description">Quran for Android is a free Quran application. Please do not forget the contributors in your prayers.</string>
+  <string name="about_title">Islamic prophet Muhammad</string>
+  <string name="about_description">Indeed I am leaving two things among you, to which if you hold yourself, you will never astray: the book of Allah –who is all mighty and great- and my ahl al-bayt (household), my 'itra (family). O people hear! And I have announced to you that: indeed you will enter my presence and I will ask you about what you did to the thaqalayn (two weighty things) and the thaqalayn are the book of Allah and my ahl al-bayt.</string>
   <string name="about_data_sources">Data Sources</string>
   <string name="about_images">Images</string>
   <string name="about_madani_images">The Quran images are based on the fonts from the King Fahd Quran Printing Complex</string>
@@ -51,7 +52,7 @@
   <string name="about_qaloon_images">Qaloon images used with permission of Nous Memes Editions Et Diffusion (Tunisia)</string>
   <string name="about_quranicaudio" translatable="false">Audio Quran</string>
   <string name="about_quranicaudio_summary">Gapless mp3 Quran recitations</string>
-  <string name="about_quranicaudio_url" translatable="false">https://quranicaudio.com</string>
+  <string name="about_quranicaudio_url" translatable="false">https://dl.salamquran.com</string>
   <string name="about_quran_ksu">Electronic Moshaf Project</string>
   <string name="about_quran_ksu_summary">The King Saud University Electronic Moshaf Project is the app\'s source of Arabic Tafaseer and translations for various languages. It is also the source for Dr. Ayman Suwaid\'s recitation.</string>
   <string name="about_quran_ksu_url" translatable="false">https://quran.ksu.edu.sa</string>
@@ -397,4 +398,6 @@
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="menu_btn_setting">Setting</string>
   <string name="menu_btn_search">Search</string>
+  <string name="about_quran_android">Quran Android</string>
+  <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
 </resources>

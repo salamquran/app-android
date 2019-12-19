@@ -264,7 +264,8 @@
 
   <string name="downloadTabletPrompt">تم تحسين الصور الخاصه بالتابلت. هل تود تحميلها الان؟</string>
   <string name="menu_sort_group_by_tags">رتب حسب للتصنيفات</string>
-  <string name="about_description">هذا التطبيق مجانا. لا تنسونا من صالح دعائكم.</string>
+  <string name="about_title">النبینا محمد صلی‌الله‌علیه‌وآله</string>
+  <string name="about_description">إِنِّی تَارِک فِیکمْ أَمْرَینِ إِنْ أَخَذْتُمْ بِهِمَا لَنْ تَضِلُّوا- کتَابَ اللَّهِ عَزَّ وَ جَلَّ وَ أَهْلَ بَیتِی عِتْرَتِی أَیهَا النَّاسُ اسْمَعُوا وَ قَدْ بَلَّغْتُ إِنَّکمْ سَتَرِدُونَ عَلَی الْحَوْضَ فَأَسْأَلُکمْ عَمَّا فَعَلْتُمْ فِی الثَّقَلَینِ وَ الثَّقَلَانِ کتَابُ اللَّهِ جَلَّ ذِکرُهُ وَ أَهْلُ بَیتِی.</string>
   <string name="about_data_sources">مصدر المعلومات</string>
   <string name="about_images">الصور</string>
   <string name="about_madani_images">صور صفحات القران الموجودة بالتطبيق مصدرها مجمع الملك فهد لطباعة المصحف الشريف بالمدينة المنورة</string>
@@ -298,5 +299,7 @@
   <string name="about_quranicaudio" translatable="false">تلاوت القرآن</string>
   <string name="menu_btn_setting">الإعدادات</string>
   <string name="menu_btn_search">بحث</string>
+  <string name="about_tanzil" translatable="false">تنزیل</string>
+  <string name="about_tanzil_summary">کثیر من الترجمات</string>
 
 </resources>
