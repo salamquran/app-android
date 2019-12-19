@@ -42,7 +42,7 @@
 
   <!-- about -->
   <string name="about_title">Islamic prophet Muhammad</string>
-  <string name="about_description">Indeed I am leaving two things among you, to which if you hold yourself, you will never astray: the book of Allah –who is all mighty and great- and my ahl al-bayt (household), my 'itra (family). O people hear! And I have announced to you that: indeed you will enter my presence and I will ask you about what you did to the thaqalayn (two weighty things) and the thaqalayn are the book of Allah and my ahl al-bayt.</string>
+  <string name="about_description">Indeed I am leaving two things among you, to which if you hold yourself, you will never astray: the book of Allah –who is all mighty and great- and my ahl al-bayt (household), my itra (family). O people hear! And I have announced to you that: indeed you will enter my presence and I will ask you about what you did to the thaqalayn (two weighty things) and the thaqalayn are the book of Allah and my ahl al-bayt.</string>
   <string name="about_data_sources">Data Sources</string>
   <string name="about_images">Images</string>
   <string name="about_madani_images">The Quran images are based on the fonts from the King Fahd Quran Printing Complex</string>
@@ -398,6 +398,4 @@
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="menu_btn_setting">Setting</string>
   <string name="menu_btn_search">Search</string>
-  <string name="about_quran_android">Quran Android</string>
-  <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
 </resources>
