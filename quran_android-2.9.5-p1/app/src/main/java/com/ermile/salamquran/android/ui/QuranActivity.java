@@ -30,6 +30,7 @@ import com.ermile.salamquran.android.presenter.translation.TranslationManagerPre
 import com.ermile.salamquran.android.salamquran.Learn.LearnFragment;
 import com.ermile.salamquran.android.salamquran.Mag.MagFragment;
 import com.ermile.salamquran.android.salamquran.SearchFragment;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
 import com.ermile.salamquran.android.ui.fragment.BookmarksFragment;
@@ -109,6 +110,8 @@ public class QuranActivity extends QuranActionBarActivity
   @Inject
   BookmarksContextualModePresenter bookmarksContextualModePresenter;
 
+  String languageUsed = null;
+
   //----------
 
 
@@ -171,6 +174,7 @@ public class QuranActivity extends QuranActionBarActivity
     }
 
     //salamquran
+    languageUsed = UserInfo.getAppLanguage(this);
     linear_quranList = findViewById(R.id.linear_quran_list);
     bottomNavigation = findViewById(R.id.bottom_navigation);
     frameLayout = findViewById(R.id.frameLayout);
@@ -190,8 +194,7 @@ public class QuranActivity extends QuranActionBarActivity
     setVisibilityQuran();
     compositeDisposable.add(recentPages.subscribe());
     super.onResume();
-    final boolean isRtl = isRtl();
-    if (isRtl != this.isRtl) {
+    if (!languageUsed.equals(UserInfo.getAppLanguage(this))) {
       final Intent i = getIntent();
       finish();
       startActivity(i);
