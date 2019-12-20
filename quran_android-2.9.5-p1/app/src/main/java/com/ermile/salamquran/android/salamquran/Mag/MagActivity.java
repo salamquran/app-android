@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Adapter;
 import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
@@ -29,6 +30,13 @@ public class MagActivity extends AppCompatActivity {
 
   String result = null;
   String image = null;
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

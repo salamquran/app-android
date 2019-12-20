@@ -3,7 +3,10 @@ package com.ermile.salamquran.android.ui.fragment
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.preference.*
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceGroup
+import androidx.preference.PreferenceScreen
 import com.ermile.data.source.PageProvider
 import com.ermile.salamquran.android.QuranAdvancedPreferenceActivity
 import com.ermile.salamquran.android.QuranApplication
@@ -14,6 +17,7 @@ import com.ermile.salamquran.android.salamquran.Language.LanguageActivity
 import com.ermile.salamquran.android.ui.AudioManagerActivity
 import com.ermile.salamquran.android.ui.QuranActivity
 import com.ermile.salamquran.android.ui.TranslationManagerActivity
+import java.util.*
 import javax.inject.Inject
 
 class QuranSettingsFragment : PreferenceFragmentCompat(),
@@ -64,6 +68,10 @@ class QuranSettingsFragment : PreferenceFragmentCompat(),
 
   override fun onResume() {
     super.onResume()
+    context?.let {
+      (Objects.requireNonNull(activity)!!.application as QuranApplication)
+          .refreshLocale(it, true)
+    }
     preferenceScreen.sharedPreferences
       .registerOnSharedPreferenceChangeListener(this)
   }

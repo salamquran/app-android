@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
 
@@ -30,6 +31,12 @@ public class LearnActivity_level_list extends AppCompatActivity {
   /*TryAgain*/
   private ProgressBar progressBar;
   private View viewTry;
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

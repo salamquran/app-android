@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.SearchActivity;
 
@@ -38,6 +39,13 @@ public class SearchFragment extends Fragment {
     // Required empty public constructor
   }
 
+  @Override
+  public void onResume() {
+    super.onResume();
+    ((QuranApplication)
+        Objects.requireNonNull(getActivity()).getApplication())
+        .refreshLocale(Objects.requireNonNull(getContext()), true);
+  }
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,

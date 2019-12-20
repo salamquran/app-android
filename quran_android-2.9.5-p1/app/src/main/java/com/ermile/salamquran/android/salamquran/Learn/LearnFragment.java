@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
 import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
@@ -25,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +42,14 @@ public class LearnFragment extends Fragment {
   /*TryAgain*/
   private ProgressBar progressBar;
   private View viewTry;
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    ((QuranApplication)
+        Objects.requireNonNull(getActivity()).getApplication())
+        .refreshLocale(Objects.requireNonNull(getContext()), true);
+  }
 
   public LearnFragment() {
     // Required empty public constructor

@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Utility.VideoShowActivity;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
@@ -27,6 +28,12 @@ public class LearnActivity_level_info extends AppCompatActivity {
   private ProgressBar progressBar;
   private View viewTry;
   View boxLearn;
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    ((QuranApplication) getApplication()).refreshLocale(this, true);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

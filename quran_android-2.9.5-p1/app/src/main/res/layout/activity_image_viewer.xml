@@ -15,6 +15,11 @@
       android:clipToPadding="false"
       tools:ignore="UnusedAttribute" />-->
 
+  <ProgressBar
+      android:layout_centerInParent="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
   <com.github.chrisbanes.photoview.PhotoView
       android:id="@+id/photo_view"
       android:background="#333"
