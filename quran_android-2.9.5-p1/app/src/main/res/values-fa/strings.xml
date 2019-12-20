@@ -189,7 +189,7 @@
   <string name="about_images">تصاویر</string>
   <string name="about_madani_images">تصاویر صفحه‌های این قرآن متعلق به چاپخانه ملک فهد در مدینه منوره می‌باشد.</string>
 
-  <string name="about_quran_android">Quran Android</string>
+  <string name="about_quran_android">سلام قرآن</string>
   <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
 
   <string name="about_quranicaudio_summary">سلام قرآن</string>
@@ -298,4 +298,12 @@
   <string name="menu_btn_setting">تنظیمات</string>
   <string name="menu_btn_search">جستجو</string>
   <string name="about_tanzil" translatable="false">تنزیل</string>
+  <string name="prefs_immersive_in_portrait_title">تمام صفحه در حالت عمودی</string>
+  <string name="prefs_immersive_in_portrait_summary_disabled">"فقط قرآن در تمام صفحه نمایش داده می شوند "</string>
+  <string name="downloadTabletPrompt">ما به تازگی تصاویر بهبود یافته ای را اضافه کرده ایم           آیا می خواهید این تصاویر را اکنون بارگیری کنید؟</string>
+  <string name="see_tafseer_of_verse">تفسيرآیه به آيه %d (برای مشاهده لمس کنید).</string>
+  <string name="prefs_page_type_summary">"نوع صفحه را برای خواندن انتخاب کنید "</string>
+  <string name="prefs_send_logs_summary">گزارش های اشکال زدایی را به توسعه دهنده ارسال کنید</string>
+  <string name="prefs_send_logs_title">گزارش اشکالات</string>
+  <string name="prefs_page_type_title">نوع صفحه</string>
 </resources>

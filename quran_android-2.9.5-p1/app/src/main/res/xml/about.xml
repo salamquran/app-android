@@ -114,7 +114,7 @@
 
     <Preference
         android:summary="@string/about_androidx_url"
-        android:title="@string/about_androidx"
+        android:title="@string/"
         app:iconSpaceReserved="false">
       <intent
           android:action="android.intent.action.VIEW"
