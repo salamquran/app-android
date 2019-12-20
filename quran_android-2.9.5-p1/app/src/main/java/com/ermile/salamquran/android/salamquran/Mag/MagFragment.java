@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
@@ -31,6 +33,10 @@ public class  MagFragment extends Fragment {
   private MagAdapter adaptor;
   private LinearLayoutManager layoutManager;
 
+  /*TryAgain*/
+  private ProgressBar progressBar;
+  private View viewTry;
+
   public MagFragment() {
     // Required empty public constructor
   }
@@ -42,17 +48,33 @@ public class  MagFragment extends Fragment {
     new TempLoginUtil(getContext());
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_learn, container, false);
+
     recyclerView = view.findViewById(R.id.recycler_view);
     model = new ArrayList<>();
     adaptor = new MagAdapter(getContext(),model);
     layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 
+    /*TryAgain*/
+    progressBar = view.findViewById(R.id.progress);
+    viewTry = view.findViewById(R.id.itemTryAgain);
+    Button btnTry = viewTry.findViewById(R.id.btn_try_again);
 
+    getItem();
+    btnTry.setOnClickListener(v -> getItem());
+
+    return view;
+  }
+
+  private void getItem(){
+    progressBar.setVisibility(View.VISIBLE);
+    viewTry.setVisibility(View.GONE);
     MagApi.newsList(getContext(),50, new MagApi.magListListener() {
       @Override
       public void onReceived(String Result) {
         try {
+          viewTry.setVisibility(View.GONE);
+          progressBar.setVisibility(View.GONE);
           addItem(Result);
           recyclerView.setLayoutManager(layoutManager);
           recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -65,12 +87,10 @@ public class  MagFragment extends Fragment {
 
       @Override
       public void onFiled() {
-
+        progressBar.setVisibility(View.GONE);
+        viewTry.setVisibility(View.VISIBLE);
       }
     });
-
-
-    return view;
   }
 
   private void addItem(String Response){

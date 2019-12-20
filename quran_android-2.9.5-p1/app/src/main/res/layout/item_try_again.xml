@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@+id/image"
+      android:src="@drawable/salamquran"
+      android:layout_width="@dimen/_100sdp"
+      android:layout_height="@dimen/_100sdp"/>
+
+  <Button
+      android:id="@+id/btn_try_again"
+      android:text="try"
+      android:layout_marginTop="@dimen/_5sdp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+</LinearLayout>

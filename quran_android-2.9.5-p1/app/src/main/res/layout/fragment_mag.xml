@@ -5,7 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".salamquran.Mag.MagFragment">
 
-  <!-- TODO: Update blank fragment layout -->
+  <include
+      android:visibility="gone"
+      android:layout_centerInParent="true"
+      android:id="@+id/itemTryAgain"
+      layout="@layout/item_try_again"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"/>
+
+  <ProgressBar
+      android:id="@+id/progress"
+      android:layout_centerInParent="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/recycler_view"
       android:layout_width="match_parent"

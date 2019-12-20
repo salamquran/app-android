@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -21,33 +23,54 @@ public class LearnActivity_level_info extends AppCompatActivity {
   ImageView image;
   TextView title,desc;
 
+  /*TryAgain*/
+  private ProgressBar progressBar;
+  private View viewTry;
+  View boxLearn;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_learn_level_info);
 
+    boxLearn = findViewById(R.id.box_learn);
     box_image = findViewById(R.id.box_image);
     box_title = findViewById(R.id.cardview_title);
     box_desc = findViewById(R.id.cardview_desc);
-    image = findViewById(R.id.image);
+    image = findViewById(R.id.image_video);
     title = findViewById(R.id.title);
     desc = findViewById(R.id.desc);
 
+    /*TryAgain*/
+    viewTry = findViewById(R.id.itemTryAgain);
+    progressBar = findViewById(R.id.progress);
+    Button btnTry = viewTry.findViewById(R.id.btn_try_again);
+
+    getItem();
+    btnTry.setOnClickListener(v -> getItem());
+  }
+
+  private void getItem(){
+    progressBar.setVisibility(View.VISIBLE);
+    viewTry.setVisibility(View.GONE);
     LearnApi.levelInfo(
         getApplication(),
         getIntent().getStringExtra("id"),
         new LearnApi.levelInfoListener() {
-      @Override
-      public void onReceived(String Result) {
-        addItem(Result);
-      }
+          @Override
+          public void onReceived(String Result) {
+            addItem(Result);
+            boxLearn.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+          }
 
-      @Override
-      public void onFiled() {
-
-      }
-    });
-
+          @Override
+          public void onFiled() {
+            boxLearn.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
+            viewTry.setVisibility(View.VISIBLE);
+          }
+        });
   }
 
   private void addItem(String Response){
@@ -66,14 +89,11 @@ public class LearnActivity_level_info extends AppCompatActivity {
               .load(file)
               .into(image);
         }
-        image.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            Intent intent = new Intent(getApplication(), VideoShowActivity.class);
-            intent.putExtra("video",file);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-          }
+        image.setOnClickListener(v -> {
+          Intent intent = new Intent(getApplication(), VideoShowActivity.class);
+          intent.putExtra("video",file);
+          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          startActivity(intent);
         });
       }
 

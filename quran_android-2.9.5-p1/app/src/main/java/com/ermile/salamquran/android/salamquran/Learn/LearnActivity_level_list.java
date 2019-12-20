@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.api.LearnApi;
@@ -24,11 +27,14 @@ public class LearnActivity_level_list extends AppCompatActivity {
   private LearnAdapter adaptor;
   private LinearLayoutManager layoutManager;
 
+  /*TryAgain*/
+  private ProgressBar progressBar;
+  private View viewTry;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_learn_level_list);
-    String id = getIntent().getStringExtra("id");
 
     recyclerView = findViewById(R.id.recycler_view);
     mainModel = new ArrayList<>();
@@ -38,18 +44,35 @@ public class LearnActivity_level_list extends AppCompatActivity {
         new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
     recyclerView.setAdapter(adaptor);
 
+    /*TryAgain*/
+    progressBar = findViewById(R.id.progress);
+    viewTry = findViewById(R.id.itemTryAgain);
+    Button btnTry = viewTry.findViewById(R.id.btn_try_again);
+
+    getItem();
+    btnTry.setOnClickListener(v -> getItem());
+  }
+
+  private void getItem(){
+    progressBar.setVisibility(View.VISIBLE);
+    viewTry.setVisibility(View.GONE);
+
+    String id = getIntent().getStringExtra("id");
     LearnApi.levelList(getApplication(), id, new LearnApi.levelListListener() {
       @Override
       public void onReceived(String Result) {
+        progressBar.setVisibility(View.GONE);
+        viewTry.setVisibility(View.GONE);
+
         addItem(Result);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         adaptor.notifyDataSetChanged();
       }
-
       @Override
       public void onFiled() {
-
+        progressBar.setVisibility(View.GONE);
+        viewTry.setVisibility(View.VISIBLE);
       }
     });
   }
