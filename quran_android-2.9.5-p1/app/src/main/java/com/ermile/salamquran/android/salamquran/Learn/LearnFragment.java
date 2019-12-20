@@ -103,7 +103,7 @@ public class LearnFragment extends Fragment {
   private void addItem(String Response){
     try {
       JSONArray array = new JSONArray(Response);
-      for (int i = array.length(); i == 0; i--) {
+      for (int i = 0; i < array.length(); i++) {
         JSONObject object = array.getJSONObject(i);
         mainModel.add(new LearnModel(LearnModel.GROUP));
         groupModel.add(new LearnModel.group(
