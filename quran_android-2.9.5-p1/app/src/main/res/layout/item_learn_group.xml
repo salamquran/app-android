@@ -20,13 +20,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-      <ImageView
-          android:id="@+id/image"
+      <RelativeLayout
+          android:id="@+id/box_image"
           android:layout_alignParentTop="true"
-          android:scaleType="centerCrop"
-          android:src="@drawable/salamquran"
           android:layout_width="match_parent"
-          android:layout_height="@dimen/_100sdp"/>
+          android:layout_height="@dimen/_100sdp">
+
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"/>
+
+      </RelativeLayout>
+
+
 
       <TextView
           android:id="@+id/title"
@@ -38,7 +51,7 @@
           android:textSize="@dimen/_15ssp"
           android:textStyle="bold"
           android:text="Unit 2"
-          android:layout_below="@+id/image"
+          android:layout_below="@+id/box_image"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           />
