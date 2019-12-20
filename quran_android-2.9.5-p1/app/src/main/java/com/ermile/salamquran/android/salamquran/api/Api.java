@@ -161,12 +161,7 @@ public class Api {
             JSONObject mainObject = new JSONObject(response);
             if (mainObject.getBoolean("ok")){
               JSONObject result = mainObject.getJSONObject("result");
-
-              JSONArray intro = result.getJSONArray("intro");
-              if (intro.length() > 30){
-                SaveManager.get(context).save_json_intro(String.valueOf(intro));
-              }
-
+              Log.d("amingoli", "getAndroidDetail: "+result);
             }
           } catch (Exception e) {
             e.printStackTrace();

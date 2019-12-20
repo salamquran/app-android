@@ -10,6 +10,7 @@ import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.QuranDataActivity;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Intro.IntroActivity;
+import com.ermile.salamquran.android.salamquran.Intro.IntroApi;
 import com.ermile.salamquran.android.salamquran.Language.LanguageActivity;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
@@ -28,6 +29,7 @@ public class Splash extends AppCompatActivity {
         break;
 
       case 1:
+        new IntroApi(getApplication());
         goIntro();
         break;
 

@@ -38,9 +38,9 @@ public class IntroActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_intro);
 
-    nex_string = "next";
-    pravs_string = "back";
-    skip_string = "skip";
+    nex_string = "->";
+    pravs_string = "<-";
+    skip_string = "SKIP";
 
     nex = findViewById(R.id.btn_next);
     prav = findViewById(R.id.btn_prav);
@@ -55,7 +55,6 @@ public class IntroActivity extends AppCompatActivity {
 
 
     try {
-      Log.d("amingoli", "onCreate: "+Json.Get.intro(getApplication()));
       JSONArray intro = new JSONArray( Json.Get.intro(getApplication()) );
 
       for (int i = 0; i < intro.length(); i++) {
