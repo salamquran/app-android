@@ -68,7 +68,7 @@
   <string name="about_open_source">Open Source Projects</string>
   <string name="about_quran_android">Salam Quran</string>
   <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
-  <string name="" translatable="false">AndroidX</string>
+  <string name="about_androidx" translatable="false">AndroidX</string>
   <string name="about_androidx_url" translatable="false">https://developer.android.com/jetpack/androidx</string>
   <string name="about_dagger2" translatable="false">Dagger 2</string>
   <string name="about_dagger2_url" translatable="false">https://google.github.io/dagger</string>
