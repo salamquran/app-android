@@ -22,7 +22,7 @@
       android:layout_height="wrap_content"/>
 
   <RelativeLayout
-      android:visibility="visible"
+      android:visibility="gone"
       android:id="@+id/box_learn"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
@@ -52,7 +52,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/cardview_title"
         android:layout_below="@id/box_image"
         android:layout_width="match_parent"
@@ -78,7 +78,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_desc"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_below="@id/cardview_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
