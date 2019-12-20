@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ermile.salamquran.android.R;
+import com.ermile.salamquran.android.salamquran.Utility.ColorUtil;
+
 import java.util.List;
 
 public class IntroAdapter extends RecyclerView.Adapter<IntroAdapter.ViewHolder>{
@@ -40,7 +42,8 @@ public class IntroAdapter extends RecyclerView.Adapter<IntroAdapter.ViewHolder>{
         String title = itemIntroList.get(position).getTitle();
         final String content = itemIntroList.get(position).getDesc();
 
-        String bg_color = itemIntroList.get(position).getBg_color_layout();
+        String bg_color_start = itemIntroList.get(position).getBg_color_start();
+        String bg_color_end = itemIntroList.get(position).getBg_color_end();
         String title_color = itemIntroList.get(position).getColot_title();
         String desc_color = itemIntroList.get(position).getColot_desc();
 
@@ -50,8 +53,8 @@ public class IntroAdapter extends RecyclerView.Adapter<IntroAdapter.ViewHolder>{
         holder.title.setText(title);
         holder.content.setText(content);
 
-        if (bg_color != null){
-            holder.linearLayout.setBackgroundColor(Color.parseColor(bg_color));
+        if (bg_color_start != null && bg_color_end !=null){
+          ColorUtil.setGradient(holder.linearLayout,bg_color_start,bg_color_end);
         }
         if (title_color != null){
             holder.title.setTextColor(Color.parseColor(title_color));

@@ -30,9 +30,8 @@ public class Splash extends AppCompatActivity {
 
       case 1:
         new IntroApi(getApplication());
-        goIntro();
+        new Handler().postDelayed(this::goIntro,1500);
         break;
-
       case 2:
         quranActivity();
         break;
@@ -62,7 +61,7 @@ public class Splash extends AppCompatActivity {
     }
   }
   private void goIntro() {
-//    SaveManager.get(getApplication()).save_splash(2);
+    SaveManager.get(getApplication()).save_splash(2);
     Intent intent = new Intent(this, IntroActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
     startActivity(intent);

@@ -68,7 +68,7 @@ public class IntroActivity extends AppCompatActivity {
         String title_color = object.getString("title_color");
         String desc_color = object.getString("desc_color");
 
-        itemIntroList.add(new IntroModel(image,title,desc,bg_from,title_color,desc_color));
+        itemIntroList.add(new IntroModel(image,title,desc,bg_from,bg_to,title_color,desc_color));
         recyclerViewPager.setLayoutManager(layout);
         recyclerViewPager.setItemAnimator(new DefaultItemAnimator());
 
@@ -81,7 +81,7 @@ public class IntroActivity extends AppCompatActivity {
             String titleBtn = btnObject.getString("title");
 
             switch (action){
-              case "next_img":
+              case "next":
                 nex_string = titleBtn;
                 break;
               case "prev":

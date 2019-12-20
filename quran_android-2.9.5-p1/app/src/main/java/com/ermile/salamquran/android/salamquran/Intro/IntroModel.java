@@ -2,13 +2,14 @@ package com.ermile.salamquran.android.salamquran.Intro;
 
 public class IntroModel {
   String image,title,desc;
-  String bg_color_layout,colot_title,colot_desc;
+  String bg_color_start,bg_color_end,colot_title,colot_desc;
 
-  public IntroModel(String image, String title, String desc, String bg_color_layout, String colot_title, String colot_desc) {
+  public IntroModel(String image, String title, String desc, String bg_color_start, String bg_color_end, String colot_title, String colot_desc) {
     this.image = image;
     this.title = title;
     this.desc = desc;
-    this.bg_color_layout = bg_color_layout;
+    this.bg_color_start = bg_color_start;
+    this.bg_color_end = bg_color_end;
     this.colot_title = colot_title;
     this.colot_desc = colot_desc;
   }
@@ -37,12 +38,20 @@ public class IntroModel {
     this.desc = desc;
   }
 
-  public String getBg_color_layout() {
-    return bg_color_layout;
+  public String getBg_color_start() {
+    return bg_color_start;
   }
 
-  public void setBg_color_layout(String bg_color_layout) {
-    this.bg_color_layout = bg_color_layout;
+  public void setBg_color_start(String bg_color_start) {
+    this.bg_color_start = bg_color_start;
+  }
+
+  public String getBg_color_end() {
+    return bg_color_end;
+  }
+
+  public void setBg_color_end(String bg_color_end) {
+    this.bg_color_end = bg_color_end;
   }
 
   public String getColot_title() {
