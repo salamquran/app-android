@@ -12,7 +12,6 @@
   <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- foreground services need this when targeting Android 9+ (Api 28+) -->
   <uses-permission-sdk-23 android:name="android.permission.FOREGROUND_SERVICE" /> <!-- support chromebooks without touch screen -->
   <!-- salamquran -->
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
   <uses-feature
@@ -186,6 +185,16 @@
         android:exported="false">
       <intent-filter>
         <action android:name="android.intent.action.MEDIA_BUTTON" />
+      </intent-filter>
+    </service>
+
+    <service
+        android:name=".salamquran.Notification.NotificationSearvic"
+        tools:ignore="ExportedService,InnerclassSeparator">
+      <intent-filter>
+        <action android:name="com.jibres.android.NotificationService" />
+
+        <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </service>
 

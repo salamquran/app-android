@@ -29,6 +29,7 @@ import com.ermile.salamquran.android.presenter.bookmark.BookmarksContextualModeP
 import com.ermile.salamquran.android.presenter.translation.TranslationManagerPresenter;
 import com.ermile.salamquran.android.salamquran.Learn.LearnFragment;
 import com.ermile.salamquran.android.salamquran.Mag.MagFragment;
+import com.ermile.salamquran.android.salamquran.Notification.NotificationSearvic;
 import com.ermile.salamquran.android.salamquran.SearchFragment;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.service.AudioService;
@@ -174,6 +175,7 @@ public class QuranActivity extends QuranActionBarActivity
     }
 
     //salamquran
+    startService(new Intent(this, NotificationSearvic.class));
     languageUsed = UserInfo.getAppLanguage(this);
     linear_quranList = findViewById(R.id.linear_quran_list);
     bottomNavigation = findViewById(R.id.bottom_navigation);
