@@ -96,4 +96,10 @@
   <style name="spinnerTheme">
     <item name="android:textColor">#333333</item>
   </style>
+
+  <style name="showNews">
+    <item name="android:textColor">#333333</item>
+    <item name="android:autoLink">all</item>
+    <item name="android:padding">@dimen/_10sdp</item>
+  </style>
 </resources>

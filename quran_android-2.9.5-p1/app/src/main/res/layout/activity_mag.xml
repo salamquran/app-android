@@ -25,34 +25,26 @@
 
     <TextView
         android:id="@+id/title"
-        android:textColor="@color/title_color"
-        android:padding="@dimen/_10sdp"
         android:textStyle="bold"
-        android:textSize="@dimen/_12ssp"
-        android:text="@string/app_name"
         android:layout_below="@+id/recyclerViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        style="@style/showNews"/>
     <TextView
         android:id="@+id/short_desc"
-        android:textColor="@color/title_color"
-        android:padding="@dimen/_10sdp"
         android:textStyle="bold"
-        android:textSize="@dimen/_10ssp"
-        android:text="@string/app_name"
         android:layout_below="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        style="@style/showNews"/>
     <TextView
         android:id="@+id/desc"
-        android:textColor="@color/title_color"
-        android:padding="@dimen/_10sdp"
         android:textStyle="normal"
         android:textSize="@dimen/_10ssp"
-        android:text="@string/app_name"
         android:layout_below="@+id/short_desc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        style="@style/showNews"/>
 
 
   </RelativeLayout>
