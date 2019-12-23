@@ -27,10 +27,8 @@ public class Splash extends AppCompatActivity {
       case 0:
         changeLanguage();
         break;
-
       case 1:
-        new IntroApi(getApplication());
-        new Handler().postDelayed(this::goIntro,1500);
+        goIntro();
         break;
       case 2:
         quranActivity();
@@ -52,6 +50,7 @@ public class Splash extends AppCompatActivity {
       case "ar":
         SaveManager.get(getApplication()).save_app_language(deviceLanguage);
         ((QuranApplication) getApplication()).refreshLocale(this, true);
+        goIntro();
         break;
       default:
         Intent intent = new Intent(this, LanguageActivity.class);
@@ -61,11 +60,15 @@ public class Splash extends AppCompatActivity {
     }
   }
   private void goIntro() {
+    new IntroApi(getApplication());
     SaveManager.get(getApplication()).save_splash(2);
-    Intent intent = new Intent(this, IntroActivity.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-    startActivity(intent);
-    finish();
+    new Handler().postDelayed(() -> {
+      Intent intent = new Intent(getApplication(), IntroActivity.class);
+      intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+      startActivity(intent);
+      finish();
+    },700);
+
   }
   private void quranActivity() {
     Intent intent = new Intent(this, QuranDataActivity.class);
