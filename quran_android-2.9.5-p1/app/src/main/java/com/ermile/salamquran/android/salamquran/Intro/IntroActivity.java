@@ -3,24 +3,17 @@ package com.ermile.salamquran.android.salamquran.Intro;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
+import com.ermile.salamquran.android.QuranDataActivity;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Utility.Json;
-import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
-import com.ermile.salamquran.android.ui.QuranActivity;
 import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,50 +90,38 @@ public class IntroActivity extends AppCompatActivity {
 
       if (itemIntroList.size() == 1){
         nex.setText(nex_string);
-        nex.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), QuranActivity.class));
-          }
+        nex.setOnClickListener(view -> {
+          finish();
+          startActivity(new Intent(getApplicationContext(), QuranDataActivity.class));
         });
       }
       else {
         nex.setText(nex_string);
         prav.setText(pravs_string);
-        nex.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
+        nex.setOnClickListener(view -> {
 
+          if (page_intro() == itemIntroList.size()-1){
+            finish();
+            startActivity(new Intent(getApplicationContext(),QuranDataActivity.class));
+          }else {
+            recyclerViewPager.smoothScrollToPosition(recyclerViewPager.getCurrentPosition() + 1);
+          }
+        });
+        prav.setOnClickListener(view ->
+            recyclerViewPager.smoothScrollToPosition(recyclerViewPager.getCurrentPosition() - 1));
+
+        recyclerViewPager.addOnPageChangedListener((i, i1) -> {
+          if (recyclerViewPager.isScrollContainer()){
             if (page_intro() == itemIntroList.size()-1){
-              finish();
-              startActivity(new Intent(getApplicationContext(),QuranActivity.class));
+              nex.setText(skip_string);
             }else {
-              recyclerViewPager.smoothScrollToPosition(recyclerViewPager.getCurrentPosition() + 1);
+              nex.setText(nex_string);
             }
-          }
-        });
-        prav.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-            recyclerViewPager.smoothScrollToPosition(recyclerViewPager.getCurrentPosition() - 1);
-          }
-        });
-        recyclerViewPager.addOnPageChangedListener(new RecyclerViewPager.OnPageChangedListener() {
-          @Override
-          public void OnPageChanged(int i, int i1) {
-            if (recyclerViewPager.isScrollContainer()){
-              if (page_intro() == itemIntroList.size()-1){
-                nex.setText(skip_string);
-              }else {
-                nex.setText(nex_string);
-              }
 
-              if (page_intro() >=1){
-                prav.setVisibility(View.VISIBLE);
-              }else {
-                prav.setVisibility(View.INVISIBLE);
-              }
+            if (page_intro() >=1){
+              prav.setVisibility(View.VISIBLE);
+            }else {
+              prav.setVisibility(View.INVISIBLE);
             }
           }
         });
