@@ -2,8 +2,8 @@
     "data": [
         {
             "id": 23,
-            "displayName": "Farsi Translation",
-            "translator": "Hussein Taji Kal Dari",
+            "displayName": "ترجمه فارسی",
+            "translator": "حسین تاجی گله داری",
             "languageCode": "fa",
             "fileUrl": "https://android.quran.com/data/getTranslation.php?id=23",
             "fileName": "quran.farsi.db",
