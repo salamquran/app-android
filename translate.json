@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "id": 23,
+            "displayName": "Farsi Translation",
+            "translator": "Hussein Taji Kal Dari",
+            "languageCode": "fa",
+            "fileUrl": "https://android.quran.com/data/getTranslation.php?id=23",
+            "fileName": "quran.farsi.db",
+            "saveTo": "databases",
+            "downloadType": "translation",
+            "minimum_required_version": 1,
+            "maximum_allowed_version": null,
+            "minimumVersion": 1,
+            "currentVersion": 2,
+            "translatorForeign": "حسین تاجی گله داری"
+        }
+    ]
+}
