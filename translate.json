@@ -36,7 +36,7 @@
             "translator": " 2 ترجمه فارسی",
             "languageCode": "fa",
             "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/tras2.db",
-            "fileName": "quran.ansarian.db",
+            "fileName": "quran.ansarian2.db",
             "saveTo": "databases",
             "downloadType": "translation",
             "minimum_required_version": 1,
