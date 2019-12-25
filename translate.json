@@ -29,6 +29,21 @@
             "minimumVersion": 1,
             "currentVersion": 2,
             "translatorForeign": "حسین انصاریان"
+        },
+        {
+            "id": 25,
+            "displayName": " 2 انصاریان",
+            "translator": " 2 ترجمه فارسی",
+            "languageCode": "fa",
+            "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/tras2.db",
+            "fileName": "quran.ansarian.db",
+            "saveTo": "databases",
+            "downloadType": "translation",
+            "minimum_required_version": 1,
+            "maximum_allowed_version": null,
+            "minimumVersion": 1,
+            "currentVersion": 2,
+            "translatorForeign": " 2 حسین انصاریان"
         }
     ]
 }
