@@ -49,6 +49,7 @@ import com.ermile.salamquran.android.util.QuranUtils;
 import com.ermile.salamquran.android.widgets.SlidingTabLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -328,6 +329,9 @@ public class QuranActivity extends QuranActionBarActivity
       searchItem.collapseActionView();
     }
     if (isQuran){
+      if (frameLayout != null){
+        frameLayout.removeAllViews();
+      }
       linear_quranList.setVisibility(View.VISIBLE);
       frameLayout.setVisibility(View.GONE);
     }else {
@@ -379,8 +383,7 @@ public class QuranActivity extends QuranActionBarActivity
       searchItem.collapseActionView();
     } else if (linear_quranList.getVisibility() != View.VISIBLE){
       bottomNavigation.setSelectedItemId(R.id.quran);
-      linear_quranList.setVisibility(View.VISIBLE);
-      frameLayout.setVisibility(View.GONE);
+      hiddenQuranList(true);
     }else {
       super.onBackPressed();
     }
