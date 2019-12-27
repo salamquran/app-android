@@ -56,9 +56,7 @@ public class MagActivity extends AppCompatActivity {
     subTitle = findViewById(R.id.short_desc);
     desc = findViewById(R.id.desc);
 
-//    Go in <a> Link html
-    subTitle.setMovementMethod(LinkMovementMethod.getInstance());
-    desc.setMovementMethod(LinkMovementMethod.getInstance());
+
 
     if (getIntent().getExtras() != null){
       Intent e = getIntent();
@@ -70,8 +68,11 @@ public class MagActivity extends AppCompatActivity {
       String content = e.getStringExtra("content");
 
       title.setText(title_i);
-      subTitle.setText(excerpt);
+      subTitle.setText(Html.fromHtml(excerpt));
       desc.setText(Html.fromHtml(content));
+//    Go in <a> Link html
+      subTitle.setMovementMethod(LinkMovementMethod.getInstance());
+      desc.setMovementMethod(LinkMovementMethod.getInstance());
 
       if (e.getStringExtra("gallery") != null){
         result = e.getStringExtra("gallery");
