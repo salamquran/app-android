@@ -1,12 +1,12 @@
 {
     "data": [
         {
-            "id": 24,
+            "id": 1,
             "displayName": "ترجمه فارسی",
             "translator": "حسین انصاریان",
             "languageCode": "fa",
-            "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/quran.farsi.db",
-            "fileName": "quran.ansarian.db",
+            "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/salamquran_fa_ansarian.db",
+            "fileName": "salamquran_fa_ansarian.db",
             "saveTo": "databases",
             "downloadType": "translation",
             "minimum_required_version": 1,
