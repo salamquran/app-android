@@ -146,7 +146,7 @@ public class QuranDataActivity extends Activity implements
     final String path = quranSettings.getAppCustomLocation();
     final File fallbackFile = getExternalFilesDir(null);
 
-    boolean usesExternalFileDir = path != null && path.contains("com.quran");
+    boolean usesExternalFileDir = path != null && path.contains("com.ermile");
     if (path == null || (usesExternalFileDir && fallbackFile == null)) {
       // suggests that we're on m+ and getExternalFilesDir returned null at some point
       runListView();
