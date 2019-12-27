@@ -306,4 +306,6 @@
   <string name="prefs_send_logs_summary">گزارش های اشکال زدایی را به توسعه دهنده ارسال کنید</string>
   <string name="prefs_send_logs_title">گزارش اشکالات</string>
   <string name="prefs_page_type_title">نوع صفحه</string>
+  <string name="playback_prompt_title">تلاوت از کجا شروع شود؟</string>
+  <string name="starting_page_label">اول صفحه</string>
 </resources>

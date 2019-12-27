@@ -303,5 +303,7 @@
   <string name="menu_btn_search">بحث</string>
   <string name="about_tanzil" translatable="false">تنزیل</string>
   <string name="about_tanzil_summary">کثیر من الترجمات</string>
+  <string name="playback_prompt_title">قراءة من:</string>
+  <string name="starting_page_label">بداية الصفحة</string>
 
 </resources>
