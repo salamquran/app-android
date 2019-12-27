@@ -1,119 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string-array name="sura_names">
-    <item>الفاتحة</item>
-    <item>البقرة</item>
+    <item>فاتحة</item>
+    <item>بقرة</item>
     <item>آل عمران</item>
-    <item>النساء</item>
-    <item>المائدة</item>
-    <item>اﻷنعام</item>
-    <item>اﻷعراف</item>
-    <item>اﻷنفال</item>
-    <item>التوبة</item>
+    <item>نساء</item>
+    <item>مائدة</item>
+    <item>انعام</item>
+    <item>اعراف</item>
+    <item>انفال</item>
+    <item>توبه</item>
     <item>يونس</item>
     <item>هود</item>
     <item>يوسف</item>
-    <item>الرعد</item>
-    <item>إبراهيم</item>
-    <item>الحجر</item>
-    <item>النحل</item>
-    <item>اﻹسراء</item>
-    <item>الكهف</item>
+    <item>رعد</item>
+    <item>ابراهيم</item>
+    <item>حجر</item>
+    <item>نحل</item>
+    <item>اسراء</item>
+    <item>كهف</item>
     <item>مريم</item>
     <item>طه</item>
-    <item>اﻷنبياء</item>
-    <item>الحج</item>
-    <item>المؤمنون</item>
-    <item>النور</item>
-    <item>الفرقان</item>
-    <item>الشعراء</item>
-    <item>النمل</item>
-    <item>القصص</item>
-    <item>العنكبوت</item>
-    <item>الروم</item>
+    <item>انبياء</item>
+    <item>حج</item>
+    <item>مؤمنون</item>
+    <item>نور</item>
+    <item>فرقان</item>
+    <item>شعراء</item>
+    <item>نمل</item>
+    <item>قصص</item>
+    <item>عنكبوت</item>
+    <item>روم</item>
     <item>لقمان</item>
-    <item>السجدة</item>
-    <item>اﻷحزاب</item>
+    <item>سجدة</item>
+    <item>احزاب</item>
     <item>سبأ</item>
     <item>فاطر</item>
     <item>يس</item>
-    <item>الصافات</item>
+    <item>صافات</item>
     <item>ص</item>
-    <item>الزمر</item>
+    <item>زمر</item>
     <item>غافر</item>
     <item>فصلت</item>
-    <item>الشورى</item>
-    <item>الزخرف</item>
-    <item>الدخان</item>
-    <item>الجاثية</item>
-    <item>اﻷحقاف</item>
+    <item>شورى</item>
+    <item>زخرف</item>
+    <item>دخان</item>
+    <item>جاثية</item>
+    <item>احقاف</item>
     <item>محمد</item>
-    <item>الفتح</item>
-    <item>الحجرات</item>
+    <item>فتح</item>
+    <item>حجرات</item>
     <item>ق</item>
-    <item>الذاريات</item>
-    <item>الطور</item>
-    <item>النجم</item>
-    <item>القمر</item>
+    <item>ذاريات</item>
+    <item>طور</item>
+    <item>نجم</item>
+    <item>قمر</item>
     <item>الرحمن</item>
-    <item>الواقعة</item>
-    <item>الحديد</item>
-    <item>المجادلة</item>
-    <item>الحشر</item>
-    <item>الممتحنة</item>
-    <item>الصف</item>
-    <item>الجمعة</item>
-    <item>المنافقون</item>
-    <item>التغابن</item>
-    <item>الطلاق</item>
-    <item>التحريم</item>
-    <item>الملك</item>
-    <item>القلم</item>
-    <item>الحاقة</item>
-    <item>المعارج</item>
+    <item>واقعة</item>
+    <item>حديد</item>
+    <item>مجادلة</item>
+    <item>حشر</item>
+    <item>ممتحنة</item>
+    <item>صف</item>
+    <item>جمعة</item>
+    <item>منافقون</item>
+    <item>تغابن</item>
+    <item>طلاق</item>
+    <item>تحريم</item>
+    <item>ملك</item>
+    <item>قلم</item>
+    <item>حاقة</item>
+    <item>معارج</item>
     <item>نوح</item>
-    <item>الجن</item>
-    <item>المزمل</item>
-    <item>المدثر</item>
-    <item>القيامة</item>
-    <item>اﻹنسان</item>
-    <item>المرسلات</item>
-    <item>النبأ</item>
-    <item>النازعات</item>
+    <item>جن</item>
+    <item>مزمل</item>
+    <item>مدثر</item>
+    <item>قيامة</item>
+    <item>انسان</item>
+    <item>مرسلات</item>
+    <item>نبأ</item>
+    <item>نازعات</item>
     <item>عبس</item>
-    <item>التكوير</item>
-    <item>الانفطار</item>
-    <item>المطففين</item>
-    <item>الانشقاق</item>
-    <item>البروج</item>
-    <item>الطارق</item>
-    <item>اﻷعلى</item>
-    <item>الغاشية</item>
-    <item>الفجر</item>
-    <item>البلد</item>
-    <item>الشمس</item>
-    <item>الليل</item>
-    <item>الضحى</item>
-    <item>الشرح</item>
-    <item>التين</item>
-    <item>العلق</item>
-    <item>القدر</item>
-    <item>البينة</item>
-    <item>الزلزلة</item>
-    <item>العاديات</item>
-    <item>القارعة</item>
-    <item>التكاثر</item>
-    <item>العصر</item>
-    <item>الهمزة</item>
-    <item>الفيل</item>
+    <item>تكوير</item>
+    <item>انفطار</item>
+    <item>مطففين</item>
+    <item>انشقاق</item>
+    <item>بروج</item>
+    <item>طارق</item>
+    <item>اعلى</item>
+    <item>غاشية</item>
+    <item>فجر</item>
+    <item>بلد</item>
+    <item>شمس</item>
+    <item>ليل</item>
+    <item>ضحى</item>
+    <item>شرح</item>
+    <item>تين</item>
+    <item>علق</item>
+    <item>قدر</item>
+    <item>بينة</item>
+    <item>زلزلة</item>
+    <item>عاديات</item>
+    <item>قارعة</item>
+    <item>تكاثر</item>
+    <item>عصر</item>
+    <item>همزة</item>
+    <item>فيل</item>
     <item>قريش</item>
-    <item>الماعون</item>
-    <item>الكوثر</item>
-    <item>الكافرون</item>
-    <item>النصر</item>
-    <item>المسد</item>
-    <item>اﻹخلاص</item>
-    <item>الفلق</item>
-    <item>الناس</item>
+    <item>ماعون</item>
+    <item>كوثر</item>
+    <item>كافرون</item>
+    <item>نصر</item>
+    <item>مسد</item>
+    <item>اخلاص</item>
+    <item>فلق</item>
+    <item>ناس</item>
   </string-array>
 </resources>
