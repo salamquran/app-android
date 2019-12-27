@@ -43,7 +43,8 @@ import timber.log.Timber;
 
 @Singleton
 public class TranslationManagerPresenter implements Presenter<TranslationManagerActivity> {
-  private static final String WEB_SERVICE_ENDPOINT = "data/translations.php?v=5";
+//  private static final String WEB_SERVICE_ENDPOINT = "data/translations.php?v=5";
+  private static final String WEB_SERVICE_ENDPOINT = "translate.json";
   private static final String CACHED_RESPONSE_FILE_NAME = "translations.v5.cache";
 
   private final Context appContext;
@@ -61,7 +62,8 @@ public class TranslationManagerPresenter implements Presenter<TranslationManager
                               QuranSettings quranSettings,
                               TranslationsDBAdapter dbAdapter,
                               QuranFileUtils quranFileUtils) {
-    this.host = Constants.HOST;
+//    this.host = Constants.HOST;
+    this.host = "https://raw.githubusercontent.com/salamquran/SalamQuran-android/master/";
     this.appContext = appContext;
     this.okHttpClient = okHttpClient;
     this.quranSettings = quranSettings;
