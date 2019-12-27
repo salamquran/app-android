@@ -1,49 +1,19 @@
 {
   "data": [
     {
-      "id": 23,
+      "id": 1,
       "displayName": "ترجمه فارسی",
-      "translator": "حسین تاجی گله داری",
+      "translator": "حسین انصاریان",
       "languageCode": "fa",
-      "fileUrl": "https://android.quran.com/data/getTranslation.php?id=23",
-      "fileName": "quran.farsi.db",
+      "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/salamquran_fa_ansarian.db",
+      "fileName": "salamquran_fa_ansarian.db",
       "saveTo": "databases",
       "downloadType": "translation",
       "minimum_required_version": 1,
       "maximum_allowed_version": null,
       "minimumVersion": 1,
-      "currentVersion": 2,
-      "translatorForeign": "حسین تاجی گله داری"
-    },
-    {
-      "id": 24,
-      "displayName": "انصاریان",
-      "translator": "ترجمه فارسی",
-      "languageCode": "fa",
-      "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/quran.ansarian.db",
-      "fileName": "quran.ansarian.db",
-      "saveTo": "databases",
-      "downloadType": "translation",
-      "minimum_required_version": 1,
-      "maximum_allowed_version": null,
-      "minimumVersion": 1,
-      "currentVersion": 2,
+      "currentVersion": 1,
       "translatorForeign": "حسین انصاریان"
-    },
-    {
-      "id": 25,
-      "displayName": " 2 انصاریان",
-      "translator": " 2 ترجمه فارسی",
-      "languageCode": "fa",
-      "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/tras2.db",
-      "fileName": "quran.ansarian2.db",
-      "saveTo": "databases",
-      "downloadType": "translation",
-      "minimum_required_version": 1,
-      "maximum_allowed_version": null,
-      "minimumVersion": 1,
-      "currentVersion": 2,
-      "translatorForeign": " 2 حسین انصاریان"
     }
   ]
 }
