@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ import com.ermile.salamquran.android.salamquran.Learn.LearnFragment;
 import com.ermile.salamquran.android.salamquran.Mag.MagFragment;
 import com.ermile.salamquran.android.salamquran.Notification.NotificationSearvic;
 import com.ermile.salamquran.android.salamquran.SearchFragment;
+import com.ermile.salamquran.android.salamquran.UnzipFirstFile;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.service.AudioService;
 import com.ermile.salamquran.android.ui.fragment.AddTagDialog;
@@ -175,7 +177,12 @@ public class QuranActivity extends QuranActionBarActivity
     }
 
     //salamquran
-    startService(new Intent(this, NotificationSearvic.class));
+    try {
+      new UnzipFirstFile(this);
+      startService(new Intent(this, NotificationSearvic.class));
+    }catch (Exception e){
+      Log.e("amingoli", "UnzipFirstFile (QuranActivity.java): ",e );
+    }
     languageUsed = UserInfo.getAppLanguage(this);
     linear_quranList = findViewById(R.id.linear_quran_list);
     bottomNavigation = findViewById(R.id.bottom_navigation);

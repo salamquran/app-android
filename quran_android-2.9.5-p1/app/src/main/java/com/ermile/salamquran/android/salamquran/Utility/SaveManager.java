@@ -30,6 +30,8 @@ public class SaveManager extends ContextWrapper {
 
 
   /** App Info */
+  public static final String unZipFileReq = "unZipFileReq";
+
   public static final String local = "local";
   public static final String splash = "splash";
   public static final String appLanguage = "appLanguage";
@@ -43,6 +45,11 @@ public class SaveManager extends ContextWrapper {
   public static final String jsonLanguageList = "jsonLanguageList";
   public static final String jsonAyaDay = "jsonAyaDay";
   public static final String jsonPageDay = "jsonPageDay";
+
+  public void save_status_unzip_file_rq(Boolean state) {
+    editor.putBoolean(unZipFileReq, state);
+    editor.apply();
+  }
 
   public void save_local_url(String local_URL) {
     editor.putString(local, local_URL);
@@ -104,6 +111,12 @@ public class SaveManager extends ContextWrapper {
   public Map<String, Integer> getIntValue() {
     HashMap<String, Integer> hashMap = new HashMap<>();
     hashMap.put(splash, sharedPreferences.getInt(splash, 0 ));
+    return hashMap;
+  }
+
+  public Map<String,Boolean> getBoolValue() {
+    HashMap<String, Boolean> hashMap = new HashMap<>();
+    hashMap.put(unZipFileReq, sharedPreferences.getBoolean(unZipFileReq, false));
     return hashMap;
   }
 
