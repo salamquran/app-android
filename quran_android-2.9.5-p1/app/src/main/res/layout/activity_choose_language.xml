@@ -24,7 +24,7 @@
 
   <androidx.cardview.widget.CardView
       android:layout_below="@+id/ss"
-      app:cardBackgroundColor="#9AFFFFFF"
+      app:cardBackgroundColor="#fff"
       app:cardCornerRadius="10dp"
       android:layout_marginBottom="@dimen/_20sdp"
       android:layout_centerInParent="true"

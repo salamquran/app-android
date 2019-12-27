@@ -35,8 +35,6 @@ public class LanguageActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_choose_language);
-    View view = findViewById(R.id.relative_layout_main);
-    ColorUtil.setGradient(view,"#07aedb","#b5d7e0");
 
     recyclerView = findViewById(R.id.recycler_view);
     item = new ArrayList<>();
