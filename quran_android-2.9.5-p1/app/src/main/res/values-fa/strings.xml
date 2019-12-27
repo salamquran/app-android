@@ -129,13 +129,13 @@
   <string name="download_processing">در حال بارگذاری…</string>
   <string name="download_error_general">خطا در بارگذاری</string>
   <string name="download_error_disk">فضای کافی برای بارگذاری وجود ندارد</string>
-  <string name="download_error_network">خطای شبکه مانع بارگذاری است</string>
+  <string name="download_error_network">شما به اینترنت متصل نیستید</string>
   <string name="download_error_perms">خطا در دسترسی</string>
   <string name="download_error_invalid_download">بارگذاری با خطا مواجه شد</string>
   <string name="download_error_invalid_download_retry">فایل خراب است. دوباره بارگذاری نمایید</string>
   <string name="download_error_network_retry">خطای شبکه، تلاش مجدد…</string>
   <string name="notification_download_canceled">بارگذاری لغو شد</string>
-  <string name="download_non_wifi_prompt">شبکه بی‌سیم قطع است. بارگذاری انجام شود؟</string>
+  <string name="download_non_wifi_prompt">شما به وای فای متصل نیستید. بارگذاری انجام شود؟</string>
 
   <!-- downloading dialogs -->
   <string name="download_progress">بارگذاری %1$s / %2$s</string>
@@ -150,7 +150,7 @@
   <string name="search_data">جستجو</string>
 
   <!-- help -->
-  <string name="email_us">اگر پاسخ پرسشتان در بالا یافت نشد، می‌توانید برای پشتیبانی با رایانامه quranandroid@gmail.com تماس بگیرید. توجه داشته باشید که حجم نامه‌های دریافتی بالاست و شاید پاسخ به نامه شما اندکی طول بکشد.</string>
+  <string name="email_us">اگر پاسخ پرسشتان در بالا یافت نشد، می‌توانید برای پشتیبانی با رایانامه info@ermile.com تماس بگیرید. توجه داشته باشید که حجم نامه‌های دریافتی بالاست و شاید پاسخ به نامه شما اندکی طول بکشد.</string>
 
   <!-- sura metainfo -->
   <string name="makki">مکی</string>
