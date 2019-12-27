@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 
-import com.ermile.salamquran.android.R;
-
 import java.util.HashMap;
 import java.util.Map;
 

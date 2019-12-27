@@ -6,7 +6,6 @@ import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.QuranApplication;
-import com.ermile.salamquran.android.salamquran.LookServer;
 import com.ermile.salamquran.android.salamquran.Utility.Url;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 

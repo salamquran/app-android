@@ -2,8 +2,6 @@ package com.ermile.salamquran.android.salamquran.Utility;
 
 import android.content.Context;
 
-import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
-
 public class Url {
   public static String site = "https://salamquran.com";
   public static String api = site+"/api/v6";

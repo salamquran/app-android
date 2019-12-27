@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
 import com.ermile.salamquran.android.AboutUsActivity;
@@ -48,12 +47,8 @@ import com.ermile.salamquran.android.util.QuranSettings;
 import com.ermile.salamquran.android.util.QuranUtils;
 import com.ermile.salamquran.android.widgets.SlidingTabLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-
 import javax.inject.Inject;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;

@@ -20,10 +20,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.salamquran.Splash;
 import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
@@ -33,8 +29,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import static com.ermile.salamquran.android.salamquran.Notification.Attribuites.FCM_ACTION_CLICK_NOTIFICATION;

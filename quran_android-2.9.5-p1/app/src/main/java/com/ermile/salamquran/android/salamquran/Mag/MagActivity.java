@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.ermile.salamquran.android.QuranApplication;
@@ -54,6 +55,10 @@ public class MagActivity extends AppCompatActivity {
     title = findViewById(R.id.title);
     subTitle = findViewById(R.id.short_desc);
     desc = findViewById(R.id.desc);
+
+//    Go in <a> Link html
+    subTitle.setMovementMethod(LinkMovementMethod.getInstance());
+    desc.setMovementMethod(LinkMovementMethod.getInstance());
 
     if (getIntent().getExtras() != null){
       Intent e = getIntent();

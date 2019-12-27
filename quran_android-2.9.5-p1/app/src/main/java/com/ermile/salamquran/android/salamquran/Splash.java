@@ -13,7 +13,6 @@ import com.ermile.salamquran.android.salamquran.Intro.IntroActivity;
 import com.ermile.salamquran.android.salamquran.Intro.IntroApi;
 import com.ermile.salamquran.android.salamquran.Language.LanguageActivity;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
-import com.ermile.salamquran.android.salamquran.Utility.TempLoginUtil;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 
 import java.util.Locale;

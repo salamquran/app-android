@@ -1,26 +1,21 @@
 package com.ermile.salamquran.android.salamquran.Language;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.R;
-import com.ermile.salamquran.android.salamquran.Utility.ColorUtil;
 import com.ermile.salamquran.android.salamquran.Utility.Json;
-import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
