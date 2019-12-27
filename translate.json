@@ -17,3 +17,16 @@
         }
     ]
 }
+
+// Query add Translate
+// UPDATE verses_content
+// SET
+//       c2text = (SELECT text 
+//                             FROM fa_ansarian
+//                             WHERE fa_ansarian.indexs = verses_content.docid )
+// WHERE
+//     EXISTS (
+//         SELECT *
+//         FROM fa_ansarian
+//         WHERE fa_ansarian.indexs  = verses_content.docid
+//     )
