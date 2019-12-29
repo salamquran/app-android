@@ -45,6 +45,7 @@
       android:title="@string/menu_jump_last_page"
       app:showAsAction="ifRoom" />
   <item
+      android:enabled="false"
       android:visible="false"
       android:id="@+id/search"
       android:icon="@drawable/ic_ab_search"
@@ -53,8 +54,9 @@
       app:showAsAction="ifRoom|collapseActionView" />
   <item
       android:id="@+id/jump"
+      android:icon="@drawable/ic_jump"
       android:title="@string/menu_jump"
-      app:showAsAction="never" />
+      app:showAsAction="ifRoom" />
 
   <item
       android:visible="false"
