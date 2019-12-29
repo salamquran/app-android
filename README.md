@@ -1,4 +1,4 @@
-<img src="/public_html/static/images/logo.png" alt="SalamQuran logo" align="right" width="200px"/>
+<img src="https://raw.githubusercontent.com/salamquran/SalamQuran-website/master/public_html/static/images/logo.png" alt="SalamQuran logo" align="right" width="200px"/>
 
 # SalamQuran
 > Quran Anywhere Anytime
