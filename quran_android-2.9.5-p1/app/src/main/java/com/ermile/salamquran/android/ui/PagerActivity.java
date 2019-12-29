@@ -627,7 +627,7 @@ public class PagerActivity extends QuranActionBarActivity implements
     // animate toolbar
     toolBarArea.animate()
         .translationY(visible ? 0 : -toolBarArea.getHeight())
-        .setDuration(250)
+        .setDuration(150)
         .start();
 
             /* the bottom margin on the audio bar is not part of its height, and so we have to
@@ -637,7 +637,7 @@ public class PagerActivity extends QuranActionBarActivity implements
     // and audio bar
     audioStatusBar.animate()
         .translationY(visible ? 0 : audioStatusBar.getHeight() + bottomMargin)
-        .setDuration(250)
+        .setDuration(150)
         .start();
   }
 
@@ -648,10 +648,10 @@ public class PagerActivity extends QuranActionBarActivity implements
         && PreferenceManager.getDefaultSharedPreferences(this).
         getBoolean(Constants.PREF_USE_VOLUME_KEY_NAV, false);
     if (navigate && keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-      viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
+      viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
       return true;
     } else if (navigate && keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-      viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+      viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
       return true;
     }
     return super.onKeyDown(keyCode, event);
