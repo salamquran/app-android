@@ -267,7 +267,7 @@ public class QuranActivity extends QuranActionBarActivity
       case R.id.other_apps: {
 //        Answers.getInstance().logCustom(new CustomEvent("menuOtherApps")); //1L
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("market://search?q=pub:quran.com"));
+        intent.setData(Uri.parse("market://search?q=pub:Ermile"));
         if (getPackageManager().resolveActivity(intent,
             PackageManager.MATCH_DEFAULT_ONLY) == null) {
           intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Ermile"));
