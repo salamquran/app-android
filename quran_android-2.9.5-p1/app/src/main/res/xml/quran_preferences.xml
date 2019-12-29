@@ -30,6 +30,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="true"
         android:key="@string/prefs_new_background"
         android:persistent="true"
@@ -37,6 +38,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="@bool/immersive_in_portrait"
         android:key="@string/prefs_immersive_in_portrait"
         android:persistent="true"
@@ -46,6 +48,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="false"
         android:disableDependentsState="false"
         android:key="@string/prefs_lock_orientation"
@@ -56,6 +59,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:dependency="@string/prefs_lock_orientation"
         android:key="@string/prefs_landscape_orientation"
         android:persistent="true"
@@ -72,6 +76,7 @@
         app:iconSpaceReserved="false"/>
 
     <com.ermile.salamquran.android.ui.preference.SeekBarPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="255"
         android:dependency="@string/prefs_night_mode"
         android:key="@string/prefs_night_mode_text_brightness"
@@ -80,21 +85,32 @@
         android:summary="@string/prefs_night_mode_text_brightness_summary"
         android:title="@string/prefs_night_mode_text_brightness_title"/>
     <CheckBoxPreference
-        android:defaultValue="@bool/use_tablet_interface_by_default"
+        app:isPreferenceVisible="false"
+        android:defaultValue="true"
         android:key="@string/prefs_dual_page_enabled"
         android:persistent="true"
         android:summaryOff="@string/prefs_dual_page_mode_disabled"
         android:summaryOn="@string/prefs_dual_page_mode_enabled"
         android:title="@string/prefs_dual_page_mode_title"
         app:iconSpaceReserved="false" />
+<!--    <CheckBoxPreference
+        android:defaultValue="@bool/use_tablet_interface_by_default"
+        android:key="@string/prefs_dual_page_enabled"
+        android:persistent="true"
+        android:summaryOff="@string/prefs_dual_page_mode_disabled"
+        android:summaryOn="@string/prefs_dual_page_mode_enabled"
+        android:title="@string/prefs_dual_page_mode_title"
+        app:iconSpaceReserved="false" />-->
   </PreferenceCategory>
 
   <PreferenceCategory
+      app:isPreferenceVisible="false"
       android:key="@string/prefs_reading_category_key"
       android:title="@string/prefs_category_reading"
       app:iconSpaceReserved="false">
 
     <Preference
+        app:isPreferenceVisible="false"
         android:key="@string/prefs_page_type"
         android:summary="@string/prefs_page_type_summary"
         android:title="@string/prefs_page_type_title"
@@ -109,6 +125,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="true"
         android:key="@string/prefs_display_marker_popup"
         android:persistent="true"
@@ -117,6 +134,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="true"
         android:key="@string/prefs_highlight_bookmarks"
         android:persistent="true"
@@ -125,7 +143,8 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
+        app:isPreferenceVisible="false"
+        android:defaultValue="true"
         android:key="@string/prefs_volume_key_navigation"
         android:persistent="true"
         android:summary="@string/prefs_volume_key_navigation_summary"
@@ -144,6 +163,7 @@
         app:iconSpaceReserved="false"/>
 
     <CheckBoxPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="true"
         android:key="@string/prefs_ayah_before_translation"
         android:persistent="true"
@@ -152,6 +172,7 @@
         app:iconSpaceReserved="false"/>
 
     <com.ermile.salamquran.android.ui.preference.SeekBarPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="15"
         android:key="@string/prefs_translation_text_size"
         android:max="40"
@@ -164,15 +185,8 @@
       android:title="@string/prefs_category_download"
       app:iconSpaceReserved="false">
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="@string/prefs_prefer_streaming"
-        android:persistent="true"
-        android:summary="@string/prefs_streaming_summary"
-        android:title="@string/prefs_streaming_title"
-        app:iconSpaceReserved="false"/>
-
     <ListPreference
+        app:isPreferenceVisible="false"
         android:defaultValue="1"
         android:dialogTitle="@string/prefs_download_amount_title"
         android:entries="@array/download_amount_preference"
@@ -186,6 +200,14 @@
         android:key="@string/prefs_audio_manager_key"
         android:summary="@string/prefs_audio_manager_summary"
         android:title="@string/prefs_audio_manager"
+        app:iconSpaceReserved="false"/>
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/prefs_prefer_streaming"
+        android:persistent="true"
+        android:summary="@string/prefs_streaming_summary"
+        android:title="@string/prefs_streaming_title"
         app:iconSpaceReserved="false"/>
   </PreferenceCategory>
 

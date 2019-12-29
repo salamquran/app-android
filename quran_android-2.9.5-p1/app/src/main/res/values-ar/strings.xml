@@ -110,6 +110,8 @@
   <string name="prefs_category_download">خيارات التحميل</string>
   <string name="prefs_streaming_title">استماع عبر اﻻنترنت</string>
   <string name="prefs_streaming_summary"> سيتم تشغيل الملفات عبر اﻻنترنت (لن يتم تنزيل الملفات على الجهاز)</string>
+  <string name="prefs_streaming_summary_off">اگر فضای ذخیره سازی ندارید و نمیخواهید تلاوت ها ذخیره شوند این گزینه را فعال کنید</string>
+  <string name="prefs_streaming_summary_on">اگر فضای کافی برای ذخیره تلاوت ها دارید این گزینه را غیر فعال کنید</string>
   <string name="prefs_download_amount_title">كم التحميل</string>
   <string name="prefs_download_amount_summary">كم التحميل للتلاوات الغير متصلة</string>
   <string name="prefs_audio_manager">إدارة الصوتيات</string>

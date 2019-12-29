@@ -90,9 +90,11 @@
   <string name="prefs_translations_summary">بارگذاری و مدیریت ترجمه‌ها</string>
   <string name="prefs_ayah_before_translation_title">آیه پیش از ترجمه</string>
   <string name="prefs_ayah_before_translation_summary">نمایش متن عربی آیه پیش از ترجمه</string>
-  <string name="prefs_category_download">بارگذاری تنظیمات</string>
-  <string name="prefs_streaming_title">پخش اینترنتی</string>
-  <string name="prefs_streaming_summary">پخش جویباری صوت از اینترنت</string>
+  <string name="prefs_category_download">تنظیمات دریافت تلاوت ها</string>
+  <string name="prefs_streaming_title">پخش آنلاین تلاوت ها</string>
+  <string name="prefs_streaming_summary">اگر فضای ذخیره سازی ندارید و نمیخواهید تلاوت ها ذخیره شوند این گزینه را فعال کنید</string>
+  <string name="prefs_streaming_summary_off">اگر فضای ذخیره سازی ندارید و نمیخواهید تلاوت ها ذخیره شوند این گزینه را فعال کنید</string>
+  <string name="prefs_streaming_summary_on">اگر فضای کافی برای ذخیره تلاوت ها دارید این گزینه را غیر فعال کنید</string>
   <string name="prefs_download_amount_summary">میزان پیشنهادی برای بارگذاری فایل‌های صوتی</string>
   <string name="downloaded_translations">بارگذاری انجام گرفت</string>
   <string name="available_translations">آماده بارگذاری</string>

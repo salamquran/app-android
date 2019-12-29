@@ -192,6 +192,8 @@
   <string name="prefs_category_download">Download Options</string>
   <string name="prefs_streaming_title">Streaming</string>
   <string name="prefs_streaming_summary">Stream audio instead of downloading</string>
+  <string name="prefs_streaming_summary_off">اگر فضای ذخیره سازی ندارید و نمیخواهید تلاوت ها ذخیره شوند این گزینه را فعال کنید</string>
+  <string name="prefs_streaming_summary_on">اگر فضای کافی برای ذخیره تلاوت ها دارید این گزینه را غیر فعال کنید</string>
   <string name="prefs_download_amount_title">Download amount</string>
   <string name="prefs_download_amount_summary">Preferred download amount for non-gapless audio</string>
   <string name="prefs_audio_manager">Audio manager</string>
