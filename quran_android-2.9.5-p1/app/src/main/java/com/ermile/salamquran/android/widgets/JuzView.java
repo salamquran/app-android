@@ -7,6 +7,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import androidx.core.content.ContextCompat;
 import android.text.TextPaint;
@@ -37,6 +38,7 @@ public class JuzView extends Drawable {
     final Resources resources = context.getResources();
     final int circleColor = ContextCompat.getColor(context, R.color.circlHizb);
     final int circleBackground = ContextCompat.getColor(context, R.color.circlHizb_background);
+    Typeface font_dana = Typeface.createFromAsset(context.getAssets(),"dana_regular.ttf");
 
     circlePaint = new Paint();
     circlePaint.setStyle(Paint.Style.FILL);
@@ -56,6 +58,7 @@ public class JuzView extends Drawable {
       overlayTextPaint = new TextPaint();
       overlayTextPaint.setAntiAlias(true);
       overlayTextPaint.setColor(textColor);
+      overlayTextPaint.setTypeface(font_dana);
       overlayTextPaint.setTextSize(textSize);
       overlayTextPaint.setTextAlign(Paint.Align.CENTER);
 
