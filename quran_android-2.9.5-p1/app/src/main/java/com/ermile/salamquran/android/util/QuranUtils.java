@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 
 import com.ermile.salamquran.android.R;
 import com.ermile.salamquran.android.data.Constants;
+import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -82,8 +83,9 @@ public class QuranUtils {
   }
 
   public static String getLocalizedNumber(Context context, int number) {
-    Locale locale = Locale.getDefault();
+    /*Locale locale = Locale.getDefault();
     boolean isArabicNames = QuranSettings.getInstance(context).isArabicNames();
+
     boolean change = numberFormat == null ||
         !locale.equals(lastLocale) ||
         isArabicNames != isArabicFormatter;
@@ -94,7 +96,8 @@ public class QuranUtils {
           DecimalFormat.getIntegerInstance(locale);
       lastLocale = locale;
       isArabicFormatter = isArabicNames;
-    }
+    }*/
+    numberFormat = DecimalFormat.getIntegerInstance(new Locale(UserInfo.getAppLanguage(context)));
     return numberFormat.format(number);
   }
 
