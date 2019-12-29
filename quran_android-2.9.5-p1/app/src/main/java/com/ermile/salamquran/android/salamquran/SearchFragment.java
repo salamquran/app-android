@@ -23,9 +23,6 @@ import java.util.Objects;
  */
 public class SearchFragment extends Fragment {
 
-  private SearchView searchView;
-  private SearchManager searchManager;
-
   public SearchFragment() {
     // Required empty public constructor
   }
@@ -43,21 +40,13 @@ public class SearchFragment extends Fragment {
                            Bundle savedInstanceState) {
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_search, container, false);
-    searchView = view.findViewById(R.id.searchView);
+    SearchView searchView = view.findViewById(R.id.searchView);
     searchView.setQueryHint(getString(R.string.search_hint));
-    searchManager = (SearchManager)
+    SearchManager searchManager = (SearchManager)
         Objects.requireNonNull(getActivity()).getSystemService(Context.SEARCH_SERVICE);
     searchView.setSearchableInfo(searchManager.getSearchableInfo(
         new ComponentName(getActivity().getApplication(), SearchActivity.class)));
-    setFocusSearchView();
-    view.findViewById(R.id.box_search).setOnClickListener(v -> setFocusSearchView());
     return view;
   }
 
-  private void setFocusSearchView(){
-    searchView.setQuery(null,false);
-    searchView.setFocusable(true);
-    searchView.setIconified(false);
-    searchView.requestFocusFromTouch();
-  }
 }
