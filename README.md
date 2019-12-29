@@ -30,4 +30,4 @@ You need to setup project? call us to help you run it eaisly or read dash docume
 
 
 ## License
-This project is licensed under the MIT License - see the [license.md](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
