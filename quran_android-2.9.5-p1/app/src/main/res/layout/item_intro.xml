@@ -24,6 +24,7 @@
 
   <TextView
       android:id="@+id/intro_title"
+      android:textColor="@color/title_color"
       android:textSize="@dimen/_12ssp"
       android:layout_marginTop="@dimen/_14sdp"
       android:textAlignment="center"
@@ -32,8 +33,9 @@
       />
 
   <TextView
-      android:textAlignment="center"
       android:id="@+id/intro_desc"
+      android:textColor="@color/title_color"
+      android:textAlignment="center"
       android:layout_marginTop="10dp"
       android:textSize="@dimen/_10ssp"
       android:layout_width="wrap_content"
