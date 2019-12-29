@@ -86,7 +86,7 @@
   <string name="prefs_display_marker_title">نمایش پیغام‌ها</string>
   <string name="prefs_display_marker_summary">فعال‌سازی پیغام‌های رسیدن به جزء، حزب و …</string>
   <string name="prefs_translation_text_title">اندازه قلم ترجمه</string>
-  <string name="prefs_translations">ترجمه‌ها</string>
+  <string name="prefs_translations">تفسیر و ترجمه‌ها</string>
   <string name="prefs_translations_summary">بارگذاری و مدیریت ترجمه‌ها</string>
   <string name="prefs_ayah_before_translation_title">آیه پیش از ترجمه</string>
   <string name="prefs_ayah_before_translation_summary">نمایش متن عربی آیه پیش از ترجمه</string>
@@ -194,10 +194,10 @@
   <string name="about_quran_android">سلام قرآن</string>
   <string name="about_quran_android_url">https://github.com/quran/quran_android</string>
 
-  <string name="about_quranicaudio_summary">سلام قرآن</string>
+  <string name="about_quranicaudio_summary">تمامی تلاوت ها از بانک صوت سلام قرآن بارگذاری میشوند</string>
   <string name="about_quran_ksu">پروژه مصحف الکترونیکی</string>
   <string name="about_quran_ksu_summary">پروژه مصحف الکترونیکی در دانشگاه ملک سعود منبع تفاسیر عربی و برخی ترجمه‌هاست.</string>
-  <string name="about_tanzil_summary">بسیاری از ترجمه‌ها</string>
+  <string name="about_tanzil_summary">ما سعی کردیم فقط از ترجمه‌هایی استفاده کنیم که اعتبار سنجی شده باشند در صورت بروز هرگونه مشکل با ما تماس بگیرید</string>
   <string name="about_noorhidayat_summary">قلم نور حرا و ترجمه مفتی تقی</string>
   <string name="about_open_source">پروژه‌های متن‌باز</string>
   <string name="about_others">دیگران</string>
