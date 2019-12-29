@@ -47,4 +47,5 @@
   <!-- BottomNavigation -->
   <dimen name="design_bottom_navigation_text_size" tools:override="true">@dimen/_8sdp</dimen>
   <dimen name="design_bottom_navigation_active_text_size" tools:override="true">@dimen/_10sdp</dimen>
+  <dimen name="design_bottom_navigation_height" tools:override="true">@dimen/_42sdp</dimen>
 </resources>

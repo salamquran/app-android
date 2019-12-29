@@ -183,11 +183,7 @@ public class QuranActivity extends QuranActionBarActivity
     linear_quranList = findViewById(R.id.linear_quran_list);
     bottomNavigation = findViewById(R.id.bottom_navigation);
     frameLayout = findViewById(R.id.frameLayout);
-
     bottomNavigation.setOnNavigationItemSelectedListener(this);
-
-    int iconSizeBottomNaigation = (int) getResources().getDimension(R.dimen._18sdp);
-    bottomNavigation.setItemIconSize(iconSizeBottomNaigation);
     setVisibilityQuran();
     //----------
 
