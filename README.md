@@ -23,7 +23,7 @@ You need to setup project? call us to help you run it eaisly or read dash docume
 
 
 ## Contributing
-1. Fork it (<https://github.com/salamquran/SalamQuran-website/fork>)
+1. Fork it (<https://github.com/salamquran/SalamQuran-android/fork>)
 3. Commit your changes (`git commit -am 'Add some changes'`)
 4. Push to the branch (`git push origin master`)
 5. Create a new Pull Request
