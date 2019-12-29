@@ -17,8 +17,8 @@ android {
     defaultConfig {
         minSdkVersion deps.android.build.minSdkVersion
         targetSdkVersion deps.android.build.targetSdkVersion
-        versionCode 8
-        versionName "8.0.0"
+        versionCode 9
+        versionName "9.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
