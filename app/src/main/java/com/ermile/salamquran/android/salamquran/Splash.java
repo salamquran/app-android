@@ -1,10 +1,14 @@
 package com.ermile.salamquran.android.salamquran;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.QuranDataActivity;
@@ -15,6 +19,7 @@ import com.ermile.salamquran.android.salamquran.Language.LanguageActivity;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import com.ermile.salamquran.android.salamquran.api.UrlApi;
+import com.ermile.salamquran.android.salamquran.checkVersion.DeprecatedVersionApi;
 import com.ermile.salamquran.android.salamquran.checkVersion.UpdateVersionApi;
 
 import java.util.Locale;
@@ -24,6 +29,7 @@ public class Splash extends AppCompatActivity {
   protected void onStart() {
     super.onStart();
     new UrlApi(getApplicationContext());
+    new DeprecatedVersionApi(getApplicationContext());
     new UpdateVersionApi(getApplicationContext());
   }
 
@@ -78,9 +84,34 @@ public class Splash extends AppCompatActivity {
 
   }
   private void quranActivity() {
-    Intent intent = new Intent(this, QuranDataActivity.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-    startActivity(intent);
-    finish();
+    if (!UserInfo.getDeprecatedVersion(getApplicationContext())){
+      Intent intent = new Intent(this, QuranDataActivity.class);
+      intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+      startActivity(intent);
+      finish();
+    }else {
+      deprecatedDialog();
+    }
+  }
+
+  public void deprecatedDialog() {
+    final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+    /*Title*/
+    builderSingle.setTitle(getString(R.string.update));
+    /*Message*/
+    builderSingle.setMessage(getString(R.string.update_warn));
+    /*Button*/
+    builderSingle.setPositiveButton(getString(R.string.update),
+        /*Open Url*/
+        (dialog, which) -> {
+          Intent intent = new Intent(Intent.ACTION_VIEW);
+          intent.setData(Uri.parse(UserInfo.getUrlUpdate(getApplicationContext())));
+          startActivity(intent);
+        });
+    builderSingle.setCancelable(false);
+    if (!this.isFinishing()){
+      builderSingle.show();
+    }
+
   }
 }

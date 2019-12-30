@@ -37,6 +37,10 @@ public class UserInfo {
     return SaveManager.get(context).getBoolValue().get(SaveManager.updateVersion);
   }
 
+  public static Boolean getDeprecatedVersion(Context context){
+    return SaveManager.get(context).getBoolValue().get(SaveManager.deprecatedVersion);
+  }
+
   public static String getUrlUpdate(Context context){
     return SaveManager.get(context).getstring_appINFO().get(SaveManager.url_update);
   }

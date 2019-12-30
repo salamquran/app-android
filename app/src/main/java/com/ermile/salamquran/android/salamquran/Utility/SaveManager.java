@@ -51,6 +51,7 @@ public class SaveManager extends ContextWrapper {
   public static final String url_update = "url_update";
 
   public static final String updateVersion = "updateVersion";
+  public static final String deprecatedVersion = "deprecatedVersion";
 
   public void save_status_unzip_file_rq(Boolean state) {
     editor.putBoolean(unZipFileReq, state);
@@ -94,11 +95,6 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
-  public void save_status_update_version(Boolean HasNewVersion) {
-    editor.putBoolean(SaveManager.updateVersion, HasNewVersion);
-    editor.apply();
-  }
-
   public void save_url(String site, String kingdom, String domain, String root, String update ) {
     if (site!=null){
       editor.putString(SaveManager.url_site, site);
@@ -115,6 +111,16 @@ public class SaveManager extends ContextWrapper {
     if (update!=null){
       editor.putString(SaveManager.url_update, update);
     }
+    editor.apply();
+  }
+
+  public void save_status_update_version(Boolean HasNewVersion) {
+    editor.putBoolean(SaveManager.updateVersion, HasNewVersion);
+    editor.apply();
+  }
+
+  public void save_status_deprecated_version(Boolean versionIsDeprecated) {
+    editor.putBoolean(SaveManager.deprecatedVersion, versionIsDeprecated);
     editor.apply();
   }
 
@@ -155,6 +161,7 @@ public class SaveManager extends ContextWrapper {
     HashMap<String, Boolean> hashMap = new HashMap<>();
     hashMap.put(unZipFileReq, sharedPreferences.getBoolean(unZipFileReq, false));
     hashMap.put(updateVersion, sharedPreferences.getBoolean(updateVersion, false));
+    hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false));
     return hashMap;
   }
 

@@ -15,7 +15,6 @@ import org.json.JSONObject;
 
 public class UpdateVersionApi {
   public UpdateVersionApi(Context context) {
-
     StringRequest request =
         new StringRequest(Request.Method.GET, Url.getAndroidDetail(context), response -> {
           try {
