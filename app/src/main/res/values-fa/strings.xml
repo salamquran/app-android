@@ -310,4 +310,6 @@
   <string name="prefs_page_type_title">نوع صفحه</string>
   <string name="playback_prompt_title">تلاوت از کجا شروع شود؟</string>
   <string name="starting_page_label">اول صفحه</string>
+  <string name="update">بروزرسانی</string>
+  <string name="update_warn">بروز باشید و نسخه جدید را نصب کنید</string>
 </resources>

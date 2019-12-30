@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,6 +26,49 @@
         app:titleTextColor="#fff"
         android:background="@color/toolbar_main_bg"
         style="@style/ToolBarArea"/>
+
+
+
+    <RelativeLayout
+        android:padding="@dimen/_5sdp"
+        android:background="@color/toolbar_main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UnusedAttribute">
+
+      <ImageView
+          android:layout_alignParentTop="true"
+          android:layout_alignParentStart="true"
+          android:src="@drawable/ic_cancel"
+          android:layout_width="@dimen/_10sdp"
+          android:layout_height="@dimen/_10sdp"
+          tools:ignore="RtlCompat" />
+
+      <TextView
+          android:background="@drawable/quran_row_background"
+          android:textColor="#fff"
+          android:textAlignment="center"
+          android:textSize="@dimen/_12ssp"
+          android:text="@string/update_warn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentStart="true"
+          android:layout_centerInParent="true"
+          android:layout_toStartOf="@+id/btn"
+          android:layout_toLeftOf="@+id/btn"
+          tools:ignore="RtlCompat" />
+
+      <Button
+          android:textSize="@dimen/_12ssp"
+          android:text="@string/update"
+          android:id="@+id/btn"
+          android:layout_centerInParent="true"
+          android:layout_alignParentEnd="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:ignore="RtlCompat" />
+
+    </RelativeLayout>
 
     <com.ermile.salamquran.android.widgets.SlidingTabLayout
         android:id="@+id/indicator"

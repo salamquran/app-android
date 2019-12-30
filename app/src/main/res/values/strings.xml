@@ -402,4 +402,6 @@
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="menu_btn_setting">Setting</string>
   <string name="menu_btn_search">Search</string>
+  <string name="update">Update</string>
+  <string name="update_warn">Update the new version</string>
 </resources>

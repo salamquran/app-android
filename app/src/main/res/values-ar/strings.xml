@@ -307,5 +307,7 @@
   <string name="about_tanzil_summary">کثیر من الترجمات</string>
   <string name="playback_prompt_title">قراءة من:</string>
   <string name="starting_page_label">بداية الصفحة</string>
+  <string name="update">تحدیث</string>
+  <string name="update_warn">تحديث الإصدار الجديد</string>
 
 </resources>
