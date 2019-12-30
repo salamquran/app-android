@@ -12,8 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 //import com.crashlytics.android.answers.Answers; //1L
 //import com.crashlytics.android.answers.CustomEvent; //1L
 import com.ermile.salamquran.android.AboutUsActivity;
@@ -100,18 +104,23 @@ public class QuranActivity extends QuranActionBarActivity
   @Inject AudioUtils audioUtils;
   @Inject RecentPageModel recentPageModel;
   @Inject TranslationManagerPresenter translationManagerPresenter;
+  @Inject BookmarksContextualModePresenter bookmarksContextualModePresenter;
 
   //salamquran
   LinearLayout linear_quranList;
   BottomNavigationView bottomNavigation;
   FrameLayout frameLayout;
   FragmentManager fragmentManagers = getSupportFragmentManager();
-  @Inject
-  BookmarksContextualModePresenter bookmarksContextualModePresenter;
 
   String languageUsed = null;
 
+  RelativeLayout update_box;
+  ImageView update_closed;
+  TextView update_title;
+  Button update_btn;
+
   //----------
+
 
 
 
@@ -185,6 +194,13 @@ public class QuranActivity extends QuranActionBarActivity
     frameLayout = findViewById(R.id.frameLayout);
     bottomNavigation.setOnNavigationItemSelectedListener(this);
     setVisibilityQuran();
+
+    update_box = findViewById(R.id.update_box);
+    update_closed = findViewById(R.id.update_closed);
+    update_title = findViewById(R.id.update_title);
+    update_btn = findViewById(R.id.update_btn);
+
+    update_notif();
     //----------
 
     updateTranslationsListAsNeeded();
@@ -283,6 +299,16 @@ public class QuranActivity extends QuranActionBarActivity
 
   }
 
+  private void market_apk(){
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    intent.setData(Uri.parse("market://search?q=pub:Ermile"));
+    if (getPackageManager().resolveActivity(intent,
+        PackageManager.MATCH_DEFAULT_ONLY) == null) {
+      intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.ermile.salamquran.android"));
+    }
+    startActivity(intent);
+  }
+
   //salamquran
   @Override
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -351,6 +377,14 @@ public class QuranActivity extends QuranActionBarActivity
       fragmentManagers.beginTransaction()
           .replace(R.id.frameLayout, fragment)
           .commit();
+    }
+  }
+
+  private void update_notif(){
+    update_closed.setOnClickListener(v -> update_box.setVisibility(View.GONE));
+    update_btn.setOnClickListener(v -> market_apk());
+    if (UserInfo.getNewVersion(getApplicationContext())){
+      update_box.setVisibility(View.VISIBLE);
     }
   }
   //-------------------------------------------

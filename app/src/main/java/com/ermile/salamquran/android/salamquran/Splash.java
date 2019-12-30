@@ -14,6 +14,7 @@ import com.ermile.salamquran.android.salamquran.Intro.IntroApi;
 import com.ermile.salamquran.android.salamquran.Language.LanguageActivity;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
+import com.ermile.salamquran.android.salamquran.checkVersion.UpdateVersionApi;
 
 import java.util.Locale;
 
@@ -22,6 +23,7 @@ public class Splash extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
+    new UpdateVersionApi(getApplicationContext());
     switch (UserInfo.getSplash(getApplication())){
       case 0:
         changeLanguage();
@@ -29,9 +31,9 @@ public class Splash extends AppCompatActivity {
       case 1:
         goIntro();
         break;
-      case 2:
-        quranActivity();
-        break;
+      default:
+          quranActivity();
+          break;
     }
   }
 

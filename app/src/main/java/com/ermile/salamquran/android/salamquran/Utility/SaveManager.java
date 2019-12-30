@@ -44,6 +44,8 @@ public class SaveManager extends ContextWrapper {
   public static final String jsonAyaDay = "jsonAyaDay";
   public static final String jsonPageDay = "jsonPageDay";
 
+  public static final String updateVersion = "updateVersion";
+
   public void save_status_unzip_file_rq(Boolean state) {
     editor.putBoolean(unZipFileReq, state);
     editor.apply();
@@ -86,6 +88,11 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
+  public void save_status_update_version(Boolean HasNewVersion) {
+    editor.putBoolean(SaveManager.updateVersion, HasNewVersion);
+    editor.apply();
+  }
+
   public Map<String, String> getstring_appINFO() {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put(local, sharedPreferences.getString(local, Url.api ));
@@ -115,6 +122,7 @@ public class SaveManager extends ContextWrapper {
   public Map<String,Boolean> getBoolValue() {
     HashMap<String, Boolean> hashMap = new HashMap<>();
     hashMap.put(unZipFileReq, sharedPreferences.getBoolean(unZipFileReq, false));
+    hashMap.put(updateVersion, sharedPreferences.getBoolean(updateVersion, false));
     return hashMap;
   }
 
