@@ -299,17 +299,15 @@ public class QuranActivity extends QuranActionBarActivity
 
   }
 
+
+
+  //salamquran
   private void market_apk(){
     Intent intent = new Intent(Intent.ACTION_VIEW);
-    intent.setData(Uri.parse("market://search?q=pub:Ermile"));
-    if (getPackageManager().resolveActivity(intent,
-        PackageManager.MATCH_DEFAULT_ONLY) == null) {
-      intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.ermile.salamquran.android"));
-    }
+    intent.setData(Uri.parse(UserInfo.getUrlUpdate(getApplicationContext())));
     startActivity(intent);
   }
 
-  //salamquran
   @Override
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     switch (item.getItemId()){
