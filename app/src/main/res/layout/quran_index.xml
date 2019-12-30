@@ -62,6 +62,7 @@
           tools:ignore="RtlCompat" />
 
       <ImageView
+          android:background="@drawable/quran_row_background"
           android:id="@+id/update_closed"
           android:layout_alignParentTop="true"
           android:layout_alignParentStart="true"
