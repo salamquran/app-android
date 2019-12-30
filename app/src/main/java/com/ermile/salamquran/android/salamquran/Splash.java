@@ -33,6 +33,7 @@ public class Splash extends AppCompatActivity {
       new DeprecatedVersionApi(getApplicationContext());
       new UpdateVersionApi(getApplicationContext());
     }catch (Exception e){
+      quranActivity();
       Log.e("amingoli", "onStart: ",e );
     }
   }
@@ -57,6 +58,7 @@ public class Splash extends AppCompatActivity {
         deprecatedDialog();
       }
     }catch (Exception e){
+      quranActivity();
       Log.e("amingoli", "onResume: ",e );
     }
 
@@ -124,6 +126,7 @@ public class Splash extends AppCompatActivity {
         builderSingle.show();
       }
     }catch (Exception e){
+      quranActivity();
       Log.e("amingoli", "deprecatedDialog: ",e );
     }
   }
