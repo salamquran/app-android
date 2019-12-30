@@ -14,9 +14,7 @@ import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 import org.json.JSONObject;
 
 public class UpdateVersionApi {
-  private Context context;
   public UpdateVersionApi(Context context) {
-    this.context = context;
 
     StringRequest request =
         new StringRequest(Request.Method.GET, Url.getAndroidDetail(context), response -> {
@@ -30,8 +28,9 @@ public class UpdateVersionApi {
                 if (!version.isNull("last")){
                   int last = version.getInt("last");
                   if (UserInfo.versionCode < last && last != 0){
-                    Log.d("amingoli", "UpdateVersionApi: "+last);
                     SaveManager.get(context).save_status_update_version(true);
+                  }else {
+                    SaveManager.get(context).save_status_update_version(false);
                   }
                 }
               }
