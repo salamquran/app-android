@@ -7,8 +7,8 @@
     android:id="@+id/linear_inro_item">
 
   <RelativeLayout
-      android:layout_width="@dimen/_220sdp"
-      android:layout_height="@dimen/_220sdp">
+      android:layout_width="@dimen/_190sdp"
+      android:layout_height="@dimen/_190sdp">
     <ProgressBar
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"

@@ -52,7 +52,10 @@ public class IntroActivity extends AppCompatActivity {
 
       for (int i = 0; i < intro.length(); i++) {
         JSONObject object = intro.getJSONObject(i);
-        String image = object.getString("image");
+        String image= null;
+        if (!object.isNull("image")){
+          image = object.getString("image");
+        }
         String title = object.getString("title");
         String desc = object.getString("desc");
 
