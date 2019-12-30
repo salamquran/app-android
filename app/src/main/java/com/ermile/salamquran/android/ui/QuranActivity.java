@@ -192,6 +192,7 @@ public class QuranActivity extends QuranActionBarActivity
 
   @Override
   public void onResume() {
+    //salamquran
     setVisibilityQuran();
     compositeDisposable.add(recentPages.subscribe());
     super.onResume();
@@ -352,6 +353,7 @@ public class QuranActivity extends QuranActionBarActivity
           .commit();
     }
   }
+  //-------------------------------------------
 
 
   @Override
