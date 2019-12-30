@@ -9,7 +9,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.ermile.salamquran.android.QuranApplication;
 import com.ermile.salamquran.android.salamquran.Utility.SaveManager;
 import com.ermile.salamquran.android.salamquran.Utility.Url;
-import com.ermile.salamquran.android.salamquran.Utility.UserInfo;
 
 import org.json.JSONObject;
 
@@ -21,18 +20,12 @@ public class DeprecatedVersionApi {
             JSONObject mainObject = new JSONObject(response);
             if (mainObject.getBoolean("ok")){
               JSONObject result = mainObject.getJSONObject("result");
-
               if (!result.isNull("version")){
                 JSONObject version = result.getJSONObject("version");
                 if (!version.isNull("deprecated")){
                   int deprecated = version.getInt("deprecated");
-                  if (UserInfo.versionCode <= deprecated && deprecated != 0){
-                    Log.d("amingoli", "DeprecatedVersionApi: true "+deprecated);
-                    SaveManager.get(context).save_status_deprecated_version(true);
-                  }else {
-                    SaveManager.get(context).save_status_deprecated_version(false);
-                    Log.d("amingoli", "DeprecatedVersionApi: false "+deprecated);
-                  }
+                  Log.d("amingoli", "DeprecatedVersionApi: true "+deprecated);
+                  SaveManager.get(context).save_status_deprecated_version(deprecated);
                 }
               }
             }

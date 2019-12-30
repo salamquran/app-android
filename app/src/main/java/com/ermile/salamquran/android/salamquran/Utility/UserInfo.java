@@ -38,7 +38,8 @@ public class UserInfo {
   }
 
   public static Boolean getDeprecatedVersion(Context context){
-    return SaveManager.get(context).getBoolValue().get(SaveManager.deprecatedVersion);
+    int deprecatdCode = SaveManager.get(context).getIntValue().get(SaveManager.deprecatedVersion);
+    return UserInfo.versionCode <= deprecatdCode && deprecatdCode != 0;
   }
 
   public static String getUrlUpdate(Context context){

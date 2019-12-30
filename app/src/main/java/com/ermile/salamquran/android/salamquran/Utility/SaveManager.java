@@ -119,8 +119,8 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
-  public void save_status_deprecated_version(Boolean versionIsDeprecated) {
-    editor.putBoolean(SaveManager.deprecatedVersion, versionIsDeprecated);
+  public void save_status_deprecated_version(int versionIsDeprecated) {
+    editor.putInt(SaveManager.deprecatedVersion, versionIsDeprecated);
     editor.apply();
   }
 
@@ -154,6 +154,8 @@ public class SaveManager extends ContextWrapper {
   public Map<String, Integer> getIntValue() {
     HashMap<String, Integer> hashMap = new HashMap<>();
     hashMap.put(splash, sharedPreferences.getInt(splash, 0 ));
+    hashMap.put(deprecatedVersion, sharedPreferences.getInt(deprecatedVersion, 0));
+
     return hashMap;
   }
 
@@ -161,7 +163,6 @@ public class SaveManager extends ContextWrapper {
     HashMap<String, Boolean> hashMap = new HashMap<>();
     hashMap.put(unZipFileReq, sharedPreferences.getBoolean(unZipFileReq, false));
     hashMap.put(updateVersion, sharedPreferences.getBoolean(updateVersion, false));
-    hashMap.put(deprecatedVersion, sharedPreferences.getBoolean(deprecatedVersion, false));
     return hashMap;
   }
 
