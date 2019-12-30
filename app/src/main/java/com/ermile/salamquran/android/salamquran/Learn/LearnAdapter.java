@@ -148,11 +148,11 @@ public class LearnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         case LearnModel.LEVEL_LIST:
           final LearnModel.level_list item_level_list = itemLevel_List.get(listPosition);
           holder_level_list hLeve_list = ((holder_level_list) holder);
-          if (item_level_list.getFilepic()!=null){
+          /*if (item_level_list.getFilepic()!=null){
             Glide.with(mContext)
                 .load(item_level_list.getFilepic())
                 .into(hLeve_list.image );
-          }
+          }*/
           hLeve_list.title.setText(item_level_list.getTitle());
           hLeve_list.desc.setText(item_level_list.getType_title());
 
