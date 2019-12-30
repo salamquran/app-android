@@ -1,6 +1,8 @@
 package com.ermile.salamquran.android.salamquran.checkVersion;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
@@ -21,6 +23,7 @@ public class UpdateVersionApi {
                 JSONObject version = result.getJSONObject("version");
                 if (!version.isNull("last")){
                   int last = version.getInt("last");
+                  Log.d("amingoli", "UpdateVersionApi: "+last);
                   SaveManager.get(context).save_status_update_version(last);
                 }
               }

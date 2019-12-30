@@ -22,7 +22,7 @@ public class DeprecatedVersionApi {
                 JSONObject version = result.getJSONObject("version");
                 if (!version.isNull("deprecated")){
                   int deprecated = version.getInt("deprecated");
-                  Log.d("amingoli", "DeprecatedVersionApi: true "+deprecated);
+                  Log.d("amingoli", "DeprecatedVersionApi: "+deprecated);
                   SaveManager.get(context).save_status_deprecated_version(deprecated);
                 }
               }
