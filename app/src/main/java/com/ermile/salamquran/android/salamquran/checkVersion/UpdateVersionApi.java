@@ -26,11 +26,8 @@ public class UpdateVersionApi {
                 JSONObject version = result.getJSONObject("version");
                 if (!version.isNull("last")){
                   int last = version.getInt("last");
-                  if (UserInfo.versionCode < last && last != 0){
-                    SaveManager.get(context).save_status_update_version(true);
-                  }else {
-                    SaveManager.get(context).save_status_update_version(false);
-                  }
+                  SaveManager.get(context).save_status_update_version(last);
+
                 }
               }
             }

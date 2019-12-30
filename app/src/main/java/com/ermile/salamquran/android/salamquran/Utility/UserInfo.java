@@ -34,7 +34,8 @@ public class UserInfo {
   }
 
   public static Boolean getNewVersion(Context context){
-    return SaveManager.get(context).getBoolValue().get(SaveManager.updateVersion);
+    int updateCode = SaveManager.get(context).getIntValue().get(SaveManager.updateVersion);
+    return UserInfo.versionCode <= updateCode && updateCode != 0;
   }
 
   public static Boolean getDeprecatedVersion(Context context){

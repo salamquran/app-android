@@ -114,8 +114,8 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
-  public void save_status_update_version(Boolean HasNewVersion) {
-    editor.putBoolean(SaveManager.updateVersion, HasNewVersion);
+  public void save_status_update_version(int HasNewVersion) {
+    editor.putInt(SaveManager.updateVersion, HasNewVersion);
     editor.apply();
   }
 
@@ -155,6 +155,7 @@ public class SaveManager extends ContextWrapper {
     HashMap<String, Integer> hashMap = new HashMap<>();
     hashMap.put(splash, sharedPreferences.getInt(splash, 0 ));
     hashMap.put(deprecatedVersion, sharedPreferences.getInt(deprecatedVersion, 0));
+    hashMap.put(updateVersion, sharedPreferences.getInt(updateVersion, 0));
 
     return hashMap;
   }
@@ -162,7 +163,6 @@ public class SaveManager extends ContextWrapper {
   public Map<String,Boolean> getBoolValue() {
     HashMap<String, Boolean> hashMap = new HashMap<>();
     hashMap.put(unZipFileReq, sharedPreferences.getBoolean(unZipFileReq, false));
-    hashMap.put(updateVersion, sharedPreferences.getBoolean(updateVersion, false));
     return hashMap;
   }
 
