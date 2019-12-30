@@ -1,6 +1,7 @@
 package com.ermile.salamquran.android.salamquran.checkVersion;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -26,9 +27,11 @@ public class DeprecatedVersionApi {
                 if (!version.isNull("deprecated")){
                   int deprecated = version.getInt("deprecated");
                   if (UserInfo.versionCode <= deprecated && deprecated != 0){
+                    Log.d("amingoli", "DeprecatedVersionApi: true "+deprecated);
                     SaveManager.get(context).save_status_deprecated_version(true);
                   }else {
                     SaveManager.get(context).save_status_deprecated_version(false);
+                    Log.d("amingoli", "DeprecatedVersionApi: false "+deprecated);
                   }
                 }
               }

@@ -28,25 +28,39 @@ public class Splash extends AppCompatActivity {
   @Override
   protected void onStart() {
     super.onStart();
-    new UrlApi(getApplicationContext());
-    new DeprecatedVersionApi(getApplicationContext());
-    new UpdateVersionApi(getApplicationContext());
+    try {
+      new UrlApi(getApplicationContext());
+      new DeprecatedVersionApi(getApplicationContext());
+      new UpdateVersionApi(getApplicationContext());
+    }catch (Exception e){
+      Log.e("amingoli", "onStart: ",e );
+    }
   }
 
   @Override
   protected void onResume() {
     super.onResume();
-    switch (UserInfo.getSplash(getApplication())){
-      case 0:
-        changeLanguage();
-        break;
-      case 1:
-        goIntro();
-        break;
-      default:
-          quranActivity();
-          break;
+    try {
+      if (!UserInfo.getDeprecatedVersion(getApplicationContext())){
+        switch (UserInfo.getSplash(getApplication())){
+          case 0:
+            changeLanguage();
+            break;
+          case 1:
+            goIntro();
+            break;
+          default:
+            quranActivity();
+            break;
+        }
+      }else {
+        deprecatedDialog();
+      }
+    }catch (Exception e){
+      Log.e("amingoli", "onResume: ",e );
     }
+
+
   }
 
   @Override
@@ -84,34 +98,34 @@ public class Splash extends AppCompatActivity {
 
   }
   private void quranActivity() {
-    if (!UserInfo.getDeprecatedVersion(getApplicationContext())){
-      Intent intent = new Intent(this, QuranDataActivity.class);
-      intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-      startActivity(intent);
-      finish();
-    }else {
-      deprecatedDialog();
-    }
+    Intent intent = new Intent(this, QuranDataActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+    startActivity(intent);
+    finish();
   }
 
   public void deprecatedDialog() {
-    final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
-    /*Title*/
-    builderSingle.setTitle(getString(R.string.update));
-    /*Message*/
-    builderSingle.setMessage(getString(R.string.update_warn));
-    /*Button*/
-    builderSingle.setPositiveButton(getString(R.string.update),
-        /*Open Url*/
-        (dialog, which) -> {
-          Intent intent = new Intent(Intent.ACTION_VIEW);
-          intent.setData(Uri.parse(UserInfo.getUrlUpdate(getApplicationContext())));
-          startActivity(intent);
-        });
-    builderSingle.setCancelable(false);
-    if (!this.isFinishing()){
-      builderSingle.show();
+    try {
+      final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+      /*Title*/
+      builderSingle.setTitle(getString(R.string.update));
+      /*Message*/
+      builderSingle.setMessage(getString(R.string.update_warn));
+      /*Button*/
+      builderSingle.setPositiveButton(getString(R.string.update),
+          /*Open Url*/
+          (dialog, which) -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(UserInfo.getUrlUpdate(getApplicationContext())));
+            startActivity(intent);
+          });
+      builderSingle.setCancelable(false);
+      if (!this.isFinishing()){
+        builderSingle.show();
+      }
+    }catch (Exception e){
+      Log.e("amingoli", "deprecatedDialog: ",e );
     }
-
   }
+
 }
