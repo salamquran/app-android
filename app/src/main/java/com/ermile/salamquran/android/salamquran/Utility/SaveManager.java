@@ -44,6 +44,12 @@ public class SaveManager extends ContextWrapper {
   public static final String jsonAyaDay = "jsonAyaDay";
   public static final String jsonPageDay = "jsonPageDay";
 
+  public static final String url_site = "url_site";
+  public static final String url_kingdom = "url_kingdom";
+  public static final String url_domain = "url_domain";
+  public static final String url_root = "url_root";
+  public static final String url_update = "url_update";
+
   public static final String updateVersion = "updateVersion";
 
   public void save_status_unzip_file_rq(Boolean state) {
@@ -93,6 +99,25 @@ public class SaveManager extends ContextWrapper {
     editor.apply();
   }
 
+  public void save_url(String site, String kingdom, String domain, String root, String update ) {
+    if (site!=null){
+      editor.putString(SaveManager.url_site, site);
+    }
+    if (kingdom!=null){
+      editor.putString(SaveManager.url_kingdom, kingdom);
+    }
+    if (domain!=null){
+      editor.putString(SaveManager.url_domain, domain);
+    }
+    if (root!=null){
+      editor.putString(SaveManager.url_root, root);
+    }
+    if (update!=null){
+      editor.putString(SaveManager.url_update, update);
+    }
+    editor.apply();
+  }
+
   public Map<String, String> getstring_appINFO() {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put(local, sharedPreferences.getString(local, Url.api ));
@@ -110,6 +135,13 @@ public class SaveManager extends ContextWrapper {
         .getString(jsonLanguageList, Json.defaultValue.appLanguage));
     hashMap.put(jsonAyaDay, sharedPreferences.getString(jsonAyaDay, Json.defaultValue.ayaDay));
     hashMap.put(jsonPageDay, sharedPreferences.getString(jsonPageDay, Json.defaultValue.pageDay));
+
+    hashMap.put(url_site, sharedPreferences.getString(url_site, "https://salamquran.com" ));
+    hashMap.put(url_kingdom, sharedPreferences.getString(url_kingdom, "https://salamquran.com/en" ));
+    hashMap.put(url_domain, sharedPreferences.getString(url_domain, "salamquran.com" ));
+    hashMap.put(url_root, sharedPreferences.getString(url_root, "salamquran" ));
+    hashMap.put(url_update, sharedPreferences.getString(url_update, "https://salamquran.com/app/update" ));
+
     return hashMap;
   }
 

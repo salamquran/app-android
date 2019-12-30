@@ -36,4 +36,8 @@ public class UserInfo {
   public static Boolean getNewVersion(Context context){
     return SaveManager.get(context).getBoolValue().get(SaveManager.updateVersion);
   }
+
+  public static String getUrlUpdate(Context context){
+    return SaveManager.get(context).getstring_appINFO().get(SaveManager.url_update);
+  }
 }
