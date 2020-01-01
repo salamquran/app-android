@@ -131,7 +131,7 @@
   <string name="download_processing">در حال بارگذاری…</string>
   <string name="download_error_general">خطا در بارگذاری</string>
   <string name="download_error_disk">فضای کافی برای بارگذاری وجود ندارد</string>
-  <string name="download_error_network">شما به اینترنت متصل نیستید</string>
+  <string name="download_error_network">خطا در اتصال به اینترنت</string>
   <string name="download_error_perms">خطا در دسترسی</string>
   <string name="download_error_invalid_download">بارگذاری با خطا مواجه شد</string>
   <string name="download_error_invalid_download_retry">فایل خراب است. دوباره بارگذاری نمایید</string>
