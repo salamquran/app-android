@@ -22,8 +22,8 @@
       android:layout_height="wrap_content"/>
 
   <RelativeLayout
-      android:visibility="gone"
       android:id="@+id/box_learn"
+      android:visibility="gone"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
@@ -41,12 +41,18 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"/>
 
-      <ImageView
-          android:src="@drawable/ic_play_cicle"
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/lav_actionBar"
           android:layout_centerInParent="true"
-          android:tint="#fff"
           android:layout_width="@dimen/_80sdp"
-          android:layout_height="@dimen/_80sdp"/>
+          android:layout_height="@dimen/_80sdp"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="0dp"
+          android:layout_marginEnd="0dp"
+          android:scaleType="fitCenter"
+          app:lottie_autoPlay="true"
+          app:lottie_fileName="icon_video.json"
+          app:lottie_loop="true" />
 
     </RelativeLayout>
 
