@@ -151,7 +151,7 @@ dependencies {
     implementation 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2'
 //  Photo Viewer
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-
-
+//    Lottie Animate
+  implementation 'com.airbnb.android:lottie:3.3.1'
 //----------
 }
