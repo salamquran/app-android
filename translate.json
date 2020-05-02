@@ -179,6 +179,21 @@
             "minimumVersion": 1,
             "currentVersion": 1,
             "translatorForeign": "صادقی"
+        },
+        {
+            "id": 13,
+            "displayName": "English translation",
+            "translator": "sahih",
+            "languageCode": "en",
+            "fileUrl": "https://github.com/salamquran/SalamQuran-android/raw/master/Trasnlate%20DB/salamquran_en_sahih.db",
+            "fileName": "salamquran_en_sahih.db",
+            "saveTo": "databases",
+            "downloadType": "translation",
+            "minimum_required_version": 1,
+            "maximum_allowed_version": null,
+            "minimumVersion": 1,
+            "currentVersion": 1,
+            "translatorForeign": "sahih"
         }
     ]
 }
